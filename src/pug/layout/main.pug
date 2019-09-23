@@ -3,13 +3,14 @@ block variables
 
 doctype html
 html(lang='ru')
-  head
-    meta(charset='utf-8')
-    title #{title}
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title #{title}
 
-  body
-    .wrapper
-      include ./header
-      .content-wrapper
-        block content
-      include ./footer
+	body
+		.wrapper
+			include ./header
+			main
+				block content
+			include ./footer

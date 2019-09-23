@@ -1,0 +1,142 @@
+html,
+body{
+	background: #fff;
+	font-family: $font-site;
+	@include font(normal, normal, 16px, 1.6, $color-text);
+	box-sizing:border-box;
+	height:100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+img{
+	max-width: 100%;
+}
+
+a{
+	color: $color-text;
+}
+
+a:hover,
+a:active,
+a:focus{
+	text-decoration: none;
+}
+
+p{
+	padding: 0 0 10px;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5
+{
+	line-height: 1.4;
+	color: $color-text;
+}
+
+h1,.h1{
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+h2,.h2{
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+
+h3,.h3{
+	font-size: 24px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+h4,.h4{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+h5,.h5{
+	font-size: 18px;
+	margin-bottom: 0;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	max-width: 1920px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+main{
+	flex: 1 1 auto;
+	padding-bottom: 76px;
+	width: 100%;
+}
+
+.st-width{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn,
+input[type="submit"].btn{
+	display: inline-block;
+	height: 38px;
+	background: $color-text;
+	border: 1px solid $color-text;
+	@include font(normal, 500, 12px, 36px, #fff);
+	text-transform: uppercase;
+	padding: 0 20px;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	min-width: 200px;
+}
+
+.btn:hover,
+input[type="submit"].btn:hover{
+	background: transparent;
+	color: $color-text;
+}
+
+.btn--border,
+input[type="submit"].btn--border{
+	background: transparent;
+	color: $color-text;
+}
+
+.btn--border:hover,
+input[type="submit"].btn--border:hover{
+	background: $color-text;
+	color: #fff;
+}
+
+.code{
+	background-color: #f7f7f7;
+	border: 1px solid #e1e1e8;
+	color: #d14;
+	padding: 1px 4px;
+	display: inline-block;
+	font-family: monospace, arial;
+	border-radius: 3px;
+}
+
+.text-left{text-align: left !important;}
+.text-center{text-align: center !important;}
+.text-right{text-align: right !important;}
+.text-justify{text-align: justify !important;}
+.text-uppercase{text-transform: uppercase !important;}
+.text-bold {font-weight: 700 !important;}
