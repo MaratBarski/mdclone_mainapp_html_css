@@ -1,0 +1,15 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    title #{title}
+
+  body
+    .wrapper
+      include ./header
+      .content-wrapper
+        block content
+      include ./footer
