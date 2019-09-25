@@ -1,5 +1,6 @@
 const webpack =  require('webpack')
 const merge = require('webpack-merge')
+const ImageSpritePlugin = require('image-sprite-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
@@ -17,6 +18,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map'
+    }),
+    new ImageSpritePlugin({
+      commentOrigin: true,
+      compress: false,
+      extensions: ['png'],
+      indent: '  ',
+      log: true,
+      //outputPath: './public',
+      outputFilename: 'assets/sprites/sprite.png',
+      padding: 20,
+      suffix: ''
     })
   ]
 })
