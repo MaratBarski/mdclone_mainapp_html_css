@@ -4,6 +4,8 @@
 @import "utils/fonts";
 @import "utils/reset";
 
-@import "components/main";
-@import "components/header";
-@import "components/footer";
+@import "layouts/main";
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "components/*";
