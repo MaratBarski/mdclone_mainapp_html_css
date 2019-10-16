@@ -4,14 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-const globImporter = require('node-sass-glob-importer')
+const globImporter = require('node-sass-glob-importer');
+
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
+  fonts: 'assets/fonts',
+  img: 'assets/img'
 }
 
 // Pages const for HtmlWebpackPlugin
@@ -32,7 +35,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    // publicPath: '../'
   },
   optimization: {
     splitChunks: {
@@ -51,7 +54,7 @@ module.exports = {
       test: /\.pug$/,
       loader: 'pug-loader',
       options:{
-        pretty: true
+        pretty: '\t'
       }
     }, {
       test: /\.js$/,
@@ -66,16 +69,20 @@ module.exports = {
         }
       }
     }, {
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: '[name].[ext]',
+        outputPath: PATHS.fonts,
+        publicPath: '../fonts/'
       }
     }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '[path][name].[ext]'
+        name: '[name].[ext]',
+        outputPath: PATHS.img,
+        publicPath: '../img/'
       }
     }, {
       test: /\.scss$/,
@@ -124,8 +131,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
+      // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+      // { from: `${PATHS.src}/static`, to: '' },
     ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
