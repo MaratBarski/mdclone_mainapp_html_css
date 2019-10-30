@@ -1,19 +1,22 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Главная';
+	- var title = 'Содержание';
 	- 
 		var pagelist = [
-			{href: 'index.html',name:'Главная'},
-			{href: 'tipografika.html',name:'Типографика'}
+			{href: 'main.html',name:'Главная'},
+			{href: 'tipografika.html',name:'Типографика'},
 		];
 
 block content
 	section
-		.st-width
-			h1 содержание
-			ul
-				each page in pagelist
-					li
-						a(href=page.href)= page.name
+		.container
+			.row
+				.col-12
+					h1 содержание
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+
 

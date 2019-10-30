@@ -1,11 +1,27 @@
-@import "utils/libs";
+// fancybox
+// @import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
+
+// bootstrap
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// @import "~bootstrap/scss/utilities/flex";
+// @import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/modal";
+
+// Наш сайт
+// @import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
 
-@import "layouts/main";
-@import "layouts/header";
-@import "layouts/footer";
-
+@import "layouts/*";
 @import "components/*";
+
+
+
+
+
+
