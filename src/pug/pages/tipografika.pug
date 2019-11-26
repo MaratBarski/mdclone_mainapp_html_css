@@ -1,58 +1,74 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Типографика';
-	- var h1 = 'Типографика';
-
-
-block breadcrumb
-	-
-		var breadcrumbs=[
-			{href:'/',name:'Главная'},
-			{href:'#',name:'Типографика'},
-		];
-
-	+breadcrumbs(breadcrumbs)
+	- var title = 'Typography';
+	- var h1 = 'Typography';
 
 block content
-	section.st-width
-		p
-			a(href='#') Это стандартная ссылка
+	section
+		.container
+			.row
+				.col-12
+					p
+						a(href='#') This is a standard link
 
-		p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+					p Redtooth triggerfish jewel tetra sockeye salmon, snake mackerel plownose chimaera slimehead firefish taimen. Barbeled dragonfish codling wolffish giant sea bass.
+					p Armored gurnard wahoo burma danio bream eagle ray grass carp Bombay duck bleak mudsucker; sandfish kahawai. Dory plunderfish bullhead starry flounder tubeshoulder bala shark southern flounder Antarctic icefish Sacramento blackfish deep sea anglerfish. Spiny dogfish, milkfish, steelhead piranha; snake eel sailfin silverside. Requiem shark yellow moray ribbon eel ziege, "African glass catfish pigfish bull trout bristlemouth Sundaland noodlefish." Manta Ray dory, whitefish: angler catfish wrasse grunt sculpin eel cod paradise fish. Minnow--Blind shark; Mexican golden trout Norwegian Atlantic salmon tripletail mouthbrooder, dusky grouper buffalofish goby sharksucker, yellowfin surgeonfish white marlin nurse shark. Rock cod, pollyfish murray cod goldfish.
+					p Pleco muskellunge wels catfish seatrout redmouth whalefish? Snipe eel Dolly Varden trout, torrent catfish sea toad eel tadpole cod bonito mrigal lefteye flounder.
 
-		p По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</p>
+					br
+					br
+					div.h2 Additional classes for text
+					p <span class="code">text-left</span> text align left
+					p <span class="code">text-center</span> text align center
+					p <span class="code">text-right</span> text align right
+					p <span class="code">text-justify</span> text align across the width
+					p <span class="code">text-uppercase</span> text uppercase
+					p <span class="code">text-bold</span> text bold
 
-		br
-		br
-		div.h2 Доп. классы для текста
-		p <span class="code">text-left</span> Выравнивание текста по левому краю
-		p <span class="code">text-center</span> Выравнивание текста по центру
-		p <span class="code">text-right</span> Выравнивание текста по правому краю
-		p <span class="code">text-justify</span> Выравнивание текста по ширине
-		p <span class="code">text-uppercase</span> Все символы текста становятся прописными (верхний регистр)
-		p <span class="code">text-bold</span> Жирный текст
+					br
+					br
+					div.h2 Headers
+					h1 Header - h1
+					h2 Header - h2
+					h3 Header - h3
+					h4 Header - h4
+					h5 Header - h5
+					h6 Header - h6
 
-		br
-		br
-		div.h2 Заголовки
-		h1 Заголовок - h1
-		h2 Заголовок - h2
-		h3 Заголовок - h3
-		h4 Заголовок - h4
-		h5 Заголовок - h5
-		h6 Заголовок - h6
+					br
+					p.h1 The class is called h1
+					p.h2 The class is called h2
+					p.h3 The class is called h3
+					p.h4 The class is called h4
+					p.h5 The class is called h5
+					p.h6 The class is called h6
+					p.h7 The class is called h7
+					p.h8 The class is called h8
 
-		br
-		p.h1 Это класс с названием h1
-		p.h2 Это класс с названием h2
-		p.h3 Это класс с названием h3
-		p.h4 Это класс с названием h4
-		p.h5 Это класс с названием h5
-		p.h6 Это класс с названием h6
+					br
+					br
+					div.h2 Buttons
+					a.btn(href='#') Button
+					a.btn.btn_disable(href='#') Button
+					br
+					br
+					a.btn.btn_border(href='#') Button
+					a.btn.btn_border.btn_disable(href='#') Button
+					br
+					br
+					a.btn(href='#') 
+						img(src="/assets/img/icon/ic-plus.svg", alt="")
+						|Button
+					a.btn.btn_disable(href='#')
+						img(src="/assets/img/icon/ic-plus.svg", alt="")
+						|Button
 
-		br
-		br
-		br
-		div.h2 Кнопки
-		a.btn(href='#') Кнопка
+					br
+					br
+					a.btn.btn_small(href='#') Button
+					a.btn.btn_small.btn_disable(href='#') Button
+					br
+					br
+					a.btn.btn_small.btn_border(href='#') Button
+					a.btn.btn_small.btn_border.btn_disable(href='#') Button

@@ -1,27 +1,26 @@
 // fancybox
 // @import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
 
+
+@import "utils/vars";
+
+
 // bootstrap
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-// @import "~bootstrap/scss/utilities/flex";
-// @import "~bootstrap/scss/utilities/display";
-@import "~bootstrap/scss/grid";
-// @import "~bootstrap/scss/modal";
+@import "~bootstrap-xxl/scss/functions";
+@import "~bootstrap-xxl/scss/variables";
+@import "~bootstrap-xxl/scss/mixins";
+@import "~bootstrap-xxl/scss/reboot";
+@import "~bootstrap-xxl/scss/root";
+@import "~bootstrap-xxl/scss/utilities/flex";
+@import "~bootstrap-xxl/scss/utilities/display";
+@import "~bootstrap-xxl/scss/grid";
+@import "~bootstrap-xxl/scss/modal";
+// @import "bootstrap-xxl";
 
 // Наш сайт
 // @import "utils/libs";
-@import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "utils/reset";
 
 @import "layouts/*";
 @import "components/*";
-
-
-
-
-
-

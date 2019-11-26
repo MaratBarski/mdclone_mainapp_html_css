@@ -1,11 +1,11 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Содержание';
+	- var title = 'Content';
 	- 
 		var pagelist = [
-			{href: 'main.html',name:'Главная'},
-			{href: 'tipografika.html',name:'Типографика'},
+			{href: 'main.html',name:'Imported files'},
+			{href: 'tipografika.html',name:'Typography'},
 		];
 
 block content
@@ -13,7 +13,7 @@ block content
 		.container
 			.row
 				.col-12
-					h1 содержание
+					h1 Content
 					ul
 						each page in pagelist
 							li
