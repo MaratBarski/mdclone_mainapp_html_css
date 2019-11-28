@@ -168,15 +168,16 @@ mixin modalWindow(error, status)
 				.form-site__shared
 					span Is it a shared file?
 
-					.switch
+					.switch(class=status=='active'?'active':'')
 						.switch__marker
 						.switch__on Yes
 						.switch__off No
 
-					//- span.form-site__shared-notice
-					//- 	img(src="assets/icon/ic-shared.svg", alt="")
-					//- 	|The file is now shared with everyone
+					if (status=='active')
+						span.form-site__shared-notice
+							img(src="assets/icon/ic-shared.svg", alt="")
+							|The file is now shared with everyone
 
 				.form-site__btn
 					a(href="#").btn.btn_border Cancel
-					input(type="submit", value="Load file").btn.btn_disable
+					input(type="submit", value="Load file").btn(class=status=='active'?'':'btn_disable')
