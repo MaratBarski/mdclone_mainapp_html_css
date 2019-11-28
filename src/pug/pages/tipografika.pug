@@ -76,39 +76,104 @@ block content
 					br
 					br
 					.h2 Tabs
-					.tabs-page
-						a.tabs-page__item.active(href="#") All
-						a.tabs-page__item(href="#") Last Month
-						a.tabs-page__item(href="#") Last Week
-						a.tabs-page__item(href="#") Last Day
+					-
+						var tabs=[
+							{name:'All', link:'#'},
+							{name:'Last Month', link:'#'},
+							{name:'Last Week', link:'#'},
+							{name:'Last Day', link:'#'},
+						];
+
+					+tabsPage(tabs)
 
 					br
 					br
 					.h2 Form search
-					form.form-search
-						input(type="text", placeholder="Search…")
-						input(type="submit")
+					+formSearch()
 
 					br
 					div(style="background: #0d1e42; padding: 10px;")
-						form.form-search.form-search_white
-							input(type="text", placeholder="Search…")
-							input(type="submit")
+						+formSearch('white')
+
+					br
+					br
+					.h2 Checkbox
+					.input-check
+						input#param3(type='checkbox', name='param3')
+						label.input-check__label(for='param3')
+							span.input-check__mark
+							span.input-check__text Text
+
+					br
+					br
+					.h2 Tooltip
+					span.tooltip Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					br
+					br
+					span.tooltip.tooltip_left Initial Cohort was 2,345
+					br
+					br
+					span.tooltip.tooltip_right Initial Cohort was 2,345
+					br
+					br
+					span.tooltip.tooltip_top Initial Cohort was 2,345
+
 
 					br
 					br
 					.h2 Icons
-					img(src="assets/icon/ic-business-warning.svg", alt="").ic-hover
+					span.ic-hover
+						img(src="assets/icon/ic-business-warning.svg", alt="")
 					span(style="margin-left: 20px") Business Warning
 					br
 					br
-					img(src="assets/icon/ic-warning.svg", alt="").ic-hover
+					span.ic-hover
+						img(src="assets/icon/ic-warning.svg", alt="")
 					span(style="margin-left: 20px") Warning
 					br
 					br
-					img(src="assets/icon/ic-success.svg", alt="").ic-hover
+					span.ic-hover
+						img(src="assets/icon/ic-success.svg", alt="")
 					span(style="margin-left: 20px") Success
 					br
 					br
-					img(src="assets/icon/ic-failure.svg", alt="").ic-hover
+					span.ic-hover
+						img(src="assets/icon/ic-failure.svg", alt="")
 					span(style="margin-left: 20px") Failure
+
+					br
+					br
+					img(src="assets/icon/ic-edit.svg", alt="")
+					span(style="margin-left: 20px") Edit Details
+					br
+					br
+					img(src="assets/icon/ic-edit-grey.svg", alt="")
+					span(style="margin-left: 20px") Edit Details disabled
+
+					br
+					br
+					img(src="assets/icon/ic-duplicate.svg", alt="")
+					span(style="margin-left: 20px") Duplicate
+					br
+					br
+					img(src="assets/icon/ic-duplicate-grey.svg", alt="")
+					span(style="margin-left: 20px") Duplicate disabled
+
+					br
+					br
+					img(src="assets/icon/ic-remove.svg", alt="")
+					span(style="margin-left: 20px") Delete
+					br
+					br
+					img(src="assets/icon/ic-remove-grey.svg", alt="")
+					span(style="margin-left: 20px") Delete disabled
+
+					br
+					br
+					img(src="assets/icon/ic-view.svg", alt="")
+					span(style="margin-left: 20px") View
+					br
+					br
+					img(src="assets/icon/ic-view-grey.svg", alt="")
+					span(style="margin-left: 20px") View disabled
+

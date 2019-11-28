@@ -19,18 +19,25 @@ mixin breadcrumbs(links)
 					li.breadcrumb__item
 						span=links[i].name
 
+mixin tabsPage(tabs)
+	.tabs-page
+		each item, index in tabs
+			a.tabs-page__item(href=item.link)(class=index==0?'active':'')= item.name
+
+mixin formSearch(type)
+	form.form-search(class=type=='white'?'form-search_white':'')
+		input(type="text", placeholder="Search…")
+		input(type="submit")
+
 mixin adminTableFilter(status)
 	.admin-table-filter
-		if (status == 'active')
-			.admin-table-filter__icon.active
-		else
-			.admin-table-filter__icon
+		.admin-table-filter__icon(class=status?'active':'')
 
-		.admin-table-filter__popup
+		.admin-table-filter__popup(class=status?'active':'')
 			form
 				.admin-table-filter__top
 					.input-check
-						input#check1(type='checkbox', name='paramAll')
+						input#paramAll(type='checkbox', name='paramAll')
 						label.input-check__label(for='paramAll')
 							span.input-check__mark
 							span.input-check__text Select All
@@ -39,25 +46,25 @@ mixin adminTableFilter(status)
 
 				.admin-table-filter__params
 					.input-check
-						input#check1(type='checkbox', name='param1')
+						input#param1(type='checkbox', name='param1')
 						label.input-check__label(for='param1')
 							span.input-check__mark
 							span.input-check__text R Test Project
 
 					.input-check
-						input#check1(type='checkbox', name='param2', checked="checked")
+						input#param2(type='checkbox', name='param2', checked="checked")
 						label.input-check__label(for='param2')
 							span.input-check__mark
 							span.input-check__text Demo Project
 
 					.input-check
-						input#check1(type='checkbox', name='param3')
+						input#param3(type='checkbox', name='param3')
 						label.input-check__label(for='param3')
 							span.input-check__mark
 							span.input-check__text Another Project
 
 					.input-check
-						input#check1(type='checkbox', name='param4')
+						input#param4(type='checkbox', name='param4')
 						label.input-check__label(for='param4')
 							span.input-check__mark
 							span.input-check__text Another Project with long name
@@ -65,3 +72,47 @@ mixin adminTableFilter(status)
 				.admin-table-filter__btn
 					a(href="#").btn.btn_border.btn_small Cancel
 					input.btn.btn_small(type="submit", value="Apply")
+
+mixin adminTableRow(rows)
+	each item in rows
+		.admin-table__row
+			.admin-table__item
+				.admin-table__name= item.name
+					if(item.tooltip)
+						span.tooltip(class=item.tooltip_status?'active':'')= item.name
+			.admin-table__item= item.loaded
+			.admin-table__item= item.project
+			.admin-table__item= item.template
+			.admin-table__item= item.user
+			.admin-table__item
+				if item.shared
+					img(src="assets/icon/ic-shared.svg", alt="")
+
+			.admin-table__item= item.columns
+			.admin-table__item= item.rows
+			.admin-table__item.admin-table__item_menu
+				if item.notice
+					.admin-table__notice
+						.ic-hover
+							img(src="assets/icon/ic-business-warning.svg", alt="")
+
+				.admin-table-action
+					span.admin-table-action__menu.ic-hover
+
+					.admin-table-popup(class=item.popup?'active':'')
+						.admin-table-popup__top
+							a(href="#").admin-table-popup__item
+								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-edit.svg)")
+								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-edit-grey.svg)")
+								.admin-table-popup__text Edit File Settings
+
+							a(href="#").admin-table-popup__item.disable
+								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-view.svg)")
+								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-view-grey.svg)")
+								.admin-table-popup__text View Output Summary
+
+						.admin-table-popup__bottom
+							a(href="#").admin-table-popup__item
+								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-remove.svg)")
+								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-remove-grey.svg)")
+								.admin-table-popup__text Delete

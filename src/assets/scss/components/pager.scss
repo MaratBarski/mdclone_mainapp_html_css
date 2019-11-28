@@ -3,6 +3,7 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
+	margin-top: 23px;
 
 	&__title{
 		@include font(normal, normal, 14px, 1.57, $color-purple);
@@ -17,10 +18,16 @@
 	&__item{
 		min-width: 30px;
 		@include font(normal, 600, 16px, 1.25, $color-light-grey);
-		border-right: 1px solid #c9cbd0;
 		text-align: center;
-		padding: 0 5px;
+		padding: 0 15px;
 	}
+
+	&__item:not(:last-child){
+		border-right: 1px solid #c9cbd0;
+	}
+
+	&__item:first-child{padding-left: 0;}
+	&__item:last-child{padding-right: 0;}
 
 	&__item a{
 		color: $color-blue;
@@ -32,8 +39,8 @@
 		height: 30px;
 	}
 
-	&__arr_left{background: url(#{$path-icon}/ic-pager-arr-left.svg) no-repeat center;}
-	&__arr_right{background: url(#{$path-icon}/ic-pager-arr-right.svg) no-repeat center;}
-	&__arr_left.active{background: url(#{$path-icon}/ic-pager-arr-left-active.svg) no-repeat center;}
-	&__arr_right.active{background: url(#{$path-icon}/ic-pager-arr-right-active.svg) no-repeat center;}
+	&__arr_left{background: url(#{$path-icon}/ic-pager-arr-left.svg) no-repeat center; background-size: 9px;}
+	&__arr_right{background: url(#{$path-icon}/ic-pager-arr-right.svg) no-repeat center; background-size: 9px;}
+	&__arr_left.active{background: url(#{$path-icon}/ic-pager-arr-left-active.svg) no-repeat center; background-size: 9px;}
+	&__arr_right.active{background: url(#{$path-icon}/ic-pager-arr-right-active.svg) no-repeat center; background-size: 9px;}
 }

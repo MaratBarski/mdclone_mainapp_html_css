@@ -52,7 +52,7 @@ block content
 										span.admin-table__sort-down
 									|Project
 
-									+adminTableFilter()
+									+adminTableFilter('active')
 
 							.admin-table__item
 								.admin-table__head
@@ -89,13 +89,13 @@ block content
 
 						-
 							var rows=[
-								{name:'d-Stroke for a very very long descriptiond-Stroke for a  very very long file name', loaded:'Nov 26, 2019', project:'R Test Project', template:'all_r_files', user:'Ruth', columns:'~9,999', rows:'~99,999,999', notice:'true'},
+								{name:'d-Stroke for a very very long descriptiond-Stroke for a  very very long file name', loaded:'Nov 26, 2019', project:'R Test Project', template:'all_r_files', user:'Ruth', columns:'~9,999', rows:'~99,999,999', notice:'true', popup:'active', tooltip:'show'},
 								{name:'StrokeSmall.csv', loaded:'Nov 12, 2019', project:'Demo Project', template:'Demo Template', user:'Noa',columns:'~1,929', rows:'~19,999,999'},
 								{name:'d-Stroke.csv', loaded:'Oct 22, 2019', project:'R Test Project', template:'all_r_files', user:'Ruth',columns:'~3,341', rows:'~58,879,999'},
 								{name:'20180813_134819_20180726_21210', loaded:'Oct 22, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin', shared:'true',columns:'~9,656', rows:'~62,991,991'},
 								{name:'DM-Tests - 2 date formats in t', loaded:'Oct 10, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~9,991', rows:'~29,999,999'},
 								{name:'BMsession11M_2018-11-12_100000', loaded:'Oct 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin', shared:'true',columns:'~8,888 ', rows:'~10,999,999'},
-								{name:'01234567890123456789012345678954645645601890123456789012345678954645645601', loaded:'Feb 17, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~7,214', rows:'1,847,464', tooltip:'show'},
+								{name:'01234567890123456789012345678954645645601890123456789012345678954645645601', loaded:'Feb 17, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~7,214', rows:'1,847,464', tooltip:'show', tooltip_status:'active'},
 								{name:'BTL-short2-Real.csv', loaded:'Feb 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'316,3', rows:'1,847,464'},
 								{name:'[1730][Customized][admin][if_9', loaded:'Dec 13, 2018', project:'Demo Project', template:'Demo Template', user:'admin',columns:'~9,900', rows:'1,247,464'},
 								{name:'BTL-short2-Real.csv', loaded:'Feb 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~9,875', rows:'5,590,000'},

@@ -1,10 +1,11 @@
 .input-check{
 	&__label{
 		display: flex;
-		align-items: center;
+		// align-items: center;
 		cursor: pointer;
 		position: relative;
-		@include font(normal, 300, 15px, 1.25, #8d8d8d);
+		@include font(normal, normal, 14px, 1.25, $color-dark-blue);
+		margin-bottom: 14px;
 	}
 
 	input[type=checkbox] {
@@ -13,19 +14,20 @@
 
 	&__mark{
 		display: inline-block;
-		width: 20px;
-		height: 20px;
-		border: 1px solid #e8e8e8;
+		width: 14px;
+		height: 14px;
+		border: 1px solid $color-dark-blue;
 		background: transparent;
 		position: relative;
+		margin-top: 2px;
 	}
 
 	&__mark::after{
 		content: '';
 		display: none;
-		width: 12px;
-		height: 12px;
-		background: #498aa8;
+		width: 8px;
+		height: 8px;
+		background: url(#{$path-icon}/ic-check.svg) no-repeat center;
 		position: absolute;
 		@include top-center;
 		left: 0;
@@ -34,11 +36,11 @@
 	}
 
 	&__text{
-		max-width: calc(100% - 32px);
-		margin-left: 10px;
+		max-width: calc(100% - 22px);
+		margin-left: 8px;
+		white-space: normal;
 	}
 
-	input[type=checkbox]:checked + &__label &__mark::after{
-		display: inline-block;
-	}
+	input[type=checkbox]:checked + &__label &__mark{border-color: $color-dark-purple;}
+	input[type=checkbox]:checked + &__label &__mark::after{display: inline-block;}
 }
