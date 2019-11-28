@@ -1,0 +1,24 @@
+/*-------------- import-file -----------------*/
+.import-file{
+	margin-bottom: 32px;
+	
+	&__head{
+		@include font(normal, 600, 24px, 1.4, $color-dark-grey);
+		text-transform: uppercase;
+		margin-bottom: 11px;
+	}
+
+	&__text{
+		display: inline-block;
+		vertical-align: top;
+		@include font(normal, normal, 14px, 1.57, $color-purple);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: calc(100% - 100px);
+	}
+
+	&__more{
+		@include font(normal, normal, 14px, 1.57, $color-blue);
+	}
+}

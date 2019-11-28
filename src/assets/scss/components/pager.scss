@@ -1,0 +1,39 @@
+/*-------------- pager -----------------*/
+.pager-wrap{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+	&__title{
+		@include font(normal, normal, 14px, 1.57, $color-purple);
+		margin-right: 30px;
+	}
+}
+
+.pager{
+	display: flex;
+	align-items: center;
+
+	&__item{
+		min-width: 30px;
+		@include font(normal, 600, 16px, 1.25, $color-light-grey);
+		border-right: 1px solid #c9cbd0;
+		text-align: center;
+		padding: 0 5px;
+	}
+
+	&__item a{
+		color: $color-blue;
+	}
+
+	&__arr{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+	}
+
+	&__arr_left{background: url(#{$path-icon}/ic-pager-arr-left.svg) no-repeat center;}
+	&__arr_right{background: url(#{$path-icon}/ic-pager-arr-right.svg) no-repeat center;}
+	&__arr_left.active{background: url(#{$path-icon}/ic-pager-arr-left-active.svg) no-repeat center;}
+	&__arr_right.active{background: url(#{$path-icon}/ic-pager-arr-right-active.svg) no-repeat center;}
+}

@@ -2,13 +2,165 @@ extends ../layout/main
 
 block variables
 	- var title = 'Imported files';
-	- var h1 = 'Imported files';
+	//- - var h1 = 'Imported files';
 
 block content
-	section
+	section.import-file
 		.container
 			.row
 				.col-12
-				
+					.import-file__head Imported files
+
+					.import-file__text This page allows you to import data file (in a CSV forma), in order to filter the data and generate synthetic data. The file data is not loaded to the data base.
+					span.import-file__more.d-xl-none Read more
 
 
+	section.admin-table-wrap
+		.container
+			.row
+				.col-12
+					.admin-table-wrap__action
+						.admin-table-wrap__col
+							a.btn(href='#')
+								img(src="/assets/icon/ic-plus.svg", alt="")
+								|New File
+
+						.admin-table-wrap__col
+							.tabs-page
+								a.tabs-page__item.active(href="#") All
+								a.tabs-page__item(href="#") Last Month
+								a.tabs-page__item(href="#") Last Week
+
+
+							form.form-search
+								input(type="text", placeholder="Search…")
+								input(type="submit")
+
+					.admin-table
+						.admin-table__head
+							.admin-table__item
+								.admin-table__head
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Name
+
+							.admin-table__item
+								.admin-table__head
+									span.admin-table__sort.admin-table__sort_desk
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Loaded
+
+							.admin-table__item
+								.admin-table__head
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Project
+
+									+adminTableFilter('active')
+
+							.admin-table__item
+								.admin-table__head
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Template
+
+									.admin-table-filter
+										.admin-table-filter__icon
+
+							.admin-table__item
+								.admin-table__head
+									|User
+
+									.admin-table-filter
+										.admin-table-filter__icon
+
+							.admin-table__item
+								.admin-table__head
+									|Shared
+
+							.admin-table__item
+								.admin-table__head Columns
+
+							.admin-table__item
+								.admin-table__head
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Rows
+
+							.admin-table__item
+
+						-
+							var table=[
+								{name:'d-Stroke for a very very long descriptiond-Stroke for a  very very long file name', loaded:'Nov 26, 2019', project:'R Test Project', template:'all_r_files', user:'Ruth', columns:'~9,999', rows:'~99,999,999', notice:'true'},
+								{name:'StrokeSmall.csv', loaded:'Nov 12, 2019', project:'Demo Project', template:'Demo Template', user:'Noa',columns:'~1,929', rows:'~19,999,999'},
+								{name:'d-Stroke.csv', loaded:'Oct 22, 2019', project:'R Test Project', template:'all_r_files', user:'Ruth',columns:'~3,341', rows:'~58,879,999'},
+								{name:'20180813_134819_20180726_21210', loaded:'Oct 22, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin', shared:'true',columns:'~9,656', rows:'~62,991,991'},
+								{name:'DM-Tests - 2 date formats in t', loaded:'Oct 10, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~9,991', rows:'~29,999,999'},
+								{name:'BMsession11M_2018-11-12_100000', loaded:'Oct 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin', shared:'true',columns:'~8,888 ', rows:'~10,999,999'},
+								{name:'01234567890123456789012345678954645645601890123456789012345678954645645601', loaded:'Feb 17, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~7,214', rows:'1,847,464'},
+								{name:'BTL-short2-Real.csv', loaded:'Feb 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'316,3', rows:'1,847,464'},
+								{name:'[1730][Customized][admin][if_9', loaded:'Dec 13, 2018', project:'Demo Project', template:'Demo Template', user:'admin',columns:'~9,900', rows:'1,247,464'},
+								{name:'BTL-short2-Real.csv', loaded:'Feb 7, 2019', project:'Demo Project', template:'Demo Template', user:'mdclone.admin',columns:'~9,875', rows:'5,590,000'},
+							];
+
+						each item in table
+							.admin-table__row
+								.admin-table__item
+									.admin-table__name= item.name
+								.admin-table__item= item.loaded
+								.admin-table__item= item.project
+								.admin-table__item= item.template
+								.admin-table__item= item.user
+								.admin-table__item
+									if item.shared
+										img(src="assets/icon/ic-shared.svg", alt="")
+
+								.admin-table__item= item.columns
+								.admin-table__item= item.rows
+								.admin-table__item.admin-table__item_menu
+									if item.notice
+										.admin-table__notice
+											.ic-hover
+												img(src="assets/icon/ic-business-warning.svg", alt="")
+
+									.admin-table-action
+										span.admin-table-action__menu.ic-hover
+
+										.admin-table-popup
+											.admin-table-popup__top
+												.admin-table-popup__item
+													.admin-table-popup__icon(style="background-image: url(assets/icon/ic-edit.svg)")
+													.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-edit-grey.svg)")
+													.admin-table-popup__text Edit File Settings
+
+												.admin-table-popup__item.admin-table-popup__item_disable
+													.admin-table-popup__icon(style="background-image: url(assets/icon/ic-view.svg)")
+													.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-view-grey.svg)")
+													.admin-table-popup__text View Output Summary
+
+											.admin-table-popup__bottom
+												.admin-table-popup__item
+													.admin-table-popup__icon(style="background-image: url(assets/icon/ic-remove.svg)")
+													.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-remove-grey.svg)")
+													.admin-table-popup__text Delete
+
+					
+					.pager-wrap
+						.pager-wrap__title Showing 1-15 of 82 files
+
+						.pager
+							a(href="#").pager__arr.pager__arr_left
+							span.pager__item 1
+							span.pager__item
+								a(href="#") 2
+							span.pager__item
+								a(href="#") 3
+							span.pager__item ...
+							span.pager__item
+								a(href="#") 6
+							a(href="#").pager__arr.pager__arr_right.active

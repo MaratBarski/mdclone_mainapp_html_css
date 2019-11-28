@@ -14,7 +14,8 @@ const PATHS = {
   dist: path.join(__dirname, '../dist'),
   assets: 'assets/',
   fonts: 'assets/fonts',
-  img: 'assets/img'
+  img: 'assets/img',
+  icon: 'assets/icon',
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`
@@ -131,6 +132,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}icon`, to: `${PATHS.assets}icon` },
       // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       // { from: `${PATHS.src}/static`, to: '' },
     ]),

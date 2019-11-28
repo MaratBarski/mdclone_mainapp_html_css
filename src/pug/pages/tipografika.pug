@@ -18,7 +18,7 @@ block content
 
 					br
 					br
-					div.h2 Additional classes for text
+					.h2 Additional classes for text
 					p <span class="code">text-left</span> text align left
 					p <span class="code">text-center</span> text align center
 					p <span class="code">text-right</span> text align right
@@ -28,7 +28,7 @@ block content
 
 					br
 					br
-					div.h2 Headers
+					.h2 Headers
 					h1 Header - h1
 					h2 Header - h2
 					h3 Header - h3
@@ -48,7 +48,7 @@ block content
 
 					br
 					br
-					div.h2 Buttons
+					.h2 Buttons
 					a.btn(href='#') Button
 					a.btn.btn_disable(href='#') Button
 					br
@@ -58,10 +58,10 @@ block content
 					br
 					br
 					a.btn(href='#') 
-						img(src="/assets/img/icon/ic-plus.svg", alt="")
+						img(src="/assets/icon/ic-plus.svg", alt="")
 						|Button
 					a.btn.btn_disable(href='#')
-						img(src="/assets/img/icon/ic-plus.svg", alt="")
+						img(src="/assets/icon/ic-plus.svg", alt="")
 						|Button
 
 					br
@@ -72,3 +72,43 @@ block content
 					br
 					a.btn.btn_small.btn_border(href='#') Button
 					a.btn.btn_small.btn_border.btn_disable(href='#') Button
+
+					br
+					br
+					.h2 Tabs
+					.tabs-page
+						a.tabs-page__item.active(href="#") All
+						a.tabs-page__item(href="#") Last Month
+						a.tabs-page__item(href="#") Last Week
+						a.tabs-page__item(href="#") Last Day
+
+					br
+					br
+					.h2 Form search
+					form.form-search
+						input(type="text", placeholder="Search…")
+						input(type="submit")
+
+					br
+					div(style="background: #0d1e42; padding: 10px;")
+						form.form-search.form-search_white
+							input(type="text", placeholder="Search…")
+							input(type="submit")
+
+					br
+					br
+					.h2 Icons
+					img(src="assets/icon/ic-business-warning.svg", alt="").ic-hover
+					span(style="margin-left: 20px") Business Warning
+					br
+					br
+					img(src="assets/icon/ic-warning.svg", alt="").ic-hover
+					span(style="margin-left: 20px") Warning
+					br
+					br
+					img(src="assets/icon/ic-success.svg", alt="").ic-hover
+					span(style="margin-left: 20px") Success
+					br
+					br
+					img(src="assets/icon/ic-failure.svg", alt="").ic-hover
+					span(style="margin-left: 20px") Failure

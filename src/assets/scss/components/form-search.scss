@@ -1,0 +1,64 @@
+/*-------------- form-search -----------------*/
+.form-search{
+	width: 255px;
+	position: relative;
+
+	input[type="text"]{
+		display: inline-block;
+		height: 30px;
+		width: 100%;
+		padding-right: 38px;
+		@include font(normal, normal, 16px, 28px, $color-dark-blue);
+		padding: 0 0 1px;
+		margin: 0;
+		border: 0;
+		outline: 0;
+		border-bottom: 1px solid $color-purple;
+		background: transparent;
+	}
+
+	input[type="text"]::placeholder{font-weight: 300; color: $color-dark-grey}
+	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-dark-grey}
+	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-dark-grey}
+
+	input[type="text"]:focus{
+		border-bottom: 2px solid $color-dark-purple;
+		padding: 0;
+	}
+
+	input[type="submit"],
+	button{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url(#{$path-icon}/ic-search.svg) no-repeat center;
+		position: absolute;
+		right: 0;
+		@include top-center;
+		font-size: 0;
+		border: 0;
+		outline: 0;
+		box-shadow: none;
+	}
+	
+	input[type="text"]:focus + input[type="submit"],
+	input[type="text"]:focus+button{
+		background: url(#{$path-icon}/ic-search-dark.svg) no-repeat center;
+	}
+
+	&_white input[type="text"]::placeholder{color: $color-light-grey}
+	&_white input[type="text"]::-webkit-input-placeholder {color: $color-light-grey}
+	&_white input[type="text"]:-moz-placeholder {color: $color-light-grey}
+
+	&_white input[type="text"]{color: #fff;}
+
+	&_white input[type="text"]{border-color: #fff;}
+	&_white input[type="text"]:focus{border-bottom: 2px solid #fff;}
+
+	&_white input[type="submit"],
+	&_white button,
+	&_white input[type="text"]:focus + input[type="submit"],
+	&_white input[type="text"]:focus+button{
+		background: url(#{$path-icon}/ic-search-white.svg) no-repeat center;
+	}
+}

@@ -18,3 +18,50 @@ mixin breadcrumbs(links)
 						- i++
 					li.breadcrumb__item
 						span=links[i].name
+
+mixin adminTableFilter(status)
+	.admin-table-filter
+		if (status == 'active')
+			.admin-table-filter__icon.active
+		else
+			.admin-table-filter__icon
+
+		.admin-table-filter__popup
+			form
+				.admin-table-filter__top
+					.input-check
+						input#check1(type='checkbox', name='paramAll')
+						label.input-check__label(for='paramAll')
+							span.input-check__mark
+							span.input-check__text Select All
+
+					a(href="#").admin-table-filter__clear Clear
+
+				.admin-table-filter__params
+					.input-check
+						input#check1(type='checkbox', name='param1')
+						label.input-check__label(for='param1')
+							span.input-check__mark
+							span.input-check__text R Test Project
+
+					.input-check
+						input#check1(type='checkbox', name='param2', checked="checked")
+						label.input-check__label(for='param2')
+							span.input-check__mark
+							span.input-check__text Demo Project
+
+					.input-check
+						input#check1(type='checkbox', name='param3')
+						label.input-check__label(for='param3')
+							span.input-check__mark
+							span.input-check__text Another Project
+
+					.input-check
+						input#check1(type='checkbox', name='param4')
+						label.input-check__label(for='param4')
+							span.input-check__mark
+							span.input-check__text Another Project with long name
+
+				.admin-table-filter__btn
+					a(href="#").btn.btn_border.btn_small Cancel
+					input.btn.btn_small(type="submit", value="Apply")

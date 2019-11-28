@@ -1,0 +1,33 @@
+/*-------------- tabs-page -----------------*/
+.tabs-page{
+	display: flex;
+
+	&__item{
+		display: inline-block;
+		height: 30px;
+		min-width: 110px;
+		border: 1px solid $color-dark-purple;
+		@include font(normal, 600, 14px, 28px, $color-dark-purple);
+		text-align: center;
+		padding: 0 16px;
+	}
+
+	&__item.active,
+	&__item:hover{
+		background: $color-dark-purple;
+		color: #fff;
+	}
+
+	&__item:first-child{
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+	&__item:last-child{
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+
+	&__item:not(:last-child){
+		border-right: 0;
+	}
+}

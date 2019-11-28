@@ -1,0 +1,146 @@
+/*-------------- admin-table -----------------*/
+.admin-table-wrap{
+	&__action{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 23px;
+	}
+
+	&__col{
+		display: flex;
+		align-items: center;
+	}
+
+	.form-search{
+		margin-left: 32px;
+	}
+}
+
+.admin-table{
+	display: table;
+	width: 100%;
+	@include font(normal, normal, 14px, 1.2, $color-purple);
+	background: #fff;
+
+	&__head,
+	&__row{
+		display: table-row;
+	}
+
+	&__item{
+		display: table-cell;
+		vertical-align: middle;
+		padding: 3.5px 25px;
+		position: relative;
+	}
+
+	&__item_menu{
+		width: 220px;
+		padding-left: 0;
+		padding-right: 0;
+		text-align: right;
+	}
+
+	&__name{
+		width: 510px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: $color-dark-grey;
+	}
+
+	&__head &__item{
+		border-bottom: solid 1px rgba(161,173,205,0.5);
+		white-space: nowrap;
+		padding: 20px 25px 10px;
+	}
+
+	&__row:nth-child(odd){
+		background: rgba(242, 243, 245, 0.9);
+	}
+
+	&__head{
+		@include font(normal, 600, 14px, 1.43, $color-dark-blue);
+	}
+
+	&__sort{
+		display: inline-block;
+		vertical-align: middle;
+		width: 7px;
+		height: 12px;
+		margin-right: 4px;
+		position: relative;
+	}
+
+	&__sort-up,
+	&__sort-down{
+		display: inline-block;
+		width: 7px;
+		height: 4px;
+		position: absolute;
+		left: 0;
+	}
+
+	&__sort-up{
+		background: url(#{$path-icon}/sort-up.svg) no-repeat center;
+		top: 0;
+	}
+
+	&__sort-down{
+		background: url(#{$path-icon}/sort-down.svg) no-repeat center;
+		bottom: 0;
+	}
+
+	&__sort_disable &__sort-up{background: url(#{$path-icon}/sort-up-grey.svg) no-repeat center;}
+	&__sort_disable &__sort-down{background: url(#{$path-icon}/sort-down-grey.svg) no-repeat center;}
+
+	&__sort_desk &__sort-up,
+	&__sort_asc &__sort-down{
+		display: none;
+	}
+
+	&__row:hover{
+		color: #121111;
+	}
+
+	&__notice{
+		width: 24px;
+		position: absolute;
+		right: 35px;
+		@include top-center;
+	}
+}
+
+.admin-table-filter{
+	display: inline-block;
+	vertical-align: middle;
+
+	&__icon{
+		display: inline-block;
+		width: 14px;
+		height: 14px;
+		background: url(#{$path-icon}/ic-filter.svg) no-repeat center;
+	}
+
+	&__icon.active{background: url(#{$path-icon}/ic-filter-active.svg) no-repeat center;}
+
+	&__popup{
+		display: none;
+	}
+}
+
+.admin-table-popup{
+	display: none;
+}
+
+.admin-table-action{
+	display: inline-block;
+	width: 30px;
+	
+	&__menu{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url(#{$path-icon}/ic-dot-menu.svg) no-repeat center;
+	}
+}
