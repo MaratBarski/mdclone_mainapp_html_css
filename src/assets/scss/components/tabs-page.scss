@@ -31,3 +31,12 @@
 		border-right: 0;
 	}
 }
+
+@media (max-width: 767px) {
+	.tabs-page{
+		&__item{
+			min-width: 53px;
+			padding: 0 10px;
+		}
+	}
+}

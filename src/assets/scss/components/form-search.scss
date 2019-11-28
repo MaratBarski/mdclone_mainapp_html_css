@@ -62,3 +62,9 @@
 		background: url(#{$path-icon}/ic-search-white.svg) no-repeat center;
 	}
 }
+
+@media (max-width: 991px) {
+	.form-search{
+		width: 150px;
+	}
+}

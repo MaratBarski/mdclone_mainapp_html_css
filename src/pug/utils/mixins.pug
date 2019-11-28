@@ -22,10 +22,14 @@ mixin breadcrumbs(links)
 mixin tabsPage(tabs)
 	.tabs-page
 		each item, index in tabs
-			a.tabs-page__item(href=item.link)(class=index==0?'active':'')= item.name
+			a.tabs-page__item(href=item.link)(class=index==0?'active':'')
+				span(class=item.name_sort?'d-none d-md-inline':'')= item.name
+				if item.name_sort
+					span.d-md-none= item.name_sort
 
-mixin formSearch(type)
-	form.form-search(class=type=='white'?'form-search_white':'')
+
+mixin formSearch(classes)
+	form.form-search(class=classes?classes:'')
 		input(type="text", placeholder="Search…")
 		input(type="submit")
 
@@ -80,16 +84,16 @@ mixin adminTableRow(rows)
 				.admin-table__name= item.name
 					if(item.tooltip)
 						span.tooltip(class=item.tooltip_status?'active':'')= item.name
-			.admin-table__item= item.loaded
-			.admin-table__item= item.project
-			.admin-table__item= item.template
-			.admin-table__item= item.user
-			.admin-table__item
+			.admin-table__item.d-none.d-md-table-cell= item.loaded
+			.admin-table__item.d-none.d-md-table-cell= item.project
+			.admin-table__item.d-none.d-md-table-cell= item.template
+			.admin-table__item.d-none.d-md-table-cell= item.user
+			.admin-table__item.d-none.d-md-table-cell
 				if item.shared
 					img(src="assets/icon/ic-shared.svg", alt="")
 
-			.admin-table__item= item.columns
-			.admin-table__item= item.rows
+			.admin-table__item.d-none.d-xxl-table-cell= item.columns
+			.admin-table__item.d-none.d-xxl-table-cell= item.rows
 			.admin-table__item.admin-table__item_menu
 				if item.notice
 					.admin-table__notice

@@ -43,3 +43,9 @@
 		margin-left: 30px;
 	}
 }
+
+@media (max-width: 767px) {
+	.header{
+		&__logo, &__profile{margin-left: 25px;}
+	}
+}

@@ -257,3 +257,44 @@
 		background: url(#{$path-icon}/ic-dot-menu.svg) no-repeat center;
 	}
 }
+
+@media (max-width: 1899px) {
+	.admin-table{
+		&__name{width: 340px;}
+		&__item_menu{width: 30px;}
+		&__item,
+		&__head &__item{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__item:first-child{padding-left: 25px;}
+		&__item:last-child{padding-right: 5px;}
+	}
+}
+
+@media (max-width: 1199px) {
+	.admin-table{
+		&__name{width: 240px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.admin-table{
+		&__name{width: 140px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.admin-table-wrap{
+		&__action{
+			flex-wrap: wrap;
+		}
+
+		.form-search{
+			margin-left: 0;
+			width: 100%;
+			margin-bottom: 23px;
+		}
+	}
+}

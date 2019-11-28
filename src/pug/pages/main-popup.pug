@@ -12,6 +12,8 @@ block content
 			.row
 				.col-12
 					.admin-table-wrap__action
+						+formSearch('d-md-none')
+
 						.admin-table-wrap__col
 							a.btn(href='#')
 								img(src="/assets/icon/ic-plus.svg", alt="")
@@ -21,13 +23,13 @@ block content
 							-
 								var tabs=[
 									{name:'All', link:'#'},
-									{name:'Last Month', link:'#'},
-									{name:'Last Week', link:'#'},
+									{name:'Last Month', name_sort:'M', link:'#'},
+									{name:'Last Week', name_sort:'W', link:'#'},
 								];
 
 							+tabsPage(tabs)
 
-							+formSearch()
+							+formSearch('d-none d-md-block')
 
 					.admin-table
 						.admin-table__head
@@ -38,14 +40,14 @@ block content
 										span.admin-table__sort-down
 									|Name
 
-							.admin-table__item
+							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head
 									span.admin-table__sort.admin-table__sort_desk
 										span.admin-table__sort-up
 										span.admin-table__sort-down
 									|Loaded
 
-							.admin-table__item
+							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head
 									span.admin-table__sort
 										span.admin-table__sort-up
@@ -54,7 +56,7 @@ block content
 
 									+adminTableFilter('active')
 
-							.admin-table__item
+							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head
 									span.admin-table__sort
 										span.admin-table__sort-up
@@ -64,21 +66,21 @@ block content
 									.admin-table-filter
 										.admin-table-filter__icon
 
-							.admin-table__item
+							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head
 									|User
 
 									.admin-table-filter
 										.admin-table-filter__icon
 
-							.admin-table__item
+							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head
 									|Shared
 
-							.admin-table__item
+							.admin-table__item.d-none.d-xxl-table-cell
 								.admin-table__head Columns
 
-							.admin-table__item
+							.admin-table__item.d-none.d-xxl-table-cell
 								.admin-table__head
 									span.admin-table__sort
 										span.admin-table__sort-up

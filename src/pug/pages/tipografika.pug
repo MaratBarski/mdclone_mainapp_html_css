@@ -79,9 +79,9 @@ block content
 					-
 						var tabs=[
 							{name:'All', link:'#'},
-							{name:'Last Month', link:'#'},
-							{name:'Last Week', link:'#'},
-							{name:'Last Day', link:'#'},
+							{name:'Last Month', name_sort:'M', link:'#'},
+							{name:'Last Week', name_sort:'W', link:'#'},
+							{name:'Last Day', name_sort:'D', link:'#'},
 						];
 
 					+tabsPage(tabs)
@@ -93,7 +93,7 @@ block content
 
 					br
 					div(style="background: #0d1e42; padding: 10px;")
-						+formSearch('white')
+						+formSearch('form-search_white')
 
 					br
 					br
