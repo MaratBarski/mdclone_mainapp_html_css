@@ -1,0 +1,35 @@
+/*-------------- modal-window -----------------*/
+.modal-window{
+	display: block;
+	width: 540px;
+	background: #fff;
+	border-top: 7px solid $color-dark-purple;
+	border-radius: 4px;
+	padding: 20px 25px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 100;
+
+	&__head{
+		@include font(normal, 600, 20px, 1.25, $color-dark-grey);
+		text-transform: uppercase;
+		padding-right: 40px;
+		margin-bottom: 20px;
+	}
+
+	&__close{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url(#{$path-icon}/ic-close.svg) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+	}
+
+	&__close:hover{background: url(#{$path-icon}/ic-close-grey.svg) no-repeat center;}
+}

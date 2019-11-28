@@ -7,6 +7,12 @@ body{
 	height:100%;
 }
 
+body.no-scroll {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -225,5 +231,20 @@ button.btn_small{
 
 	&:hover::before{
 		opacity: 1;
+	}
+}
+
+.shadow-site{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(13, 13, 13, 0.7);
+	z-index: 99;
+
+	&.is-visible{
+		display: block;
 	}
 }
