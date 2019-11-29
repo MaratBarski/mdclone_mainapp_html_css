@@ -123,10 +123,96 @@
 
 .file-upload{
 	height: 40px;
-	padding: 8px 17px;
 	border-radius: 2px;
 	border: 1px solid $color-light-grey;
+
+	input[type="file"]{display: none;}
+
+	&__content{
+		padding: 0 17px;
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
+	&__btn{
+		display: inline-block;
+		height: 23px;
+		width: 112px;
+		border-radius: 11.5px;
+		border: solid 1px $color-light-grey;
+		padding: 0 15px;
+		@include font(normal, 600, 12px, 21px, $color-dark-grey);
+		text-align: center;
+		margin-right: 5px;
+		cursor: pointer;
+	}
+
+	&__btn:hover{
+		border-color: $color-dark-purple;
+	}
+
+	&__name{
+		@include font(normal, normal, 14px, 21px, $color-dark-grey);
+	}
 }
+
+/*-------------- file-upload -----------------*/
+// .file-upload{
+// 	display: inline-block;
+// 	vertical-align: middle;
+
+// 	
+
+// 	&__content{
+// 		display: inline-block;
+// 		vertical-align: middle;
+// 		height: 43px;
+// 		border-radius: 2px;
+// 		background: $color-blue;
+// 		padding: 0 10px 0 45px;
+// 		text-align: center;
+// 		cursor: pointer;
+// 		text-decoration: none;
+// 		border: 0;
+// 		outline: 0;
+// 		cursor: pointer;
+// 		@include font(normal, bold, 14px, 43px, #222);
+// 		margin: 0;
+// 		position: relative;
+// 		white-space: nowrap;
+// 	}
+
+// 	&__content::before{
+// 		content: '';
+// 		display: block;
+// 		width: 26px;
+// 		height: 24px;
+// 		position: absolute;
+// 		@include top-center;
+// 		left: 8px;
+// 		background: url(#{$path-img}/sprite.png) no-repeat -5px -620px;
+// 	}
+
+// 	&__content:hover{
+// 		background-color: #000;
+// 		color: #fff;
+// 	}
+
+// 	&__content:hover::before{
+// 		background-position: -40px -620px;
+// 	}
+
+// 	&__name{
+// 		text-overflow: ellipsis;
+// 		text-align: left;
+// 		width: 115px;
+// 		display: inline-block;
+// 		overflow: hidden;
+// 	}
+// }
 
 .select{
 	width: 230px;
@@ -191,9 +277,20 @@
 	vertical-align: middle;
 	width: 57px;
 	height: 24px;
-	border: solid 1px $color-light-grey;
-	border-radius: 12px;
-	position: relative;
+
+	input[type="checkbox"]{
+		display: none;
+	}
+
+	&__content{
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		border: solid 1px $color-light-grey;
+		border-radius: 12px;
+		position: relative;
+		cursor: pointer;
+	} 
 
 	&__marker{
 		display: inline-block;
@@ -216,10 +313,10 @@
 	&__on{left: 7px; display: none;}
 	&__off{right: 7px;}
 
-	&.active{border-color: $color-dark-purple;}
-	&.active &__on{display: block;}
-	&.active &__off{display: none;}
-	&.active &__marker{background: $color-dark-purple; left: auto; right: 4px;}
+	input[type="checkbox"]:checked + &__content{border-color: $color-dark-purple;}
+	input[type="checkbox"]:checked + &__content &__on{display: block;}
+	input[type="checkbox"]:checked + &__content &__off{display: none;}
+	input[type="checkbox"]:checked + &__content &__marker{background: $color-dark-purple; left: auto; right: 4px;}
 }
 
 @media (max-width: 767px) {

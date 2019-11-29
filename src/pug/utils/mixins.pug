@@ -129,11 +129,14 @@ mixin modalWindow(error, status)
 		form.form-site
 			.form-site__fields
 				.form-site__item(class=error?'form-site__item_error':'')
-					label(for="file").form-site__label Choose File
+					.form-site__label Choose File
 
 					.file-upload
-							input.js-input-file(type='file', name='file')
-								//- span.file-upload__name.js-name-file Выбрать файлы
+						label.file-upload__content
+							input(type='file', name='file')
+							span.file-upload__btn Choose File
+							span.file-upload__name No file chosen
+					
 					
 					if (error)
 						.form-site-alert
@@ -173,10 +176,15 @@ mixin modalWindow(error, status)
 				.form-site__shared
 					span Is it a shared file?
 
-					.switch(class=status=='active'?'active':'')
-						.switch__marker
-						.switch__on Yes
-						.switch__off No
+					.switch
+						if (status=='active')
+							input(type="checkbox", id="switch1", checked="checked")
+						else
+							input(type="checkbox", id="switch1")
+						label.switch__content(for="switch1")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
 
 					if (status=='active')
 						span.form-site__shared-notice.d-none.d-md-inline

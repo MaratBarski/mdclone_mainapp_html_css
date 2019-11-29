@@ -7,7 +7,7 @@
 	background: #fff;
 	border-top: 7px solid $color-dark-purple;
 	border-radius: 4px;
-	padding: 20px 25px;
+	padding: 20px 25px 10px;
 	position: fixed;
 	@include top-center;
 	left: 0;
@@ -31,9 +31,14 @@
 		position: absolute;
 		top: 25px;
 		right: 25px;
+		cursor: pointer;
 	}
 
-	&__close:hover{background: url(#{$path-icon}/ic-close-grey.svg) no-repeat center;}
+	&__close:hover{background: url(#{$path-icon}/ic-close-grey.svg) no-repeat center; background-size: contain;}
+
+	.form-site{
+		margin-bottom: 10px;
+	}
 }
 
 @media (max-width: 767px) {
