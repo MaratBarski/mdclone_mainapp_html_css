@@ -221,3 +221,14 @@
 	&.active &__off{display: none;}
 	&.active &__marker{background: $color-dark-purple; left: auto; right: 4px;}
 }
+
+@media (max-width: 767px) {
+	.form-site{
+		&__item{margin-bottom: 20px;}
+		&__btn{margin-top: 33px;}
+	}
+
+	.form-site-alert{
+		position: static;
+	}
+}

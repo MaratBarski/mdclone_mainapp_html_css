@@ -44,3 +44,16 @@
 	&__arr_left.active{background: url(#{$path-icon}/ic-pager-arr-left-active.svg) no-repeat center; background-size: 9px;}
 	&__arr_right.active{background: url(#{$path-icon}/ic-pager-arr-right-active.svg) no-repeat center; background-size: 9px;}
 }
+
+@media (max-width: 767px) {
+	.pager-wrap{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__title{
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+}

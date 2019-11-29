@@ -1,0 +1,54 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Imported files';
+	//- - var h1 = 'Imported files';
+
+block content
+	.container
+		.row
+			.col-12
+				a(href="#").link-back Back to list
+				
+	section.file-details
+		.container
+			.row
+				.col-12
+					.file-details__head File details
+
+					.file-details__content
+						-
+							var list=[
+								{title:'Name', text:'d-Stroke for a very very long description that is wrapped 2 lines'},
+								{title:'Modified date', text:'m_date'},
+								{title:'Project', text:'Demo'},
+								{title:'Template', text:'Medications'},
+								{title:'User', text:'Mdclone.Admin'},
+								{title:'Type', text:'Private'},
+								{title:'Columns', text:'25'},
+								{title:'Rows', text:'2,456'},
+								{title:'Shared', shared:'true'},
+							];
+
+
+						each item in list
+							.file-details__item
+								.file-details__title= item.name
+								.file-details__text= item.text
+									if (item.shared=='true')
+										img(src="assets/icon/ic-shared.svg", alt="")
+
+
+					.file-details-action
+						a(href="#").file-details-action__item
+							.file-details-action__icon.file-details-action__icon_edit
+							.file-details-action__text Edit
+
+						a(href="#").file-details-action__item
+							.file-details-action__icon.file-details-action__icon_view
+							.file-details-action__text View
+
+						a(href="#").file-details-action__item
+							.file-details-action__icon.file-details-action__icon_delete
+							.file-details-action__text Delete
+

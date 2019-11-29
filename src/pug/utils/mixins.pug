@@ -96,7 +96,7 @@ mixin adminTableRow(rows)
 			.admin-table__item.d-none.d-xxl-table-cell= item.rows
 			.admin-table__item.admin-table__item_menu
 				if item.notice
-					.admin-table__notice
+					.admin-table__notice.d-none.d-md-inline-block
 						.ic-hover
 							img(src="assets/icon/ic-business-warning.svg", alt="")
 
@@ -132,12 +132,13 @@ mixin modalWindow(error, status)
 					label(for="file").form-site__label Choose File
 
 					.file-upload
-						input.js-input-file(type='file', name='file')
-							//- span.file-upload__name.js-name-file Выбрать файлы
+							input.js-input-file(type='file', name='file')
+								//- span.file-upload__name.js-name-file Выбрать файлы
 					
-					.form-site-alert
-						img(src="assets/icon/ic-failure.svg", alt="").form-site-alert__icon
-						span.form-site-alert__text File format needs to be CSV (comma separate values)
+					if (error)
+						.form-site-alert
+							img(src="assets/icon/ic-failure.svg", alt="").form-site-alert__icon
+							span.form-site-alert__text File format needs to be CSV (comma separate values)
 
 				.form-site__item
 					label(for="name").form-site__label Name
@@ -178,10 +179,10 @@ mixin modalWindow(error, status)
 						.switch__off No
 
 					if (status=='active')
-						span.form-site__shared-notice
+						span.form-site__shared-notice.d-none.d-md-inline
 							img(src="assets/icon/ic-shared.svg", alt="")
 							|The file is now shared with everyone
 
-				.form-site__btn
-					a(href="#").btn.btn_border Cancel
-					input(type="submit", value="Load file").btn(class=status=='active'?'':'btn_disable')
+			.form-site__btn
+				a(href="#").btn.btn_border Cancel
+				input(type="submit", value="Load file").btn(class=status=='active'?'':'btn_disable')

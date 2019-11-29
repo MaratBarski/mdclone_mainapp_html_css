@@ -35,3 +35,29 @@
 
 	&__close:hover{background: url(#{$path-icon}/ic-close-grey.svg) no-repeat center;}
 }
+
+@media (max-width: 767px) {
+	.mobile-modal-window{
+		.modal-window{
+			width: 100%;
+			max-height: 100%;
+			overflow: visible;
+			position: static;
+			transform: none;
+			box-shadow: 0 2px 4px 0 #dbe4f9;
+			padding: 17px;
+
+			&__head{
+				font-size: 18px;
+				margin-bottom: 27px;
+			}
+
+			&__close{
+				width: 18px;
+				height: 18px;
+				top: 25px;
+				right: 30px;
+			}
+		}
+	}
+}

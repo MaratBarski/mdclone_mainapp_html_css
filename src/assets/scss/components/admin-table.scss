@@ -22,6 +22,7 @@
 	width: 100%;
 	@include font(normal, normal, 14px, 1.2, $color-purple);
 	background: #fff;
+	box-shadow: 0 2px 4px 0 #dbe4f9;
 
 	&__head,
 	&__row{
@@ -199,7 +200,8 @@
 	top: 100%;
 	z-index: 10;
 
-	&.active{
+	&.active,
+	&:hover{
 		display: block;
 	}
 
@@ -295,6 +297,56 @@
 			margin-left: 0;
 			width: 100%;
 			margin-bottom: 23px;
+		}
+	}
+
+	.admin-table{
+		&__item:first-child{
+			padding-left: 15px;
+		}
+
+		&,
+		&__head,
+		&__row{
+			display: block;
+		}
+
+		&__row{
+			position: relative;
+		}
+
+		&__item{
+			display: flex;
+			align-items: center;
+			min-height: 40px;
+		}
+
+		&__head &__item:last-child{
+			display: none;
+		}
+
+		&__item:last-child{
+			padding: 0;
+			position: absolute;
+			@include top-center;
+			right: 5px;
+			z-index: 10;
+		}
+
+		&__name{
+			width: calc(100% - 30px);
+		}
+
+		&__name:hover .tooltip,
+		&__name .tooltip.active{
+			display: none;
+		}
+	}
+
+	.admin-table-popup{
+		&.active,
+		&:hover{
+			display: none;
 		}
 	}
 }
