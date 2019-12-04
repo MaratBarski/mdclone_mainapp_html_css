@@ -86,8 +86,8 @@ mixin adminTableRow(rows)
 						span.tooltip(class=item.tooltip_status?'active':'')= item.name
 			.admin-table__item.d-none.d-md-table-cell= item.loaded
 			.admin-table__item.d-none.d-md-table-cell= item.project
-			.admin-table__item.d-none.d-md-table-cell= item.template
-			.admin-table__item.d-none.d-md-table-cell= item.user
+			.admin-table__item.d-none.d-lg-table-cell= item.template
+			.admin-table__item.d-none.d-xl-table-cell= item.user
 			.admin-table__item.d-none.d-md-table-cell
 				if item.shared
 					img(src="assets/icon/ic-shared.svg", alt="")
@@ -165,7 +165,7 @@ mixin modalWindow(error, status)
 						|Template
 						span.form-site__info.ic-hover
 
-					#template.select
+					#template.select.select_up
 						.select__head Select Template...
 						.select__option
 							.select__param Template 1

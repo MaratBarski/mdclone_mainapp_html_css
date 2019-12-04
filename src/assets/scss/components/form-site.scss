@@ -270,6 +270,11 @@
 	&.disable &__head{color: $color-light-grey;}
 	&.disable:hover{cursor: auto;}
 	&.disable:hover &__option{display: none;}
+
+	&_up &__option{
+		top: auto;
+		bottom: 100%;
+	}
 }
 
 .switch{
