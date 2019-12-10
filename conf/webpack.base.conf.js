@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const globImporter = require('node-sass-glob-importer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 
 const PATHS = {
@@ -15,7 +16,9 @@ const PATHS = {
   assets: 'assets/',
   fonts: 'assets/fonts',
   img: 'assets/img',
-  icon: 'assets/icon',
+  sprites:'assets/sprites/',
+  svgicon:'../src/assets/svg-icon/',
+  svgcoloricon:'../src/assets/svg-color-icon/',
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`
@@ -72,8 +75,58 @@ module.exports = {
         outputPath: PATHS.fonts,
         publicPath: '../fonts/'
       }
-    }, {
-      test: /\.(png|jpg|gif|svg)$/,
+    },
+    {
+      test: /\.svg$/,
+      include: [
+        path.resolve(__dirname, PATHS.svgicon),
+      ],
+      use:[{
+        loader: 'svg-sprite-loader',
+        options: {
+          esModule: false,
+          extract: true,
+          spriteFilename: 'sprite.svg',
+          // outputPath: PATHS.sprites,
+          publicPath: PATHS.sprites,
+        }
+      },{
+        loader: 'svgo-loader',
+        options: {
+          plugins: [
+            { removeNonInheritableGroupAttrs: true },
+            { collapseGroups: true },
+            { removeAttrs: { attrs: '(fill|stroke)' } },
+          ]
+        }
+      }]
+    },
+    {
+      test: /\.svg$/,
+      include: [
+        path.resolve(__dirname, PATHS.svgcoloricon),
+      ],
+      use:[{
+        loader: 'svg-sprite-loader',
+        options: {
+          esModule: false,
+          extract: true,
+          spriteFilename: 'spritecolor.svg',
+          // outputPath: PATHS.sprites,
+          publicPath: PATHS.sprites,
+        }
+      },{
+        loader: 'svgo-loader',
+        options: {
+          plugins: [
+            { removeNonInheritableGroupAttrs: true },
+            { collapseGroups: true },
+          ]
+        }
+      }]
+    },
+    {
+      test: /\.(png|jpg|gif)$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
@@ -130,9 +183,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
+    new SpriteLoaderPlugin({
+      plainSprite: true
+    }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}icon`, to: `${PATHS.assets}icon` },
+      // { from: `${PATHS.src}/${PATHS.assets}icon`, to: `${PATHS.assets}icon` },
+      // { from: `${PATHS.src}/${PATHS.assets}icon-color`, to: `${PATHS.assets}icon-color` },
       // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       // { from: `${PATHS.src}/static`, to: '' },
     ]),
