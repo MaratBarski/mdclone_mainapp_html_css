@@ -16,7 +16,7 @@ block content
 
 						.admin-table-wrap__col
 							a.btn(href='#')
-								img(src="/assets/icon/ic-plus.svg", alt="")
+								+svg('ic-plus','ic-plus')
 								|New File
 
 						.admin-table-wrap__col
@@ -65,6 +65,9 @@ block content
 
 									.admin-table-filter
 										.admin-table-filter__icon
+											span.ic-hover
+												+svg('ic-filter','ic-filter ic-stroke')
+
 
 							.admin-table__item.d-none.d-xl-table-cell
 								.admin-table__head
@@ -72,6 +75,8 @@ block content
 
 									.admin-table-filter
 										.admin-table-filter__icon
+											span.ic-hover
+												+svg('ic-filter','ic-filter ic-stroke')
 
 							.admin-table__item.d-none.d-md-table-cell
 								.admin-table__head

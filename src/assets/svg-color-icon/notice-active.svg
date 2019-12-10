@@ -4,6 +4,6 @@
     </defs>
     <g fill="none" fill-rule="evenodd" transform="translate(-1.856 -6.178)">
         <use fill="#FFF" transform="rotate(30 18.36 19.438)" xlink:href="#a"/>
-        <ellipse cx="13.486" cy="12.5" fill="#EB3232" rx="4.495" ry="4.5"/>
+        <ellipse cx="13.486" cy="12.5" fill="#EB3232" rx="4.495" ry="4.5" class="dot"/>
     </g>
 </svg>

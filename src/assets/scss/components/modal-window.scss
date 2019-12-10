@@ -24,17 +24,15 @@
 
 	&__close{
 		display: inline-block;
-		width: 20px;
-		height: 20px;
-		background: url(#{$path-icon}/ic-close.svg) no-repeat center;
-		background-size: contain;
+		width: 30px;
+		height: 30px;
 		position: absolute;
-		top: 25px;
-		right: 25px;
+		top: 20px;
+		right: 20px;
 		cursor: pointer;
 	}
 
-	&__close:hover{background: url(#{$path-icon}/ic-close-grey.svg) no-repeat center; background-size: contain;}
+	&__close .icon.ic-stroke:hover{stroke: $color-light-grey;}
 
 	.form-site{
 		margin-bottom: 10px;

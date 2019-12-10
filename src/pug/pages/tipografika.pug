@@ -58,10 +58,10 @@ block content
 					br
 					br
 					a.btn(href='#') 
-						img(src="/assets/icon/ic-plus.svg", alt="")
+						+svg('ic-plus','ic-plus')
 						|Button
 					a.btn.btn_disable(href='#')
-						img(src="/assets/icon/ic-plus.svg", alt="")
+						+svg('ic-plus','ic-plus')
 						|Button
 
 					br
@@ -102,6 +102,7 @@ block content
 						input#param3(type='checkbox', name='param3')
 						label.input-check__label(for='param3')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text Text
 
 					br
@@ -134,6 +135,8 @@ block content
 					.h2 Select
 					.select
 						.select__head Please Select...
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
 							.select__param Parameter 1
 							.select__param Parameter 2
@@ -144,6 +147,8 @@ block content
 					br
 					.select.disable
 						.select__head Please Select...
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
 							.select__param Parameter 1
 							.select__param Parameter 2
@@ -155,21 +160,21 @@ block content
 					.h2 System Notifications
 					.system-notice
 						span.system-notice__icon
-							img(src="assets/icon/ic-running.svg", alt="")
+							+svg('ic-running','ic-running')
 						span.system-notice__text NLP engine started running on source collection
 
 					br
 					br
 					.system-notice
 						span.system-notice__icon
-							img(src="assets/icon/ic-success.svg", alt="")
+							+svg('ic-success','ic-success')
 
 						span.system-notice__text Model saved successfully
 					br
 					br
 					.system-notice.system-notice_red
 						span.system-notice__icon
-							img(src="assets/icon/ic-error.svg", alt="")
+							+svg('ic-error','ic-error')
 
 						span.system-notice__text Something failed
 
@@ -178,121 +183,169 @@ block content
 					br
 					br
 					.h2 Icons
-					span.ic-hover
-						img(src="assets/icon/ic-business-warning.svg", alt="")
-					span(style="margin-left: 20px") Business Warning
-					br
-					br
-					span.ic-hover
-						img(src="assets/icon/ic-warning.svg", alt="")
-					span(style="margin-left: 20px") Warning
-					br
-					br
-					span.ic-hover
-						img(src="assets/icon/ic-success.svg", alt="")
-					span(style="margin-left: 20px") Success
-					br
-					br
-					span.ic-hover
-						img(src="assets/icon/ic-failure.svg", alt="")
-					span(style="margin-left: 20px") Failure
+					div(style="background: #5303a8; padding: 10px;")
+						.type-icon.type-icon_white
+							.type-icon__item
+								.type-icon__img
+									+svg('notice','notice')
+								.type-icon__name notice
+
+							.type-icon__item
+								.type-icon__img
+									+svg('notice-active','notice-active')
+								.type-icon__name notice-active
+						
+						
+
 
 					br
 					br
-					img(src="assets/icon/ic-edit.svg", alt="")
-					span(style="margin-left: 20px") Edit Details
-					br
-					br
-					img(src="assets/icon/ic-edit-grey.svg", alt="")
-					span(style="margin-left: 20px") Edit Details disabled
+					.type-icon
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-plus','ic-plus')
+							.type-icon__name ic-plus
 
-					br
-					br
-					img(src="assets/icon/ic-duplicate.svg", alt="")
-					span(style="margin-left: 20px") Duplicate
-					br
-					br
-					img(src="assets/icon/ic-duplicate-grey.svg", alt="")
-					span(style="margin-left: 20px") Duplicate disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-search','ic-search')
+							.type-icon__name ic-search
 
-					br
-					br
-					img(src="assets/icon/ic-remove.svg", alt="")
-					span(style="margin-left: 20px") Delete
-					br
-					br
-					img(src="assets/icon/ic-remove-grey.svg", alt="")
-					span(style="margin-left: 20px") Delete disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-filter','ic-filter ic-stroke')
+							.type-icon__name ic-filter ic-stroke
 
-					br
-					br
-					img(src="assets/icon/ic-view.svg", alt="")
-					span(style="margin-left: 20px") View
-					br
-					br
-					img(src="assets/icon/ic-view-grey.svg", alt="")
-					span(style="margin-left: 20px") View disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-filter','ic-filter')
+							.type-icon__name ic-filter
 
-					br
-					br
-					img(src="assets/icon/ic-external-link.svg", alt="")
-					span(style="margin-left: 20px") Navigate to an external link
-					br
-					br
-					img(src="assets/icon/ic-external-link-grey.svg", alt="")
-					span(style="margin-left: 20px") Navigate to an external link disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-business-warning','ic-business-warning')
+							.type-icon__name ic-business-warning
 
-					br
-					br
-					img(src="assets/icon/ic-numeric.svg", alt="")
-					span(style="margin-left: 20px") Numeric
-					br
-					br
-					img(src="assets/icon/ic-numeric-grey.svg", alt="")
-					span(style="margin-left: 20px") Numeric disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-failure','ic-failure')
+							.type-icon__name ic-failure
+							
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-warning','ic-warning')
+							.type-icon__name ic-warning
 
-					br
-					br
-					img(src="assets/icon/ic-textual.svg", alt="")
-					span(style="margin-left: 20px") Textual
-					br
-					br
-					img(src="assets/icon/ic-textual-grey.svg", alt="")
-					span(style="margin-left: 20px") Textual disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-success','ic-success')
+							.type-icon__name ic-success
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-running','ic-running')
+							.type-icon__name ic-running
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-error','ic-error')
+							.type-icon__name ic-error
+				
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-shared','ic-shared')
+							.type-icon__name ic-shared
 
-					br
-					br
-					img(src="assets/icon/ic-calendar.svg", alt="")
-					span(style="margin-left: 20px") Temporal (Time/Date)
-					br
-					br
-					img(src="assets/icon/ic-calendar-grey.svg", alt="")
-					span(style="margin-left: 20px") Temporal (Time/Date) disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-check','ic-check')
+							.type-icon__name ic-check
 
-					br
-					br
-					img(src="assets/icon/ic-and.svg", alt="")
-					span(style="margin-left: 20px") ‘And' relation - Customised event
-					br
-					br
-					img(src="assets/icon/ic-and-grey.svg", alt="")
-					span(style="margin-left: 20px") ‘And' relation - Customised event disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-close','ic-close ic-stroke')
+							.type-icon__name ic-close
 
-					br
-					br
-					img(src="assets/icon/ic-or.svg", alt="")
-					span(style="margin-left: 20px") ‘OR’ relation - Customised event
-					br
-					br
-					img(src="assets/icon/ic-or-grey.svg", alt="")
-					span(style="margin-left: 20px") ‘OR’ relation - Customised event disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-info','ic-info')
+							.type-icon__name ic-info
 
-					br
-					br
-					img(src="assets/icon/ic-synthetic-data.svg", alt="")
-					span(style="margin-left: 20px") Synthetic Data
-					br
-					br
-					img(src="assets/icon/ic-synthetic-data-grey.svg", alt="")
-					span(style="margin-left: 20px") Synthetic Data disabled
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-help','ic-help')
+							.type-icon__name ic-help
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-synthetic-data','ic-synthetic-data')
+							.type-icon__name ic-synthetic-data
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-dot-menu','ic-dot-menu')
+							.type-icon__name ic-dot-menu
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-pager-arr-left','ic-pager-arr-left')
+							.type-icon__name ic-pager-arr-left
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-pager-arr-right','ic-pager-arr-right')
+							.type-icon__name ic-pager-arr-right
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-select-arr-down','ic-select-arr-down')
+							.type-icon__name ic-select-arr-down
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-edit','ic-edit')
+							.type-icon__name ic-edit
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-edit','ic-edit')
+							.type-icon__name ic-edit
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-view','ic-view')
+							.type-icon__name ic-view
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-duplicate','ic-duplicate')
+							.type-icon__name ic-duplicate
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-external-link','ic-external-link')
+							.type-icon__name ic-external-link
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-numeric','ic-numeric')
+							.type-icon__name ic-numeric
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-textual','ic-textual')
+							.type-icon__name ic-textual
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-calendar','ic-calendar')
+							.type-icon__name ic-calendar
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-and','ic-and')
+							.type-icon__name ic-and
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-or','ic-or')
+							.type-icon__name ic-or
 

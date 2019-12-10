@@ -22,12 +22,11 @@
 		margin-top: 2px;
 	}
 
-	&__mark::after{
-		content: '';
+	.ic-check{
 		display: none;
 		width: 8px;
 		height: 8px;
-		background: url(#{$path-icon}/ic-check.svg) no-repeat center;
+		fill: $color-dark-purple;
 		position: absolute;
 		@include top-center;
 		left: 0;
@@ -42,5 +41,5 @@
 	}
 
 	input[type=checkbox]:checked + &__label &__mark{border-color: $color-dark-purple;}
-	input[type=checkbox]:checked + &__label &__mark::after{display: inline-block;}
+	input[type=checkbox]:checked + &__label &__mark .ic-check{display: inline-block;}
 }

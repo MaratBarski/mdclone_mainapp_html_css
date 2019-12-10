@@ -31,7 +31,7 @@
 		display: inline-block;
 		width: 30px;
 		height: 30px;
-		background: url(#{$path-icon}/ic-search.svg) no-repeat center;
+		background: transparent;
 		position: absolute;
 		right: 0;
 		@include top-center;
@@ -39,11 +39,18 @@
 		border: 0;
 		outline: 0;
 		box-shadow: none;
+		padding: 0 7px;
+	}
+
+	button .icon{
+		width: 16px;
+		height: 16px;
+		fill: $color-grey;
 	}
 	
-	input[type="text"]:focus + input[type="submit"],
-	input[type="text"]:focus+button{
-		background: url(#{$path-icon}/ic-search-dark.svg) no-repeat center;
+	// input[type="text"]:focus + input[type="submit"],
+	input[type="text"]:focus+button .icon{
+		fill: $color-dark-blue;
 	}
 
 	&_white input[type="text"]::placeholder{color: $color-light-grey}
@@ -55,11 +62,11 @@
 	&_white input[type="text"]{border-color: #fff;}
 	&_white input[type="text"]:focus{border-bottom: 2px solid #fff;}
 
-	&_white input[type="submit"],
-	&_white button,
-	&_white input[type="text"]:focus + input[type="submit"],
-	&_white input[type="text"]:focus+button{
-		background: url(#{$path-icon}/ic-search-white.svg) no-repeat center;
+	// &_white input[type="submit"],
+	&_white button .icon,
+	// &_white input[type="text"]:focus + input[type="submit"],
+	&_white input[type="text"]:focus+button .icon{
+		fill: #fff;
 	}
 }
 

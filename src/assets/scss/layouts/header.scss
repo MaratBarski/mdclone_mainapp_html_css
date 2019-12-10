@@ -28,11 +28,6 @@
 		display: inline-block;
 		width: 30px;
 		height: 30px;
-		background: url(#{$path-icon}/notice.svg) no-repeat center;
-	}
-
-	&__notice.active{
-		background-image: url(#{$path-icon}/notice-active.svg);
 	}
 
 	&__profile{

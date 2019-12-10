@@ -92,24 +92,28 @@
 	&__sort-up,
 	&__sort-down{
 		display: inline-block;
-		width: 7px;
-		height: 4px;
+		width: 0;
+		height: 0;
 		position: absolute;
 		left: 0;
 	}
 
 	&__sort-up{
-		background: url(#{$path-icon}/sort-up.svg) no-repeat center;
+		border-style: solid;
+		border-width: 0 3.5px 4px 3.5px;
+		border-color: transparent transparent $color-dark-blue transparent;
 		top: 0;
 	}
 
 	&__sort-down{
-		background: url(#{$path-icon}/sort-down.svg) no-repeat center;
+		border-style: solid;
+		border-width: 4px 3.5px 0 3.5px;
+		border-color: $color-dark-blue transparent transparent transparent;
 		bottom: 0;
 	}
 
-	&__sort_disable &__sort-up{background: url(#{$path-icon}/sort-up-grey.svg) no-repeat center;}
-	&__sort_disable &__sort-down{background: url(#{$path-icon}/sort-down-grey.svg) no-repeat center;}
+	&__sort_disable &__sort-up{border-color: transparent transparent $color-light-grey transparent;}
+	&__sort_disable &__sort-down{border-color: $color-light-grey transparent transparent transparent;}
 
 	&__sort_desk &__sort-up,
 	&__sort_asc &__sort-down{
@@ -122,9 +126,15 @@
 
 	&__notice{
 		width: 24px;
+		height: 24px;
 		position: absolute;
 		right: 35px;
 		@include top-center;
+	}
+
+	.ic-shared{
+		width: 19px;
+		height: 17px;
 	}
 }
 
@@ -136,10 +146,7 @@
 		display: inline-block;
 		width: 14px;
 		height: 14px;
-		background: url(#{$path-icon}/ic-filter.svg) no-repeat center;
 	}
-
-	&__icon.active{background: url(#{$path-icon}/ic-filter-active.svg) no-repeat center;}
 
 	&__popup{
 		display: none;
@@ -213,14 +220,13 @@
 		@include font(normal, normal, 14px, 1.57, $color-dark-blue);
 	}
 
-	&__icon,
-	&__icon-disable{
-		width: 30px;
-		height: 30px;
+	&__item.disable .icon{
+		fill: $color-light-grey;
 	}
 
-	&__icon-disable{
-		display: none;
+	&__icon{
+		width: 30px;
+		height: 30px;
 	}
 
 	&__text{
@@ -241,8 +247,6 @@
 		border-top: 1px solid rgba(172, 178, 195, 0.5);
 	}
 
-	&__item.disable &__icon-disable{display: inline-block;}
-	&__item.disable &__icon{display: none;}
 	&__item.disable{color: $color-light-grey;}
 	&__item.disable:hover{background: transparent; cursor: auto;}
 }
@@ -256,7 +260,6 @@
 		display: inline-block;
 		width: 30px;
 		height: 30px;
-		background: url(#{$path-icon}/ic-dot-menu.svg) no-repeat center;
 	}
 }
 

@@ -22,7 +22,7 @@ mixin breadcrumbs(links)
 mixin tabsPage(tabs)
 	.tabs-page
 		each item, index in tabs
-			a.tabs-page__item(href=item.link)(class=index==0?'active':'')
+			a.tabs-page__item(href=item.link, class=index==0?'active':'')
 				span(class=item.name_sort?'d-none d-md-inline':'')= item.name
 				if item.name_sort
 					span.d-md-none= item.name_sort
@@ -31,11 +31,17 @@ mixin tabsPage(tabs)
 mixin formSearch(classes)
 	form.form-search(class=classes?classes:'')
 		input(type="text", placeholder="Search…")
-		input(type="submit")
+		button(type="submit")
+			+svg('ic-search','ic-search')
 
 mixin adminTableFilter(status)
 	.admin-table-filter
-		.admin-table-filter__icon(class=status?'active':'')
+		.admin-table-filter__icon
+			span.ic-hover
+				if(status=='active')
+					+svg('ic-filter','ic-filter')
+				else
+					+svg('ic-filter','ic-filter ic-stroke')
 
 		.admin-table-filter__popup(class=status?'active':'')
 			form
@@ -44,6 +50,7 @@ mixin adminTableFilter(status)
 						input#paramAll(type='checkbox', name='paramAll')
 						label.input-check__label(for='paramAll')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text Select All
 
 					a(href="#").admin-table-filter__clear Clear
@@ -53,24 +60,28 @@ mixin adminTableFilter(status)
 						input#param1(type='checkbox', name='param1')
 						label.input-check__label(for='param1')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text R Test Project
 
 					.input-check
 						input#param2(type='checkbox', name='param2', checked="checked")
 						label.input-check__label(for='param2')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text Demo Project
 
 					.input-check
 						input#param3(type='checkbox', name='param3')
 						label.input-check__label(for='param3')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text Another Project
 
 					.input-check
 						input#param4(type='checkbox', name='param4')
 						label.input-check__label(for='param4')
 							span.input-check__mark
+								+svg('ic-check','ic-check')
 							span.input-check__text Another Project with long name
 
 				.admin-table-filter__btn
@@ -90,7 +101,7 @@ mixin adminTableRow(rows)
 			.admin-table__item.d-none.d-xl-table-cell= item.user
 			.admin-table__item.d-none.d-md-table-cell
 				if item.shared
-					img(src="assets/icon/ic-shared.svg", alt="")
+					+svg('ic-shared','ic-shared ic-grey')
 
 			.admin-table__item.d-none.d-xxl-table-cell= item.columns
 			.admin-table__item.d-none.d-xxl-table-cell= item.rows
@@ -98,33 +109,35 @@ mixin adminTableRow(rows)
 				if item.notice
 					.admin-table__notice.d-none.d-md-inline-block
 						.ic-hover
-							img(src="assets/icon/ic-business-warning.svg", alt="")
+							+svg('ic-business-warning','ic-business-warning')
 
 				.admin-table-action
 					span.admin-table-action__menu.ic-hover
+						+svg('ic-dot-menu','ic-dot-menu')
 
 					.admin-table-popup(class=item.popup?'active':'')
 						.admin-table-popup__top
 							a(href="#").admin-table-popup__item
-								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-edit.svg)")
-								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-edit-grey.svg)")
+								.admin-table-popup__icon
+									+svg('ic-edit','ic-edit')
 								.admin-table-popup__text Edit File Settings
 
 							a(href="#").admin-table-popup__item.disable
-								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-view.svg)")
-								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-view-grey.svg)")
+								.admin-table-popup__icon
+									+svg('ic-view','ic-view')
 								.admin-table-popup__text View Output Summary
 
 						.admin-table-popup__bottom
 							a(href="#").admin-table-popup__item
-								.admin-table-popup__icon(style="background-image: url(assets/icon/ic-remove.svg)")
-								.admin-table-popup__icon-disable(style="background-image: url(assets/icon/ic-remove-grey.svg)")
+								.admin-table-popup__icon
+									+svg('ic-remove','ic-remove')
 								.admin-table-popup__text Delete
 
 mixin modalWindow(error, status)
 	.modal-window
 		.modal-window__head Upload file
 		.modal-window__close
+			+svg('ic-close','ic-close ic-stroke')
 
 		form.form-site
 			.form-site__fields
@@ -140,7 +153,8 @@ mixin modalWindow(error, status)
 					
 					if (error)
 						.form-site-alert
-							img(src="assets/icon/ic-failure.svg", alt="").form-site-alert__icon
+							.form-site-alert__icon
+								+svg('ic-failure','ic-failure')
 							span.form-site-alert__text File format needs to be CSV (comma separate values)
 
 				.form-site__item
@@ -153,6 +167,8 @@ mixin modalWindow(error, status)
 
 					#project.select
 						.select__head Select Project…
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
 							.select__param Demo project
 							.select__param.active Mimic
@@ -164,9 +180,12 @@ mixin modalWindow(error, status)
 					label(for="template").form-site__label
 						|Template
 						span.form-site__info.ic-hover
+							+svg('ic-info','ic-info')
 
 					#template.select.select_up
 						.select__head Select Template...
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
 							.select__param Template 1
 							.select__param Template 2
@@ -188,9 +207,13 @@ mixin modalWindow(error, status)
 
 					if (status=='active')
 						span.form-site__shared-notice.d-none.d-md-inline
-							img(src="assets/icon/ic-shared.svg", alt="")
+							+svg('ic-shared','ic-shared')
 							|The file is now shared with everyone
 
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
-				input(type="submit", value="Load file").btn(class=status=='active'?'':'btn_disable')
+				input.btn(type="submit", value="Load file", class=status=='active'?'':'btn_disable')
+
+mixin svg(icon, name_class)
+	svg.icon(class=name_class?name_class:'')
+		use(xlink:href='/assets/sprites/sprite.svg#'+icon)

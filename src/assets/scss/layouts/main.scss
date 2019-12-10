@@ -186,6 +186,12 @@ button.btn_small{
 }
 
 .btn img{margin-right: 4px;}
+.btn .icon{
+	width: 16px;
+	height: 16px;
+	fill: #fff;
+	margin-right: 4px;
+}
 
 .btn + .btn{
 	margin-left: 15px;
@@ -207,33 +213,6 @@ button.btn_small{
 .text-justify{text-align: justify !important;}
 .text-uppercase{text-transform: uppercase !important;}
 .text-bold {font-weight: 700 !important;}
-
-.ic-hover{
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-
-	&::before{
-		content: '';
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-		min-width: 30px;
-		min-height: 30px;
-		background: rgba(172, 178, 195, 0.25);
-		border-radius: 50%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		opacity: 0;
-		transition: all 0.3s ease;
-	}
-
-	&:hover::before{
-		opacity: 1;
-	}
-}
 
 .shadow-site{
 	display: none;
