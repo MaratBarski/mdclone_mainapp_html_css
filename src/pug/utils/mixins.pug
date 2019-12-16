@@ -33,6 +33,8 @@ mixin formSearch(classes)
 		input(type="text", placeholder="Search…")
 		button(type="submit")
 			+svg('ic-search','ic-search')
+		span.form-search__close
+			+svg('ic-close-small','ic-close-small ic-stroke')
 
 mixin adminTableFilter(status)
 	.admin-table-filter
@@ -136,7 +138,7 @@ mixin adminTableRow(rows)
 mixin modalWindow(error, status)
 	.modal-window
 		.modal-window__head Upload file
-		.modal-window__close
+		.modal-window__close.ic-hover
 			+svg('ic-close','ic-close ic-stroke')
 
 		form.form-site
@@ -179,8 +181,9 @@ mixin modalWindow(error, status)
 				.form-site__item
 					label(for="template").form-site__label
 						|Template
-						span.form-site__info.ic-hover
+						span.form-site__info
 							+svg('ic-info','ic-info')
+							span.tooltip Tooltip
 
 					#template.select.select_up
 						.select__head Select Template...

@@ -7,7 +7,7 @@
 	}
 
 	&__head{
-		@include font(normal, 600, 24px, 1.4, $color-dark-grey);
+		@include font(normal, normal, 24px, 1.4, $color-dark-grey);
 		text-transform: uppercase;
 	}
 

@@ -27,13 +27,12 @@ img{
 
 a{
 	color: $color-blue;
+	text-decoration: none;
 }
 
-a:hover,
-a:active,
-a:focus{
-	color: $color-dark-purple;
-	text-decoration: none;
+a:hover{
+	color: $color-blue;
+	text-decoration: underline;
 }
 
 // p{
@@ -116,7 +115,7 @@ button.btn{
 	align-items: center;
 	justify-content: center;
 	height: 30px;
-	min-width: 114px;
+	min-width: 120px;
 	padding: 0 40px;
 	background: $color-dark-purple;
 	border: 1px solid $color-dark-purple;
@@ -132,9 +131,10 @@ button.btn{
 .btn:hover,
 input[type="submit"].btn:hover,
 button.btn:hover{
-	background: #752dc2;
-	border-color: #752dc2;
+	background: #3f0280;
+	border-color: #3f0280;
 	color: #fff;
+	text-decoration: none;
 }
 
 .btn_border,

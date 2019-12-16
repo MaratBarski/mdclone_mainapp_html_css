@@ -1,7 +1,7 @@
 /*-------------- tooltip -----------------*/
 .tooltip{
 	display: inline-block;
-	width: 250px;
+	max-width: 350px;
 	background: $color-dark-blue;
 	padding: 4px 8px;
 	margin: 4px;
@@ -41,5 +41,11 @@
 		border-color: transparent transparent $color-dark-blue transparent;
 		top: auto;
 		bottom: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	.tooltip{
+		width: 250px;
 	}
 }

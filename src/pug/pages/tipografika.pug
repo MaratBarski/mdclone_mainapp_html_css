@@ -105,6 +105,13 @@ block content
 								+svg('ic-check','ic-check')
 							span.input-check__text Text
 
+					.input-check
+						input#param3(type='checkbox', name='param10', disabled="disabled")
+						label.input-check__label(for='param10')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
+							span.input-check__text Text
+
 					br
 					br
 					.h2 Tooltip
@@ -129,6 +136,33 @@ block content
 							.switch__marker
 							.switch__on Yes
 							.switch__off No
+
+					br
+					br
+					.switch
+						input(type="checkbox", id="switch2", disabled="disabled")
+						label.switch__content(for="switch2")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
+
+					br
+					br
+					.switch
+						input(type="checkbox", id="switch3", disabled="disabled", checked="checked")
+						label.switch__content(for="switch3")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
+
+					br
+					br
+					.h2 Input
+					form.form-site(style="width: 250px;")
+						input(type="text", placeholder="Text")
+						br
+						br
+						input(type="text", placeholder="Text", disabled="disabled")
 
 					br
 					br
@@ -262,7 +296,7 @@ block content
 						.type-icon__item
 							.type-icon__img
 								+svg('ic-close','ic-close ic-stroke')
-							.type-icon__name ic-close
+							.type-icon__name ic-close ic-stroke
 
 						.type-icon__item
 							.type-icon__img
@@ -298,11 +332,6 @@ block content
 							.type-icon__img
 								+svg('ic-select-arr-down','ic-select-arr-down')
 							.type-icon__name ic-select-arr-down
-
-						.type-icon__item
-							.type-icon__img
-								+svg('ic-edit','ic-edit')
-							.type-icon__name ic-edit
 
 						.type-icon__item
 							.type-icon__img

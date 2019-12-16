@@ -12,10 +12,21 @@
 		padding: 0 16px;
 	}
 
-	&__item.active,
-	&__item:hover{
+	&__item.active{
 		background: $color-dark-purple;
 		color: #fff;
+		cursor: auto;
+	}
+
+	&__item:hover{
+		color: #3f0280;
+		text-decoration: none;
+		border-color: #3f0280;
+	}
+
+	&__item.active:hover{
+		color: #fff;
+		border-color: $color-dark-purple;
 	}
 
 	&__item:first-child{

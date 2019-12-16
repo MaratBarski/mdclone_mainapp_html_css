@@ -9,7 +9,7 @@
 		width: 100%;
 		padding-right: 38px;
 		@include font(normal, normal, 16px, 28px, $color-dark-blue);
-		padding: 0 30px 1px 0;
+		padding: 5px 0 1px 26px;
 		margin: 0;
 		border: 0;
 		outline: 0;
@@ -29,17 +29,18 @@
 	input[type="submit"],
 	button{
 		display: inline-block;
-		width: 30px;
-		height: 30px;
+		width: 16px;
+		height: 16px;
 		background: transparent;
 		position: absolute;
-		right: 0;
+		left: 0;
 		@include top-center;
 		font-size: 0;
 		border: 0;
 		outline: 0;
 		box-shadow: none;
-		padding: 0 7px;
+		padding: 0;
+		margin-top: 1px;
 	}
 
 	button .icon{
@@ -51,6 +52,27 @@
 	// input[type="text"]:focus + input[type="submit"],
 	input[type="text"]:focus+button .icon{
 		fill: $color-dark-blue;
+	}
+
+	&__close{
+		display: none;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		right: 0;
+		@include top-center;
+		text-align: center;
+		vertical-align: middle;
+		margin-top: 3px;
+	}
+
+	&__close .ic-close-small{
+		width: 7px;
+		stroke: $color-dark-blue;
+	}
+
+	input[type="text"]:focus + button + &__close{
+		display: inline-block;
 	}
 
 	&_white input[type="text"]::placeholder{color: $color-light-grey}
@@ -68,6 +90,10 @@
 	&_white input[type="text"]:focus+button .icon{
 		fill: #fff;
 	}
+
+	&_white &__close .ic-close-small{stroke: #fff;}
+
+	
 }
 
 @media (max-width: 991px) {

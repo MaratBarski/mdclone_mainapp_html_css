@@ -21,6 +21,7 @@
 		@include font(normal, normal, 14px, 38px, #686b83);
 		padding: 0 15px;
 		margin: 0;
+		transition: all 0.3s ease;
 	}
 
 	textarea{
@@ -32,6 +33,18 @@
 	input[type="text"]::placeholder,
 	input[type="email"]::placeholder,
 	textarea::placeholder{
+		color: $color-light-grey;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	textarea:focus{
+		border-color: $color-purple;
+	}
+
+	input[disabled="disabled"],
+	textarea[disabled="disabled"]{
+		background: #fff;
 		color: $color-light-grey;
 	}
 
@@ -80,12 +93,27 @@
 		width: 16px;
 		height: 16px;
 		margin-left: 5px;
+		position: relative;
+		cursor: pointer;
 	}
 
 	&__info.ic-hover,
 	&__help.ic-hover{
 		width: 16px;
 		height: 16px;
+	}
+
+	&__info .tooltip,
+	&__help .tooltip{
+		display: none;
+		position: absolute;
+		bottom: 100%;
+		left: -12px;
+	}
+
+	&__info:hover .tooltip,
+	&__help:hover .tooltip{
+		display: block;
 	}
 
 	&__item_error input[type="text"]::placeholder,
@@ -239,7 +267,7 @@
 	&__option{
 		display: none;
 		background: #fff;
-		border: solid 1px rgba(172, 178, 195, 0.5);
+		border: solid 1px $color-light-grey;
 		max-height: 240px;
 		overflow-y: auto;
 		box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
@@ -297,6 +325,7 @@
 		border-radius: 12px;
 		position: relative;
 		cursor: pointer;
+		transition: all 0.3s ease;
 	} 
 
 	&__marker{
@@ -308,6 +337,21 @@
 		position: absolute;
 		@include top-center;
 		left: 4px;
+		transition: all 0.3s ease;
+	}
+
+	&__marker::before{
+		content: '';
+		display: none;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: $color-light-grey;
+		opacity: 0.25;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	&__on,
@@ -320,10 +364,26 @@
 	&__on{left: 7px; display: none;}
 	&__off{right: 7px;}
 
+	&:hover &__content{border-color: $color-grey;}
+	&:hover &__marker{background: $color-grey;}
+
 	input[type="checkbox"]:checked + &__content{border-color: $color-dark-purple;}
 	input[type="checkbox"]:checked + &__content &__on{display: block;}
 	input[type="checkbox"]:checked + &__content &__off{display: none;}
 	input[type="checkbox"]:checked + &__content &__marker{background: $color-dark-purple; left: auto; right: 4px;}
+	input[type="checkbox"]:checked + &__content &__marker::before{background: $color-dark-purple;}
+
+	input[type="checkbox"]:focus + &__content &__marker::before{display: inline-block;}
+
+	&:hover input[type="checkbox"]:checked + &__content{border-color: #3f0280;}
+	&:hover input[type="checkbox"]:checked + &__content &__marker{background: #3f0280;}
+
+	input[disabled="disabled"] + &__content, &:hover input[disabled="disabled"] + &__content{border-color: $color-light-grey; opacity: 0.5;}
+	input[disabled="disabled"] + &__content &__marker, &:hover input[disabled="disabled"] + &__content &__marker{background: $color-light-grey;}
+	input[disabled="disabled"]:checked + &__content, &:hover input[disabled="disabled"]:checked + &__content{border-color: $color-dark-purple; opacity: 0.5;}
+	input[disabled="disabled"]:checked + &__content &__marker, &:hover input[disabled="disabled"]:checked + &__content &__marker{background: $color-dark-purple;}
+
+	
 }
 
 @media (max-width: 767px) {

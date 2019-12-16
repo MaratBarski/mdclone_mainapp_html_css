@@ -3,7 +3,7 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-top: 23px;
+	margin-top: 15px;
 
 	&__title{
 		@include font(normal, normal, 14px, 1.57, $color-grey);
@@ -17,9 +17,16 @@
 
 	&__item{
 		min-width: 30px;
-		@include font(normal, 600, 16px, 1.25, $color-light-grey);
+		@include font(normal, 600, 16px, 1.25, $color-blue);
 		text-align: center;
 		padding: 0 15px;
+	}
+
+	&__item a{color: $color-blue;}
+
+	&__item.active{
+		color: $color-light-grey;
+		font-weight: bold;
 	}
 
 	&__item:not(:last-child){
@@ -28,10 +35,6 @@
 
 	&__item:first-child{padding-left: 0;}
 	&__item:last-child{padding-right: 0;}
-
-	&__item a{
-		color: $color-blue;
-	}
 
 	&__arr{
 		display: inline-block;

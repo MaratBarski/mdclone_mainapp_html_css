@@ -22,6 +22,22 @@
 		margin-top: 2px;
 	}
 
+	&__mark::before{
+		content: '';
+		display: none;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: $color-light-grey;
+		opacity: 0.25;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&:hover &__mark::before{display: inline-block;}
+
 	.ic-check{
 		display: none;
 		width: 8px;
@@ -42,4 +58,7 @@
 
 	input[type=checkbox]:checked + &__label &__mark{border-color: $color-dark-purple;}
 	input[type=checkbox]:checked + &__label &__mark .ic-check{display: inline-block;}
+
+	input[disabled="disabled"] + &__label &__mark{border-color: $color-light-grey; background: $color-sort-grey;}
+	&:hover input[disabled="disabled"] + &__label &__mark::before{display: none;}
 }
