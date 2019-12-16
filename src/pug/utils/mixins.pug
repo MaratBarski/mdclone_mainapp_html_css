@@ -1,5 +1,5 @@
 mixin h1(v)
-	.container
+	.container-fluid
 		.row
 			.col-12
 				h1= v
@@ -7,7 +7,7 @@ mixin h1(v)
 
 mixin breadcrumbs(links)
 	- var len=links.length
-	.container.d-none.d-md-block
+	.container-fluid.d-none.d-md-block
 		.row
 			.col-12
 				ul.breadcrumb
@@ -170,8 +170,8 @@ mixin modalWindow(error, status)
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
-							.select__param Demo project
-							.select__param.active Mimic
+							.select__param.active Demo project
+							.select__param Mimic
 							.select__param Project 1
 							.select__param Project 2
 							.select__param Project with very long name
@@ -187,9 +187,9 @@ mixin modalWindow(error, status)
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
-							.select__param Template 1
+							.select__param.active Template 1
 							.select__param Template 2
-							.select__param.active Template with very long name
+							.select__param Template with very long name
 							.select__param Template 4
 
 				.form-site__shared

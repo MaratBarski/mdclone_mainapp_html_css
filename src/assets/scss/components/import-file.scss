@@ -14,7 +14,7 @@
 	&__text{
 		display: inline-block;
 		vertical-align: top;
-		@include font(normal, normal, 14px, 1.57, $color-purple);
+		@include font(normal, normal, 14px, 1.57, $color-grey);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
