@@ -167,7 +167,7 @@ mixin modalWindow(error, status)
 				.form-site__item
 					label(for="project").form-site__label Project
 
-					#project.select
+					#project.select(class=status!='active'?'select_up':'')
 						.select__head Select Project…
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
@@ -179,39 +179,45 @@ mixin modalWindow(error, status)
 							.select__param Project with very long name
 
 				.form-site__item
-					label(for="template").form-site__label
-						|Template
-						span.form-site__info
-							+svg('ic-info','ic-info')
-							span.tooltip Tooltip
-
-					#template.select.select_up
-						.select__head Select Template...
-							.select__head-arr
-								+svg('ic-select-arr-down','ic-select-arr-down')
-						.select__option
-							.select__param.active Template 1
-							.select__param Template 2
-							.select__param Template with very long name
-							.select__param Template 4
-
-				.form-site__shared
-					span Is it a shared file?
-
-					.switch
+					label.form-site__label Make this a shared file
+	
+					.form-site__shared
 						if (status=='active')
-							input(type="checkbox", id="switch1", checked="checked")
+							span.form-site__shared-notice.d-none.d-md-inline
+								+svg('ic-shared','ic-shared')
+								|File is shared now. It can be viewed and used by everyone.
 						else
-							input(type="checkbox", id="switch1")
-						label.switch__content(for="switch1")
-							.switch__marker
-							.switch__on Yes
-							.switch__off No
+							span When file is shared everyone can see and use it.
 
-					if (status=='active')
-						span.form-site__shared-notice.d-none.d-md-inline
-							+svg('ic-shared','ic-shared')
-							|The file is now shared with everyone
+						.switch
+							if (status=='active')
+								input(type="checkbox", id="switch1", checked="checked")
+							else
+								input(type="checkbox", id="switch1")
+							label.switch__content(for="switch1")
+								.switch__marker
+								.switch__on Yes
+								.switch__off No
+
+				if (status=='active')
+					.form-site__item
+						label(for="template").form-site__label
+							|Template
+							span.form-site__info
+								+svg('ic-help','ic-help')
+								span.tooltip Tooltip
+
+							span.form-site__info-optional Optional
+
+						#template.select.select_up
+							.select__head Select Template...
+								.select__head-arr
+									+svg('ic-select-arr-down','ic-select-arr-down')
+							.select__option
+								.select__param.active Template 1
+								.select__param Template 2
+								.select__param Template with very long name
+								.select__param Template 4
 
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel

@@ -60,9 +60,14 @@
 
 	&__shared{
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		@include font(normal, 600, 14px, 1.25, $color-dark-grey);
+		@include font(normal, normal, 14px, 1.25, $color-dark-grey);
+	}
+
+	&__shared-notice{
+		margin-right: 17px;
 	}
 
 	&__shared-notice .ic-shared{
@@ -70,13 +75,12 @@
 		vertical-align: middle;
 		width: 19px;
 		height: 17px;
-		margin-right: 5px;
+		margin-right: 8px;
 		fill: $color-grey;
 	}
 
-	&__shared .switch{
-		margin-left: 17px;
-		margin-right: 17px;
+	&__shared-notice .ic-shared{
+		margin-top: -4px;
 	}
 
 	&__btn{
@@ -95,6 +99,7 @@
 		margin-left: 5px;
 		position: relative;
 		cursor: pointer;
+		margin-top: -2px;
 	}
 
 	&__info.ic-hover,
@@ -114,6 +119,11 @@
 	&__info:hover .tooltip,
 	&__help:hover .tooltip{
 		display: block;
+	}
+
+	&__info-optional{
+		@include font(italic, normal, 12px, 1.57, $color-grey);
+		margin-left: 6px;
 	}
 
 	&__item_error input[type="text"]::placeholder,
