@@ -1,0 +1,53 @@
+extends ../layout/main
+
+block variables
+	- var title = 'User dashboard';
+	- var h1 = 'User dashboard';
+
+block content
+	section.query-wrap
+		.container-fluid
+			.row
+				.col-12
+					.unwrap.active
+						.unwrap__head
+							span.unwrap__arr.ic-hover
+								+svg('ic-select-arr-down','ic-select-arr-down')
+							span.unwrap__title My Queries | 
+								span.unwrap__count 0
+
+						.unwrap__content
+							a.btn(href='#')
+								+svg('ic-plus','ic-plus')
+								|New Query
+
+							.query-empty
+								.query-empty__head
+									span.query-empty__title You did not ask anything yet.
+									a(href="#").query-empty__link Creat a new query here
+
+								.query-empty__img
+									img(src="assets/img/query-empty.jpg", alt="")
+
+	-
+		var list=[
+			{name:'Queries shared with me', count:'3'},
+			{name:'My Events', count:'4'},
+			{name:'My Approval Keys', count:'2'},
+		]
+
+	each item in list
+		section.query-wrap
+			.container-fluid
+				.row
+					.col-12
+						.unwrap
+							.unwrap__head
+								span.unwrap__arr.ic-hover
+									+svg('ic-select-arr-down','ic-select-arr-down')
+								span.unwrap__title= item.name
+									|  | 
+									span.unwrap__count= item.count
+
+							.unwrap__content
+
