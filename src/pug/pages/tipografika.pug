@@ -75,6 +75,19 @@ block content
 
 					br
 					br
+					.split-btn
+						.split-btn__title New Event
+						.split-btn__arr
+							+svg('ic-select-arr-down','ic-select-arr-down')
+
+						.split-btn__popup
+							.split-btn__item Action number 00001
+							.split-btn__item Action number 00002
+							.split-btn__item Action number 00003
+							.split-btn__item Action number 00004
+
+					br
+					br
 					.h2 Tabs
 					-
 						var tabs=[
@@ -290,6 +303,11 @@ block content
 
 						.type-icon__item
 							.type-icon__img
+								+svg('ic-key','ic-key')
+							.type-icon__name ic-key
+
+						.type-icon__item
+							.type-icon__img
 								+svg('ic-check','ic-check')
 							.type-icon__name ic-check
 
@@ -347,6 +365,36 @@ block content
 							.type-icon__img
 								+svg('ic-duplicate','ic-duplicate')
 							.type-icon__name ic-duplicate
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-download','ic-download')
+							.type-icon__name ic-download
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-share','ic-share')
+							.type-icon__name ic-share
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-quality','ic-quality')
+							.type-icon__name ic-quality
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-send','ic-send')
+							.type-icon__name ic-send
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-remove','ic-remove')
+							.type-icon__name ic-remove
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-delete','ic-delete')
+							.type-icon__name ic-delete
 
 						.type-icon__item
 							.type-icon__img

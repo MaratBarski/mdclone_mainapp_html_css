@@ -6,9 +6,9 @@
 		margin-bottom: 11px;
 	}
 
-	&__head{
-		@include font(normal, normal, 24px, 1.4, $color-dark-grey);
-		text-transform: uppercase;
+	h1,
+	.h1{
+		margin-bottom: 0;
 	}
 
 	&__text{
@@ -28,7 +28,8 @@
 
 	&__more:hover,
 	&__detail:hover{
-		color: $color-dark-purple;
+		text-decoration: underline;
+		cursor: pointer;
 	}
 }
 
@@ -42,8 +43,6 @@
 			align-items: center;
 			margin-bottom: 15px;
 		}
-
-		&__head{font-size: 22px;}
 
 		&__text{
 			display: none;

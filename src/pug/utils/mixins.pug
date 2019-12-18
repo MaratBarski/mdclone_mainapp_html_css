@@ -2,7 +2,7 @@ mixin h1(v)
 	.container-fluid
 		.row
 			.col-12
-				h3= v
+				h1= v
 
 
 mixin breadcrumbs(links)
@@ -28,9 +28,9 @@ mixin tabsPage(tabs)
 					span.d-md-none= item.name_sort
 
 
-mixin formSearch(classes)
+mixin formSearch(classes,placeholder)
 	form.form-search(class=classes?classes:'')
-		input(type="text", placeholder="Search…")
+		input(type="text", placeholder=placeholder?placeholder:"Search…")
 		button(type="submit")
 			+svg('ic-search','ic-search')
 		span.form-search__close
@@ -91,49 +91,60 @@ mixin adminTableFilter(status)
 					input.btn.btn_small(type="submit", value="Apply")
 
 mixin adminTableRow(rows)
-	each item in rows
+	each row in rows
 		.admin-table__row
 			.admin-table__item
-				.admin-table__name= item.name
-					if(item.tooltip)
-						span.tooltip(class=item.tooltip_status?'active':'')= item.name
-			.admin-table__item.d-none.d-md-table-cell= item.loaded
-			.admin-table__item.d-none.d-md-table-cell= item.project
-			.admin-table__item.d-none.d-lg-table-cell= item.template
-			.admin-table__item.d-none.d-xl-table-cell= item.user
-			.admin-table__item.d-none.d-md-table-cell
-				if item.shared
-					+svg('ic-shared','ic-shared ic-grey')
+				.admin-table__name= row.name.title
+					if(row.name.tooltip)
+						span.tooltip(class=row.name.tooltip_status?'active':'')= row.name.title
 
-			.admin-table__item.d-none.d-xxl-table-cell= item.columns
-			.admin-table__item.d-none.d-xxl-table-cell= item.rows
+			each field in row.fields
+				.admin-table__item(class=field.class?field.class:'')
+					if(field.icon)
+						if(field.icon_color=='true')
+							+svg(field.icon,field.icon)
+						else
+							+svg(field.icon,field.icon+' ic-grey')
+
+						if(field.title)
+							span.admin-table__icon-label= field.title
+					else
+						= field.title
+
 			.admin-table__item.admin-table__item_menu
-				if item.notice
-					.admin-table__notice.d-none.d-md-inline-block
-						.ic-hover
-							+svg('ic-business-warning','ic-business-warning')
+				if row.menu
+					if row.menu.notice
+						.admin-table__notice.d-none.d-md-inline-block
+							+svg(row.menu.notice,row.menu.notice)
 
-				.admin-table-action
-					span.admin-table-action__menu.ic-hover
-						+svg('ic-dot-menu','ic-dot-menu')
+					.admin-table-action
+						span.admin-table-action__menu.ic-hover
+							+svg('ic-dot-menu','ic-dot-menu')
 
-					.admin-table-popup(class=item.popup?'active':'')
-						.admin-table-popup__top
-							a(href="#").admin-table-popup__item
-								.admin-table-popup__icon
-									+svg('ic-edit','ic-edit')
-								.admin-table-popup__text Edit File Settings
+							.admin-table-popup(class=row.menu.popup?'active':'')
+								.admin-table-popup__top
+									if(row.menu.icons)
+										each icon in row.menu.icons
+											a.admin-table-popup__item(href="#",class=icon.disable?'disable':'')
+												.admin-table-popup__icon
+													+svg(icon.img,icon.img)
+												.admin-table-popup__text !{icon.text}
 
-							a(href="#").admin-table-popup__item.disable
-								.admin-table-popup__icon
-									+svg('ic-view','ic-view')
-								.admin-table-popup__text View Output Summary
+								.admin-table-popup__bottom
+									if(row.menu.icons_bottom)
+										each icon in row.menu.icons_bottom
+											a(href="#").admin-table-popup__item
+												.admin-table-popup__icon
+													+svg(icon.img,icon.img)
+												.admin-table-popup__text= icon.text
+									else
+										a(href="#").admin-table-popup__item
+											.admin-table-popup__icon
+												+svg('ic-delete','ic-delete')
+											.admin-table-popup__text Delete
 
-						.admin-table-popup__bottom
-							a(href="#").admin-table-popup__item
-								.admin-table-popup__icon
-									+svg('ic-remove','ic-remove')
-								.admin-table-popup__text Delete
+
+								
 
 mixin modalWindow(error, status)
 	.modal-window
@@ -226,3 +237,23 @@ mixin modalWindow(error, status)
 mixin svg(icon, name_class)
 	svg.icon(class=name_class?name_class:'')
 		use(xlink:href='/assets/sprites/sprite.svg#'+icon)
+
+mixin pager(title)
+	.pager-wrap
+		.pager-wrap__title= title
+
+		.pager
+			span.pager__arr.pager__arr_left
+				+svg('ic-pager-arr-left','ic-pager-arr-left')
+
+			span.pager__list
+				span.pager__item.active 1
+				span.pager__item
+					a(href="#") 2
+				span.pager__item
+					a(href="#") 3
+				span.pager__item ...
+				span.pager__item
+					a(href="#") 6
+			a(href="#").pager__arr.pager__arr_right.active.ic-hover
+				+svg('ic-pager-arr-right','ic-pager-arr-right')

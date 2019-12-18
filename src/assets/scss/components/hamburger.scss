@@ -73,7 +73,7 @@
 	&:hover span,
 	&:hover span::before,
 	&:hover span::after{
-		background-color: #818181;
+		background-color: $color-soft-blue;
 	}
 	
 	&.active:hover span{

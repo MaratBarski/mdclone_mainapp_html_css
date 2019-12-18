@@ -1,6 +1,6 @@
 .input-check{
 	&__label{
-		display: flex;
+		display: inline-flex;
 		// align-items: center;
 		cursor: pointer;
 		position: relative;
@@ -36,7 +36,7 @@
 		transform: translate(-50%, -50%);
 	}
 
-	&:hover &__mark::before{display: inline-block;}
+	&__label:hover &__mark::before{display: inline-block;}
 
 	.ic-check{
 		display: none;

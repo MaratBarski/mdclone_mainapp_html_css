@@ -53,34 +53,34 @@ h6,.h6,
 }
 
 h1,.h1{
-	font-size: 36px;
-	font-weight: 300;
-}
-
-h2,.h2{
-	font-size: 24px;
-	font-weight: 600;
-}
-
-h3,.h3{
 	font-size: 24px;
 	font-weight: normal;
 	text-transform: uppercase;
 	margin-bottom: 11px;
 }
 
-h4,.h4{
+h2,.h2{
 	font-size: 24px;
 	font-weight: 300;
 }
 
-h5,.h5{
+h3,.h3{
 	font-size: 22px;
 	font-weight: 600;
 }
 
-h6,.h6{
+h4,.h4{
 	font-size: 22px;
+	font-weight: normal;
+}
+
+h5,.h5{
+	font-size: 18px;
+	font-weight: 600;
+}
+
+h6,.h6{
+	font-size: 18px;
 	font-weight: normal;
 }
 
@@ -260,8 +260,7 @@ button.btn_small{
 		padding-right: 15px;
 	}
 
-	.h1, h1{font-size: 28px;}
-	.h2, h2{font-size: 22px;}
+	.h1, h1{font-size: 22px;}
 
 	.btn, button.btn, input[type="submit"].btn{padding: 0 27px;}
 }

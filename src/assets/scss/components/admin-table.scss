@@ -24,6 +24,11 @@
 	background: #fff;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
 
+	&_yellow{border-left: 5px solid $color-yellow;}
+	&_blue{border-left: 5px solid $color-blue;}
+	&_green{border-left: 5px solid $color-green;}
+	&_red{border-left: 5px solid $color-light-red;}
+
 	&__head,
 	&__row{
 		display: table-row;
@@ -32,6 +37,7 @@
 	&__item{
 		display: table-cell;
 		vertical-align: middle;
+		height: 40px;
 		padding: 2.7px 25px;
 		position: relative;
 	}
@@ -133,9 +139,38 @@
 		@include top-center;
 	}
 
-	.ic-shared{
+	&__item > .icon{
+		display: inline-block;
+		vertical-align: middle;
+		width: 20px;
+		height: 20px;
+	}
+
+	&__item > .ic-shared{
 		width: 19px;
 		height: 17px;
+	}
+
+	&__item > .ic-duplicate{
+		width: 27px;
+		height: 27px;
+	}
+
+	&__item > .ic-and{
+		width: 25px;
+		height: 17px;
+	}
+
+	&__item > .ic-success,
+	&__item > .ic-warning{
+		width: 18px;
+		height: 18px;
+	}
+
+	&__icon-label{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 12px;
 	}
 
 	.tooltip{
@@ -146,6 +181,7 @@
 .admin-table-filter{
 	display: inline-block;
 	vertical-align: middle;
+	margin-left: 3px;
 
 	&__icon{
 		display: inline-block;
@@ -204,7 +240,8 @@
 
 .admin-table-popup{
 	display: none;
-	width: 226px;
+	width: auto;
+	// max-width: 226px;
 	border-radius: 4px;
 	background: #fff;
 	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
@@ -224,7 +261,7 @@
 
 	&__item{
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
 		align-items: center;
 		padding: 5px 15px 5px 20px;
 		@include font(normal, normal, 14px, 1.57, $color-dark-blue);
@@ -237,15 +274,18 @@
 	&__icon{
 		width: 30px;
 		height: 30px;
+		margin-right: 10px;
 	}
 
 	&__text{
-		width: calc(100% - 40px);
+		// width: calc(100% - 40px);
+		white-space: nowrap;
 	}
 
 	&__item:hover{
 		background: $color-sort-grey;
 		color: $color-dark-blue;
+		text-decoration: none;
 	}
 
 	&__top,
