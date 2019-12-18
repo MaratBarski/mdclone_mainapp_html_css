@@ -26,8 +26,9 @@
 
 	textarea{
 		height: 122px;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		line-height: 1.79;
 	}
 
 	input[type="text"]::placeholder,
@@ -121,14 +122,14 @@
 		display: block;
 	}
 
-	&__info-optional{
+	&__optional{
 		@include font(italic, normal, 12px, 1.57, $color-grey);
 		margin-left: 6px;
 	}
 
-	&__item_error input[type="text"]::placeholder,
-	&__item_error input[type="email"]::placeholder,
-	&__item_error textarea::placeholder,
+	&__item_error input[type="text"],
+	&__item_error input[type="email"],
+	&__item_error textarea,
 	&__item_error .file-upload,
 	&__item_error .select__head{
 		border-color: $color-red;

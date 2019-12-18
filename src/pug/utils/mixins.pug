@@ -218,7 +218,7 @@ mixin modalWindow(error, status)
 								+svg('ic-help','ic-help')
 								span.tooltip Tooltip
 
-							span.form-site__info-optional Optional
+							span.form-site__optional Optional
 
 						#template.select.select_up
 							.select__head Select Template...
@@ -233,6 +233,50 @@ mixin modalWindow(error, status)
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
 				input.btn(type="submit", value="Load file", class=status=='active'?'':'btn_disable')
+
+mixin modalWindowQuery(error, status)
+	.modal-window
+		.modal-window__head Create Query
+		.modal-window__close.ic-hover
+			+svg('ic-close','ic-close ic-stroke')
+
+		form.form-site
+			.form-site__fields
+				.form-site__item(class=error?'form-site__item_error':'')
+					label(for="name").form-site__label Query Name
+
+					input(type="text", placeholder="Type a unique query name")
+
+					if (error)
+						.form-site-alert
+							.form-site-alert__icon
+								+svg('ic-failure','ic-failure')
+							span.form-site-alert__text A query with this name already exists.  Please select a unique name.
+
+				.form-site__item
+					label(for="desc").form-site__label Query Description
+						span.form-site__optional Optional
+
+					textarea(id="desc", placeholder="Use this space to describe your query in free text")
+
+				.form-site__item
+					label(for="key").form-site__label Select Approval Key (IRB)
+						span.form-site__optional Optional
+
+					#key.select.select_up
+						.select__head Select Key…
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param.active Demo key
+							.select__param Mimic
+							.select__param Key 1
+							.select__param Key 2
+							.select__param Key with very long name
+
+			.form-site__btn
+				a(href="#").btn.btn_border Cancel
+				input.btn(type="submit", value="Create", class=status=='active'?'':'btn_disable')
 
 mixin svg(icon, name_class)
 	svg.icon(class=name_class?name_class:'')
