@@ -17,9 +17,9 @@
 		background: transparent;
 	}
 
-	input[type="text"]::placeholder{font-weight: 300; color: $color-dark-grey}
-	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-dark-grey}
-	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-dark-grey}
+	input[type="text"]::placeholder{font-weight: 300; color: $color-dark-grey; opacity: 1;}
+	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-dark-grey; opacity: 1;}
+	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-dark-grey; opacity: 1;}
 
 	input[type="text"]:focus{
 		border-bottom: 2px solid $color-dark-purple;
@@ -98,6 +98,6 @@
 
 @media (max-width: 991px) {
 	.form-search{
-		width: 150px;
+		width: 175px;
 	}
 }
