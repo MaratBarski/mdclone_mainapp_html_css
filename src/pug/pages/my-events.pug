@@ -27,38 +27,39 @@ block content
 								+formSearch('d-none d-md-block','Search Event Name')
 
 
-						.admin-table.admin-table_red
-							.admin-table__head
-								.admin-table__item
-									.admin-table__head
-										span.admin-table__sort
-											span.admin-table__sort-up
-											span.admin-table__sort-down
-										|Name
+						table.admin-table.admin-table_red
+							thead
+								tr.admin-table__head
+									th.admin-table__item
+										.admin-table__head
+											span.admin-table__sort
+												span.admin-table__sort-up
+												span.admin-table__sort-down
+											|Name
 
-								.admin-table__item.d-none.d-md-table-cell
-									.admin-table__head
-										span.admin-table__sort.admin-table__sort_asc
-											span.admin-table__sort-up
-											span.admin-table__sort-down
-										|Modified
+									th.admin-table__item.d-none.d-md-table-cell
+										.admin-table__head
+											span.admin-table__sort.admin-table__sort_asc
+												span.admin-table__sort-up
+												span.admin-table__sort-down
+											|Modified
 
-								.admin-table__item.d-none.d-md-table-cell
-									.admin-table__head
-										span.admin-table__sort
-											span.admin-table__sort-up
-											span.admin-table__sort-down
-										|Generated
+									th.admin-table__item.d-none.d-md-table-cell
+										.admin-table__head
+											span.admin-table__sort
+												span.admin-table__sort-up
+												span.admin-table__sort-down
+											|Generated
 
-								.admin-table__item.d-none.d-lg-table-cell
-									.admin-table__head
-										|Event Type
+									th.admin-table__item.d-none.d-lg-table-cell
+										.admin-table__head
+											|Event Type
 
-								.admin-table__item.d-none.d-lg-table-cell
-									.admin-table__head
-										|Status
+									th.admin-table__item.d-none.d-lg-table-cell
+										.admin-table__head
+											|Status
 
-								.admin-table__item
+									th.admin-table__item
 
 							-
 								var rows=[

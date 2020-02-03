@@ -18,7 +18,7 @@
 }
 
 .admin-table{
-	display: table;
+	// display: table;
 	width: 100%;
 	@include font(normal, normal, 14px, 20px, $color-grey);
 	background: #fff;
@@ -29,27 +29,17 @@
 	&_green{border-left: 5px solid $color-green;}
 	&_red{border-left: 5px solid $color-light-red;}
 
-	&__head,
-	&__row{
-		display: table-row;
-	}
+	// &__head,
+	// &__row{
+	// 	display: table-row;
+	// }
 
 	&__item{
-		display: table-cell;
+		// display: table-cell;
 		vertical-align: middle;
 		height: 40px;
 		padding: 2.7px 25px;
 		position: relative;
-		border-top: 1px solid transparent;
-		border-bottom: 1px solid transparent;
-	}
-
-	&__item:last-child{
-		border-right: 1px solid transparent;
-	}
-
-	&__item:first-child{
-		border-left: 5px solid transparent;
 	}
 
 	&__item_menu{
@@ -80,6 +70,11 @@
 	&__name:hover .tooltip,
 	&__name .tooltip.active{
 		display: table;
+	}
+
+	&__name:hover .tooltip__content,
+	&__name .tooltip.active .tooltip__content{
+		display: table-cell;
 	}
 
 	&__head &__item{
@@ -146,7 +141,22 @@
 	}
 
 	&__row.active &__item{
-		border-color: $color-dark-purple;
+		border-top: 1px solid $color-dark-purple;
+		border-bottom: 1px solid $color-dark-purple;
+	}
+
+	&__row.active &__item:last-child{
+		border-right: 1px solid $color-dark-purple;
+		padding-right: 24px;
+	}
+
+	&__row.active &__item:last-child.admin-table__item_menu{
+		padding-right: 0;
+	}
+
+	&__row.active &__item:first-child{
+		border-left: 5px solid $color-dark-purple;
+		padding-left: 20px;
 	}
 
 	&__notice{
@@ -229,6 +239,13 @@
 	&__icon:hover .tooltip,
 	&__icon .tooltip.active{
 		display: table;
+	}
+
+	&__icon-label:hover .tooltip__content,
+	&__icon-label .tooltip.active .tooltip__content,
+	&__icon:hover .tooltip__content,
+	&__icon .tooltip.active .tooltip__content{
+		display: table-cell;
 	}
 
 	.tooltip{
@@ -419,7 +436,10 @@
 
 		&,
 		&__head,
-		&__row{
+		&__row,
+		thead,
+		tbody,
+		tr{
 			display: block;
 		}
 
@@ -427,10 +447,22 @@
 			position: relative;
 		}
 
-		&__item{
+		&__item,
+		td{
 			display: flex;
 			align-items: center;
 			min-height: 40px;
+		}
+
+		&__row.active &__item,
+		&__row.active &__item:first-child,
+		&__row.active &__item:last-child{
+			border: 0;
+		}
+
+		&__row.active{
+			border: 1px solid $color-dark-purple;
+			border-left: 5px solid $color-dark-purple;
 		}
 
 		&__head &__item:last-child{

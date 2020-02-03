@@ -91,65 +91,70 @@ mixin adminTableFilter(status)
 					input.btn.btn_small(type="submit", value="Apply")
 
 mixin adminTableRow(rows)
-	each row in rows
-		.admin-table__row(class=row.row.selected?'active':'')
-			.admin-table__item
-				.admin-table__name= row.name.title
-					if(row.name.tooltip)
-						span.tooltip(class=row.name.tooltip_status?'active':'')= row.name.title
+	tbody
+		each row in rows
+			tr.admin-table__row(class=row.row.selected?'active':'')
+				td.admin-table__item
+					.admin-table__name= row.name.title
+						if(row.name.tooltip)
+							span.tooltip(class=row.name.tooltip_status?'active':'')
+								span.tooltip__content= row.name.title
 
-			each field in row.fields
-				.admin-table__item(class=field.class?field.class:'')
-					if(field.icon)
-						if(field.icon_color=='true')
-							span.admin-table__icon
-								+svg(field.icon,field.icon)
-								if(field.tooltip_icon)
-									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip_icon
+				each field in row.fields
+					td.admin-table__item(class=field.class?field.class:'')
+						if(field.icon)
+							if(field.icon_color=='true')
+								span.admin-table__icon
+									+svg(field.icon,field.icon)
+									if(field.tooltip_icon)
+										span.tooltip(class=field.tooltip_status?'active':'')
+											span.tooltip__content= field.tooltip_icon
+							else
+								span.admin-table__icon
+									+svg(field.icon,field.icon+' ic-grey')
+									if(field.tooltip_icon)
+										span.tooltip(class=field.tooltip_status?'active':'')
+											span.tooltip__content= field.tooltip_icon
+
+							if(field.title)
+								span.admin-table__icon-label= field.title
+									if(field.tooltip)
+										span.tooltip(class=field.tooltip_status?'active':'')
+											span.tooltip__content= field.tooltip
 						else
-							span.admin-table__icon
-								+svg(field.icon,field.icon+' ic-grey')
-								if(field.tooltip_icon)
-									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip_icon
+							= field.title
 
-						if(field.title)
-							span.admin-table__icon-label= field.title
-								if(field.tooltip)
-									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip
-					else
-						= field.title
+				td.admin-table__item.admin-table__item_menu
+					if row.menu
+						if row.menu.notice
+							.admin-table__notice.d-none.d-md-inline-block
+								+svg(row.menu.notice,row.menu.notice)
 
-			.admin-table__item.admin-table__item_menu
-				if row.menu
-					if row.menu.notice
-						.admin-table__notice.d-none.d-md-inline-block
-							+svg(row.menu.notice,row.menu.notice)
+						.admin-table-action
+							span.admin-table-action__menu.ic-hover
+								+svg('ic-dot-menu','ic-dot-menu')
 
-					.admin-table-action
-						span.admin-table-action__menu.ic-hover
-							+svg('ic-dot-menu','ic-dot-menu')
+								.admin-table-popup(class=row.menu.popup?'active':'')
+									.admin-table-popup__top
+										if(row.menu.icons)
+											each icon in row.menu.icons
+												a.admin-table-popup__item(href="#",class=icon.disable?'disable':'')
+													.admin-table-popup__icon
+														+svg(icon.img,icon.img)
+													.admin-table-popup__text !{icon.text}
 
-							.admin-table-popup(class=row.menu.popup?'active':'')
-								.admin-table-popup__top
-									if(row.menu.icons)
-										each icon in row.menu.icons
-											a.admin-table-popup__item(href="#",class=icon.disable?'disable':'')
-												.admin-table-popup__icon
-													+svg(icon.img,icon.img)
-												.admin-table-popup__text !{icon.text}
-
-								.admin-table-popup__bottom
-									if(row.menu.icons_bottom)
-										each icon in row.menu.icons_bottom
+									.admin-table-popup__bottom
+										if(row.menu.icons_bottom)
+											each icon in row.menu.icons_bottom
+												a(href="#").admin-table-popup__item
+													.admin-table-popup__icon
+														+svg(icon.img,icon.img)
+													.admin-table-popup__text= icon.text
+										else
 											a(href="#").admin-table-popup__item
 												.admin-table-popup__icon
-													+svg(icon.img,icon.img)
-												.admin-table-popup__text= icon.text
-									else
-										a(href="#").admin-table-popup__item
-											.admin-table-popup__icon
-												+svg('ic-delete','ic-delete')
-											.admin-table-popup__text Delete
+													+svg('ic-delete','ic-delete')
+												.admin-table-popup__text Delete
 
 
 								
@@ -225,7 +230,8 @@ mixin modalWindow(error, status)
 							|Template
 							span.form-site__info
 								+svg('ic-help','ic-help')
-								span.tooltip Tooltip
+								span.tooltip
+									span.tooltip__content Tooltip
 
 							span.form-site__optional Optional
 

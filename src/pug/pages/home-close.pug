@@ -27,52 +27,53 @@ block content
 									.admin-table-wrap__col
 										+formSearch('d-none d-md-block','Search Query Name')
 
-								.admin-table.admin-table_yellow
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Name
+								table.admin-table.admin-table_yellow
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Modified
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Modified
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Created
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Created
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Shared
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|Shared
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|IRB
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|IRB
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Status
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|Status
 
-										.admin-table__item.d-none.d-xl-table-cell
-											.admin-table__head Columns
+											th.admin-table__item.d-none.d-xl-table-cell
+												.admin-table__head Columns
 
-										.admin-table__item.d-none.d-xxl-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Cohort size
+											th.admin-table__item.d-none.d-xxl-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Cohort size
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[
@@ -286,34 +287,35 @@ block content
 									.admin-table-wrap__col
 										+formSearch('d-none d-md-block','Search Query Name')
 
-								.admin-table.admin-table_blue
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Name
+								table.admin-table.admin-table_blue
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort.admin-table__sort_asc
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Modified
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort.admin-table__sort_asc
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Modified
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Shared by
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Shared by
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|My Permissions
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|My Permissions
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[
@@ -408,28 +410,29 @@ block content
 
 						.unwrap__content
 							.admin-table-wrap
-								.admin-table.admin-table_green
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												|Key name
+								table.admin-table.admin-table_green
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													|Key name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												|Research
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													|Research
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												|Status
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													|Status
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												span.admin-table__sort.admin-table__sort_asc
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Expiration date
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													span.admin-table__sort.admin-table__sort_asc
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Expiration date
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[

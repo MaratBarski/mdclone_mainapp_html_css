@@ -32,67 +32,68 @@ block content
 
 							+formSearch('d-none d-md-block')
 
-					.admin-table
-						.admin-table__head
-							.admin-table__item
-								.admin-table__head
-									span.admin-table__sort
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|Name
+					table.admin-table
+						thead
+							tr.admin-table__head
+								th.admin-table__item
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Name
 
-							.admin-table__item.d-none.d-md-table-cell
-								.admin-table__head
-									span.admin-table__sort.admin-table__sort_desk
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|Loaded
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										span.admin-table__sort.admin-table__sort_desk
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Loaded
 
-							.admin-table__item.d-none.d-md-table-cell
-								.admin-table__head
-									span.admin-table__sort
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|Environment
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Environment
 
-									+adminTableFilter()
+										+adminTableFilter()
 
-							.admin-table__item.d-none.d-lg-table-cell
-								.admin-table__head
-									span.admin-table__sort
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|Template
+								th.admin-table__item.d-none.d-lg-table-cell
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Template
 
-									.admin-table-filter
-										.admin-table-filter__icon
-											span.ic-hover
-												+svg('ic-filter','ic-filter ic-stroke')
+										.admin-table-filter
+											.admin-table-filter__icon
+												span.ic-hover
+													+svg('ic-filter','ic-filter ic-stroke')
 
-							.admin-table__item.d-none.d-xl-table-cell
-								.admin-table__head
-									|User
+								th.admin-table__item.d-none.d-xl-table-cell
+									.admin-table__head
+										|User
 
-									.admin-table-filter
-										.admin-table-filter__icon
-											span.ic-hover
-												+svg('ic-filter','ic-filter ic-stroke')
+										.admin-table-filter
+											.admin-table-filter__icon
+												span.ic-hover
+													+svg('ic-filter','ic-filter ic-stroke')
 
-							.admin-table__item.d-none.d-md-table-cell
-								.admin-table__head
-									|Shared
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										|Shared
 
-							.admin-table__item.d-none.d-xxl-table-cell
-								.admin-table__head Columns
+								th.admin-table__item.d-none.d-xxl-table-cell
+									.admin-table__head Columns
 
-							.admin-table__item.d-none.d-xxl-table-cell
-								.admin-table__head
-									span.admin-table__sort
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|Rows
+								th.admin-table__item.d-none.d-xxl-table-cell
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Rows
 
-							.admin-table__item
+								th.admin-table__item
 
 						-
 							var rows = [

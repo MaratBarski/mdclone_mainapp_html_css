@@ -28,52 +28,53 @@ block content
 									.admin-table-wrap__col
 										+formSearch('d-none d-md-block','Search Query Name')
 
-								.admin-table.admin-table_yellow
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Name
+								table.admin-table.admin-table_yellow
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Modified
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Modified
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Created
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Created
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Shared
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|Shared
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|IRB
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|IRB
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Status
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|Status
 
-										.admin-table__item.d-none.d-xl-table-cell
-											.admin-table__head Columns
+											th.admin-table__item.d-none.d-xl-table-cell
+												.admin-table__head Columns
 
-										.admin-table__item.d-none.d-xxl-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Cohort size
+											th.admin-table__item.d-none.d-xxl-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Cohort size
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[
@@ -218,34 +219,35 @@ block content
 									.admin-table-wrap__col
 										+formSearch('d-none d-md-block','Search Query Name')
 
-								.admin-table.admin-table_blue
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Name
+								table.admin-table.admin-table_blue
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort.admin-table__sort_asc
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Modified
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort.admin-table__sort_asc
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Modified
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Shared by
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													span.admin-table__sort
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Shared by
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|My Permissions
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													|My Permissions
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[
@@ -316,171 +318,34 @@ block content
 						.unwrap__head
 							span.unwrap__arr.ic-hover
 								+svg('ic-select-arr-down','ic-select-arr-down')
-							span.unwrap__title My Events | 
-								span.unwrap__count 4
-
-						.unwrap__content
-							.admin-table-wrap
-								.admin-table-wrap__action
-									.admin-table-wrap__col
-										.split-btn
-											.split-btn__title New Event
-											.split-btn__arr
-												+svg('ic-select-arr-down','ic-select-arr-down')
-
-											.split-btn__popup
-												.split-btn__item Action number 00001
-												.split-btn__item Action number 00002
-												.split-btn__item Action number 00003
-												.split-btn__item Action number 00004
-
-									.admin-table-wrap__col
-										+formSearch('d-none d-md-block','Search Event Name')
-
-
-								.admin-table.admin-table_red
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Name
-
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort.admin-table__sort_asc
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Modified
-
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												span.admin-table__sort
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Generated
-
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Event Type
-
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												|Status
-
-										.admin-table__item
-
-									-
-										var rows=[
-											{
-												row:{selected:''},
-												name:{title:'eGFR and calculated CKD'},
-												fields:[
-													{title:'Nov 7, 2019', class:'d-none d-md-table-cell'},
-													{title:'Nov 21, 2010', class:'d-none d-md-table-cell'},
-													{icon:'ic-and', class:'d-none d-lg-table-cell'},
-													{icon:'ic-running', title:'Generating', class:'d-none d-lg-table-cell'},
-												],
-												menu:{
-													icons:[
-														{img:'ic-edit', text:'Edit'},
-														{img:'ic-duplicate', text:'Duplicate'},
-														{img:'ic-send', text:'Send'},
-													]
-												}
-											},
-											{
-												row:{selected:''},
-												name:{title:'eGFR'},
-												fields:[
-													{title:'Oct 8, 2019', class:'d-none d-md-table-cell'},
-													{title:'Nov 5, 2019', class:'d-none d-md-table-cell'},
-													{icon:'ic-and', class:'d-none d-lg-table-cell'},
-													{icon:'ic-success', title:'Active', class:'d-none d-lg-table-cell'},
-												],
-												menu:{
-													icons:[
-														{img:'ic-edit', text:'Edit'},
-														{img:'ic-duplicate', text:'Duplicate'},
-														{img:'ic-send', text:'Send'},
-													]
-												}
-											},
-											{
-												row:{selected:''},
-												name:{title:'CKD patient list provided by Shibe'},
-												fields:[
-													{title:'Sep 8, 2019', class:'d-none d-md-table-cell'},
-													{title:'Oct 8, 2019', class:'d-none d-md-table-cell'},
-													{icon:'ic-and', class:'d-none d-lg-table-cell'},
-													{icon:'ic-failure', title:'Failed', class:'d-none d-lg-table-cell'},
-												],
-												menu:{
-													popup:'active',
-													icons:[
-														{img:'ic-edit', text:'Edit'},
-														{img:'ic-duplicate', text:'Duplicate'},
-														{img:'ic-send', text:'Send'},
-													]
-												}
-											},
-											{
-												row:{selected:''},
-												name:{title:'CKD and Diabetes (Type 1) - example of very very long name'},
-												fields:[
-													{title:'Sep 10, 2019', class:'d-none d-md-table-cell'},
-													{title:'Sep 11, 2019', class:'d-none d-md-table-cell'},
-													{icon:'ic-upload', class:'d-none d-lg-table-cell'},
-													{icon:'ic-running', title:'Generating', class:'d-none d-lg-table-cell'},
-												],
-												menu:{
-													icons:[
-														{img:'ic-edit', text:'Edit'},
-														{img:'ic-duplicate', text:'Duplicate'},
-														{img:'ic-send', text:'Send'},
-													]
-												}
-											},
-										];
-
-									+adminTableRow(rows)
-
-	section.query-wrap
-		.container-fluid
-			.row
-				.col-12
-					.unwrap
-						.unwrap__head
-							span.unwrap__arr.ic-hover
-								+svg('ic-select-arr-down','ic-select-arr-down')
 							span.unwrap__title My Approval Keys | 
 								span.unwrap__count 2
 
 						.unwrap__content
 							.admin-table-wrap
-								.admin-table.admin-table_green
-									.admin-table__head
-										.admin-table__item
-											.admin-table__head
-												|Key name
+								table.admin-table.admin-table_green
+									thead
+										tr.admin-table__head
+											th.admin-table__item
+												.admin-table__head
+													|Key name
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												|Research
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													|Research
 
-										.admin-table__item.d-none.d-md-table-cell
-											.admin-table__head
-												|Status
+											th.admin-table__item.d-none.d-md-table-cell
+												.admin-table__head
+													|Status
 
-										.admin-table__item.d-none.d-lg-table-cell
-											.admin-table__head
-												span.admin-table__sort.admin-table__sort_asc
-													span.admin-table__sort-up
-													span.admin-table__sort-down
-												|Expiration date
+											th.admin-table__item.d-none.d-lg-table-cell
+												.admin-table__head
+													span.admin-table__sort.admin-table__sort_asc
+														span.admin-table__sort-up
+														span.admin-table__sort-down
+													|Expiration date
 
-										.admin-table__item
+											th.admin-table__item
 
 									-
 										var rows=[
