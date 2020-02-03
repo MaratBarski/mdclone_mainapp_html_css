@@ -92,7 +92,7 @@ mixin adminTableFilter(status)
 
 mixin adminTableRow(rows)
 	each row in rows
-		.admin-table__row
+		.admin-table__row(class=row.row.selected?'active':'')
 			.admin-table__item
 				.admin-table__name= row.name.title
 					if(row.name.tooltip)
@@ -102,12 +102,20 @@ mixin adminTableRow(rows)
 				.admin-table__item(class=field.class?field.class:'')
 					if(field.icon)
 						if(field.icon_color=='true')
-							+svg(field.icon,field.icon)
+							span.admin-table__icon
+								+svg(field.icon,field.icon)
+								if(field.tooltip_icon)
+									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip_icon
 						else
-							+svg(field.icon,field.icon+' ic-grey')
+							span.admin-table__icon
+								+svg(field.icon,field.icon+' ic-grey')
+								if(field.tooltip_icon)
+									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip_icon
 
 						if(field.title)
 							span.admin-table__icon-label= field.title
+								if(field.tooltip)
+									span.tooltip(class=field.tooltip_status?'active':'')= field.tooltip
 					else
 						= field.title
 
@@ -194,11 +202,12 @@ mixin modalWindow(error, status)
 	
 					.form-site__shared
 						if (status=='active')
-							span.form-site__shared-notice.d-none.d-md-inline
+							span.form-site__shared-notice
 								+svg('ic-shared','ic-shared')
-								|File is shared now. It can be viewed and used by everyone.
+								span.form-site__shared-text File is shared now. It can be viewed and used by everyone.
 						else
-							span When file is shared everyone can see and use it.
+							span.form-site__shared-notice
+								span.form-site__shared-text When file is shared everyone can see and use it.
 
 						.switch
 							if (status=='active')
@@ -296,7 +305,7 @@ mixin pager(title)
 					a(href="#") 2
 				span.pager__item
 					a(href="#") 3
-				span.pager__item ...
+				span.pager__item.pager__item_dots ...
 				span.pager__item
 					a(href="#") 6
 			a(href="#").pager__arr.pager__arr_right.active.ic-hover

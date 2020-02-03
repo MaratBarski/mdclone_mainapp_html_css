@@ -40,6 +40,16 @@
 		height: 40px;
 		padding: 2.7px 25px;
 		position: relative;
+		border-top: 1px solid transparent;
+		border-bottom: 1px solid transparent;
+	}
+
+	&__item:last-child{
+		border-right: 1px solid transparent;
+	}
+
+	&__item:first-child{
+		border-left: 5px solid transparent;
 	}
 
 	&__item_menu{
@@ -126,9 +136,17 @@
 		display: none;
 	}
 
-	&__row:hover,
-	&__row:hover &__name{
-		color: #121111;
+	// &__row:hover,
+	// &__row:hover &__name{
+	// 	color: #121111;
+	// }
+
+	&__row:hover{
+		box-shadow: 0 2px 5px 0 #dbe4f9;
+	}
+
+	&__row.active &__item{
+		border-color: $color-dark-purple;
 	}
 
 	&__notice{
@@ -139,30 +157,48 @@
 		@include top-center;
 	}
 
-	&__item > .icon{
+	&__icon{
+		position: relative;
+	}
+
+	&__item > .icon,
+	&__icon .icon{
 		display: inline-block;
 		vertical-align: middle;
 		width: 20px;
 		height: 20px;
 	}
 
-	&__item > .ic-shared{
+	&__item > .ic-shared,
+	&__icon .ic-shared{
 		width: 19px;
 		height: 17px;
 	}
 
-	&__item > .ic-duplicate{
+	&__item > .ic-duplicate,
+	&__icon .ic-duplicate{
 		width: 27px;
 		height: 27px;
 	}
 
-	&__item > .ic-and{
+	&__item > .ic-data,
+	&__icon .ic-data{
+		width: 20px;
+		height: 24px;
+	}
+
+	&__item > .ic-and,
+	&__item > .ic-or,
+	&__icon .ic-and,
+	&__icon > .ic-or{
 		width: 25px;
 		height: 17px;
 	}
 
 	&__item > .ic-success,
-	&__item > .ic-warning{
+	&__item > .ic-warning,
+	&__icon .ic-success,
+	&__icon .ic-warning{
 		width: 18px;
 		height: 18px;
 	}
@@ -171,6 +207,28 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin-left: 12px;
+		position: relative;
+	}
+
+	&__icon-label .tooltip,
+	&__icon .tooltip{
+		display: none;
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		z-index: 10;
+		white-space: nowrap;
+	}
+
+	&__icon .tooltip{
+		left: -10px;
+	}
+
+	&__icon-label:hover .tooltip,
+	&__icon-label .tooltip.active,
+	&__icon:hover .tooltip,
+	&__icon .tooltip.active{
+		display: table;
 	}
 
 	.tooltip{

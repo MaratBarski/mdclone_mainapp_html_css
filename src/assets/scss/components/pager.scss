@@ -22,6 +22,10 @@
 		padding: 0 15px;
 	}
 
+	&__item_dots{
+		color: $color-light-grey;
+	}
+
 	&__item a{color: $color-blue;}
 
 	&__item.active{

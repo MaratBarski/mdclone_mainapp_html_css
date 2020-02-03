@@ -1,8 +1,9 @@
 extends ../layout/main
 
 block variables
-	- var title = 'User dashboard';
-	- var h1 = 'User dashboard';
+	- var title = 'Home';
+	- var h1 = 'Home';
+	- var body_scroll = 'false';
 
 block content
 	section.query-wrap
@@ -77,6 +78,7 @@ block content
 									-
 										var rows=[
 											{
+												row:{selected:''},
 												name:{title:'CKD patients with all their medications patients with all their medications'},
 												fields:[
 													{title:'Nov 26, 2019', class:'d-none d-md-table-cell'},
@@ -100,6 +102,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'CKD patients with all their medications patients with all their medications'},
 												fields:[
 													{title:'Nov 5, 2019', class:'d-none d-md-table-cell'},
@@ -122,6 +125,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'1234567890123456789012345678901289012'},
 												fields:[
 													{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
@@ -144,6 +148,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'20180813_134819_20180726_21210'},
 												fields:[
 													{title:'Nov 2, 2019', class:'d-none d-md-table-cell'},
@@ -166,6 +171,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'DM-Tests - 2 date formats in t'},
 												fields:[
 													{title:'Oct 21, 2019', class:'d-none d-md-table-cell'},
@@ -244,6 +250,7 @@ block content
 									-
 										var rows=[
 											{
+												row:{selected:''},
 												name:{title:'Diabetes: patients with Kidney desease (3-4)'},
 												fields:[
 													{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
@@ -261,6 +268,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'12345678901234567890123456789012345678901234567890546'},
 												fields:[
 													{title:'Oct 11, 2019', class:'d-none d-md-table-cell'},
@@ -279,6 +287,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'Diabetes: Type 1 patients with ESRD'},
 												fields:[
 													{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
@@ -365,6 +374,7 @@ block content
 									-
 										var rows=[
 											{
+												row:{selected:''},
 												name:{title:'eGFR and calculated CKD'},
 												fields:[
 													{title:'Nov 7, 2019', class:'d-none d-md-table-cell'},
@@ -381,6 +391,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'eGFR'},
 												fields:[
 													{title:'Oct 8, 2019', class:'d-none d-md-table-cell'},
@@ -397,6 +408,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'CKD patient list provided by Shibe'},
 												fields:[
 													{title:'Sep 8, 2019', class:'d-none d-md-table-cell'},
@@ -414,6 +426,7 @@ block content
 												}
 											},
 											{
+												row:{selected:''},
 												name:{title:'CKD and Diabetes (Type 1) - example of very very long name'},
 												fields:[
 													{title:'Sep 10, 2019', class:'d-none d-md-table-cell'},
@@ -472,6 +485,7 @@ block content
 									-
 										var rows=[
 											{
+												row:{selected:''},
 												name:{title:'28549-1-CKD patients'},
 												fields:[
 													{title:'CKD research approval 2', class:'d-none d-md-table-cell'},
@@ -480,6 +494,7 @@ block content
 												],
 											},
 											{
+												row:{selected:''},
 												name:{title:'215490-0215490-0215490-0215490-0215490-0215490-021549532'},
 												fields:[
 													{title:'CKD research approval', class:'d-none d-md-table-cell'},
@@ -490,3 +505,5 @@ block content
 										];
 
 									+adminTableRow(rows)
+
+	+modalWindowQuery()

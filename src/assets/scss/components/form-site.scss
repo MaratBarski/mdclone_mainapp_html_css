@@ -62,13 +62,15 @@
 	&__shared{
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
+		// align-items: center;
+		// flex-wrap: wrap;
 		@include font(normal, normal, 14px, 1.25, $color-dark-grey);
 	}
 
 	&__shared-notice{
+		display: inline-flex;
 		margin-right: 17px;
+		width: calc(100% - 100px);
 	}
 
 	&__shared-notice .ic-shared{
@@ -80,9 +82,9 @@
 		fill: $color-grey;
 	}
 
-	&__shared-notice .ic-shared{
-		margin-top: -4px;
-	}
+	// &__shared-notice .ic-shared{
+	// 	margin-top: -4px;
+	// }
 
 	&__btn{
 		display: flex;
