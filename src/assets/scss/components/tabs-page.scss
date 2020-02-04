@@ -19,14 +19,15 @@
 	}
 
 	&__item:hover{
-		color: #3f0280;
+		color: $color-dark-purple;
 		text-decoration: none;
-		border-color: #3f0280;
+		background: rgba(83, 3, 168, 0.05);
 	}
 
 	&__item.active:hover{
 		color: #fff;
-		border-color: $color-dark-purple;
+		border-color: #3f0280;
+		background: #3f0280;
 	}
 
 	&__item:first-child{

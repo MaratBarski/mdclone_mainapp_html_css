@@ -400,7 +400,7 @@
 		}
 
 		&__item:first-child{padding-left: 25px;}
-		&__item:last-child{padding-right: 5px;}
+		&__item:last-child, &__row.active &__item:last-child.admin-table__item_menu{padding-right: 5px;}
 	}
 }
 
