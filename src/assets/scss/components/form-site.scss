@@ -1,7 +1,7 @@
 /*-------------- form-site -----------------*/
 .form-site{
 	&__item{
-		margin-bottom: 25px;
+		margin-bottom: 24px;
 		position: relative;
 	}
 
@@ -65,12 +65,13 @@
 		// align-items: center;
 		// flex-wrap: wrap;
 		@include font(normal, normal, 14px, 1.25, $color-dark-grey);
+		margin-top: 6px;
 	}
 
 	&__shared-notice{
 		display: inline-flex;
-		margin-right: 17px;
-		width: calc(100% - 100px);
+		padding-right: 10px;
+		width: calc(100% - 65px);
 	}
 
 	&__shared-notice .ic-shared{
@@ -80,6 +81,10 @@
 		height: 17px;
 		margin-right: 8px;
 		fill: $color-grey;
+	}
+
+	&__shared .switch{
+		margin-top: -2px;
 	}
 
 	// &__shared-notice .ic-shared{
