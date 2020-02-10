@@ -8,8 +8,8 @@
 		height: 30px;
 		width: 100%;
 		padding-right: 38px;
-		@include font(normal, normal, 16px, 28px, $color-dark-blue);
-		padding: 5px 0 1px 26px;
+		@include font(normal, normal, 14px, 28px, $color-dark-blue);
+		padding: 5px 0 0 26px;
 		margin: 0;
 		border: 0;
 		outline: 0;
@@ -17,13 +17,12 @@
 		background: transparent;
 	}
 
-	input[type="text"]::placeholder{font-weight: 300; color: $color-dark-grey; opacity: 1;}
-	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-dark-grey; opacity: 1;}
-	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-dark-grey; opacity: 1;}
+	input[type="text"]::placeholder{font-weight: 300; color: $color-grey; opacity: 1;}
+	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
+	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
 
 	input[type="text"]:focus{
-		border-bottom: 2px solid $color-dark-purple;
-		padding-bottom: 0;
+		border-color: $color-dark-purple;
 	}
 
 	input[type="submit"],
@@ -47,11 +46,6 @@
 		width: 16px;
 		height: 16px;
 		fill: $color-grey;
-	}
-	
-	// input[type="text"]:focus + input[type="submit"],
-	input[type="text"]:focus+button .icon{
-		fill: $color-dark-blue;
 	}
 
 	&__close{
@@ -81,19 +75,17 @@
 
 	&_white input[type="text"]{color: #fff;}
 
-	&_white input[type="text"]{border-color: #fff;}
-	&_white input[type="text"]:focus{border-bottom: 2px solid #fff;}
+	&_white input[type="text"],
+	&_white input[type="text"]:focus{
+		border-color: #fff;
+	}
 
-	// &_white input[type="submit"],
 	&_white button .icon,
-	// &_white input[type="text"]:focus + input[type="submit"],
 	&_white input[type="text"]:focus+button .icon{
 		fill: #fff;
 	}
 
 	&_white &__close .ic-close-small{stroke: #fff;}
-
-	
 }
 
 @media (max-width: 991px) {

@@ -20,7 +20,7 @@
 .admin-table{
 	// display: table;
 	width: 100%;
-	@include font(normal, normal, 14px, 20px, $color-grey);
+	@include font(normal, normal, 14px, 20px, $color-dark-grey);
 	background: #fff;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
 
@@ -54,8 +54,6 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		color: $color-dark-grey;
-		// position: relative;
 	}
 
 	&__name .tooltip{
@@ -131,32 +129,30 @@
 		display: none;
 	}
 
-	// &__row:hover,
-	// &__row:hover &__name{
-	// 	color: #121111;
-	// }
+	&__row{
+		position: relative;
+	}
 
 	&__row:hover{
 		box-shadow: 0 2px 5px 0 #dbe4f9;
+		position: relative;
+		z-index: 1;
 	}
 
-	&__row.active &__item{
-		border-top: 1px solid $color-dark-purple;
-		border-bottom: 1px solid $color-dark-purple;
+	&__row.active{
+		box-shadow: 0px 0px 1px 1px $color-dark-purple;
+		z-index: 2;
 	}
 
-	&__row.active &__item:last-child{
-		border-right: 1px solid $color-dark-purple;
-		padding-right: 24px;
-	}
-
-	&__row.active &__item:last-child.admin-table__item_menu{
-		padding-right: 0;
-	}
-
-	&__row.active &__item:first-child{
-		border-left: 5px solid $color-dark-purple;
-		padding-left: 20px;
+	&__row.active &__item:first-child::before{
+		content: '';
+		display: inline-block;
+		width: 5px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $color-dark-purple;
 	}
 
 	&__notice{
