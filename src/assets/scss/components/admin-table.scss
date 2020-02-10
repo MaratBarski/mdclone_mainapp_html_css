@@ -24,10 +24,10 @@
 	background: #fff;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
 
-	&_yellow{border-left: 5px solid $color-yellow;}
-	&_blue{border-left: 5px solid $color-blue;}
-	&_green{border-left: 5px solid $color-green;}
-	&_red{border-left: 5px solid $color-light-red;}
+	&_yellow{box-shadow: -5px 0px 0px 0px $color-yellow;}
+	&_blue{box-shadow: -5px 0px 0px 0px $color-blue;}
+	&_green{box-shadow: -5px 0px 0px 0px $color-green;}
+	&_red{box-shadow: -5px 0px 0px 0px $color-red;}
 
 	// &__head,
 	// &__row{

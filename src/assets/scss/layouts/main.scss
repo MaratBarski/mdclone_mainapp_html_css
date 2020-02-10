@@ -123,7 +123,7 @@ button.btn{
 	border: 1px solid $color-dark-purple;
 	border-radius: 15px;
 	outline: 0;
-	@include font(normal, 600, 14px, 28px, #fff);
+	@include font(normal, 400, 14px, 28px, #fff);
 	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
