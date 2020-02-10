@@ -176,6 +176,12 @@ button.btn_border.btn_disable:hover{
 	cursor: auto;
 }
 
+.btn_icon,
+input[type="submit"].btn_icon,
+button.btn_icon{
+	padding: 0 25px;
+}
+
 .btn_small,
 input[type="submit"].btn_small,
 button.btn_small{
