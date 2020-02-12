@@ -1,0 +1,75 @@
+extends ../layout/main
+
+block variables
+	- var title = 'File Mapping';
+	- var footer = 'show';
+	//- - var h1 = 'Imported files';
+
+block content
+	+mappingHead('popup')
+
+	+infoPanel('inactive')
+
+	section.admin-table-wrap
+		.container-fluid
+			.row
+				.col-12
+					.admin-table-wrap__action
+						.admin-table-wrap__col
+
+						.admin-table-wrap__col
+							+formSearch('d-none d-md-block','Search Query Name')
+
+					table.admin-table.admin-table_white
+						thead
+							tr.admin-table__head
+								th.admin-table__item.d-none.d-md-table-cell
+									.input-check
+										input#paramall(type='checkbox', name='paramall')
+										label.input-check__label(for='paramall')
+											span.input-check__mark
+												+svg('ic-check','ic-check')
+
+								th.admin-table__item
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Column Name
+
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Data Type
+
+										+mappingTableFilter('active')
+
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										|Associated Hierarchy
+										span.admin-table__option Optional
+
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__head
+										|% Match
+
+								th.admin-table__item.d-none.d-lg-table-cell
+									.admin-table__head
+										|Data Sample
+
+						-
+							var rows = [
+								{name:'Gender', data_active:'2', data_inactive:'3', hierarchy:'show', progress:'75', data:'F'},
+								{name:'Reference Event-Age at transfer', data_active:'2', data_inactive:'3', hierarchy:'show', progress:'0', data:'60.24383562'},
+								{name:'Reference Event-Out date (current care unit)', data_active:'2', data_inactive:'3', hierarchy:'show', progress:'25', data:'60'},
+								{name:'Reference Event-Length of stay', data_active:'1', data_inactive:'3', data:'18'},
+								{name:'Hospitalization cost', data_active:'2', data_inactive:'3', hierarchy:'show', progress:'50', data:'1800'},
+								{name:'Admission diag-Diagnosis', data_active:'1', data_inactive:'3', data:'Mitral and aortic vaves insuff Mitral and aortic vaves insuff Mitral and aortic vaves', tooltip:'true', tooltip_status:'active'},
+								{name:'First creatinine-Age at lab test', data_active:'2', data_inactive:'1', data:'60.24383562'},
+								{name:'First creatinine-Lab result numeric', data_active:'1', data_inactive:'3', data:'5.2'},
+								{name:'First creatinine-Result date', data_active:'3', data_inactive:'1', data:'0.020127315'},
+								{name:'Last creatinine at discharge-Lab result numeric',data_active:'1', data_inactive:'2,3', data:'6.7'},
+							];
+						+mappingTableRow(rows)

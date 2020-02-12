@@ -92,6 +92,54 @@ mixin adminTableFilter(status)
 					a(href="#").btn.btn_border.btn_small Cancel
 					input.btn.btn_small(type="submit", value="Apply")
 
+mixin mappingTableFilter(status)
+	.admin-table-filter
+		.admin-table-filter__icon
+			span.ic-hover
+				if(status=='active')
+					+svg('ic-filter','ic-filter')
+				else
+					+svg('ic-filter','ic-filter ic-stroke')
+
+		.admin-table-filter__popup(class=status?'active':'')
+			form
+				.admin-table-filter__top
+					.input-check
+						input#paramAll(type='checkbox', name='paramAll')
+						label.input-check__label(for='paramAll')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
+							span.input-check__text Select All
+
+					a(href="#").admin-table-filter__clear Clear
+
+				.admin-table-filter__params
+					.input-check
+						input#param1(type='checkbox', name='param1')
+						label.input-check__label(for='param1')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
+							span.input-check__text # - Numeric
+
+					.input-check
+						input#param2(type='checkbox', name='param2', checked="checked")
+						label.input-check__label(for='param2')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
+							span.input-check__text A - String
+
+					.input-check
+						input#param3(type='checkbox', name='param3')
+						label.input-check__label(for='param3')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
+							span.input-check__text D - Date
+
+
+				.admin-table-filter__btn
+					a(href="#").btn.btn_border.btn_small Cancel
+					input.btn.btn_small(type="submit", value="Apply")
+
 mixin adminTableRow(rows)
 	tbody
 		each row in rows
@@ -158,8 +206,60 @@ mixin adminTableRow(rows)
 													+svg('ic-delete','ic-delete')
 												.admin-table-popup__text Delete
 
+mixin mappingTableRow(rows)
+	tbody
+		each row, index in rows
+			tr.admin-table__row
+				td.admin-table__item.d-none.d-md-table-cell
+					.input-check
+						input(type='checkbox', name='param'+index+'1', id='param'+index+'1')
+						label.input-check__label(for='param'+index+'1')
+							span.input-check__mark
+								+svg('ic-check','ic-check')
 
-								
+				td.admin-table__item
+					.admin-table__name-edit
+						input(type="text", value=row.name)
+
+				td.admin-table__item.d-none.d-md-table-cell
+					.switch-icon
+						.switch-icon__item(class=(row.data_active=='1')?'active':(row.data_inactive=='1')?'disable':'')
+							+svg('ic-numeric','ic-numeric')
+
+						.switch-icon__item(class=(row.data_active=='2')?'active':(row.data_inactive=='2' || row.data_inactive=='2,3')?'disable':'')
+							+svg('ic-textual','ic-textual')
+
+						.switch-icon__item(class=(row.data_active=='3')?'active':(row.data_inactive=='3' || row.data_inactive=='2,3')?'disable':'')
+							+svg('ic-calendar','ic-calendar')
+
+				td.admin-table__item.d-none.d-md-table-cell
+					if(row.hierarchy)
+						.select.select_small
+							.select__head Select Hierarchy...
+								.select__head-arr
+									+svg('ic-select-arr-down','ic-select-arr-down')
+							.select__option
+								.select__param Departments
+								.select__param Diagnosis
+								.select__param Drugs
+								.select__param Fractures
+								.select__param Hospitals
+								.select__param Medications
+								.select__param MRI and CT Codes
+								.select__param Ranks for Nurses
+								.select__param Units
+
+				td.admin-table__item.d-none.d-md-table-cell
+					if(row.progress)
+						.progress(class=(row.progress=='25')?'progress_red':(row.progress=='50')?'progress_yellow':(row.progress=='75')?'progress_green':'')
+							.progress__bg(style='width: '+row.progress+'%')
+							.progress__text= row.progress+'%'
+
+				td.admin-table__item.d-none.d-lg-table-cell
+					.admin-table__data-sample= row.data
+						if(row.tooltip)
+							span.tooltip(class=row.tooltip_status?'active':'')
+								span.tooltip__content= row.data
 
 mixin modalWindow(error, status)
 	.modal-window
@@ -318,3 +418,186 @@ mixin pager(title)
 					a(href="#") 6
 			a(href="#").pager__arr.pager__arr_right.active.ic-hover
 				+svg('ic-pager-arr-right','ic-pager-arr-right')
+
+mixin infoPanel(share, popup)
+	section.info-panel-wrap
+		.container-fluid
+			.row
+				.col-12
+					.info-panel
+						.info-panel__item
+							.info-panel__title Environment:
+							.info-panel__val Sheba Central
+
+						.info-panel__item
+							.info-panel__val
+								.info-panel__shared(class=popup=='show'?'active':'') Shared
+									+svg('ic-shared','ic-shared')
+
+									.info-popup
+										form.form-site
+											.info-popup__top
+												.info-popup__head-wrap
+													span.info-popup__head File Sharing
+
+												.info-popup__close
+													+svg('ic-close-circle','ic-close-circle')
+
+											.info-popup__content
+												.info-popup-switch
+													if(share=='active')
+														.info-popup-switch__content
+															.info-popup-switch__icon
+																+svg('ic-shared','ic-shared')
+
+															.info-popup-switch__text-wrap
+																.info-popup-switch__title File is shared.
+																.info-popup-switch__text It can be viewed and used by everyone.
+
+														.switch
+															input(type="checkbox", id="switch10", checked="checked")
+															label.switch__content(for="switch10")
+																.switch__marker
+																.switch__on Yes
+																.switch__off No
+													else
+														.info-popup-switch__content
+															.info-popup-switch__text-wrap
+																.info-popup-switch__title File is not shared.
+																.info-popup-switch__text When a file is shared everyone can see and use it.
+
+														.switch
+															input(type="checkbox", id="switch10")
+															label.switch__content(for="switch10")
+																.switch__marker
+																.switch__on Yes
+																.switch__off No
+
+											.info-popup__btn
+												a(href="#").btn.btn_border.btn_small Cancel
+												input(type="submit", value="Apply").btn.btn_small
+
+
+						.info-panel__item
+							.info-panel__title Template:
+							.info-panel__val
+								.select.select_small
+									.select__head Please Select...
+										.select__head-arr
+											+svg('ic-select-arr-down','ic-select-arr-down')
+									.select__option
+										.select__param Template 1
+										.select__param Template 2
+										.select__param Template 3
+										.select__param Template 4
+
+						.info-panel__item
+							.info-panel__title Modified:
+							.info-panel__val Jul 9, 2019
+
+						.info-panel__item.info-panel__item_no-indent
+							.info-panel__title Columns:
+							.info-panel__val 34
+
+						.info-panel__item
+							.info-panel__title Rows:
+							.info-panel__val 12,456
+
+
+mixin mappingHead(popup, legend)
+	section.page-header
+		.container-fluid
+			.row
+				.col-12
+					.page-header__wrap
+						.page-header__content
+							.page-header__back(class=popup?'active':'')
+								span.ic-hover
+									+svg('ic-back-to-page','ic-back-to-page')
+								
+								span.tooltip.tooltip_top
+									span.tooltip__content Back to Imported Files
+
+							h1 File Mapping
+
+							.page-header__text
+								input(type="text", value="CKD Patients with cost, diabetes and medications")
+
+						.notice(class=legend?'active':'')
+							.notice__icon
+								+svg('ic-bulb','ic-bulb')
+
+							.notice-popup
+								.notice-popup__text Define which fields to import, their data type, and relevant available hierarchies.
+									span.notice-popup__more Show more
+
+								.notice-popup__content
+									.notice-popup__head Legend
+
+									.notice-popup-info
+										.notice-popup-info__col
+											.notice-popup-info__item
+												.notice-popup-info__val.notice-popup-info__val_big
+													.progress
+														.progress__bg
+														.progress__text 0%
+
+												.notice-popup-info__text 0% Match
+
+											.notice-popup-info__item
+												.notice-popup-info__val.notice-popup-info__val_big
+													.progress.progress_red
+														.progress__bg(style='width: 25%')
+														.progress__text 25%
+
+												.notice-popup-info__text 1%-49% Match
+
+											.notice-popup-info__item
+												.notice-popup-info__val.notice-popup-info__val_big
+													.progress.progress_yellow
+														.progress__bg(style='width: 50%')
+														.progress__text 50%
+
+												.notice-popup-info__text 50-74% Match
+
+											.notice-popup-info__item
+												.notice-popup-info__val.notice-popup-info__val_big
+													.progress.progress_green
+														.progress__bg(style='width: 75%')
+														.progress__text 75%
+
+												.notice-popup-info__text 75-100% Match
+
+										.notice-popup-info__col
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-numeric','ic-numeric')
+
+												.notice-popup-info__text Numeric
+
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-textual','ic-textual')
+
+												.notice-popup-info__text String
+
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-calendar','ic-calendar')
+
+												.notice-popup-info__text Date
+
+								.notice-popup__footer
+									.notice-popup-link
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text View tutorials
+											+svg('ic-view-tutorials','ic-view-tutorials')
+
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text Additional help
+											+svg('ic-add-help','ic-add-help')
+
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text Live help
+											+svg('ic-live-help','ic-live-help')
+

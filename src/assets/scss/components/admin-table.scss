@@ -49,14 +49,34 @@
 		text-align: right;
 	}
 
-	&__name{
+	&__name,
+	&__data-sample{
 		width: 510px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	&__name .tooltip{
+	&__name-edit{
+		width: 510px;
+
+		input[type="text"]{
+			height: 30px;
+			width: 100%;
+			border: 1px dashed transparent ;
+			outline: 0;
+			margin: 0;
+			padding: 0 4px;
+			background: transparent;
+			@include font(normal, normal, 14px, 28px, $color-dark-grey);
+		}
+
+		input[type="text"]:hover{border-color: $color-light-grey;}
+		input[type="text"]:focus{border: 1px solid $color-light-grey;}
+	}
+
+	&__name .tooltip,
+	&__data-sample .tooltip{
 		display: none;
 		position: absolute;
 		bottom: calc(100% - 14px);
@@ -65,13 +85,21 @@
 		white-space: normal;
 	}
 
+	&__data-sample .tooltip{
+		left: 0;
+	}
+
 	&__name:hover .tooltip,
-	&__name .tooltip.active{
+	&__name .tooltip.active,
+	&__data-sample:hover .tooltip,
+	&__data-sample .tooltip.active{
 		display: table;
 	}
 
 	&__name:hover .tooltip__content,
-	&__name .tooltip.active .tooltip__content{
+	&__name .tooltip.active .tooltip__content,
+	&__data-sample:hover .tooltip__content,
+	&__data-sample .tooltip.active .tooltip__content{
 		display: table-cell;
 	}
 
@@ -87,6 +115,11 @@
 
 	&__head{
 		@include font(normal, 600, 14px, 1.43, $color-dark-blue);
+	}
+
+	&__option{
+		@include font(italic, normal, 12px, 1.43, $color-grey);
+		margin-left: 4px;
 	}
 
 	&__sort{
@@ -137,11 +170,12 @@
 		box-shadow: 0 2px 5px 0 #dbe4f9;
 		position: relative;
 		z-index: 1;
+		transform: scale(1);
 	}
 
 	&__row.active{
-		box-shadow: 0px 0px 1px 1px $color-dark-purple;
 		z-index: 2;
+		outline: 1px solid $color-dark-purple;
 	}
 
 	&__row.active &__item:first-child::before{
@@ -247,12 +281,29 @@
 	.tooltip{
 		max-width: 100%;
 	}
+
+	&_white &__row:nth-child(2n+1){
+		background: transparent;
+	}
+
+	&_white &__row:not(:last-child) &__item{
+		border-bottom: 1px solid rgba(161,173,205,.5);
+	}
+
+	.input-check{
+		margin-top: 2px;
+	}
+
+	.input-check__label{
+		margin-bottom: 0;
+	}
 }
 
 .admin-table-filter{
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 4px;
+	position: relative;
 
 	&__icon{
 		display: inline-block;
@@ -270,8 +321,8 @@
 		border: solid 1px rgba(172, 178, 195, 0.5);
 		margin-top: -5px;
 		position: absolute;
-		top: 100%;
-		right: 25px;
+		top: calc(100% + 15px);
+		right: -5px;
 		z-index: 10;
 	}
 
@@ -387,6 +438,8 @@
 @media (max-width: 1899px) {
 	.admin-table{
 		&__name{width: 340px;}
+		&__name-edit{width: 328px;}
+		&__data-sample{width: 240px;}
 		// .tooltip{width: 340px;}
 		&__item_menu{width: 30px;}
 		&__item,
@@ -403,12 +456,14 @@
 @media (max-width: 1199px) {
 	.admin-table{
 		&__name{width: 240px;}
+		&__name-edit{width: 240px;}
+		&__data-sample{width: 160px;}
 	}
 }
 
 @media (max-width: 991px) {
 	.admin-table{
-		&__name{width: 140px;}
+		&__name, &__data-sample, &__name-edit{width: 140px;}
 	}
 }
 
@@ -450,17 +505,6 @@
 			min-height: 40px;
 		}
 
-		&__row.active &__item,
-		&__row.active &__item:first-child,
-		&__row.active &__item:last-child{
-			border: 0;
-		}
-
-		&__row.active{
-			border: 1px solid $color-dark-purple;
-			border-left: 5px solid $color-dark-purple;
-		}
-
 		&__head &__item:last-child{
 			display: none;
 		}
@@ -473,7 +517,9 @@
 			z-index: 10;
 		}
 
-		&__name{
+		&__name,
+		&__data-sample,
+		&__name-edit{
 			width: calc(100% - 30px);
 		}
 

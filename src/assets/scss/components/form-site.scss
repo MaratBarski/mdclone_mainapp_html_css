@@ -24,6 +24,11 @@
 		transition: all 0.3s ease;
 	}
 
+	input[type="text"].input-small,
+	input[type="email"].input-small{
+		height: 30px;
+	}
+
 	textarea{
 		height: 122px;
 		padding-top: 8px;
@@ -286,7 +291,7 @@
 		display: none;
 		background: #fff;
 		border: solid 1px $color-light-grey;
-		max-height: 240px;
+		max-height: 250px;
 		overflow-y: auto;
 		box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
 		position: absolute;
@@ -303,7 +308,7 @@
 	}
 
 	&__param{
-		@include font(normal, normal, 14px, 38px, $color-dark-grey);
+		@include font(normal, normal, 14px, 30px, $color-dark-grey);
 		padding: 0 15px;
 	}
 
@@ -323,6 +328,16 @@
 		margin-bottom: -2px;
 		box-shadow: -10px -9px 21px 0 rgba(128, 152, 213, 0.08);
 	}
+
+	&_small &__head{
+		height: 28px;
+		line-height: 26px;
+		padding-right: 42px;
+	}
+
+	&_small{width: 195px;}
+	&_small &__param{line-height: 25px;}
+	&_small &__option{max-height: 270px;}
 }
 
 .switch{
@@ -365,7 +380,7 @@
 		height: 24px;
 		border-radius: 50%;
 		background: $color-light-grey;
-		opacity: 0.25;
+		opacity: 0.2;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -382,8 +397,7 @@
 	&__on{left: 7px; display: none;}
 	&__off{right: 7px;}
 
-	&:hover &__content{border-color: $color-grey;}
-	&:hover &__marker{background: $color-grey;}
+	&:hover &__content{background-color: rgba(172, 178, 195, 0.1);}
 
 	input[type="checkbox"]:checked + &__content{border-color: $color-dark-purple;}
 	input[type="checkbox"]:checked + &__content &__on{display: block;}
@@ -392,16 +406,12 @@
 	input[type="checkbox"]:checked + &__content &__marker::before{background: $color-dark-purple;}
 
 	input[type="checkbox"]:focus + &__content &__marker::before{display: inline-block;}
+	input[disabled="disabled"]:focus + &__content &__marker::before{display: none;}
 
-	&:hover input[type="checkbox"]:checked + &__content{border-color: #3f0280;}
-	&:hover input[type="checkbox"]:checked + &__content &__marker{background: #3f0280;}
+	&:hover input[type="checkbox"]:checked + &__content{background-color: rgba(83, 3, 168, 0.05);}
 
-	input[disabled="disabled"] + &__content, &:hover input[disabled="disabled"] + &__content{border-color: $color-light-grey; opacity: 0.5;}
-	input[disabled="disabled"] + &__content &__marker, &:hover input[disabled="disabled"] + &__content &__marker{background: $color-light-grey;}
-	input[disabled="disabled"]:checked + &__content, &:hover input[disabled="disabled"]:checked + &__content{border-color: $color-dark-purple; opacity: 0.5;}
-	input[disabled="disabled"]:checked + &__content &__marker, &:hover input[disabled="disabled"]:checked + &__content &__marker{background: $color-dark-purple;}
-
-	
+	input[disabled="disabled"] + &__content, &:hover input[disabled="disabled"] + &__content{background: transparent; opacity: 0.5;}
+	input[disabled="disabled"]:checked + &__content, &:hover input[disabled="disabled"]:checked + &__content{background: transparent; opacity: 0.5;}
 }
 
 @media (max-width: 767px) {

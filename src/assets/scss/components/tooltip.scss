@@ -28,7 +28,7 @@
 	&_left::after{
 		border-width: 6px 5px 6px 0;
 		border-color: transparent $color-dark-blue transparent transparent;
-		@include top-center;
+		top: 8px;
 		left: auto;
 		right: 100%;
 	}
@@ -36,7 +36,7 @@
 	&_right::after{
 		border-width: 6px 0 6px 5px;
 		border-color: transparent transparent transparent $color-dark-blue;
-		@include top-center;
+		top: 8px;
 		left: 100%;
 	}
 
@@ -46,6 +46,12 @@
 		top: auto;
 		bottom: 100%;
 	}
+
+	&_red{background: $color-red;}
+	&_red::after{border-color: $color-red transparent transparent transparent;}
+	&_red.tooltip_left::after{border-color: transparent $color-red transparent transparent;}
+	&_red.tooltip_right::after{border-color: transparent transparent transparent $color-red;}
+	&_red.tooltip_top::after{border-color: transparent transparent $color-red transparent;}
 }
 
 @media (max-width: 767px) {
