@@ -1,0 +1,248 @@
+.admin-table-wrap
+	.admin-table-wrap__action
+		.admin-table-wrap__col
+			a.btn.btn_icon(href='#') + New Query
+
+		.admin-table-wrap__col
+			+formSearch('d-none d-md-block','Search Query Name')
+
+	table.admin-table.admin-table_yellow
+		thead
+			tr.admin-table__head
+				th.admin-table__item
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Name
+
+				th.admin-table__item.d-none.d-md-table-cell
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Modified
+
+				th.admin-table__item.d-none.d-md-table-cell
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Created
+
+				th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center
+					.admin-table__head
+						|Shared
+
+				th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center
+					.admin-table__head
+						|IRB
+
+				th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center
+					.admin-table__head
+						|Status
+
+				th.admin-table__item.d-none.d-xl-table-cell
+					.admin-table__head Columns
+
+				th.admin-table__item.d-none.d-xxl-table-cell
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Cohort size
+
+				th.admin-table__item
+
+		-
+			var rows=[
+				{
+					row:{selected:''},
+					name:{title:'CKD patients with all their medications patients with all their medications'},
+					fields:[
+						{title:'Nov 26, 2019', class:'d-none d-md-table-cell'},
+						{title:'Nov 26, 2019', class:'d-none d-md-table-cell'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-running', icon_color:'true', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'~9,999', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						popup:'active',
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'CKD patients with all their medications patients with all their medications'},
+					fields:[
+						{title:'Nov 5, 2019', class:'d-none d-md-table-cell'},
+						{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-key', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-data', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'10', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'1234567890123456789012345678901289012'},
+					fields:[
+						{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
+						{title:'Oct 11, 2019', class:'d-none d-md-table-cell'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-data', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'89', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'20180813_134819_20180726_21210'},
+					fields:[
+						{title:'Nov 2, 2019', class:'d-none d-md-table-cell'},
+						{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-key', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-data', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'999', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'DM-Tests - 2 date formats in t'},
+					fields:[
+						{title:'Oct 21, 2019', class:'d-none d-md-table-cell'},
+						{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'999', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'20180813_134819_20180726_21210'},
+					fields:[
+						{title:'Nov 2, 2019', class:'d-none d-md-table-cell'},
+						{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-key', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-data', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'999', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'DM-Tests - 2 date formats in t'},
+					fields:[
+						{title:'Oct 21, 2019', class:'d-none d-md-table-cell'},
+						{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'999', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'CKD patients with all their medications patients with all their medications'},
+					fields:[
+						{title:'Nov 5, 2019', class:'d-none d-md-table-cell'},
+						{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-key', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{icon:'ic-data', class:'d-none d-lg-table-cell admin-table__item_center'},
+						{title:'10', class:'d-none d-xl-table-cell admin-table__item_right'},
+						{title:'—', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate'},
+							{img:'ic-download', text:'Download files', disable:'true'},
+							{img:'ic-share', text:'Share'},
+							{img:'ic-quality', text:'Quality of Care', disable:'true'},
+							{img:'ic-send', text:'Send'},
+						]
+					}
+				},
+			];
+
+		+adminTableRow(rows)
+
+	+pager('Showing 1-8 of 38 queries')

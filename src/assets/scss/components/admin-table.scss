@@ -297,6 +297,9 @@
 	.input-check__label{
 		margin-bottom: 0;
 	}
+
+	&__item_center{text-align: center;}
+	&__item_right{text-align: right;}
 }
 
 .admin-table-filter{

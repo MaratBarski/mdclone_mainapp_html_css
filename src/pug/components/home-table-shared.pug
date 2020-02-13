@@ -1,0 +1,115 @@
+.admin-table-wrap
+	.admin-table-wrap__action
+		.admin-table-wrap__col
+
+		.admin-table-wrap__col
+			+formSearch('d-none d-md-block','Search Query Name')
+
+	table.admin-table.admin-table_blue
+		thead
+			tr.admin-table__head
+				th.admin-table__item
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Name
+
+				th.admin-table__item.d-none.d-md-table-cell
+					.admin-table__head
+						span.admin-table__sort.admin-table__sort_asc
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Modified
+
+				th.admin-table__item.d-none.d-md-table-cell
+					.admin-table__head
+						span.admin-table__sort
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Shared by
+
+				th.admin-table__item.d-none.d-lg-table-cell
+					.admin-table__head
+						|My Permissions
+
+				th.admin-table__item
+
+		-
+			var rows=[
+				{
+					row:{selected:''},
+					name:{title:'Diabetes: patients with Kidney desease (3-4)'},
+					fields:[
+						{title:'Nov 4, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared',title:'John Doe', class:'d-none d-md-table-cell', tooltip:'Shraed in Feb 15, 2019', tooltip_status:'show'},
+						{title:'View', class:'d-none d-lg-table-cell'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate to <b>My Queries</b>'},
+						],
+						icons_bottom:[
+							{img:'ic-remove', text:'Remove from list'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'12345678901234567890123456789012345678901234567890546'},
+					fields:[
+						{title:'Oct 11, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared',title:'Israel Israeli', class:'d-none d-md-table-cell'},
+						{title:'Edit', class:'d-none d-lg-table-cell'},
+					],
+					menu:{
+						popup:'active',
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate to <span style="font-weight: 600;">My Queries</span>'},
+						],
+						icons_bottom:[
+							{img:'ic-remove', text:'Remove from list'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'Diabetes: Type 1 patients with ESRD'},
+					fields:[
+						{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared',title:'Moshe Bateva', class:'d-none d-md-table-cell'},
+						{title:'View', class:'d-none d-lg-table-cell'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate to <b>My Queries</b>'},
+						],
+						icons_bottom:[
+							{img:'ic-remove', text:'Remove from list'},
+						]
+					}
+				},
+				{
+					row:{selected:''},
+					name:{title:'12345678901234567890123456789012345678901234567890546'},
+					fields:[
+						{title:'Oct 11, 2019', class:'d-none d-md-table-cell'},
+						{icon:'ic-shared',title:'Israel Israeli', class:'d-none d-md-table-cell'},
+						{title:'Edit', class:'d-none d-lg-table-cell'},
+					],
+					menu:{
+						icons:[
+							{img:'ic-edit', text:'Edit'},
+							{img:'ic-duplicate', text:'Duplicate to <span style="font-weight: 600;">My Queries</span>'},
+						],
+						icons_bottom:[
+							{img:'ic-remove', text:'Remove from list'},
+						]
+					}
+				},
+			];
+
+		+adminTableRow(rows)
