@@ -265,7 +265,7 @@ mixin mappingTableRow(rows)
 
 mixin modalWindow(error, status)
 	.modal-window
-		.modal-window__head Upload file
+		.modal-window__head New imported file
 		.modal-window__close.ic-hover
 			+svg('ic-close','ic-close ic-stroke')
 
@@ -278,7 +278,7 @@ mixin modalWindow(error, status)
 						label.file-upload__content
 							input(type='file', name='file')
 							span.file-upload__btn Choose File
-							span.file-upload__name No file chosen
+							span.file-upload__name.disable Select a CSV or Excel file
 					
 					
 					if (error)
@@ -296,7 +296,7 @@ mixin modalWindow(error, status)
 					label(for="project").form-site__label Environment
 
 					#project.select(class=status!='active'?'select_up':'')
-						.select__head Select Project…
+						.select__head Select Environment…
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
@@ -331,7 +331,7 @@ mixin modalWindow(error, status)
 				if (status=='active')
 					.form-site__item
 						label(for="template").form-site__label
-							|Template
+							|Permission Group
 							span.form-site__info
 								+svg('ic-help','ic-help')
 								span.tooltip
@@ -340,7 +340,7 @@ mixin modalWindow(error, status)
 							span.form-site__optional Optional
 
 						#template.select.select_up
-							.select__head Select Template...
+							.select__head Select Permission Group...
 								.select__head-arr
 									+svg('ic-select-arr-down','ic-select-arr-down')
 							.select__option
@@ -351,7 +351,7 @@ mixin modalWindow(error, status)
 
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
-				input.btn(type="submit", value="Upload file", class=status=='active'?'':'btn_disable')
+				input.btn(type="submit", value="Upload", class=status=='active'?'':'btn_disable')
 
 mixin modalWindowQuery(error, status)
 	.modal-window

@@ -24,10 +24,10 @@
 	background: #fff;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
 
-	&_yellow{box-shadow: -5px 0px 0px 0px $color-yellow;}
-	&_blue{box-shadow: -5px 0px 0px 0px $color-blue;}
-	&_green{box-shadow: -5px 0px 0px 0px $color-green;}
-	&_red{box-shadow: -5px 0px 0px 0px $color-red;}
+	&_yellow{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-yellow;}
+	&_blue{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-blue;}
+	&_green{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-green;}
+	&_red{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-red;}
 
 	// &__head,
 	// &__row{
@@ -45,7 +45,7 @@
 	&__item_menu{
 		width: 220px;
 		padding-left: 0;
-		padding-right: 0;
+		padding-right: 7px;
 		text-align: right;
 	}
 
@@ -79,7 +79,7 @@
 	&__data-sample .tooltip{
 		display: none;
 		position: absolute;
-		bottom: calc(100% - 14px);
+		bottom: calc(100% - 10px);
 		left: 20px;
 		z-index: 10;
 		white-space: normal;
@@ -428,11 +428,13 @@
 
 .admin-table-action{
 	display: inline-block;
+	vertical-align: middle;
 	width: 30px;
 	position: relative;
 	
 	&__menu{
 		display: inline-block;
+		vertical-align: middle;
 		width: 30px;
 		height: 30px;
 	}

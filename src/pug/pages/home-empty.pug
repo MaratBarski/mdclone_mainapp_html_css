@@ -11,10 +11,11 @@ block content
 				.col-12
 					.unwrap.active
 						.unwrap__head
-							span.unwrap__arr.ic-hover
-								+svg('ic-select-arr-down','ic-select-arr-down')
-							span.unwrap__title My Queries | 
-								span.unwrap__count 0
+							.unwrap__head-content
+								span.unwrap__arr.ic-hover
+									+svg('ic-select-arr-down','ic-select-arr-down')
+								span.unwrap__title My Queries | 
+									span.unwrap__count 0
 
 						.unwrap__content
 							a.btn.btn_icon(href='#') + New Query
@@ -41,11 +42,12 @@ block content
 					.col-12
 						.unwrap
 							.unwrap__head
-								span.unwrap__arr.ic-hover
-									+svg('ic-select-arr-down','ic-select-arr-down')
-								span.unwrap__title= item.name
-									|  | 
-									span.unwrap__count= item.count
+								.unwrap__head-content
+									span.unwrap__arr.ic-hover
+										+svg('ic-select-arr-down','ic-select-arr-down')
+									span.unwrap__title= item.name
+										|  | 
+										span.unwrap__count= item.count
 
 							.unwrap__content
 

@@ -4,10 +4,21 @@
 	
 	&__head{
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
+
+	&__head-content{
+		display: flex;
+		width: 50%;
+	}
+
+	&__head .form-search{display: none;}
+	&.active &__head .form-search{display: block;}
 
 	&__title{
 		max-width: calc(100% - 30px);
+		margin-left: 2px;
 	}
 
 	&__arr{
@@ -35,5 +46,25 @@
 
 	&.active &__content{
 		display: block;
+	}
+
+	.form-search input[type="text"]{
+		height: 25px;
+		line-height: 23px;
+		padding-top: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.unwrap{
+		&__head{
+			flex-wrap: wrap;
+		}
+
+		&__head-content{
+			width: 100%;
+		}
+
+		&.active &__head .form-search{display: none;}
 	}
 }

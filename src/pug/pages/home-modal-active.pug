@@ -12,10 +12,11 @@ block content
 				.col-12
 					.unwrap
 						.unwrap__head
-							span.unwrap__arr.ic-hover
-								+svg('ic-select-arr-down','ic-select-arr-down')
-							span.unwrap__title My Queries | 
-								span.unwrap__count 38
+							.unwrap__head-content
+								span.unwrap__arr.ic-hover
+									+svg('ic-select-arr-down','ic-select-arr-down')
+								span.unwrap__title My Queries | 
+									span.unwrap__count 38
 
 						.unwrap__content
 							.admin-table-wrap
@@ -27,10 +28,13 @@ block content
 				.col-12
 					.unwrap
 						.unwrap__head
-							span.unwrap__arr.ic-hover
-								+svg('ic-select-arr-down','ic-select-arr-down')
-							span.unwrap__title Queries shared with me | 
-								span.unwrap__count 3
+							.unwrap__head-content
+								span.unwrap__arr.ic-hover
+									+svg('ic-select-arr-down','ic-select-arr-down')
+								span.unwrap__title Queries shared with me | 
+									span.unwrap__count 3
+
+							+formSearch('','Search…')
 
 						.unwrap__content
 							include ../components/home-table-shared
@@ -41,10 +45,11 @@ block content
 				.col-12
 					.unwrap
 						.unwrap__head
-							span.unwrap__arr.ic-hover
-								+svg('ic-select-arr-down','ic-select-arr-down')
-							span.unwrap__title My Approval Keys | 
-								span.unwrap__count 2
+							.unwrap__head-content
+								span.unwrap__arr.ic-hover
+									+svg('ic-select-arr-down','ic-select-arr-down')
+								span.unwrap__title My Approval Keys | 
+									span.unwrap__count 2
 
 						.unwrap__content
 							include ../components/home-table-key

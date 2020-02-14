@@ -207,6 +207,10 @@
 	&__name{
 		@include font(normal, normal, 14px, 21px, $color-dark-grey);
 	}
+
+	&__name.disable{
+		color: $color-light-grey;
+	}
 }
 
 /*-------------- file-upload -----------------*/
@@ -272,9 +276,13 @@
 		height: 40px;
 		width: 100%;
 		border: 1px solid $color-light-grey;
-		@include font(normal, normal, 14px, 38px, $color-dark-grey);
+		@include font(normal, normal, 14px, 38px, $color-grey);
 		padding: 0 50px 0 15px;
 		position: relative;
+	}
+
+	&__head.active{
+		color: $color-dark-grey;
 	}
 
 	&__head-arr{

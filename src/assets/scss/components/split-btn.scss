@@ -5,20 +5,21 @@
 	padding-bottom: 4px;
 
 	&__title{
-		width: calc(100% - 48px);
+		width: calc(100% - 43px);
 		height: 30px;
 		@include font(normal, 600, 14px, 30px, #fff);
-		padding: 0 12px 0 25px;
+		padding: 0 12px 0 20px;
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
 		background: $color-dark-purple;
 		margin-right: 1px;
+		white-space: nowrap;
 		cursor: pointer;
 	}
 
 	&__arr{
 		display: inline-block;
-		width: 47px;
+		width: 42px;
 		height: 30px;
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
@@ -33,6 +34,7 @@
 
 	&__popup{
 		display: none;
+		min-width: 100%;
 		background: #fff;
 		border: 1px solid $color-light-grey;
 		border-radius: 4px;
@@ -44,7 +46,7 @@
 	}
 
 	&__item{
-		padding: 0 15px;
+		padding: 0 20px;
 		white-space: nowrap;
 		@include font(normal, normal, 14px, 30px, $color-dark-blue);
 		cursor: pointer;
