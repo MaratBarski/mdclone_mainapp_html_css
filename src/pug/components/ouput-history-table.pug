@@ -1,0 +1,262 @@
+table.admin-table
+	thead
+		tr.admin-table__head
+			th.admin-table__item
+				.admin-table__head
+					span.admin-table__sort.admin-table__sort_desk
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Date
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|User
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Query/File Name
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Approval Key
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Research
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Data
+					+svg('ic-help','ic-help')
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Environment
+
+					//- +adminTableFilter()
+					.admin-table-filter
+						.admin-table-filter__icon
+							span.ic-hover
+								+svg('ic-filter','ic-filter ic-stroke')
+
+			
+			th.admin-table__item.d-none.d-xxl-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Source
+
+			th.admin-table__item.d-none.d-xxl-table-cell
+				.admin-table__head
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Status
+
+			th.admin-table__item
+
+	-
+		var rows = [
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Nov 26, 2019 13:51', class:'d-none d-md-table-cell'},
+					{title:'Lina Perez', class:'d-none d-md-table-cell'},
+					{file_name:'d-Stroke for a long description...', file_count:'1233'},
+					{title:'12345678901234567890', class:'d-none d-xl-table-cell'},
+					{title:'Diabetes Research', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'R Test Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-failure', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', icon_status:'inactive', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Nov 12, 2019 11:28', class:'d-none d-md-table-cell'},
+					{title:'Ophelia Allen', class:'d-none d-md-table-cell'},
+					{file_name:'Stroke Small', file_count:'2345'},
+					{title:'Rambam Diabetees Oren', class:'d-none d-xl-table-cell'},
+					{title:'Lorem Ipsum', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Oct 22, 2019 11:44', class:'d-none d-md-table-cell'},
+					{title:'Polly Osborne', class:'d-none d-md-table-cell'},
+					{file_name:'David Frost query for c.Diff', file_count:'11223'},
+					{title:'Tik Ipur - 123BB', class:'d-none d-xl-table-cell'},
+					{title:'Lorem Ipsum', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'R Test Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Oct 22, 2019 17:36', class:'d-none d-md-table-cell'},
+					{title:'Victor Potter', class:'d-none d-md-table-cell'},
+					{file_name:'DM-Tests - 2 date formats', file_count:'567'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Lorem Ipsum', class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Oct 10, 2019 14:37', class:'d-none d-md-table-cell'},
+					{title:'Zachary Alexander', class:'d-none d-md-table-cell'},
+					{file_name:'BMI in adults with type 2', file_count:'7788'},
+					{title:'88- Moty LuchimJun19', class:'d-none d-xl-table-cell'},
+					{title:'Diabetes Research', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Mar 7, 2019 14:59', class:'d-none d-md-table-cell'},
+					{title:'Millie Alexander', class:'d-none d-md-table-cell'},
+					{file_name:'0123456789012345678901233233423', file_count:'7890'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Diabetes Research', class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-failure', icon_status:'inactive', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Feb 17, 2019 13:22', class:'d-none d-md-table-cell'},
+					{title:'Martin James', class:'d-none d-md-table-cell'},
+					{file_name:'CKD Patients query 1', file_count:'4532'},
+					{title:'Ela Maayan 6755-Z', class:'d-none d-xl-table-cell'},
+					{title:'Diabetes Research', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-failure', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Feb 7, 2019 11:34', class:'d-none d-md-table-cell'},
+					{title:'Jonathan Swansson', class:'d-none d-md-table-cell'},
+					{file_name:'All blood tests for type 1 and Type 2 Diabetes'},
+					{class:'d-none d-xl-table-cell'},
+					{class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Imported file', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Dec 13, 2018 11:43', class:'d-none d-md-table-cell'},
+					{title:'Jorge Huff', class:'d-none d-md-table-cell'},
+					{file_name:'Base-New23-12.', file_count:'895564'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Quality indicators in Hospital', class:'d-none d-md-table-cell'},
+					{title:'Synthetic', circle:'purple', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Feb 7, 2019 11:00', class:'d-none d-md-table-cell'},
+					{title:'Moti Luchim', class:'d-none d-md-table-cell'},
+					{file_name:'20181105_130910_Imported File1.csv', file_count:'2355'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Quality indicators in Hospital', class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Dec 13, 2018 11:43', class:'d-none d-md-table-cell'},
+					{title:'Jorge Huff', class:'d-none d-md-table-cell'},
+					{file_name:'Base-New23-12.', file_count:'895564'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Quality indicators in Hospital', class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Feb 7, 2019 11:00', class:'d-none d-md-table-cell'},
+					{title:'Moti Luchim', class:'d-none d-md-table-cell'},
+					{file_name:'20181105_130910_Imported File1.csv', file_count:'2355'},
+					{class:'d-none d-xl-table-cell'},
+					{title:'Quality indicators in Hospital', class:'d-none d-md-table-cell'},
+					{title:'Original', class:'d-none d-xxl-table-cell'},
+					{title:'Demo Project', class:'d-none d-xxl-table-cell'},
+					{title:'Query', class:'d-none d-xxl-table-cell'},
+					{icon:'ic-success', class:'d-none d-xxl-table-cell admin-table__item_center'},
+					{icon:'ic-download', class:'admin-table__item_right'},
+				],
+			},
+		];
+	+adminTableRow(rows)
+
++pager('Showing 1-15 of 82 files')
