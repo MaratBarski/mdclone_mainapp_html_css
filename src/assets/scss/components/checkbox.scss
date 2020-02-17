@@ -4,7 +4,7 @@
 		// align-items: center;
 		cursor: pointer;
 		position: relative;
-		@include font(normal, normal, 14px, 1.25, $color-dark-blue);
+		@include font(normal, normal, rem(14px), 1.25, $color-dark-blue);
 		margin-bottom: 14px;
 	}
 

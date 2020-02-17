@@ -8,7 +8,7 @@
 	border-radius: 4px;
 	box-shadow: 0 -9px 21px 0 rgba(128, 152, 213, 0.15), -10px 9px 21px 0 rgba(128, 152, 213, 0.15);
 	position: relative;
-	@include font(normal, normal, 12px, 1.35, $color-dark-grey);
+	@include font(normal, normal, rem(12px), 1.35, $color-dark-grey);
 
 	&::after{
 		content: '';
@@ -37,12 +37,12 @@
 	}
 
 	&__head{
-		@include font(normal, 600, 12px, 1.2, $color-dark-blue);
+		@include font(normal, 600, rem(12px), 1.2, $color-dark-blue);
 		text-transform: uppercase;
 	}
 
 	&__option{
-		@include font(italic, normal, 12px, 1.2, $color-grey);
+		@include font(italic, normal, rem(12px), 1.2, $color-grey);
 		margin-left: 6px;
 	}
 
@@ -65,8 +65,8 @@
 	}
 
 	textarea{
-		height: 67px;
-		font-size: 12px;
+		height: rem(67px);
+		font-size: rem(12px);
 		line-height: 1.2;
 		padding: 8px;
 	}
@@ -117,7 +117,7 @@
 
 	&__text-wrap,
 	&__text{
-		@include font(normal, normal, 12px, 1.35, $color-dark-grey);
+		@include font(normal, normal, rem(12px), 1.35, $color-dark-grey);
 	}
 
 	&__title{

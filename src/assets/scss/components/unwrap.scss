@@ -31,7 +31,7 @@
 
 	&__title,
 	&__count{
-		@include font(normal, 600, 18px, 1.3, $color-dark-grey);
+		@include font(normal, 600, rem(18px), 1.3, $color-dark-grey);
 		text-transform: uppercase;
 	}
 
@@ -49,8 +49,8 @@
 	}
 
 	.form-search input[type="text"]{
-		height: 25px;
-		line-height: 23px;
+		height: rem(25px);
+		line-height: rem(23px);
 		padding-top: 0;
 	}
 }

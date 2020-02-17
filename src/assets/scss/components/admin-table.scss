@@ -20,7 +20,7 @@
 .admin-table{
 	// display: table;
 	width: 100%;
-	@include font(normal, normal, 14px, 20px, $color-dark-grey);
+	@include font(normal, normal, rem(14px), 1.4, $color-dark-grey);
 	background: #fff;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
 
@@ -34,10 +34,15 @@
 	// 	display: table-row;
 	// }
 
+	&:hover{
+		position: relative;
+		z-index: 1;
+	}
+
 	&__item{
 		// display: table-cell;
 		vertical-align: middle;
-		height: 40px;
+		height: rem(40px);
 		padding: 2.7px 25px;
 		position: relative;
 	}
@@ -61,14 +66,14 @@
 		width: 510px;
 
 		input[type="text"]{
-			height: 30px;
+			height: rem(30px);
 			width: 100%;
 			border: 1px dashed transparent ;
 			outline: 0;
 			margin: 0;
 			padding: 0 4px;
 			background: transparent;
-			@include font(normal, normal, 14px, 28px, $color-dark-grey);
+			@include font(normal, normal, rem(14px), rem(28px), $color-dark-grey);
 		}
 
 		input[type="text"]:hover{border-color: $color-light-grey;}
@@ -114,11 +119,11 @@
 	}
 
 	&__head{
-		@include font(normal, 600, 14px, 1.43, $color-dark-blue);
+		@include font(normal, 600, rem(14px), 1.43, $color-dark-blue);
 	}
 
 	&__option{
-		@include font(italic, normal, 12px, 1.43, $color-grey);
+		@include font(italic, normal, rem(12px), 1.43, $color-grey);
 		margin-left: 4px;
 	}
 
@@ -345,7 +350,7 @@
 	&__top .input-check__label{margin-bottom: 0;}
 
 	&__clear{
-		font-size: 14px;
+		font-size: rem(14px);
 		font-weight: normal;
 	}
 
@@ -389,7 +394,7 @@
 		// justify-content: space-between;
 		align-items: center;
 		padding: 5px 20px;
-		@include font(normal, normal, 14px, 1.57, $color-dark-blue);
+		@include font(normal, normal, rem(14px), 1.57, $color-dark-blue);
 	}
 
 	&__item.disable .icon{

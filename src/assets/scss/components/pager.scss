@@ -6,7 +6,7 @@
 	margin-top: 15px;
 
 	&__title{
-		@include font(normal, normal, 14px, 1.57, $color-grey);
+		@include font(normal, normal, rem(14px), 1.57, $color-grey);
 		margin-right: 30px;
 	}
 }
@@ -17,7 +17,7 @@
 
 	&__item{
 		min-width: 30px;
-		@include font(normal, 600, 16px, 1.25, $color-blue);
+		@include font(normal, 600, rem(16px), 1.25, $color-blue);
 		text-align: center;
 		padding: 0 15px;
 	}

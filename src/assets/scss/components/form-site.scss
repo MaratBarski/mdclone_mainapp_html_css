@@ -26,7 +26,7 @@
 
 	input[type="text"].input-small,
 	input[type="email"].input-small{
-		height: 30px;
+		height: rem(30px);
 	}
 
 	textarea{
@@ -273,12 +273,13 @@
 	position: relative;
 
 	&__head{
-		height: 40px;
+		height: rem(40px);
 		width: 100%;
 		border: 1px solid $color-light-grey;
-		@include font(normal, normal, 14px, 38px, $color-grey);
+		@include font(normal, normal, rem(14px), rem(38px), $color-grey);
 		padding: 0 50px 0 15px;
 		position: relative;
+		white-space: nowrap;
 	}
 
 	&__head.active{
@@ -293,6 +294,10 @@
 		position: absolute;
 		@include top-center;
 		right: 0;
+	}
+
+	&__head-arr .icon{
+		vertical-align: top;
 	}
 
 	&__option{
@@ -316,7 +321,7 @@
 	}
 
 	&__param{
-		@include font(normal, normal, 14px, 30px, $color-dark-grey);
+		@include font(normal, normal, rem(14px), rem(30px), $color-dark-grey);
 		padding: 0 15px;
 	}
 
@@ -338,21 +343,21 @@
 	}
 
 	&_small &__head{
-		height: 28px;
-		line-height: 26px;
+		height: rem(28px);
+		line-height: rem(26px);
 		padding-right: 42px;
 	}
 
 	&_small{width: 195px;}
-	&_small &__param{line-height: 25px;}
+	&_small &__param{line-height: rem(25px);}
 	&_small &__option{max-height: 270px;}
 }
 
 .switch{
 	display: inline-block;
 	vertical-align: middle;
-	width: 57px;
-	height: 24px;
+	width: rem(57px);
+	height: rem(24px);
 
 	input[type="checkbox"]{
 		display: none;
@@ -363,7 +368,7 @@
 		width: 100%;
 		height: 100%;
 		border: solid 1px $color-light-grey;
-		border-radius: 12px;
+		border-radius: rem(12px);
 		position: relative;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -371,8 +376,8 @@
 
 	&__marker{
 		display: inline-block;
-		width: 16px;
-		height: 16px;
+		width: rem(16px);
+		height: rem(16px);
 		background: $color-light-grey;
 		border-radius: 50%;
 		position: absolute;
@@ -384,8 +389,8 @@
 	&__marker::before{
 		content: '';
 		display: none;
-		width: 24px;
-		height: 24px;
+		width: rem(24px);
+		height: rem(24px);
 		border-radius: 50%;
 		background: $color-light-grey;
 		opacity: 0.2;
@@ -397,7 +402,7 @@
 
 	&__on,
 	&__off{
-		@include font(normal, 600, 13px, 22px, $color-dark-grey);
+		@include font(normal, 600, rem(13px), rem(22px), $color-dark-grey);
 		position: absolute;
 		@include top-center;
 	}

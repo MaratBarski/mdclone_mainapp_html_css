@@ -11,7 +11,7 @@
 	background: #fff;
 	border-radius: 2px;
 	box-shadow: 0 2px 4px 0 #dbe4f9;
-	@include font(normal, normal, 14px, 1.57, #686b83);
+	@include font(normal, normal, rem(14px), 1.57, #686b83);
 
 	&__title{
 		font-weight: 600;
@@ -52,6 +52,10 @@
 
 	.select{
 		margin-left: 3px;
+		
+		&__head-arr .icon{
+			vertical-align: top;
+		}
 	}
 
 	&__item_no-indent:not(:last-child){

@@ -6,7 +6,7 @@
 	background: rgba(3, 207, 163, 0.1);
 	border: solid 1px $color-green;
 	border-radius: 4px;
-	@include font(normal, normal, 12px, 1.25, $color-dark-grey);
+	@include font(normal, normal, rem(12px), 1.25, $color-dark-grey);
 
 	&__text,
 	&__icon{

@@ -5,7 +5,7 @@
 	background: $color-dark-blue;
 	margin: 4px;
 	position: relative;
-	@include font(normal, normal, 12px, 1.57, #fff);
+	@include font(normal, normal, rem(12px), 1.57, #fff);
 
 	&__content{
 		display: inline-block;

@@ -26,7 +26,7 @@
 	z-index: 10;
 
 	&__text{
-		@include font(normal, normal, 14px, 1.57, $color-grey);
+		@include font(normal, normal, rem(14px), 1.57, $color-grey);
 		margin-bottom: 20px;
 	}
 
@@ -41,7 +41,7 @@
 	}
 
 	&__head{
-		@include font(normal, 600, 14px, 1.71, $color-dark-blue);
+		@include font(normal, 600, rem(14px), 1.71, $color-dark-blue);
 		text-transform: uppercase;
 		padding-bottom: 9px;
 		border-bottom: 1px solid rgba(172,178,195,0.5);
@@ -79,7 +79,7 @@
 	}
 
 	&__text{
-		@include font(normal, normal, 14px, 1.71, $color-grey);
+		@include font(normal, normal, rem(14px), 1.71, $color-grey);
 		max-width: calc(100% - 40px);
 	}
 
@@ -93,7 +93,7 @@
 }
 
 .notice-popup-link{
-	@include font(normal, normal, 14px, 1.57, $color-blue);
+	@include font(normal, normal, rem(14px), 1.57, $color-blue);
 
 	.icon{
 		fill: $color-blue;

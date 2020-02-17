@@ -25,11 +25,11 @@
 
 	&__text,
 	&__text input[type="text"]{
-		@include font(normal, normal, 14px, 28px, $color-dark-grey);
+		@include font(normal, normal, rem(14px), rem(28px), $color-dark-grey);
 	}
 
 	&__text input[type="text"]{
-		height: 30px;
+		height: rem(30px);
 		min-width: 330px;
 		border: 1px dashed transparent ;
 		outline: 0;

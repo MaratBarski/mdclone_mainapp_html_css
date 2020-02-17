@@ -1,8 +1,13 @@
+// $rem-fallback: true;
+
 html,
 body{
 	background: $color-soft-blue;
 	font-family: $font-site;
-	@include font(normal, normal, 14px, 1.57, $color-grey);
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.57;
+	color: $color-grey;
 	box-sizing:border-box;
 	height:100%;
 }
@@ -36,7 +41,13 @@ a:hover{
 }
 
 p{
-	margin-bottom: 14px;
+	font-size: rem(14px);
+	margin-bottom: rem(14px);
+}
+
+ul,
+ol{
+	font-size: rem(14px);
 }
 
 h1,.h1,
@@ -53,44 +64,44 @@ h6,.h6,
 }
 
 h1,.h1{
-	font-size: 24px;
+	font-size: rem(24px);
 	font-weight: normal;
 	text-transform: uppercase;
-	margin-bottom: 11px;
+	margin-bottom: rem(11px);
 }
 
 h2,.h2{
-	font-size: 24px;
+	font-size: rem(24px);
 	font-weight: 300;
 }
 
 h3,.h3{
-	font-size: 22px;
+	font-size: rem(22px);
 	font-weight: 600;
 }
 
 h4,.h4{
-	font-size: 22px;
+	font-size: rem(22px);
 	font-weight: normal;
 }
 
 h5,.h5{
-	font-size: 18px;
+	font-size: rem(18px);
 	font-weight: 600;
 }
 
 h6,.h6{
-	font-size: 18px;
+	font-size: rem(18px);
 	font-weight: normal;
 }
 
 .h7{
-	font-size: 18px;
+	font-size: rem(18px);
 	font-weight: 600;
 }
 
 .h8{
-	font-size: 18px;
+	font-size: rem(18px);
 	font-weight: normal;
 }
 
@@ -116,14 +127,14 @@ button.btn{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	height: 30px;
+	height: rem(30px);
 	min-width: 120px;
 	padding: 0 40px;
 	background: $color-dark-purple;
 	border: 1px solid $color-dark-purple;
-	border-radius: 15px;
+	border-radius: rem(15px);
 	outline: 0;
-	@include font(normal, 400, 14px, 28px, #fff);
+	@include font(normal, 400, rem(14px), rem(28px), #fff);
 	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
@@ -187,9 +198,9 @@ input[type="submit"].btn_small,
 button.btn_small{
 	min-width: 105px;
 	padding: 0 30px;
-	height: 25px;
-	line-height: 23px;
-	border-radius: 12.5px;
+	height: rem(25px);
+	line-height: rem(23px);
+	border-radius: rem(12.5px);
 }
 
 .btn img{margin-right: 4px;}
@@ -240,7 +251,7 @@ button.btn_small{
 	display: inline-block;
 	padding-left: 20px;
 	position: relative;
-	font-size: 14px;
+	font-size: rem(14px);
 
 	&::before{
 		content: '';
@@ -265,7 +276,7 @@ button.btn_small{
 		padding-right: 15px;
 	}
 
-	.h1, h1{font-size: 22px;}
+	.h1, h1{font-size: rem(22px);}
 
 	.btn, button.btn, input[type="submit"].btn{padding: 0 27px;}
 }

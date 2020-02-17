@@ -16,7 +16,7 @@
 	z-index: 100;
 
 	&__head{
-		@include font(normal, normal, 20px, 1.25, $color-dark-grey);
+		@include font(normal, normal, rem(20px), 1.25, $color-dark-grey);
 		text-transform: uppercase;
 		padding-right: 40px;
 		margin-bottom: 20px;
@@ -57,7 +57,7 @@
 			padding: 17px;
 
 			&__head{
-				font-size: 18px;
+				font-size: rem(18px);
 				margin-bottom: 27px;
 			}
 

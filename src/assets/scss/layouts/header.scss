@@ -20,7 +20,7 @@
 	}
 
 	&__company{
-		@include font(normal, normal, 16px, 1.25, #fff);
+		@include font(normal, normal, rem(16px), 1.25, #fff);
 		margin-left: 45px;
 	}
 

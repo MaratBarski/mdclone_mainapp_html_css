@@ -4,10 +4,10 @@
 
 	&__item{
 		display: inline-block;
-		height: 25px;
+		height: rem(25px);
 		min-width: 28px;
 		border: 1px solid $color-dark-purple;
-		@include font(normal, 600, 14px, 28px, $color-dark-purple);
+		@include font(normal, 600, rem(14px), rem(23px), $color-dark-purple);
 		text-align: center;
 		cursor: pointer;
 	}
@@ -23,11 +23,11 @@
 	}
 
 	.icon{
-		max-width: 23px;
-		max-height: 23px;
+		max-width: rem(23px);
+		max-height: rem(23px);
 	}
 
-	.ic-calendar{width: 19px;}
+	.ic-calendar{width: rem(19px);}
 
 	&__item:hover{
 		color: $color-dark-purple;
@@ -45,12 +45,12 @@
 	}
 
 	&__item:first-child{
-		border-top-left-radius: 12.5px;
-		border-bottom-left-radius: 12.5px;
+		border-top-left-radius: rem(12.5px);
+		border-bottom-left-radius: rem(12.5px);
 	}
 	&__item:last-child{
-		border-top-right-radius: 12.5px;
-		border-bottom-right-radius: 12.5px;
+		border-top-right-radius: rem(12.5px);
+		border-bottom-right-radius: rem(12.5px);
 	}
 
 	&__item:not(:last-child){
