@@ -13,12 +13,12 @@
 	input[type="text"],
 	input[type="email"],
 	textarea{
-		height: 40px;
+		height: rem(40px);
 		width: 100%;
 		outline: none;
 		border: 1px solid $color-light-grey;
 		border-radius: 2px;
-		@include font(normal, normal, 14px, 38px, #686b83);
+		@include font(normal, normal, rem(14px), rem(38px), #686b83);
 		padding: 0 15px;
 		margin: 0;
 		transition: all 0.3s ease;
@@ -148,6 +148,15 @@
 	}
 
 	&__item_error .form-site-alert{color: $color-red;}
+
+	.select-date{
+		input[type="text"]{
+			width: 160px;
+			height: rem(30px);
+			line-height: rem(28px);
+			color: $color-dark-grey;
+		}
+	}
 }
 
 .form-site-alert{
@@ -210,6 +219,48 @@
 
 	&__name.disable{
 		color: $color-light-grey;
+	}
+}
+
+.select-date{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+
+	&__item:not(:last-child){
+		margin-right: 16px;
+	}
+
+	&__main{
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+
+	&__title{
+		@include font(normal, normal, rem(14px), 1, $color-dark-blue);
+		margin-right: 8px;
+	}
+
+	&__icon{
+		width: 30px;
+		margin-left: 4px;
+	}
+
+	.ic-calendar{
+		vertical-align: middle;
+	}
+
+	&__field{
+		position: relative;
+	}
+
+	&__label{
+		@include font(normal, normal, rem(12px), 2, $color-grey);
+		margin-top: 6px;
+		position: absolute;
+		left: 0;
+		top: 100%;
 	}
 }
 

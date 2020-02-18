@@ -25,11 +25,11 @@ block content
 									{name:'All', link:'#', active:'true'},
 									{name:'Last 30 Days', name_sort:'30D', link:'#'},
 									{name:'Last 7 Days', name_sort:'7D', link:'#'},
-									{name:'Specific', name_sort:'S', link:'#', popup_date:'true'},
+									{name:'Specific', name_sort:'S', link:'#'},
 								];
 
 							+tabsPage(tabs)
 
 							+formSearch('d-none d-md-block')
 
-					include ../components/ouput-history-table
+					include ../components/ouput-history-table-details

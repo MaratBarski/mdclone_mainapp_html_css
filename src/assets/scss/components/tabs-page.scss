@@ -10,6 +10,7 @@
 		@include font(normal, 600, rem(14px), rem(28px), $color-dark-purple);
 		text-align: center;
 		padding: 0 16px;
+		position: relative;
 	}
 
 	&__item.active{
@@ -41,6 +42,47 @@
 
 	&__item:not(:last-child){
 		border-right: 0;
+	}
+
+	&__item > .icon{
+		vertical-align: middle;
+	}
+
+	&__item.active > .icon{
+		fill: #fff;
+	}
+}
+
+.tabs-popup{
+	display: none;
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	text-align: left;
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	z-index: 10;
+
+	&.active{
+		display: inline-block;
+	}
+
+	&__head{
+		@include font(normal, normal, rem(14px), 1.71, $color-dark-blue);
+		padding-bottom: 8px;
+		border-bottom: 1px solid $color-light-grey;
+	}
+
+	&__content{
+		padding: 10px 0;
+	}
+
+	&__btn{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 

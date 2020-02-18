@@ -24,10 +24,50 @@ mixin breadcrumbs(links)
 mixin tabsPage(tabs)
 	.tabs-page
 		each item, index in tabs
-			a.tabs-page__item(href=item.link, class=index==0?'active':'')
-				span(class=item.name_sort?'d-none d-md-inline':'')= item.name
-				if item.name_sort
-					span.d-md-none= item.name_sort
+			if item.popup_date
+				span.tabs-page__item(class=item.active?'active':'')
+					span(class=item.name_sort?'d-none d-md-inline':'')= item.name
+					if item.name_sort
+						span.d-md-none= item.name_sort
+					
+					if item.popup_date
+						+svg('ic-select-arr-down','ic-select-arr-down')
+						.tabs-popup(class=item.popup_show?'active':'')
+							form.form-site
+								.tabs-popup__head Select report data ragne
+								.tabs-popup__content
+									.select-date
+										.select-date__item
+											.select-date__main
+												.select-date__title From:
+												.select-date__field
+													input(type="text", value="12/25/2019")
+													.select-date__label mm/dd/yyyy
+												.select-date__icon
+													+svg('ic-calendar','ic-calendar')
+
+										.select-date__item
+											.select-date__main
+												.select-date__title To:
+												.select-date__field
+													input(type="text", value="12/25/2019")
+													.select-date__label mm/dd/yyyy
+
+												.select-date__icon
+													+svg('ic-calendar','ic-calendar')
+
+
+								.tabs-popup__btn
+									a(href="#").btn.btn_border.btn_small Cancel
+									input.btn.btn_small(type="submit", value="Apply")
+			else
+				a.tabs-page__item(href=item.link, class=item.active?'active':'')
+					span(class=item.name_sort?'d-none d-md-inline':'')= item.name
+					if item.name_sort
+						span.d-md-none= item.name_sort
+			
+
+
 
 
 mixin formSearch(classes,placeholder)
@@ -146,67 +186,87 @@ mixin adminTableRow(rows)
 			tr.admin-table__row(class=row.row.selected?'active':'')
 				if(row.name)
 					td.admin-table__item
-						.admin-table__name= row.name.title
-							if(row.name.tooltip)
-								span.tooltip(class=row.name.tooltip_status?'active':'')
-									span.tooltip__content= row.name.title
+						.admin-table__content
+
+							.admin-table__name= row.name.title
+								if(row.name.tooltip)
+									span.tooltip(class=row.name.tooltip_status?'active':'')
+										span.tooltip__content= row.name.title
 
 				each field in row.fields
-					td.admin-table__item(class=field.class?field.class:'')
-						if(field.icon)
-							if(field.icon_color=='true')
+					td.admin-table__item(class=field.class?field.class:'', class=field.color=='blue'?'admin-table__item_blue':'')
+						.admin-table__content
+							if(field.circle=='purple')
+								span.admin-table__circle
+
+
+							if(field.file_name)
+								.table-file-info
+									span.table-file-info__name= field.file_name
+									if(field.file_count)
+										| &nbsp;|&nbsp;
+										a.file-count(href="#")
+											span.file-count__val= field.file_count
+											+svg('ic-external-link','ic-external-link')
+
+							if(field.icon)
 								span.admin-table__icon
-									+svg(field.icon,field.icon)
-									if(field.tooltip_icon)
-										span.tooltip(class=field.tooltip_status?'active':'')
-											span.tooltip__content= field.tooltip_icon
-							else
-								span.admin-table__icon
-									+svg(field.icon,field.icon+' ic-grey')
+									if(field.icon_color=='true')
+										+svg(field.icon,field.icon)
+									else if(field.icon_status=='inactive')
+										+svg(field.icon,field.icon+' ic-light-grey')
+									else
+										+svg(field.icon,field.icon+' ic-grey')
+
 									if(field.tooltip_icon)
 										span.tooltip(class=field.tooltip_status?'active':'')
 											span.tooltip__content= field.tooltip_icon
 
-							if(field.title)
-								span.admin-table__icon-label= field.title
-									if(field.tooltip)
-										span.tooltip(class=field.tooltip_status?'active':'')
-											span.tooltip__content= field.tooltip
-						else
-							= field.title
+								if(field.title)
+									span.admin-table__icon-label= field.title
+										if(field.tooltip)
+											span.tooltip(class=field.tooltip_status?'active':'')
+												span.tooltip__content= field.tooltip
+							else
+								if(field.link=='true')
+									a(href="#")
+										= field.title
+								else
+									= field.title
 
 				if(row.menu)
 					td.admin-table__item.admin-table__item_menu
-						if row.menu
-							if row.menu.notice
-								.admin-table__notice.d-none.d-md-inline-block
-									+svg(row.menu.notice,row.menu.notice)
+						.admin-table__content
+							if row.menu
+								if row.menu.notice
+									.admin-table__notice.d-none.d-md-inline-block
+										+svg(row.menu.notice,row.menu.notice)
 
-							.admin-table-action
-								span.admin-table-action__menu.ic-hover
-									+svg('ic-dot-menu','ic-dot-menu')
+								.admin-table-action
+									span.admin-table-action__menu.ic-hover
+										+svg('ic-dot-menu','ic-dot-menu')
 
-									.admin-table-popup(class=row.menu.popup?'active':'')
-										.admin-table-popup__top
-											if(row.menu.icons)
-												each icon in row.menu.icons
-													a.admin-table-popup__item(href="#",class=icon.disable?'disable':'')
-														.admin-table-popup__icon
-															+svg(icon.img,icon.img)
-														.admin-table-popup__text !{icon.text}
+										.admin-table-popup(class=row.menu.popup?'active':'')
+											.admin-table-popup__top
+												if(row.menu.icons)
+													each icon in row.menu.icons
+														a.admin-table-popup__item(href="#",class=icon.disable?'disable':'')
+															.admin-table-popup__icon
+																+svg(icon.img,icon.img)
+															.admin-table-popup__text !{icon.text}
 
-										.admin-table-popup__bottom
-											if(row.menu.icons_bottom)
-												each icon in row.menu.icons_bottom
+											.admin-table-popup__bottom
+												if(row.menu.icons_bottom)
+													each icon in row.menu.icons_bottom
+														a(href="#").admin-table-popup__item
+															.admin-table-popup__icon
+																+svg(icon.img,icon.img)
+															.admin-table-popup__text= icon.text
+												else
 													a(href="#").admin-table-popup__item
 														.admin-table-popup__icon
-															+svg(icon.img,icon.img)
-														.admin-table-popup__text= icon.text
-											else
-												a(href="#").admin-table-popup__item
-													.admin-table-popup__icon
-														+svg('ic-delete','ic-delete')
-													.admin-table-popup__text Delete
+															+svg('ic-delete','ic-delete')
+														.admin-table-popup__text Delete
 
 mixin mappingTableRow(rows)
 	tbody
