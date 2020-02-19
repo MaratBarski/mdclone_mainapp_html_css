@@ -9,6 +9,7 @@
 
 	&__icon{
 		cursor: pointer;
+		padding-left: 4px;
 	}
 }
 
@@ -24,6 +25,19 @@
 	top: 0;
 	right: 100%;
 	z-index: 10;
+
+	&::after{
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 5px 0 5px 4px;
+		border-color: transparent transparent transparent #ffffff;
+		position: absolute;
+		top: 12px;
+		left: 100%;
+	}
 
 	&__text{
 		@include font(normal, normal, rem(14px), 1.57, $color-grey);

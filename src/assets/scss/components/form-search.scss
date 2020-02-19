@@ -50,8 +50,8 @@
 
 	&__close{
 		display: none;
-		width: 16px;
-		height: 16px;
+		width: 7px;
+		height: 7px;
 		position: absolute;
 		right: 0;
 		@include top-center;
@@ -61,8 +61,10 @@
 	}
 
 	&__close .ic-close-small{
-		width: 7px;
-		stroke: $color-dark-blue;
+		width: 100%;
+		height: 100%;
+		fill: $color-dark-blue;
+		vertical-align: top;
 	}
 
 	input[type="text"]:focus + button + &__close{
@@ -85,7 +87,7 @@
 		fill: #fff;
 	}
 
-	&_white &__close .ic-close-small{stroke: #fff;}
+	&_white &__close .ic-close-small{fill: #fff;}
 }
 
 @media (max-width: 991px) {
