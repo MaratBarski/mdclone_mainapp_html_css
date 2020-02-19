@@ -13,12 +13,12 @@
 		width: 50%;
 	}
 
-	&__head .form-search{display: none;}
+	&__head .form-search{display: none; margin-top: -3px;}
 	&.active &__head .form-search{display: block;}
 
 	&__title{
-		max-width: calc(100% - 30px);
-		margin-left: 2px;
+		max-width: calc(100% - 34px);
+		margin-left: 4px;
 	}
 
 	&__arr{

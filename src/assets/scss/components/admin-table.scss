@@ -212,11 +212,10 @@
 	}
 
 	&__notice{
-		width: 24px;
-		height: 24px;
-		position: absolute;
-		right: 35px;
-		@include top-center;
+		width: 22px;
+		height: 22px;
+		vertical-align: middle;
+		margin-right: -5px;
 	}
 
 	&__icon{

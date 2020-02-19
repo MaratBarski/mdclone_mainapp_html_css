@@ -1,12 +1,13 @@
 /*-------------- form-site -----------------*/
 .form-site{
 	&__item{
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		position: relative;
 	}
 
 	&__label{
-		@include font(normal, 600, 14px, 1.35, $color-dark-grey);
+		display: block;
+		@include font(normal, 600, 14px, 1, $color-dark-grey);
 		margin-bottom: 6px;
 	}
 
