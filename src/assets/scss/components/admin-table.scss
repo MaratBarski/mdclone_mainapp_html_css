@@ -123,7 +123,8 @@
 		@include font(normal, 600, rem(14px), 1.43, $color-dark-blue);
 	}
 
-	&__head .ic-help{
+	&__head .ic-help,
+	&__head .ic-info{
 		width: 16px;
 		height: 16px;
 		vertical-align: middle;
