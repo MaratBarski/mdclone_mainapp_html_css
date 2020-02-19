@@ -7,7 +7,7 @@
 		height: rem(30px);
 		min-width: 110px;
 		border: 1px solid $color-dark-purple;
-		@include font(normal, 600, rem(14px), rem(28px), $color-dark-purple);
+		@include font(normal, normal, rem(14px), rem(28px), $color-dark-purple);
 		text-align: center;
 		padding: 0 16px;
 		position: relative;

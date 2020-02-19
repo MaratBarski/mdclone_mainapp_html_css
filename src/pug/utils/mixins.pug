@@ -186,8 +186,6 @@ mixin adminTableRow(rows)
 			tr.admin-table__row(class=row.row.selected?'active':'')
 				if(row.name)
 					td.admin-table__item
-						.admin-table__content
-
 							.admin-table__name= row.name.title
 								if(row.name.tooltip)
 									span.tooltip(class=row.name.tooltip_status?'active':'')
@@ -195,7 +193,6 @@ mixin adminTableRow(rows)
 
 				each field in row.fields
 					td.admin-table__item(class=field.class?field.class:'', class=field.color=='blue'?'admin-table__item_blue':'')
-						.admin-table__content
 							if(field.circle=='purple')
 								span.admin-table__circle
 
@@ -212,7 +209,11 @@ mixin adminTableRow(rows)
 							if(field.icon)
 								span.admin-table__icon
 									if(field.icon_color=='true')
-										+svg(field.icon,field.icon)
+										if(field.icon_hover=='true')
+											span.ic-hover
+												+svg(field.icon,field.icon)
+										else
+											+svg(field.icon,field.icon)
 									else if(field.icon_status=='inactive')
 										+svg(field.icon,field.icon+' ic-light-grey')
 									else

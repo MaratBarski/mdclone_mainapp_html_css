@@ -220,6 +220,9 @@ button.btn_small{
 	
 	.icon{
 		vertical-align: middle;
+	}
+
+	.ic-hover{
 		margin-left: -7px;
 		margin-right: 2px;
 	}
@@ -227,6 +230,14 @@ button.btn_small{
 	&__text{
 		display: inline-block;
 		vertical-align: middle;
+	}
+
+	&:hover &__text{
+		color: $color-dark-blue;
+	}
+
+	&:hover .ic-hover::before {
+		opacity: 1;
 	}
 }
 

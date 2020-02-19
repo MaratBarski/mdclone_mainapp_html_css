@@ -341,6 +341,16 @@
 	&__user{
 		width: 145px;
 	}
+
+	&__load{
+		
+		padding-right: 15px;
+	}
+
+	&__load .ic-hover{
+		width: 28px;
+		height: 28px;
+	}
 }
 
 // @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -528,7 +538,7 @@
 	padding: 10px 30px 15px;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -2px;
 	z-index: 10;
 	overflow-y: auto;
 
@@ -553,6 +563,12 @@
 	&__icons{
 		display: inline-flex;
 		align-items: center;
+	}
+
+	&__icons .ic-hover{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;	
 	}
 
 	&__icons .icon:not(:last-child){
@@ -612,6 +628,11 @@
 		&__val{
 			margin-top: -3px;
 		}
+	}
+
+	.ic-close-history{
+		width: 12px;
+		height: 12px;
 	}
 }
 

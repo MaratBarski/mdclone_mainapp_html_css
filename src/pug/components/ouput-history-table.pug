@@ -3,8 +3,10 @@
 		.admin-table-info__top
 			.admin-table-info__head Details
 			.admin-table-info__icons
-				+svg('ic-download','ic-download')
-				+svg('ic-close','ic-close')
+				span.ic-hover
+					+svg('ic-download','ic-download')
+				span.ic-hover
+					+svg('ic-close-history','ic-close-history ic-stroke')
 
 		.admin-table-info__content
 			.admin-table-info__main
@@ -129,7 +131,7 @@
 								span.ic-hover
 									+svg('ic-filter','ic-filter ic-stroke')
 
-				th.admin-table__item.d-none.d-md-table-cell
+				th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
 					.admin-table__head
 						span.admin-table__sort
 							span.admin-table__sort-up
@@ -152,7 +154,7 @@
 						{title:'R Test Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-failure', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_status:'inactive', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_status:'inactive', class:'admin-table__load'},
 					],
 				},
 				{
@@ -167,7 +169,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -182,7 +184,7 @@
 						{title:'R Test Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -197,7 +199,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -212,7 +214,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -227,7 +229,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-failure', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_status:'inactive', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_status:'inactive', class:'admin-table__load'},
 					],
 				},
 				{
@@ -242,7 +244,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-failure', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -257,7 +259,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Imported file', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -272,7 +274,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -287,7 +289,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -302,7 +304,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 				{
@@ -317,7 +319,7 @@
 						{title:'Demo Project', class:'d-none d-xxxl-table-cell'},
 						{title:'Query', class:'d-none d-md-table-cell'},
 						{icon:'ic-success', class:'d-none d-md-table-cell admin-table__item_center'},
-						{icon:'ic-download', icon_color:'true', class:'admin-table__item_right'},
+						{icon:'ic-download', icon_hover:'true', icon_color:'true', class:'admin-table__load'},
 					],
 				},
 			];
