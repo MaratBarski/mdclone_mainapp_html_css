@@ -2,63 +2,56 @@ table.admin-table
 	thead
 		tr.admin-table__head
 			th.admin-table__item
-				.admin-table__head
-					span.admin-table__sort
-						span.admin-table__sort-up
-						span.admin-table__sort-down
-					|Name
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Name
 
 			th.admin-table__item.d-none.d-md-table-cell
-				.admin-table__head
-					span.admin-table__sort.admin-table__sort_desk
-						span.admin-table__sort-up
-						span.admin-table__sort-down
-					|Loaded
+				span.admin-table__sort.admin-table__sort_desk
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Loaded
 
 			th.admin-table__item.d-none.d-md-table-cell
-				.admin-table__head
-					span.admin-table__sort
-						span.admin-table__sort-up
-						span.admin-table__sort-down
-					|Environment
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Environment
 
-					+adminTableFilter()
+				+adminTableFilter()
 
 			th.admin-table__item.d-none.d-lg-table-cell
-				.admin-table__head
-					span.admin-table__sort
-						span.admin-table__sort-up
-						span.admin-table__sort-down
-					|Permission Group
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Permission Group
 
-					.admin-table-filter
-						.admin-table-filter__icon
-							span.ic-hover
-								+svg('ic-filter','ic-filter ic-stroke')
+				.admin-table-filter
+					.admin-table-filter__icon
+						span.ic-hover
+							+svg('ic-filter','ic-filter ic-stroke')
 
 
 			th.admin-table__item.d-none.d-xl-table-cell
-				.admin-table__head
-					|User
+				|User
 
-					.admin-table-filter
-						.admin-table-filter__icon
-							span.ic-hover
-								+svg('ic-filter','ic-filter ic-stroke')
+				.admin-table-filter
+					.admin-table-filter__icon
+						span.ic-hover
+							+svg('ic-filter','ic-filter ic-stroke')
 
 			th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
-				.admin-table__head
-					|Shared
+				|Shared
 
 			th.admin-table__item.d-none.d-xxl-table-cell
-				.admin-table__head Columns
+				|Columns
 
 			th.admin-table__item.d-none.d-xxl-table-cell
-				.admin-table__head
-					span.admin-table__sort
-						span.admin-table__sort-up
-						span.admin-table__sort-down
-					|Rows
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Rows
 
 			th.admin-table__item
 

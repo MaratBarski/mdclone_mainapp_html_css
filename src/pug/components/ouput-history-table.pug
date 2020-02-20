@@ -59,84 +59,75 @@
 		thead
 			tr.admin-table__head
 				th.admin-table__item.d-none.d-md-table-cell
-					.admin-table__head
-						.admin-table__date
-							span.admin-table__sort.admin-table__sort_desk
-								span.admin-table__sort-up
-								span.admin-table__sort-down
-							|Date
+					.admin-table__date
+						span.admin-table__sort.admin-table__sort_desk
+							span.admin-table__sort-up
+							span.admin-table__sort-down
+						|Date
 
 				th.admin-table__item.d-none.d-md-table-cell
-					.admin-table__head
-						.admin-table__user
-							span.admin-table__sort
-								span.admin-table__sort-up
-								span.admin-table__sort-down
-							|User
-
-							.admin-table-filter
-								.admin-table-filter__icon
-									span.ic-hover
-										+svg('ic-filter','ic-filter ic-stroke')
-
-				th.admin-table__item
-					.admin-table__head
+					.admin-table__user
 						span.admin-table__sort
 							span.admin-table__sort-up
 							span.admin-table__sort-down
-						|Query/File Name
+						|User
 
-				th.admin-table__item.d-none.d-md-table-cell
-					.admin-table__head
-						span.admin-table__sort
-							span.admin-table__sort-up
-							span.admin-table__sort-down
-						|Approval Key
-
-				th.admin-table__item.d-none.d-xxxl-table-cell
-					.admin-table__head
-						span.admin-table__sort
-							span.admin-table__sort-up
-							span.admin-table__sort-down
-						|Research
-
-				th.admin-table__item.d-none.d-xxxl-table-cell
-					.admin-table__head
-						|Data
-						+svg('ic-help','ic-help')
-
-				th.admin-table__item.d-none.d-xxxl-table-cell
-					.admin-table__head
-						span.admin-table__sort
-							span.admin-table__sort-up
-							span.admin-table__sort-down
-						|Environment
-
-						//- +adminTableFilter()
 						.admin-table-filter
 							.admin-table-filter__icon
 								span.ic-hover
 									+svg('ic-filter','ic-filter ic-stroke')
+
+				th.admin-table__item
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Query/File Name
+
+				th.admin-table__item.d-none.d-md-table-cell
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Approval Key
+
+				th.admin-table__item.d-none.d-xxxl-table-cell
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Research
+
+				th.admin-table__item.d-none.d-xxxl-table-cell
+					|Data
+					+svg('ic-help','ic-help')
+
+				th.admin-table__item.d-none.d-xxxl-table-cell
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Environment
+
+					//- +adminTableFilter()
+					.admin-table-filter
+						.admin-table-filter__icon
+							span.ic-hover
+								+svg('ic-filter','ic-filter ic-stroke')
 
 				
 				th.admin-table__item.d-none.d-md-table-cell
-					.admin-table__head
-						span.admin-table__sort
-							span.admin-table__sort-up
-							span.admin-table__sort-down
-						|Source
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Source
 
-						.admin-table-filter
-							.admin-table-filter__icon
-								span.ic-hover
-									+svg('ic-filter','ic-filter ic-stroke')
+					.admin-table-filter
+						.admin-table-filter__icon
+							span.ic-hover
+								+svg('ic-filter','ic-filter ic-stroke')
 
 				th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
-					.admin-table__head
-						span.admin-table__sort
-							span.admin-table__sort-up
-							span.admin-table__sort-down
-						|Status
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Status
 
 				th.admin-table__item
 
