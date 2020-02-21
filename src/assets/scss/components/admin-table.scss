@@ -34,10 +34,10 @@
 	// 	display: table-row;
 	// }
 
-	&:hover{
-		position: relative;
-		z-index: 1;
-	}
+	// &:hover{
+	// 	position: relative;
+	// 	z-index: 1;
+	// }
 
 	&__item{
 		// display: table-cell;
@@ -131,10 +131,6 @@
 		left: 0;
 	}
 
-	&__row:nth-child(odd){
-		background: rgba(242, 243, 245, 0.9);
-	}
-
 	&__head .ic-help,
 	&__head .ic-info{
 		width: 16px;
@@ -186,19 +182,26 @@
 	&__sort_asc &__sort-down{
 		display: none;
 	}
+	
+	&__row:nth-child(odd){
+		background: rgba(242, 243, 245, 0.9);
+	}
 
 	&__row{
 		position: relative;
 	}
 
-	&__row:hover{
-		box-shadow: 0 2px 5px 0 #dbe4f9;
-		position: relative;
-		z-index: 1;
-		transform: scale(1,1);
-	}
+	&__row:hover,
+	&__row:nth-child(odd):hover,
+	&_white &__row:nth-child(2n+1):hover{
+		background: #e1e3e7;
+		// background: rgba(82, 87, 106, 0.1);
+		// box-shadow: 0 2px 5px 0 #dbe4f9;
+		// position: relative;
+		// z-index: 1;
+		// transform: scale(1,1);
 
-	
+	}
 	  
 	//   /*To work on the others browsers*/
 	//   &__hover:hover {
