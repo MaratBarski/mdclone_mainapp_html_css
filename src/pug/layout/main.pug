@@ -12,11 +12,15 @@ html(lang='ru')
 	body(class=body_scroll=='false'?'no-scroll':'')
 		.wrapper
 			.shadow-site(class=body_scroll=='false'?'is-visible':'')
-			include ./header
-			main
-				block breadcrumb
-				if h1
-					+h1(h1)
-				block content
+			if header=='open'
+				include ./header-open
+			else
+				include ./header
+			main(class=(header=='open')?'open':'')
+				.content-page
+					block breadcrumb
+					if h1
+						+h1(h1)
+					block content
 			if footer
 				include ./footer

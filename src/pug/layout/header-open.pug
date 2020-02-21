@@ -8,18 +8,18 @@ header.header
 							a(href="/")
 								img(src="/assets/img/logo-white.svg", alt="Logo")
 
-						.hamburger
+						.hamburger.active
 							+svg('ic-pager-arr-left','ic-pager-arr-left')
 
 							span.ic-hamburger
 								span
 					.header__info
-						.header__company.d-none.d-md-block
+						.header__company.d-none.d-lg-block
 							+svg('ic-flower','ic-flower')
 							span.header__company-name Buttercup Hospital Institute
 
 						.header__action
-							.select
+							.select.d-none.d-lg-block
 								.select__head Sheba Central
 									.select__head-arr
 										+svg('ic-select-arr-down','ic-select-arr-down')
@@ -29,10 +29,10 @@ header.header
 									.select__param Text 3
 									.select__param Text 4
 		
-							.header__notice
-								+svg('notice','notice')
+							.header__notice.active
+								+svg('notice-active','notice')
 
-							.header__profile
+							.header__profile(style="background-image: url(/assets/img/avatar.jpg)")
 
-	.sidebar
+	.sidebar.active
 		include ../components/sidebar
