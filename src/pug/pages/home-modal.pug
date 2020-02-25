@@ -5,6 +5,9 @@ block variables
 	- var h1 = 'Home';
 	- var body_scroll = 'false';
 
+block modal
+	+modalWindowQuery()
+
 block content
 	section.query-wrap
 		.container-fluid
@@ -52,5 +55,3 @@ block content
 
 						.unwrap__content
 							include ../components/home-table-key
-
-	+modalWindowQuery()

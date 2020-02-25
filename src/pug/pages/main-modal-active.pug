@@ -5,6 +5,10 @@ block variables
 	- var body_scroll = 'false';
 	//- - var h1 = 'Imported files';
 
+block modal
+	// form upload file
+	+modalWindow('error','active')
+
 block content
 	include ../components/import-file
 
@@ -33,6 +37,3 @@ block content
 							+formSearch('d-none d-md-block')
 
 					include ../components/import-file-table
-
-					// form upload file
-					+modalWindow('error','active')

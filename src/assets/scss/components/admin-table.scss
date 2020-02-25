@@ -118,6 +118,7 @@
 	&__head &__item{
 		padding: 14px 25px;
 		position: relative;
+		font-weight: 600;
 	}
 
 	&__head &__item::after{
@@ -131,10 +132,11 @@
 		left: 0;
 	}
 
-	&__head .ic-help,
-	&__head .ic-info{
+	&__head &__item .ic-help,
+	&__head &__item .ic-info{
 		width: 16px;
 		height: 16px;
+		max-height: 16px;
 		vertical-align: middle;
 	}
 
@@ -550,7 +552,7 @@
 	width: calc(100% - 360px);
 	height: 100%;
 	background: #fff;
-	border-left: 2px solid rgba(161, 173, 205, 0.5);
+	border-left: 1px solid rgba(161, 173, 205, 0.5);
 	padding: 10px 30px 15px;
 	position: absolute;
 	top: 0;

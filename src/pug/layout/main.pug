@@ -12,6 +12,8 @@ html(lang='ru')
 	body(class=body_scroll=='false'?'no-scroll':'')
 		.wrapper
 			.shadow-site(class=body_scroll=='false'?'is-visible':'')
+			block modal
+
 			if header=='open'
 				include ./header-open
 			else
