@@ -122,16 +122,6 @@ main{
 	position: relative;
 	left: 0;
 	transition: left 0.3s ease;
-
-	&.open{
-		width: calc(100% - 305px);
-		left: 305px;
-		overflow: auto;
-
-		.content-page{
-			width: calc(100% + 305px);
-		}
-	}
 }
 
 
@@ -335,16 +325,4 @@ button.btn_small{
 	.h1, h1{font-size: rem(22px);}
 
 	.btn, button.btn, input[type="submit"].btn{padding: 0 27px;}
-
-
-	main{
-		&.open{
-			width: calc(100% - 275px);
-			left: 275px;
-	
-			.content-page{
-				width: calc(100% + 275px);
-			}
-		}
-	}
 }

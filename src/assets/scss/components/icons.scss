@@ -25,6 +25,9 @@
 	&.ic-failure, &.ic-error{fill: $color-red;}
 	&.ic-warning{fill: $color-yellow;}
 	&.ic-success, &.ic-running{fill: $color-green;}
+
+	&.ic-hamburger{width: 27px; height: 18px;}
+	&.ic-hamburger-arrow{width: 42px; height: 18px;}
 }
 
 .ic-hover{

@@ -11,5 +11,13 @@
 
 	&_white{
 		color: #fff;
+
+		.icon{fill: #fff;}
+		.ic-stroke{stroke: #fff;}
+	}
+
+	.ic-hamburger,
+	.ic-hamburger-arrow{
+		vertical-align: top;
 	}
 }

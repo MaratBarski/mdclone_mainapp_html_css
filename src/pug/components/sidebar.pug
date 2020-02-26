@@ -1,91 +1,100 @@
-.sidebar__content
-	nav.sidebar-menu
-		ul.sidebar-menu__list
-			li.sidebar-menu__item.active
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Manage Users
-					.sidebar-menu__arr
-						+svg('ic-pager-arr-right','ic-pager-arr-right')
-				ul.sidebar-menu__sub-list
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__text Text1
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__text Text2
+.sidebar
+	.sidebar__content
+		.sidebar__top
+			.sidebar__logo
+				a(href="/")
+					img(src="/assets/img/logo-white.svg", alt="Logo")
 
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Project & Site Settings
-					.sidebar-menu__arr
-						+svg('ic-pager-arr-right','ic-pager-arr-right')
-
-				ul.sidebar-menu__sub-list
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
-							.sidebar-menu__text Text3
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
-							.sidebar-menu__text Text4
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Monitor & Reports
-					//- .sidebar-menu__icon
-					//- 	+svg('ic-edit','ic-edit')
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Manage Hierarchies
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Queries & Events
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Imported Files
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Jobs Scheduling
-
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text Patient Story Settings
+			+svg('ic-hamburger-arrow','ic-hamburger-arrow')
 
 
-			li.sidebar-menu__item
-				a(href="#").sidebar-menu__main
-					.sidebar-menu__img
-					.sidebar-menu__text External Applications
-					.sidebar-menu__arr
-						+svg('ic-pager-arr-right','ic-pager-arr-right')
-				ul.sidebar-menu__sub-list
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
-							.sidebar-menu__text Text1
-					li.sidebar-menu__sub-item
-						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
-							.sidebar-menu__text Text2
+		nav.sidebar-menu
+			ul.sidebar-menu__list
+				li.sidebar-menu__item.active
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Manage Users
+						.sidebar-menu__arr
+							+svg('ic-pager-arr-right','ic-pager-arr-right')
+					ul.sidebar-menu__sub-list
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__text Text1
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__text Text2
 
-.sidebar__bottom
-	.sidebar__btn
-		.sidebar__btn-item
-			a.btn.btn_border.btn_grey(href='#') + New Event
-		.sidebar__btn-item
-			a.btn.btn_border.btn_grey(href='#') + New Query
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Project & Site Settings
+						.sidebar-menu__arr
+							+svg('ic-pager-arr-right','ic-pager-arr-right')
 
-	.sidebar__copyright Version 6 - June 2020
+					ul.sidebar-menu__sub-list
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__img
+								.sidebar-menu__text Text3
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__img
+								.sidebar-menu__text Text4
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Monitor & Reports
+						//- .sidebar-menu__icon
+						//- 	+svg('ic-edit','ic-edit')
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Manage Hierarchies
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Queries & Events
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Imported Files
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Jobs Scheduling
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text Patient Story Settings
+
+
+				li.sidebar-menu__item
+					a(href="#").sidebar-menu__main
+						.sidebar-menu__img
+						.sidebar-menu__text External Applications
+						.sidebar-menu__arr
+							+svg('ic-pager-arr-right','ic-pager-arr-right')
+					ul.sidebar-menu__sub-list
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__img
+								.sidebar-menu__text Text1
+						li.sidebar-menu__sub-item
+							a(href="#").sidebar-menu__main
+								.sidebar-menu__img
+								.sidebar-menu__text Text2
+
+	.sidebar__bottom
+		.sidebar__btn
+			.sidebar__btn-item
+				a.btn.btn_border.btn_grey(href='#') + New Event
+			.sidebar__btn-item
+				a.btn.btn_border.btn_grey(href='#') + New Query
+
+		.sidebar__copyright Version 6 - June 2020

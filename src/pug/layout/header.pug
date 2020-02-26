@@ -3,36 +3,44 @@ header.header
 		.row
 			.col-12
 				.header__content
-					.header__main
-						.header__logo
-							a(href="/")
-								img(src="/assets/img/logo-white.svg", alt="Logo")
-
-						.hamburger
-							+svg('ic-pager-arr-left','ic-pager-arr-left')
-
-							span.ic-hamburger
-								span
 					.header__info
+						.hamburger
+							+svg('ic-hamburger','ic-hamburger')
+
 						.header__company.d-none.d-md-block
 							+svg('ic-flower','ic-flower')
 							span.header__company-name Buttercup Hospital Institute
 
-						.header__action
-							.select
-								.select__head Sheba Central
-									.select__head-arr
-										+svg('ic-select-arr-down','ic-select-arr-down')
-								.select__option
-									.select__param Text 1
-									.select__param Text 2
-									.select__param Text 3
-									.select__param Text 4
-		
-							.header__notice
-								+svg('notice','notice')
+					.header__action
+						.select
+							.select__head Sheba Central
+								.select__head-arr
+									+svg('ic-select-arr-down','ic-select-arr-down')
+							.select__option
+								.select__param Text 1
+								.select__param Text 2
+								.select__param Text 3
+								.select__param Text 4
+	
+						.header__notice
+							+svg('notice','notice')
 
-							.header__profile
+						.header__profile
+							.header__profile-icon
 
-	.sidebar
-		include ../components/sidebar
+							.profile-popup
+								.profile-popup__list
+									a(href="#").profile-popup__item
+										.profile-popup__icon
+											+svg('ic-setting','ic-setting')
+
+										.profile-popup__text Account settings
+
+									a(href="#").profile-popup__item
+										.profile-popup__icon
+											+svg('ic-logout','ic-logout')
+
+										.profile-popup__text Logout
+
+	
+	include ../components/sidebar
