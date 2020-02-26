@@ -202,6 +202,21 @@ button.btn_border.btn_disable:hover{
 	cursor: auto;
 }
 
+.btn_border.btn_grey,
+input[type="submit"].btn_border.btn_grey,
+button.btn_border.btn_grey{
+	background: transparent;
+	border-color: #979797;
+	color: #fff;
+}
+
+.btn_border.btn_grey:hover,
+input[type="submit"].btn_border.btn_grey:hover,
+button.btn_border.btn_grey:hover{
+	background: rgba(151, 151, 151, 0.05);
+	color: #fff;
+}
+
 .btn_icon,
 input[type="submit"].btn_icon,
 button.btn_icon{

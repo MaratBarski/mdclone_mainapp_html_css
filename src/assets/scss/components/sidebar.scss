@@ -14,8 +14,24 @@
 	z-index: 100;
 	transition: left 0.3s ease;
 
-	&__copyright{
+
+	&__bottom{
 		padding: 20px 20px 20px 45px;
+
+		.btn{
+			padding: 0 30px;
+		}
+	}
+
+	&__btn{
+		margin-bottom: 40px;
+	}
+
+	&__btn-item{
+		margin-bottom: 20px;
+	}
+
+	&__copyright{
 		@include font(normal, normal, rem(12px), 1.43, #fff);
 	}
 
@@ -89,7 +105,11 @@
 
 	&__sub-list{
 		display: none;
-		padding-left: 30px;
+	}
+
+	&__sub-item &__text{
+		width: 100%;
+		margin-right: 0;
 	}
 
 	&__sub-item:not(:last-child){
@@ -107,6 +127,10 @@
 	&__item.active > &__main::before,
 	&__sub-item.active > &__main::before{
 		display: inline-block;
+	}
+
+	&__item.active > &__main &__text{
+		font-weight: 600;
 	}
 }
 

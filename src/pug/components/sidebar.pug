@@ -10,11 +10,9 @@
 				ul.sidebar-menu__sub-list
 					li.sidebar-menu__sub-item
 						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
 							.sidebar-menu__text Text1
 					li.sidebar-menu__sub-item
 						a(href="#").sidebar-menu__main
-							.sidebar-menu__img
 							.sidebar-menu__text Text2
 
 			li.sidebar-menu__item
@@ -38,8 +36,8 @@
 				a(href="#").sidebar-menu__main
 					.sidebar-menu__img
 					.sidebar-menu__text Monitor & Reports
-					.sidebar-menu__icon
-						+svg('ic-edit','ic-edit')
+					//- .sidebar-menu__icon
+					//- 	+svg('ic-edit','ic-edit')
 
 			li.sidebar-menu__item
 				a(href="#").sidebar-menu__main
@@ -83,4 +81,11 @@
 							.sidebar-menu__img
 							.sidebar-menu__text Text2
 
-.sidebar__copyright Version 6 - June 2020
+.sidebar__bottom
+	.sidebar__btn
+		.sidebar__btn-item
+			a.btn.btn_border.btn_grey(href='#') + New Event
+		.sidebar__btn-item
+			a.btn.btn_border.btn_grey(href='#') + New Query
+
+	.sidebar__copyright Version 6 - June 2020
