@@ -61,4 +61,20 @@
 
 	input[disabled="disabled"] + &__label &__mark{border-color: $color-light-grey; background: $color-sort-grey;}
 	&:hover input[disabled="disabled"] + &__label &__mark::before{display: none;}
+
+	&_all &__mark::after{
+		content: '';
+		display: none;
+		width: 8px;
+		height: 2px;
+		border-radius: 1px;
+		background: $color-dark-purple;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&_all input[type=checkbox]:checked + &__label &__mark .icon{display: none;}
+	&_all input[type=checkbox]:checked + &__label &__mark::after{display: inline-block;}
 }

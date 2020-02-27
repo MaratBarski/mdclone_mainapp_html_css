@@ -121,11 +121,17 @@ block content
 							span.input-check__text Text
 
 					.input-check
-						input#param3(type='checkbox', name='param10', disabled="disabled")
+						input#param10(type='checkbox', name='param10', disabled="disabled")
 						label.input-check__label(for='param10')
 							span.input-check__mark
 								+svg('ic-check','ic-check')
 							span.input-check__text Text
+
+					.input-check.input-check_all
+						input#param11(type='checkbox', name='param11', checked="checked")
+						label.input-check__label(for='param11')
+							span.input-check__mark
+							span.input-check__text Select All
 
 					br
 					br
