@@ -22,6 +22,12 @@
 		margin-bottom: 20px;
 	}
 
+	&__text{
+		@include font(normal, normal, rem(14px), 1.25, $color-dark-grey);
+		margin-top: -10px;
+		margin-bottom: 25px;
+	}
+
 	&__close{
 		display: inline-block;
 		width: 17px;

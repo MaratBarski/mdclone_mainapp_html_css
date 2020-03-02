@@ -11,6 +11,16 @@
 		margin-bottom: 6px;
 	}
 
+	&__icon{
+		// margin-left: 4px;
+
+		.icon{
+			width: 16px;
+			height: 16px;
+			vertical-align: middle;
+		}
+	}
+
 	input[type="text"],
 	input[type="email"],
 	textarea{
@@ -221,6 +231,10 @@
 
 	&__name.disable{
 		color: $color-light-grey;
+		white-space: nowrap;
+		width: calc(100% - 117px);
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 

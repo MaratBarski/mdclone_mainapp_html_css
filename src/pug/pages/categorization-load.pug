@@ -1,0 +1,25 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Categorization list';
+	//- - var h1 = 'Categorization list';
+
+block content
+	+catListHead('false','active')
+
+	section.admin-table-wrap
+		.container-fluid
+			.row
+				.col-12
+					.admin-table-wrap__action
+						+formSearch('d-md-none')
+
+						.admin-table-wrap__col
+							a.btn.btn_icon(href='#') + New Categorization
+
+						.admin-table-wrap__col
+							+formSearch('d-none d-md-block')
+
+					include ../components/category-list-table
+
+					+pager('Showing 1-12 of 72 categorizations')

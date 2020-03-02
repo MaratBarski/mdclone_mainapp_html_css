@@ -1,0 +1,67 @@
+.modal-window
+	.modal-window__head New categorization
+	.modal-window__close.ic-hover
+		+svg('ic-close','ic-close')
+
+	form.form-site
+		.form-site__fields
+			.form-site__item(class=error?'form-site__item_error':'')
+				.form-site__label Choose File
+
+				.file-upload
+					label.file-upload__content
+						input(type='file', name='file')
+						span.file-upload__btn Choose File
+						span.file-upload__name.disable Select a CSV or Excel file
+				
+				
+				if (error)
+					.form-site-alert
+						.form-site-alert__icon
+							+svg('ic-failure','ic-failure')
+						span.form-site-alert__text File format needs to be .CSV (Comma Separated Values)
+
+			.form-site__item
+				label(for="name").form-site__label Name
+
+				input(type="text", placeholder="Type categorization name")
+
+			.form-site__item
+				label(for="desc").form-site__label Description
+					span.form-site__optional Optional
+
+				textarea(id="desc", placeholder="Type a description that will help you understand more about this categorization")
+
+			.form-site__item
+				label(for="project").form-site__label Environment
+
+				#project.select
+					.select__head Select Environment…
+						.select__head-arr
+							+svg('ic-select-arr-down','ic-select-arr-down')
+					.select__option
+						.select__param Sheba Central
+						.select__param Sheba External
+						.select__param Demo environment
+						.select__param Mimic
+						.select__param Environment with very long name
+
+			.form-site__item
+				label(for="key").form-site__label 
+					|Default Category
+					span.form-site__icon
+						+svg('ic-help','ic-help')
+
+				#key.select.select_up
+					.select__head Select default category...
+						.select__head-arr
+							+svg('ic-select-arr-down','ic-select-arr-down')
+					.select__option
+						.select__param Hierarchy 2
+						.select__param ATC1
+						.select__param Hierarchy 1
+						.select__param Hierarchy with a very long name
+
+		.form-site__btn
+			a(href="#").btn.btn_border Cancel
+			input.btn.btn_disable(type="submit", value="Upload")

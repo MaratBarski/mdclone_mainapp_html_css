@@ -1,0 +1,328 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Categorization list';
+	//- - var h1 = 'Categorization list';
+
+block content
+	+catListHead
+
+	section.admin-table-wrap
+		.container-fluid
+			.row
+				.col-12
+					.admin-table-wrap__action
+						+formSearch('d-md-none')
+
+						.admin-table-wrap__col
+							a.btn.btn_icon(href='#') + New Categorization
+
+						.admin-table-wrap__col
+							+formSearch('d-none d-md-block')
+
+					.admin-table-content
+						.admin-table-info
+							include ../components/category-list-details
+						
+						table.admin-table
+							thead
+								tr.admin-table__head
+									th.admin-table__item
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Name
+
+									th.admin-table__item.d-none.d-xxl-table-cell
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|File Name
+
+									th.admin-table__item.d-none.d-md-table-cell
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Modified
+
+									th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|State
+
+									th.admin-table__item.d-none.d-md-table-cell
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Environment
+
+										+adminTableFilter()
+
+									th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|In Use
+
+									th.admin-table__item
+
+							-
+								var rows = [
+									{
+										row:{selected:''},
+										name:{title:'A very long name of hierarchy almost all characters', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (1).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Sep 8, 2019 12:17', class:'d-none d-md-table-cell'},
+											{icon:'ic-robot', class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'JB_TEST', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug'},
+										],
+										menu:{
+											popup:'active',
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'Hierarchy for diagnosis (non admission)', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Very_Long_File-Name_E', class:'d-none d-xxl-table-cell'},
+											{title:'Oct 7, 2019 05:41', class:'d-none d-md-table-cell'},
+											{icon:'ic-warning', class:'d-none d-md-table-cell admin-table__item_center', popup:'cat-list-warning', popup_status:'active'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'Diagnoses', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (3).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Nov 4, 2019 15:03', class:'d-none d-md-table-cell'},
+											{class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'ETL_Gen_Template', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'1234567890123456789012345678901234567890123456789012', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy.csv', class:'d-none d-xxl-table-cell'},
+											{title:'Jul 25, 2019 14:02', class:'d-none d-md-table-cell'},
+											{class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'parallel222222', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (4).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Jul 25, 2019 14:02', class:'d-none d-md-table-cell'},
+											{icon:'ic-warning', class:'d-none d-md-table-cell admin-table__item_center', popup:'cat-list-warning'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'parallel33333', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (5).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Jul 25, 2019 13:55', class:'d-none d-md-table-cell'},
+											{icon:'ic-robot', class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'parallel6000006', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (6).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Jul 25, 2019 13:55', class:'d-none d-md-table-cell'},
+											{icon:'ic-warning', class:'d-none d-md-table-cell admin-table__item_center', popup:'cat-list-warning'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'parallel1001222', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154611_Gender_Hierarchy (7).csv', class:'d-none d-xxl-table-cell'},
+											{title:'Jul 25, 2019 13:55', class:'d-none d-md-table-cell'},
+											{class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'Demo Project', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug', popup_status:'active'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'Test_API_Diagnoses_Src', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_Gender_Hierarchy.csv', class:'d-none d-xxl-table-cell'},
+											{title:'Dec 20, 2019 11:05', class:'d-none d-md-table-cell'},
+											{class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'JB_TEST', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'Test_API_Diagnoses', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154612_Gender_Hierarchy.csv', class:'d-none d-xxl-table-cell'},
+											{title:'Dec 20, 2019 11:05', class:'d-none d-md-table-cell'},
+											{icon:'ic-warning', class:'d-none d-md-table-cell admin-table__item_center', popup:'cat-list-warning'},
+											{title:'JB_TEST', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'diagnoses_heirarchy_test', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154613_Gender_Hierarchy.csv', class:'d-none d-xxl-table-cell'},
+											{title:'Dec 18, 2019 18:54', class:'d-none d-md-table-cell'},
+											{icon:'ic-robot', class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'js_test_2', class:'d-none d-md-table-cell'},
+											{class:'d-none d-lg-table-cell admin-table__item_center'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+									{
+										row:{selected:''},
+										name:{title:'diagnoses_heirarchy', link:'true'},
+										fields:[
+											{file_name:'20190804_170415_20181111_154614_Gender_Hierarchy.csv', class:'d-none d-xxl-table-cell'},
+											{title:'Dec 17, 2019 17:50', class:'d-none d-md-table-cell'},
+											{class:'d-none d-md-table-cell admin-table__item_center'},
+											{title:'js_test_2', class:'d-none d-md-table-cell'},
+											{icon:'ic-plug', class:'d-none d-lg-table-cell admin-table__item_center', popup:'cat-list-plug'},
+										],
+										menu:{
+											icons:[
+												{img:'ic-review-and-edit', text:'Review & Edit'},
+												{img:'ic-replace', text:'Replace Categorization File'},
+												{img:'ic-download', text:'Download'},
+											],
+											icons_bottom:[
+												{img:'ic-delete', text:'Delete', disable:'true'},
+											]
+										}
+									},
+								];
+							+adminTableRow(rows)
+
+					+pager('Showing 1-12 of 72 categorizations')

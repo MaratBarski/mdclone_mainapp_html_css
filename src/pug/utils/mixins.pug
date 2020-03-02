@@ -182,11 +182,15 @@ mixin mappingTableFilter(status)
 
 mixin adminTableRow(rows)
 	tbody
-		each row in rows
+		each row, index in rows
 			tr.admin-table__row(class=row.row.selected?'active':'')
 				if(row.name)
 					td.admin-table__item
-							.admin-table__name= row.name.title
+							if(row.name.link=='true')
+								a(href="#").admin-table__name= row.name.title
+							else
+								.admin-table__name= row.name.title
+
 								if(row.name.tooltip)
 									span.tooltip(class=row.name.tooltip_status?'active':'')
 										span.tooltip__content= row.name.title
@@ -222,6 +226,50 @@ mixin adminTableRow(rows)
 									if(field.tooltip_icon)
 										span.tooltip(class=field.tooltip_status?'active':'')
 											span.tooltip__content= field.tooltip_icon
+
+									if(field.popup=='cat-list-warning')
+										.info-popup.info-popup_right(style="width: 295px;", class=field.popup_status=='active'?'active':'')
+											form.form-site
+												.info-popup__top
+													.info-popup__head-wrap
+														span.info-popup__head Structure Mismatch
+
+													.info-popup__close
+														+svg('ic-close-circle','ic-close-circle')
+
+												.info-popup__content
+													.info-popup__text-wrap
+														.info-popup__text
+															p The categorization structure was manually changed and no longer match the previous one.  
+															p After the issue is fixed by the ETL owner, turn off the toggle below to restart the auto-update.
+
+													.info-popup-switch
+														.info-popup-switch__content
+															.info-popup-switch__text-wrap
+																.info-popup-switch__title Hold Automatic loading
+
+														.switch
+															input(type="checkbox", id="switch1"+index, checked="checked")
+															label.switch__content(for="switch1"+index)
+																.switch__marker
+																.switch__on On
+																.switch__off Off
+
+									if(field.popup=='cat-list-plug')
+										.info-popup.info-popup_right(style="width: 268px;", class=field.popup_status=='active'?'active':'')
+											.info-popup__top
+												.info-popup__head-wrap
+													span.info-popup__head Used in
+
+												.info-popup__close
+													+svg('ic-close-circle','ic-close-circle')
+
+											.info-popup__content
+												.info-popup__text-wrap
+													.info-popup__title Events:
+													.info-popup__text Diagnosis, Admission Diagnosis, Procedures, Customised events
+																
+
 
 								if(field.title)
 									span.admin-table__icon-label= field.title
@@ -259,7 +307,7 @@ mixin adminTableRow(rows)
 											.admin-table-popup__bottom
 												if(row.menu.icons_bottom)
 													each icon in row.menu.icons_bottom
-														a(href="#").admin-table-popup__item
+														a(href="#", class=icon.disable?'disable':'').admin-table-popup__item
 															.admin-table-popup__icon
 																+svg(icon.img,icon.img)
 															.admin-table-popup__text= icon.text
@@ -664,3 +712,134 @@ mixin mappingHead(popup, legend)
 											span.notice-popup-link__text Live help
 											+svg('ic-live-help','ic-live-help')
 
+mixin catListHead(legend,notice)
+	section.page-header
+		.container-fluid
+			.row
+				.col-12
+					.page-header__wrap
+						.page-header__content
+							h1 Categorization list
+
+						.notice(class=(legend=='legend')?'active':'')
+							.notice__icon
+								+svg('ic-bulb','ic-bulb')
+
+							.notice-popup
+								.notice-popup__text Add, maintain and update categorization used in events, imported files and patient stories.
+
+								.notice-popup__content
+									.notice-popup__head Legend
+
+									.notice-popup-info
+										.notice-popup-info__col
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-warning','ic-warning')
+
+												.notice-popup-info__text Warning: Mismatch
+
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-robot','ic-robot ic-grey')
+
+												.notice-popup-info__text Automatic Loaded Categorization
+
+										.notice-popup-info__col
+											.notice-popup-info__item
+												.notice-popup-info__val
+													+svg('ic-plug','ic-plug ic-grey')
+
+												.notice-popup-info__text In Use
+
+								.notice-popup__footer
+									.notice-popup-link
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text View tutorials
+											+svg('ic-view-tutorials','ic-view-tutorials')
+
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text Additional help
+											+svg('ic-add-help','ic-add-help')
+
+										a.notice-popup-link__item(href="#")
+											span.notice-popup-link__text Live help
+											+svg('ic-live-help','ic-live-help')
+
+					if(notice=='active')
+						.notice-load
+							.notice-load__top
+								.notice-load__head Loading categorization
+								.notice-load__close
+										+svg('ic-close','ic-close')
+
+							.notice-load__content
+								.load-doc
+									.load-doc__content
+										.load-doc__file
+											.load-doc__icon
+												+svg('ic-csv','ic-csv')
+
+											.load-doc__text 20191225_134440_Medication Hierarchy 2.csv
+
+										.load-doc__link
+											a(href="#") Abort
+
+									.load-doc__progress
+										.load-doc__progress-line(style='width:25%;')
+
+mixin modalWindowCatReplace(error)
+	.modal-window
+		.modal-window__head Replace categorization
+		.modal-window__close.ic-hover
+			+svg('ic-close','ic-close')
+
+		.modal-window__text Environment: Sheba Central
+
+		form.form-site
+			.form-site__fields
+				.form-site__item(class=error?'form-site__item_error':'')
+					.form-site__label Choose File
+
+					.file-upload
+						label.file-upload__content
+							input(type='file', name='file')
+							span.file-upload__btn Choose File
+							span.file-upload__name.disable Select a CSV or Excel file as the categorization source
+					
+					if (error)
+						.form-site-alert
+							.form-site-alert__icon
+								+svg('ic-failure','ic-failure')
+							span.form-site-alert__text File format needs to be .CSV (Comma Separated Values)
+
+				.form-site__item
+					label(for="name").form-site__label Name
+
+					input(type="text", placeholder="Type categorization name")
+
+				.form-site__item
+					label(for="desc").form-site__label Description
+						span.form-site__optional Optional
+
+					textarea(id="desc", placeholder="Type description that will help you understand more about this hierarchy")
+
+				.form-site__item
+					label(for="key").form-site__label 
+						|Default Category
+						span.form-site__icon
+							+svg('ic-help','ic-help')
+
+					#key.select.select_up
+						.select__head Select default category...
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param Hierarchy 2
+							.select__param ATC1
+							.select__param Hierarchy 1
+							.select__param Hierarchy with a very long name
+
+			.form-site__btn
+				a(href="#").btn.btn_border Cancel
+				input.btn.btn_disable(type="submit", value="Upload")
