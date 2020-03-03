@@ -1,0 +1,27 @@
+table.admin-table.admin-table_white
+	thead
+		tr.admin-table__head
+			th.admin-table__item
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Category Name
+
+			th.admin-table__item.d-none.d-md-table-cell
+				|Data Sample
+
+	-
+		var rows = [
+			{name:'Original medicine name', data:'7070, 5569, 73743'},
+			{name:'Generic name', data:'Lyrica, Meloxicam, Metformin'},
+			{name:'Mapped ATC code(s)', data:'XX,cc099'},
+			{name:'Manufacturer', data:'Sanofi, Novartis, Orion'},
+			{name:'Type of route', data:'IV'},
+			{name:'Anatomical main group (ATC1)', data:'LOREM IPSUM, LOREM'},
+			{name:'Therapeutic main group (ATC2)', data:'Lorem ipsum, lorem'},
+			{name:'Pharmacological subgroup (ATC3)', data:''},
+			{name:'Chemical subgroup (ATC4)', data:''},
+			{name:'Substance (ATC5)', data:'Lorem ipsum, lorem'},
+			
+		];
+	+editCatTableRow(rows)

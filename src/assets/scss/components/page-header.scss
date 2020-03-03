@@ -36,6 +36,7 @@
 		margin: 0;
 		padding: 0 4px;
 		background: transparent;
+		margin-right: 12px;
 	}
 
 	&__text input[type="text"]:hover{border-color: $color-light-grey;}
@@ -43,6 +44,17 @@
 
 	&__text{
 		margin-left: 17px;
+		position: relative;
+
+		.info-popup{
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 200px;
+			z-index: 10;
+		}
+
+		.info-popup.active{display: inline-block;}
 	}
 
 	&__back,

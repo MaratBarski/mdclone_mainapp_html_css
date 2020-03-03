@@ -46,6 +46,12 @@
 	&__head{
 		@include font(normal, 600, rem(12px), 1.2, $color-dark-blue);
 		text-transform: uppercase;
+
+		.ic-help{
+			vertical-align: top;
+			width: 16px;
+			height: 16px;
+		}
 	}
 
 	&__option{
@@ -69,6 +75,15 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-top: 20px;
+	}
+
+	&__btn-link{
+		@include font(normal, 600, rem(14px),  rem(23px), $color-dark-purple);
+	}
+
+	&__btn-link:hover{
+		color: $color-dark-purple;
+		text-decoration: underline;
 	}
 
 	textarea{

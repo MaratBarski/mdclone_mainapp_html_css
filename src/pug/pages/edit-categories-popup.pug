@@ -1,0 +1,17 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Edit categories';
+	- var footer = 'show';
+	//- - var h1 = 'Imported files';
+
+block content
+	+editTableHead('popup')
+
+	include ../components/edit-categories-panel
+
+	section.admin-table-wrap
+		.container-fluid
+			.row
+				.col-12
+					include ../components/edit-categories-table

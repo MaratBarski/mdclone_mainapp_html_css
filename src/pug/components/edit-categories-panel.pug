@@ -1,0 +1,36 @@
+section.info-panel-wrap
+	.container-fluid
+		.row
+			.col-12
+				.info-panel
+					.info-panel__item
+						.info-panel__title Environment:
+						.info-panel__val Sheba Central
+
+					.info-panel__item
+						.info-panel__title Default Category:
+						.info-panel__val
+							.select.select_small
+								.select__head Please Select...
+									.select__head-arr
+										+svg('ic-select-arr-down','ic-select-arr-down')
+								.select__option
+									.select__param ATC1
+									.select__param ATC2
+									.select__param ATC3
+									.select__param ATC4
+							
+							+svg('ic-help','ic-help')
+
+					.info-panel__item
+						.info-panel__title Modified:
+						.info-panel__val Jul 9, 2019
+
+					.info-panel__item
+						.info-panel__val In Use
+							+svg('ic-plug','ic-plug ic-grey')
+
+					.info-panel__item
+						.info-panel__title State:
+						.info-panel__val Auto-Update
+							+svg('ic-robot','ic-robot ic-grey')

@@ -881,11 +881,47 @@ mixin mapCatTableRow(rows)
 							span.tooltip(class=row.tooltip_status?'active':'')
 								span.tooltip__content= row.data
 
-mixin addTableInfo(error)
+mixin editCatTableRow(rows)
+	tbody
+		each row, index in rows
+			tr.admin-table__row
+				td.admin-table__item
+					.admin-table__name-edit
+						input(type="text", value=row.name)
+
+				td.admin-table__item.d-none.d-md-table-cell
+					.admin-table__data-sample= row.data
+						if(row.tooltip)
+							span.tooltip(class=row.tooltip_status?'active':'')
+								span.tooltip__content= row.data
+
+mixin addTableInfo(icon, error, popup)
 	.add-info-table
 		span.add-info-table__text
 			a(href="#") Add user notification
-				+svg('ic-user-notice-full','ic-user-notice-full')
+			span.add-info-table__notice-icon
+				+svg(icon,icon)
+
+				.info-popup.info-popup_bottom(class=popup?'active':'')
+					form.form-site
+						.info-popup__top
+							.info-popup__head-wrap
+								span.info-popup__head Categorization change notification message
+									+svg('ic-help','ic-help')
+
+							.info-popup__close
+								+svg('ic-close-circle','ic-close-circle')
+
+						.info-popup__content
+							.info-popup__fields
+								textarea(placeholder="Note! the categorization used in this query was changed.")
+
+						.info-popup__btn
+							a(href="#").info-popup__btn-link Cancel
+
+							span
+								a(href="#").btn.btn_border.btn_small Delete
+								input(type="submit", value="Apply").btn.btn_small
 
 		span.add-info-table__opt Optional
 
@@ -910,3 +946,43 @@ mixin addTableInfo(error)
 								|- Type of route<br>
 								|- Pharmacological subgroup ATC3<br>
 								|- Manufacturer 
+
+mixin editTableHead(popup)
+	section.page-header
+		.container-fluid
+			.row
+				.col-12
+					.page-header__wrap
+						.page-header__content
+							.page-header__back
+								span.ic-hover
+									+svg('ic-back-to-page','ic-back-to-page')
+
+							h1 Edit categories
+
+							.page-header__text
+								input(type="text", value="Diagonisis definition (non admission)")
+
+								a(href="#") Description
+
+								.info-popup(class=popup?'active':'')
+									form.form-site
+										.info-popup__top
+											.info-popup__head-wrap
+												span.info-popup__head Categories Description
+												span.info-popup__option Optional
+
+											.info-popup__close
+												+svg('ic-close-circle','ic-close-circle')
+
+										.info-popup__content
+											.info-popup__fields
+												textarea(placeholder="Type a description that will help you understand more about this categorization")
+
+										.info-popup__btn
+											a(href="#").btn.btn_border.btn_small Cancel
+											input(type="submit", value="Apply").btn.btn_small
+
+						.notice(class=legend?'active':'')
+							.notice__icon
+								+svg('ic-bulb','ic-bulb')
