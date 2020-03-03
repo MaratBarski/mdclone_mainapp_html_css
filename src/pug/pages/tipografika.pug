@@ -415,6 +415,22 @@ block content
 								.info-popup__title Events:
 								.info-popup__text Diagnosis, Admission Diagnosis, Procedures, Customised events
 
+					br
+					br
+					.info-popup.info-popup_right.info-popup_bottom(style="width: 276px;")
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Missing old categories
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								|- Type of route<br>
+								|- Pharmacological subgroup ATC3<br>
+								|- Manufacturer 
+
 
 					br
 					br
@@ -709,4 +725,14 @@ block content
 							.type-icon__img
 								+svg('ic-csv','ic-csv')
 							.type-icon__name ic-csv
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-user-notice-empty','ic-user-notice-empty')
+							.type-icon__name ic-user-notice-empty
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-user-notice-full','ic-user-notice-full')
+							.type-icon__name ic-user-notice-full
 

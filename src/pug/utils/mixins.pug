@@ -843,3 +843,70 @@ mixin modalWindowCatReplace(error)
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
 				input.btn.btn_disable(type="submit", value="Upload")
+
+
+mixin mapCatTableRow(rows)
+	tbody
+		each row, index in rows
+			tr.admin-table__row
+				td.admin-table__item
+					.admin-table__name-edit
+						input(type="text", value=row.name)
+
+				td.admin-table__item.d-none.d-md-table-cell
+					.select-wrap(class=row.select_error?'error':'')
+						.select.select_small.select_full
+							.select__head= row.name
+								.select__head-arr
+									+svg('ic-select-arr-down','ic-select-arr-down')
+							.select__option
+								.select__param Original medicine name
+								.select__param Generic name
+								.select__param Mapped ATC code(s)
+								.select__param New Hierarchy name
+								.select__param Manufacturer
+								.select__param Anatomical main group (ATC1)
+								.select__param Therapeutic main group (ATC2)
+								.select__param Pharmacological subgroup (ATC3)
+								.select__param Another Hierarchy
+								.select__param Another Hierarchy 2
+
+						if(row.select_error)
+							span.tooltip.tooltip_left.tooltip_red
+								span.tooltip__content= row.select_error
+
+				td.admin-table__item.d-none.d-lg-table-cell
+					.admin-table__data-sample= row.data
+						if(row.tooltip)
+							span.tooltip(class=row.tooltip_status?'active':'')
+								span.tooltip__content= row.data
+
+mixin addTableInfo(error)
+	.add-info-table
+		span.add-info-table__text
+			a(href="#") Add user notification
+				+svg('ic-user-notice-full','ic-user-notice-full')
+
+		span.add-info-table__opt Optional
+
+		if(error)
+			span.add-info-table__error
+				+svg('ic-failure','ic-failure')
+				|The following old categories will not be available for the user anymore: 
+				span.add-info-table__error-accent Type of route,  Anatomical main group (ATC1)
+				span.add-info-table__more
+					a(href="#") 3 More
+
+					.info-popup.info-popup_right.info-popup_bottom.active(style="width: 276px;")
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Missing old categories
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								|- Type of route<br>
+								|- Pharmacological subgroup ATC3<br>
+								|- Manufacturer 

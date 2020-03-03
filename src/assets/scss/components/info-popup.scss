@@ -28,6 +28,13 @@
 		right: 20px;
 	}
 
+	&_bottom::after{
+		bottom: auto;
+		top: 100%;
+		border-color: #fff rgba(0,0,0,0) rgba(0,0,0,0);
+		border-width: 6px 7px 0;
+	}
+
 	&__top{
 		display: flex;
 		justify-content: space-between;

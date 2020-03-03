@@ -50,7 +50,15 @@
 		height: 17px;
 	}
 
+	.ic-help{
+		width: 15px;
+		height: 15px;
+		margin-left: 9px;
+	}
+
 	.select{
+		display: inline-block;
+		vertical-align: middle;
 		margin-left: 3px;
 		
 		&__head-arr .icon{

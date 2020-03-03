@@ -702,6 +702,75 @@
 	}
 }
 
+.add-info-table{
+	margin-top: 14px;
+
+	&__text{
+		font-size: rem(14px);
+
+		.icon{
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 6px;
+		}
+	}
+
+	&__opt{
+		@include font(italic, normal, rem(12px), 1.4, $color-grey);
+		margin-left: 7px;
+	}
+
+	.ic-user-notice-full{
+		width: 26px;
+		height: 20px;
+		fill: $color-blue;
+	}
+	
+	.ic-failure{
+		display: inline-block;
+		vertical-align: middle;
+		width: 24px;
+		height: 22px;
+		margin-right: 6px;
+	}
+
+	&__error{
+		@include font(normal, normal, rem(14px), 1.4, $color-dark-grey);
+		position: relative;
+		margin-left: 10px;
+	}
+
+	&__error::before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 1px;
+		height: 15px;
+		background: #979797;
+		margin-right: 7px;
+	}
+
+	&__error-accent{color: $color-red;}
+
+	&__more{
+		margin-left: 10px;
+		position: relative;
+	}
+
+	.info-popup,
+	.info-popup{
+		display: none;
+		position: absolute;
+		bottom: calc(100% + 7px);
+		right: 2px;
+	}
+
+	&__more:hover .info-popup,
+	.info-popup.active{
+		display: inline-block;
+	}
+}
+
 @media (max-width: 1899px) {
 	.admin-table{
 		&__name{width: 340px;}

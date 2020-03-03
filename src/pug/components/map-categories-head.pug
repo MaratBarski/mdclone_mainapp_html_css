@@ -1,0 +1,23 @@
+section.page-header
+	.container-fluid
+		.row
+			.col-12
+				.page-header__wrap
+					.page-header__content
+						.page-header__back(class=popup?'active':'')
+							span.ic-hover
+								+svg('ic-back-to-page','ic-back-to-page')
+							
+							//- span.tooltip.tooltip_top
+							//- 	span.tooltip__content Back to Imported Files
+
+						h1 Map categories
+
+						.page-header__text
+							input(type="text", value="Hierarchy for diagnosis (non admission)")
+
+							a(href="#") Description
+
+					.notice(class=legend?'active':'')
+						.notice__icon
+							+svg('ic-bulb','ic-bulb')

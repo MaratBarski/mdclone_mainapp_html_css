@@ -418,6 +418,23 @@
 	&_small{width: 195px;}
 	&_small &__param{line-height: rem(25px);}
 	&_small &__option{max-height: 270px;}
+
+	&_full{width: auto;}
+}
+
+.select-wrap.error{
+	position: relative;
+
+	.select__head{
+		border-color: $color-red;
+	}
+
+	.tooltip{
+		position: absolute;
+		left: calc(100% + 4px);
+		@include top-center;
+		margin: 0 4px;
+	}
 }
 
 .switch{
