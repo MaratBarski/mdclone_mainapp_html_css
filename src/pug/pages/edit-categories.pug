@@ -6,12 +6,13 @@ block variables
 	//- - var h1 = 'Imported files';
 
 block content
-	+editTableHead
+	.edit-categories
+		+editTableHead
 
-	include ../components/edit-categories-panel
+		include ../components/edit-categories-panel
 
-	section.admin-table-wrap
-		.container-fluid
-			.row
-				.col-12
-					include ../components/edit-categories-table
+		section.admin-table-wrap
+			.container-fluid
+				.row
+					.col-12
+						include ../components/edit-categories-table

@@ -6,51 +6,43 @@ block variables
 	//- - var h1 = 'Imported files';
 
 block content
-	include ../components/map-categories-head
+	.map-categories
+		include ../components/map-categories-head
 
-	include ../components/map-categories-panel
+		include ../components/map-categories-panel
 
-	section.admin-table-wrap
-		.container-fluid
-			.row
-				.col-12
-					table.admin-table.admin-table_white
-						thead
-							tr.admin-table__head
-								th.admin-table__item
-									span.admin-table__sort
-										span.admin-table__sort-up
-										span.admin-table__sort-down
-									|New Category Name
+		section.admin-table-wrap
+			.container-fluid
+				.row
+					.col-12
+						table.admin-table.admin-table_white
+							thead
+								tr.admin-table__head
+									th.admin-table__item
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|New Category Name
 
-								th.admin-table__item.d-none.d-md-table-cell
-									|Matched Category in Old Categorazation
+									th.admin-table__item.d-none.d-md-table-cell
+										|Matched Category in Old Categorazation
 
-								th.admin-table__item.d-none.d-md-table-cell
-									|Data Sample
+									th.admin-table__item.d-none.d-lg-table-cell
+										|Data Sample
 
-						-
-							var rows = [
-								{name:'Original medicine name', data:'sample data'},
-								{name:'Generic name', data:'Lyrica, Meloxicam, Metf…'},
-								{name:'Mapped ATC code(s)', data:'XX,cc099'},
-								{name:'New Hierarchy name', select_error:'Missing Category'},
-								{name:'Manufacturer', data:'IV...'},
-								{name:'Anatomical main group (ATC1)', data:'LOREM IPSUM, LOREM'},
-								{name:'Therapeutic main group (ATC2)', data:'Lorem ipsum, lorem'},
-								{name:'Pharmacological subgroup (ATC3)', data:'...'},
-								{name:'Another Hierarchy', data:'...'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-								{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
-							];
-						+mapCatTableRow(rows)
+							-
+								var rows = [
+									{name:'Original medicine name', data:'sample data'},
+									{name:'Generic name', data:'Lyrica, Meloxicam, Metf…'},
+									{name:'Mapped ATC code(s)', data:'XX,cc099'},
+									{name:'New Hierarchy name', select_error:'Missing Category'},
+									{name:'Manufacturer', data:'IV...'},
+									{name:'Anatomical main group (ATC1)', data:'LOREM IPSUM, LOREM'},
+									{name:'Therapeutic main group (ATC2)', data:'Lorem ipsum, lorem'},
+									{name:'Pharmacological subgroup (ATC3)', data:'...'},
+									{name:'Another Hierarchy', data:'...'},
+									{name:'Another Hierarchy 2', data:'Lorem ipsum, lorem'},
+								];
+							+mapCatTableRow(rows)
 
-					+addTableInfo('ic-user-notice-full','error')
-							
+						+addTableInfo('ic-user-notice-full','error')

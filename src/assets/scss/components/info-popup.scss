@@ -89,7 +89,7 @@
 	textarea{
 		height: rem(67px);
 		font-size: rem(12px);
-		line-height: 1.2;
+		line-height: 1.42;
 		padding: 8px;
 	}
 
@@ -100,6 +100,11 @@
 	&__title{
 		font-weight: 600;
 		margin-right: 14px;
+	}
+
+	&__text,
+	&__text p{
+		@include font(normal, normal, rem(12px), 1.35, $color-dark-grey);
 	}
 }
 

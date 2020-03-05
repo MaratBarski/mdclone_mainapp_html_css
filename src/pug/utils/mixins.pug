@@ -771,6 +771,7 @@ mixin catListHead(legend,notice)
 							.notice-load__top
 								.notice-load__head Loading categorization
 								.notice-load__close
+									span.ic-hover
 										+svg('ic-close','ic-close')
 
 							.notice-load__content
@@ -914,7 +915,7 @@ mixin addTableInfo(icon, error, popup)
 
 						.info-popup__content
 							.info-popup__fields
-								textarea(placeholder="Note! the categorization used in this query was changed.")
+								textarea Note! the categorization used in this query was changed.
 
 						.info-popup__btn
 							a(href="#").info-popup__btn-link Cancel
@@ -925,27 +926,27 @@ mixin addTableInfo(icon, error, popup)
 
 		span.add-info-table__opt Optional
 
-		if(error)
-			span.add-info-table__error
-				+svg('ic-failure','ic-failure')
-				|The following old categories will not be available for the user anymore: 
-				span.add-info-table__error-accent Type of route,  Anatomical main group (ATC1)
-				span.add-info-table__more
-					a(href="#") 3 More
+		
+		span.add-info-table__error
+			+svg('ic-failure','ic-failure')
+			|The following old categories will not be available for the user anymore: 
+			span.add-info-table__error-accent Type of route,  Anatomical main group (ATC1)
+			span.add-info-table__more
+				a(href="#") 3 More
 
-					.info-popup.info-popup_right.info-popup_bottom.active(style="width: 276px;")
-						form.form-site
-							.info-popup__top
-								.info-popup__head-wrap
-									span.info-popup__head Missing old categories
+				.info-popup.info-popup_right.info-popup_bottom(style="width: 276px;", class=error?'active':'')
+					form.form-site
+						.info-popup__top
+							.info-popup__head-wrap
+								span.info-popup__head Missing old categories
 
-								.info-popup__close
-									+svg('ic-close-circle','ic-close-circle')
+							.info-popup__close
+								+svg('ic-close-circle','ic-close-circle')
 
-							.info-popup__content
-								|- Type of route<br>
-								|- Pharmacological subgroup ATC3<br>
-								|- Manufacturer 
+						.info-popup__content
+							|- Type of route<br>
+							|- Pharmacological subgroup ATC3<br>
+							|- Manufacturer 
 
 mixin editTableHead(popup)
 	section.page-header
