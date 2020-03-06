@@ -10,6 +10,7 @@
 		@include font(normal, normal, rem(14px), rem(28px), $color-dark-purple);
 		text-align: center;
 		padding: 0 16px;
+		white-space: nowrap;
 		position: relative;
 	}
 

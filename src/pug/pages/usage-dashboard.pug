@@ -1,0 +1,68 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Usage Dashboard';
+	//- - var h1 = 'Usage Dashboard';
+
+block content
+	.edit-categories
+		include ../components/usage-dashboard-head
+
+		section.edit-categories-top
+			.container-fluid
+				.row
+					.col-12
+						.edit-categories-top__content
+							a(href='#').link-load
+								span.ic-hover
+									+svg('ic-download','ic-download')
+								span.link-load__text Download
+
+							.edit-categories-top__tab
+								-
+									var tabs=[
+										{name:'General Usage', link:'#',  :'true'},
+										{name:'Monthly Activity', link:'#', classtyfy:'d-none d-md-inline-flex'},
+										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
+										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
+										{
+											more: 'true',
+											name:'Retention',
+											link:'#',
+											popup_list:[
+												{name:'Created', link:'#'},
+												{name:'Table', link:'#'},
+												{name:'Monthly Activity', link:'#', class:'d-md-none'},
+												{name:'Activity per User', link:'#', class:'d-lg-none'},
+												{name:'Top 10 Users', link:'#', class:'d-lg-none'},
+											]
+										}
+									];
+
+									
+
+								+tabsPage(tabs)
+						
+
+		include ../components/usage-dashboard-panel
+
+		//- section.category-list
+		//- 	.category-list__label List of users without activity in the last:
+
+		//- 	.category-list__list
+		//- 		.category-list__item.active
+		//- 			a(href="#").category-list__link Month
+
+		//- 		.category-list__item
+		//- 			a(href="#").category-list__link 3 Months
+
+		//- 		.category-list__item
+		//- 			a(href="#").category-list__link 6 Months
+
+
+		section.graph-wrap.graph-wrap_center
+			.container-fluid
+				.row
+					.col-12
+						.graph-wrap__content
+							+graph('tooltip')
