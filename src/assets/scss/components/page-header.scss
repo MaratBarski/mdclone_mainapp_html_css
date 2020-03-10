@@ -1,6 +1,7 @@
 /*-------------- page-header -----------------*/
 .page-header{
 	margin-bottom: 20px;
+	font-size: rem(14px);
 
 	&__wrap{
 		display: flex;
@@ -23,24 +24,19 @@
 		margin-top: -7px;
 	}
 
-	&__text,
-	&__text input[type="text"]{
+	&__text{
+		display: inline-block;
+		height: rem(30px);
+		background: transparent;
+		border: 1px dashed transparent;
+		outline: 0;
+		padding: 0 4px;
+		margin-right: 12px;
 		@include font(normal, normal, rem(14px), rem(28px), $color-dark-grey);
 	}
 
-	&__text input[type="text"]{
-		height: rem(30px);
-		min-width: 330px;
-		border: 1px dashed transparent ;
-		outline: 0;
-		margin: 0;
-		padding: 0 4px;
-		background: transparent;
-		margin-right: 12px;
-	}
-
-	&__text input[type="text"]:hover{border-color: $color-light-grey;}
-	&__text input[type="text"]:focus{border: 1px solid $color-light-grey;}
+	&__text:hover{border-color: $color-light-grey;}
+	&__text:focus{border: 1px solid $color-light-grey;}
 
 	&__text{
 		margin-left: 17px;
@@ -50,7 +46,7 @@
 			display: none;
 			position: absolute;
 			top: 100%;
-			left: 200px;
+			left: calc(100% - 45px);
 			z-index: 10;
 		}
 

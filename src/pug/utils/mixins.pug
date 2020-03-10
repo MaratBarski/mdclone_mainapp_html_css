@@ -773,8 +773,7 @@ mixin mappingHead(popup, legend)
 
 							h1 File Mapping
 
-							.page-header__text
-								input(type="text", value="CKD Patients with cost, diabetes and medications")
+							.page-header__text(contenteditable="true") CKD Patients with cost, diabetes and medications
 
 						.notice(class=legend?'active':'')
 							.notice__icon
@@ -1103,11 +1102,7 @@ mixin editTableHead(popup)
 
 							h1 Edit categories
 
-							.page-header__text
-								input(type="text", value="Diagonisis definition (non admission)")
-
-								a(href="#") Description
-
+							.page-header__text(contenteditable="true") Diagonisis definition (non admission)
 								.info-popup(class=popup?'active':'')
 									form.form-site
 										.info-popup__top
@@ -1125,6 +1120,8 @@ mixin editTableHead(popup)
 										.info-popup__btn
 											a(href="#").btn.btn_border.btn_small Cancel
 											input(type="submit", value="Apply").btn.btn_small
+
+							a(href="#") Description
 
 						.notice(class=legend?'active':'')
 							.notice__icon
