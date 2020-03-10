@@ -635,10 +635,10 @@ mixin modalShareQuery(status)
 								.share-form-data__col.share-form-data__col-name= item.name
 								.share-form-data__col.share-form-data__col-switch
 									.switch-icon
-										.switch-icon__item
+										.switch-icon__item(class=item.view=='active'?'active':'')
 											+svg('ic-share-view','ic-share-view')
 
-										.switch-icon__item.active
+										.switch-icon__item(class=item.edit=='active'?'active':'')
 											+svg('ic-edit','ic-edit')
 
 								.share-form-data__col.share-form-data__col-close
