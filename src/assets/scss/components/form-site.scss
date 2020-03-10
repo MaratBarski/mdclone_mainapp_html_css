@@ -170,6 +170,22 @@
 			color: $color-dark-grey;
 		}
 	}
+
+	&__notice{
+		margin-top: 85px;
+		@include font(normal, normal, rem(12px), 1.2, $color-dark-grey);
+
+		.icon{
+			width: 20px;
+			height: 20px;
+			margin-right: 6px;
+		}
+	}
+
+	&__notice .icon,
+	&__notice-text{
+		vertical-align: middle;
+	}
 }
 
 .form-site-alert{
@@ -421,6 +437,105 @@
 	&_small &__option{max-height: 270px;}
 
 	&_full{width: auto;}
+
+	&__accent{color: $color-green;}
+
+	input[type="text"]{
+		width: 100%;
+		height: 100%;
+		border: 0;
+		background: transparent;
+	}
+
+	input[type="text"]::placeholder{
+		color: $color-grey;
+	}
+
+	&__icon-wrap{
+		display: flex;
+		align-items: center;
+
+		.icon{
+			max-width: 30px;
+			margin-right: 6px;
+		}
+	}
+
+	&__icon-wrap &__head-text{
+		display: inline-block;
+		max-width: calc(100% - 6px);
+	}
+
+	&__search{
+		position: relative;
+	}
+
+	&__search-close{
+		display: none;
+		width: 7px;
+		height: 7px;
+		position: absolute;
+		right: 0;
+		@include top-center;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	&__search-close .ic-close-small{
+		width: 100%;
+		height: 100%;
+		fill: $color-dark-blue;
+		vertical-align: top;
+	}
+
+	&__search input[type="text"]{
+		@include font(normal, normal, rem(14px), rem(38px), $color-dark-blue);
+		padding: 0;
+		margin: 0;
+		border: 0;
+		outline: 0;
+		background: transparent;
+	}
+
+	&__search input[type="text"]:focus + button + &__search-close,
+	&__search input[type="text"]:focus + &__search-close{
+		display: inline-block;
+	}
+
+	&__search input[type="text"]::placeholder{font-weight: 300; color: $color-grey; opacity: 1;}
+	&__search input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
+	&__search input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
+	
+	&__search input[type="text"]:focus{
+		border-color: $color-dark-purple;
+	}
+	
+
+	// .form-search{
+	// 	width: 100%;
+		
+	// 	input[type="text"]{
+	// 		display: inline-block;
+	// 		height: rem(30px);
+	// 		width: 100%;
+	// 		padding-right: 38px;
+	// 		@include font(normal, normal, rem(14px), rem(28px), $color-dark-blue);
+	// 		padding: 5px 0 0 26px;
+	// 		margin: 0;
+	// 		border: 0;
+	// 		outline: 0;
+	// 		border-bottom: 1px solid $color-grey;
+	// 		background: transparent;
+	// 	}
+		
+	// 	input[type="text"]::placeholder{font-weight: 300; color: $color-grey; opacity: 1;}
+	// 	input[type="text"]::-webkit-input-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
+	// 	input[type="text"]:-moz-placeholder {font-weight: 300; color: $color-grey; opacity: 1;}
+		
+	// 	input[type="text"]:focus{
+	// 		border-color: $color-dark-purple;
+	// 	}
+	// }
 }
 
 .select-wrap.error{
@@ -510,6 +625,89 @@
 
 	input[disabled="disabled"] + &__content, &:hover input[disabled="disabled"] + &__content{background: transparent; opacity: 0.5;}
 	input[disabled="disabled"]:checked + &__content, &:hover input[disabled="disabled"]:checked + &__content{background: transparent; opacity: 0.5;}
+}
+
+.share-form-sort{
+	margin-bottom: 20px;
+
+	&__label{
+		display: block;
+		@include font(normal, 600, 14px, 1, $color-dark-grey);
+		margin-bottom: 6px;
+	}
+
+	&__content{
+		display: flex;
+		align-items: center;
+	}
+
+	&__name{
+		width: 247px;
+		margin-right: 20px;
+	}
+
+	&__type{
+		width: 117px;
+		margin-right: 20px;
+	}
+}
+
+.share-form-data{
+	&__label{
+		display: block;
+		@include font(normal, 600, 14px, 1, $color-dark-grey);
+		margin-bottom: 6px;
+	}
+
+	&__list{
+		display: block;
+		width: 100%;
+		max-height: 265px;
+		overflow-y: auto;
+		border: 1px solid $color-light-grey;
+		border-radius: 2px;
+	}
+
+	&__row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__row:nth-child(odd){
+		background: rgba(242, 243, 245, 0.9);
+	}
+
+	&__row:hover,
+	&__row:nth-child(odd):hover{
+		background: #e1e3e7;
+	}
+
+	&__col{
+		padding: 5px 15px;
+		height: rem(35px);
+		white-space: nowrap;
+	}
+
+	&__col-name{
+		@include font(normal, normal, rem(14px), 1.4, $color-dark-grey);
+		width: calc(60% - 46px);
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__col-switch{
+		width: calc(40% - 46px);
+	}
+
+	&__col-close{
+		width: 46px;
+	}
+
+	.ic-close-circle{
+		width: 16px;
+		height: 16px;
+	}
 }
 
 @media (max-width: 767px) {

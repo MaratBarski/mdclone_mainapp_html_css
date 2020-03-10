@@ -52,23 +52,32 @@
 	&__item.active > .icon{
 		fill: #fff;
 	}
+
+	&__item:hover .tabs-popup-wrap{
+		display: inline-block;
+	}
 }
 
-.tabs-popup{
+.tabs-popup-wrap{
 	display: none;
-	background: #fff;
-	padding: 20px;
-	border-radius: 4px;
-	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-	text-align: left;
+	padding-top: 6px;
 	position: absolute;
-	top: calc(100% + 6px);
+	top: 100%;
 	right: 0;
 	z-index: 10;
 
 	&.active{
 		display: inline-block;
 	}
+}
+
+.tabs-popup{
+	display: inline-block;
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	text-align: left;
 
 	&__head{
 		@include font(normal, normal, rem(14px), 1.71, $color-dark-blue);

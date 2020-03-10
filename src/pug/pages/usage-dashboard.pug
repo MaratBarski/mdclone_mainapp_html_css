@@ -18,11 +18,12 @@ block content
 									+svg('ic-download','ic-download')
 								span.link-load__text Download
 
+
 							.edit-categories-top__tab
 								-
 									var tabs=[
-										{name:'General Usage', link:'#',  :'true'},
-										{name:'Monthly Activity', link:'#', classtyfy:'d-none d-md-inline-flex'},
+										{name:'General Usage', link:'#', active:'true', class:'d-none d-md-inline-flex'},
+										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
 										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
 										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
 										{
@@ -32,33 +33,16 @@ block content
 											popup_list:[
 												{name:'Created', link:'#'},
 												{name:'Table', link:'#'},
+												{name:'General Usage', link:'#', class:'d-md-none'},
 												{name:'Monthly Activity', link:'#', class:'d-md-none'},
 												{name:'Activity per User', link:'#', class:'d-lg-none'},
 												{name:'Top 10 Users', link:'#', class:'d-lg-none'},
 											]
 										}
 									];
-
-									
-
 								+tabsPage(tabs)
-						
 
 		include ../components/usage-dashboard-panel
-
-		//- section.category-list
-		//- 	.category-list__label List of users without activity in the last:
-
-		//- 	.category-list__list
-		//- 		.category-list__item.active
-		//- 			a(href="#").category-list__link Month
-
-		//- 		.category-list__item
-		//- 			a(href="#").category-list__link 3 Months
-
-		//- 		.category-list__item
-		//- 			a(href="#").category-list__link 6 Months
-
 
 		section.graph-wrap.graph-wrap_center
 			.container-fluid

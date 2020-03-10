@@ -225,7 +225,7 @@ block content
 					br
 					.h2 Select
 					.select
-						.select__head Please Select...
+						.select__head.active Please Select...
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
 						.select__option
@@ -245,6 +245,7 @@ block content
 							.select__param Parameter 2
 							.select__param.active Parameter 3
 							.select__param Parameter 4
+
 
 					br
 					br
@@ -269,6 +270,43 @@ block content
 							.select__param Parameter 2
 							.select__param.active Parameter 3
 							.select__param Parameter 4
+
+					br
+					br
+					.select
+						.select__head.active
+							.select__icon-wrap
+								+svg('ic-share-view','ic-share-view')
+								span.select__head-text View
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param.active
+								.select__icon-wrap
+									+svg('ic-share-view','ic-share-view')
+									|View
+							.select__param
+								.select__icon-wrap
+									+svg('ic-edit','ic-edit')
+									|Edit
+
+					br
+					br
+					|Select autocomplite
+					br
+					.select
+						.select__head.active
+							.select__search
+								input(type="text", value="ja", placeholder="Type the person's name...",)
+								span.select__search-close
+									+svg('ic-close-small','ic-close-small')
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param <span class="select__accent">Ja</span>ck Black
+							.select__param <span class="select__accent">Ja</span>ck Nicholson
+							.select__param Johnson <span class="select__accent">Ja</span>ck
+							.select__param White <span class="select__accent">Ja</span>mes
 
 					br
 					br
@@ -735,4 +773,9 @@ block content
 							.type-icon__img
 								+svg('ic-user-notice-full','ic-user-notice-full')
 							.type-icon__name ic-user-notice-full
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-share-view','ic-share-view')
+							.type-icon__name ic-share-view
 

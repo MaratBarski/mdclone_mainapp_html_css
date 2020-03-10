@@ -51,3 +51,22 @@
 		display: inline-block;
 	}
 }
+
+@media (max-width: 767px) {
+	.graph{
+		&__head .tooltip{
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&__head .tooltip::after{
+			border-width: 0 6px 5px 6px;
+			border-color: transparent transparent $color-dark-blue transparent;
+			top: auto;
+			bottom: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

@@ -32,29 +32,30 @@ mixin tabsPage(tabs)
 					
 					if item.popup_date
 						+svg('ic-select-arr-down','ic-select-arr-down')
-						.tabs-popup(class=item.popup_show?'active':'')
-							form.form-site
-								.tabs-popup__head Select report data ragne
-								.tabs-popup__content
-									.select-date
-										.select-date__item
-											.select-date__main
-												.select-date__title From:
-												.select-date__field
-													input(type="text", value="12/25/2019")
-													.select-date__label mm/dd/yyyy
-												.select-date__icon
-													+svg('ic-calendar','ic-calendar')
+						.tabs-popup-wrap(class=item.popup_show?'active':'')
+							.tabs-popup
+								form.form-site
+									.tabs-popup__head Select report data ragne
+									.tabs-popup__content
+										.select-date
+											.select-date__item
+												.select-date__main
+													.select-date__title From:
+													.select-date__field
+														input(type="text", value="12/25/2019")
+														.select-date__label mm/dd/yyyy
+													.select-date__icon
+														+svg('ic-calendar','ic-calendar')
 
-										.select-date__item
-											.select-date__main
-												.select-date__title To:
-												.select-date__field
-													input(type="text", value="12/25/2019")
-													.select-date__label mm/dd/yyyy
+											.select-date__item
+												.select-date__main
+													.select-date__title To:
+													.select-date__field
+														input(type="text", value="12/25/2019")
+														.select-date__label mm/dd/yyyy
 
-												.select-date__icon
-													+svg('ic-calendar','ic-calendar')
+													.select-date__icon
+														+svg('ic-calendar','ic-calendar')
 
 
 								.tabs-popup__btn
@@ -62,12 +63,7 @@ mixin tabsPage(tabs)
 									input.btn.btn_small(type="submit", value="Apply")
 
 			else
-				//- - var tabsActive = item.active?'active':'';
-				//- - var tabsClass = item.class?class:'';
-
-				a.tabs-page__item(href=item.link, class=item.active?'active':''+"classtyfy")
-					
-					
+				a.tabs-page__item(href=item.link, class=item.active?'active':'', class=item.class?item.class:'')
 					span(class=item.name_sort?'d-none d-md-inline':'')
 						if(item.more)
 							|More: 
@@ -78,12 +74,11 @@ mixin tabsPage(tabs)
 					if(item.popup_list)
 						+svg('ic-select-arr-down','ic-select-arr-down')
 
-						.tabs-popup
-							.tabs-popup__list
-								each popup in item.popup_list
-									.tabs-popup__item More:
-										|
-										= popup.name
+						.tabs-popup-wrap
+							.tabs-popup
+								.tabs-popup__list
+									each popup in item.popup_list
+										.tabs-popup__item(class=popup.class?popup.class:'')= popup.name
 			
 
 
@@ -524,6 +519,134 @@ mixin modalWindowQuery(error, status)
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
 				input.btn(type="submit", value="Create", class=status=='active'?'':'btn_disable')
+
+mixin modalSendQuery(status)
+	.modal-window
+		.modal-window__head Send query
+		.modal-window__close.ic-hover
+			+svg('ic-close','ic-close')
+
+		form.form-site
+			.form-site__fields
+				.form-site__item(class=error?'form-site__item_error':'')
+					label(for="name").form-site__label Send to
+
+					#name.select
+						.select__head.active
+							.select__search
+								input(type="text", value=status=='active'?'El Hamayan':'', placeholder="Type the person's name...",)
+								span.select__search-close
+									+svg('ic-close-small','ic-close-small')
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param(class=status=='active'?'active':'') El Hamayan
+							.select__param Mimic
+							.select__param Key 1
+							.select__param Key 2
+							.select__param Key with very long name
+
+			.form-site__notice
+				+svg('ic-warning','ic-warning')
+				span.form-site__notice-text Note! the recipient may not have the permissions to see all the query domains.
+
+			.form-site__btn
+				a(href="#").btn.btn_border Cancel
+				input.btn(type="submit", value="Send", class=status=='active'?'':'btn_disable')
+
+mixin modalShareQuery(status)
+	.modal-window
+		.modal-window__head Share query
+		.modal-window__close.ic-hover
+			+svg('ic-close','ic-close')
+
+		form.form-site
+			.share-form-sort
+				.share-form-sort__label Share with
+
+				.share-form-sort__content
+					.select.share-form-sort__name
+						.select__head(class=status=='active'?'active':'')
+							.select__search
+								input(type="text", value=status=='active'?'ja':'', placeholder="Type the person's name...",)
+								span.select__search-close
+									+svg('ic-close-small','ic-close-small')
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							if(status=='active')
+								.select__param <span class="select__accent">Ja</span>ck Black
+								.select__param <span class="select__accent">Ja</span>ck Nicholson
+								.select__param Johnson <span class="select__accent">Ja</span>ck
+								.select__param White <span class="select__accent">Ja</span>mes
+							else
+								.select__param Parameter 1
+								.select__param Parameter 2
+								.select__param Parameter 3
+								.select__param Parameter 4
+								.select__param Jack Black
+								.select__param Jack Nicholson
+								.select__param Johnson Jack
+								.select__param White James
+
+					.select.share-form-sort__type
+						.select__head.active
+							.select__icon-wrap
+								+svg('ic-share-view','ic-share-view')
+								span.select__head-text View
+							.select__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.select__option
+							.select__param.active
+								.select__icon-wrap
+									+svg('ic-share-view','ic-share-view')
+									|View
+							.select__param
+								.select__icon-wrap
+									+svg('ic-edit','ic-edit')
+									|Edit
+
+					.btn.btn_small.btn_disable Add
+
+			.share-form-data
+				.share-form-data__label Already shared with:
+
+				.share-form-data__content
+					.share-form-data__list
+						-
+							var shareList = [
+								{name:'Moshe Bateva', view:'active'},
+								{name:'Bery Zakala', edit:'active'},
+								{name:'El Hamaayan', edit:'active'},
+								{name:'Moti Hiluchim', edit:'active'},
+								{name:'Alon Noshem', view:'active'},
+								{name:'Simcha Rif', view:'active'},
+								{name:'Micha Fafli', view:'active'},
+								{name:'Nagasta Bagamba', view:'active'},
+								{name:'Moshe Bateva', view:'active'},
+								{name:'Bery Zakala', edit:'active'},
+								{name:'El Hamaayan', edit:'active'},
+								{name:'Moti Hiluchim', edit:'active'},
+								{name:'Alon Noshem', view:'active'},
+							]
+						
+						each item in shareList
+							.share-form-data__row
+								.share-form-data__col.share-form-data__col-name= item.name
+								.share-form-data__col.share-form-data__col-switch
+									.switch-icon
+										.switch-icon__item
+											+svg('ic-share-view','ic-share-view')
+
+										.switch-icon__item.active
+											+svg('ic-edit','ic-edit')
+
+								.share-form-data__col.share-form-data__col-close
+									+svg('ic-close-circle','ic-close-circle')
+
+			.form-site__btn
+				a(href="#").btn.btn_border Cancel
+				input.btn(type="submit", value="Share")
 
 mixin svg(icon, name_class)
 	svg.icon(class=name_class?name_class:'')

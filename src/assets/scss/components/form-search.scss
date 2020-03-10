@@ -67,7 +67,8 @@
 		vertical-align: top;
 	}
 
-	input[type="text"]:focus + button + &__close{
+	input[type="text"]:focus + button + &__close,
+	input[type="text"]:focus + &__close{
 		display: inline-block;
 	}
 

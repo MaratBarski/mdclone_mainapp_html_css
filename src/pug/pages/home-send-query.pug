@@ -1,12 +1,12 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Home';
-	- var h1 = 'Home';
+	- var title = 'Send query';
+	- var h1 = 'Send query';
 	- var body_scroll = 'false';
 
 block modal
-	+modalWindowQuery('error','active')
+	+modalSendQuery
 
 block content
 	section.query-wrap
@@ -22,7 +22,6 @@ block content
 									span.unwrap__count 38
 
 						.unwrap__content
-							.admin-table-wrap
 								include ../components/home-table-my-queries
 
 	section.query-wrap
