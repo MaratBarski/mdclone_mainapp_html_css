@@ -400,7 +400,8 @@
 		margin-top: -2px;
 	}
 
-	&:hover &__option{
+	&:hover &__option,
+	&__option.active{
 		display: block;
 	}
 
@@ -463,7 +464,7 @@
 
 	&__icon-wrap &__head-text{
 		display: inline-block;
-		max-width: calc(100% - 6px);
+		max-width: calc(100% - 36px);
 	}
 
 	&__search{
@@ -641,14 +642,20 @@
 		align-items: center;
 	}
 
-	&__name{
+	&__name.select{
 		width: 247px;
 		margin-right: 20px;
 	}
 
-	&__type{
+	&__type.select{
 		width: 117px;
 		margin-right: 20px;
+	}
+
+	.btn_small,
+	button.btn_small,
+	input[type="submit"].btn_small{
+		min-width: 85px;
 	}
 }
 
@@ -690,7 +697,7 @@
 	}
 
 	&__col-name{
-		@include font(normal, normal, rem(14px), 1.4, $color-dark-grey);
+		@include font(normal, normal, rem(14px), rem(28px), $color-dark-grey);
 		width: calc(60% - 46px);
 		overflow: hidden;
 		text-overflow: ellipsis;

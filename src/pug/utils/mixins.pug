@@ -573,7 +573,7 @@ mixin modalShareQuery(status)
 									+svg('ic-close-small','ic-close-small')
 							.select__head-arr
 								+svg('ic-select-arr-down','ic-select-arr-down')
-						.select__option
+						.select__option(class=status=='active'?'active':'')
 							if(status=='active')
 								.select__param <span class="select__accent">Ja</span>ck Black
 								.select__param <span class="select__accent">Ja</span>ck Nicholson
