@@ -1,7 +1,7 @@
 table.admin-table
 	thead
 		tr.admin-table__head
-			th.admin-table__item
+			th.admin-table__item.w-xxl-8.w-md-6
 				span.admin-table__sort
 					span.admin-table__sort-up
 					span.admin-table__sort-down
@@ -13,7 +13,7 @@ table.admin-table
 					span.admin-table__sort-down
 				|Loaded
 
-			th.admin-table__item.d-none.d-md-table-cell
+			th.admin-table__item.d-none.d-md-table-cell.w-md-3
 				span.admin-table__sort
 					span.admin-table__sort-up
 					span.admin-table__sort-down
@@ -21,7 +21,7 @@ table.admin-table
 
 				+adminTableFilter()
 
-			th.admin-table__item.d-none.d-lg-table-cell
+			th.admin-table__item.d-none.d-lg-table-cell.w-md-3
 				span.admin-table__sort
 					span.admin-table__sort-up
 					span.admin-table__sort-down
@@ -33,7 +33,7 @@ table.admin-table
 							+svg('ic-filter','ic-filter ic-stroke')
 
 
-			th.admin-table__item.d-none.d-xl-table-cell
+			th.admin-table__item.d-none.d-xxl-table-cell
 				|User
 
 				.admin-table-filter
@@ -44,16 +44,16 @@ table.admin-table
 			th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
 				|Shared
 
-			th.admin-table__item.d-none.d-xxl-table-cell
+			th.admin-table__item.d-none.d-xxl-table-cell.admin-table__item_right
 				|Columns
 
-			th.admin-table__item.d-none.d-xxl-table-cell
+			th.admin-table__item.d-none.d-xxxl-table-cell.admin-table__item_right
 				span.admin-table__sort
 					span.admin-table__sort-up
 					span.admin-table__sort-down
 				|Rows
 
-			th.admin-table__item
+			th.admin-table__item.admin-table__item_menu
 
 	-
 		var rows = [
@@ -64,10 +64,10 @@ table.admin-table
 					{title:'Nov 26, 2019', class:'d-none d-md-table-cell'},
 					{title:'R Test Project', class:'d-none d-md-table-cell'},
 					{title:'all_r_files', class:'d-none d-lg-table-cell'},
-					{title:'Ruth', class:'d-none d-xl-table-cell'},
+					{title:'Ruth', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~9,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~99,999,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~99,999,999', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					notice:'ic-business-warning',
@@ -84,10 +84,10 @@ table.admin-table
 					{title:'Nov 12, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'Noa', class:'d-none d-xl-table-cell'},
+					{title:'Noa', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~1,929', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~19,999,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~19,999,999', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -103,10 +103,10 @@ table.admin-table
 					{title:'Oct 22, 2019', class:'d-none d-md-table-cell'},
 					{title:'R Test Project', class:'d-none d-md-table-cell'},
 					{title:'all_r_files', class:'d-none d-lg-table-cell'},
-					{title:'Ruth', class:'d-none d-xl-table-cell'},
+					{title:'Ruth', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~3,341', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~58,879,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~58,879,999', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -122,10 +122,10 @@ table.admin-table
 					{title:'Oct 22, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{icon:'ic-shared', class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~9,656', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~62,991,991', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~62,991,991', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -141,10 +141,10 @@ table.admin-table
 					{title:'Oct 10, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~9,991', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~29,999,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~29,999,999', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -160,10 +160,10 @@ table.admin-table
 					{title:'Oct 7, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{icon:'ic-shared', class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~8,888', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'~10,999,999', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'~10,999,999', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -179,10 +179,10 @@ table.admin-table
 					{title:'Feb 17, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~7,214', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'1,847,464', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'1,847,464', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -198,10 +198,10 @@ table.admin-table
 					{title:'Feb 7, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'316,3', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'1,847,464', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'1,847,464', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -217,10 +217,10 @@ table.admin-table
 					{title:'Dec 13, 2018', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'admin', class:'d-none d-xl-table-cell'},
+					{title:'admin', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~9,900', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'1,247,464', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'1,247,464', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[
@@ -236,10 +236,10 @@ table.admin-table
 					{title:'Feb 7, 2019', class:'d-none d-md-table-cell'},
 					{title:'Demo Project', class:'d-none d-md-table-cell'},
 					{title:'Demo Template', class:'d-none d-lg-table-cell'},
-					{title:'mdclone.admin', class:'d-none d-xl-table-cell'},
+					{title:'mdclone.admin', class:'d-none d-xxl-table-cell'},
 					{class:'d-none d-md-table-cell admin-table__item_center'},
 					{title:'~9,875', class:'d-none d-xxl-table-cell admin-table__item_right'},
-					{title:'5,590,000', class:'d-none d-xxl-table-cell admin-table__item_right'},
+					{title:'5,590,000', class:'d-none d-xxxl-table-cell admin-table__item_right'},
 				],
 				menu:{
 					icons:[

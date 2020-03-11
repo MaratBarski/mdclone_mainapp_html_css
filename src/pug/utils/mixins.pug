@@ -200,10 +200,10 @@ mixin adminTableRow(rows)
 			tr.admin-table__row(class=row.row.selected?'active':'')
 				if(row.name)
 					td.admin-table__item
-							if(row.name.link=='true')
-								a(href="#").admin-table__name= row.name.title
-							else
-								.admin-table__name= row.name.title
+						if(row.name.link=='true')
+							a(href="#").admin-table__name= row.name.title
+						else
+							.admin-table__name= row.name.title
 
 								if(row.name.tooltip)
 									span.tooltip(class=row.name.tooltip_status?'active':'')
@@ -346,7 +346,7 @@ mixin mappingTableRow(rows)
 					.admin-table__name-edit
 						input(type="text", value=row.name)
 
-				td.admin-table__item.d-none.d-md-table-cell
+				td.admin-table__item.admin-table__item_center.d-none.d-md-table-cell
 					.switch-icon
 						.switch-icon__item(class=(row.data_active=='1')?'active':(row.data_inactive=='1')?'disable':'')
 							+svg('ic-numeric','ic-numeric')
@@ -374,7 +374,7 @@ mixin mappingTableRow(rows)
 								.select__param Ranks for Nurses
 								.select__param Units
 
-				td.admin-table__item.d-none.d-md-table-cell
+				td.admin-table__item.admin-table__item_center.d-none.d-md-table-cell
 					if(row.progress)
 						.progress(class=(row.progress=='25')?'progress_red':(row.progress=='50')?'progress_yellow':(row.progress=='75')?'progress_green':'')
 							.progress__bg(style='width: '+row.progress+'%')

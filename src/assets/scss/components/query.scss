@@ -13,6 +13,17 @@
 	.admin-table__item:nth-child(3){
 		width: 250px;
 	}
+
+	.admin-table{
+		th,
+		td{
+			width: auto;
+		}
+	}
+
+	th.admin-table__item_menu{
+		width: 60px;
+	}
 }
 
 .query-empty{
@@ -64,16 +75,21 @@
 
 @media (max-width: 991px) {
 	.query-wrap{
-		.admin-table__item:first-child{
-			width: 175px;
-		}
+		// .admin-table__item:first-child{
+		// 	width: 175px;
+		// }
 
-		.admin-table__item:nth-child(2){
-			width: 250px;
-		}
+		// .admin-table__item:nth-child(2){
+		// 	width: 250px;
+		// }
 	
+		// .admin-table__item:nth-child(3){
+		// 	width: 250px;
+		// }
+		.admin-table__item:first-child,
+		.admin-table__item:nth-child(2),
 		.admin-table__item:nth-child(3){
-			width: 250px;
+			width: 33%;
 		}
 	}
 }
