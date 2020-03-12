@@ -1,0 +1,209 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Usage Dashboard';
+	//- - var h1 = 'Usage Dashboard';
+
+block content
+	.usage-dashboard
+		include ../components/usage-dashboard-head
+
+		section.usage-dashboard-top
+			.container-fluid
+				.row
+					.col-12
+						.usage-dashboard-top__content
+							a(href='#').link-load
+								span.ic-hover
+									+svg('ic-download','ic-download')
+								span.link-load__text Download
+
+
+							.usage-dashboard-top__tab
+								-
+									var tabs=[
+										{name:'General Usage', link:'#', class:'d-none d-md-inline-flex'},
+										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
+										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
+										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
+										{
+											more: 'true',
+											name:'Table',
+											link:'#',
+											active:'true',
+											popup_list:[
+												{name:'Created', link:'#'},
+												{name:'Retention', link:'#'},
+												{name:'General Usage', link:'#', class:'d-md-none'},
+												{name:'Monthly Activity', link:'#', class:'d-md-none'},
+												{name:'Activity per User', link:'#', class:'d-lg-none'},
+												{name:'Top 10 Users', link:'#', class:'d-lg-none'},
+											]
+										}
+									];
+								+tabsPage(tabs)
+
+		include ../components/usage-dashboard-panel
+
+		section.category-list
+			.container-fluid
+				.row
+					.col-12
+						.category-list__content
+							.category-list__label Top 10 users in the last:
+
+							.category-list__list
+								.category-list__item.active
+									a(href="#").category-list__link Month
+
+								.category-list__item
+									a(href="#").category-list__link 3 Months
+
+								.category-list__item
+									a(href="#").category-list__link 6 Months
+
+		section.admin-table-wrap
+			.container-fluid
+				.row
+					.col-12
+						.admin-table-wrap__action
+							.admin-table-wrap__col
+								.admin-table-wrap__title Summary activity table
+
+							.admin-table-wrap__col
+								+formSearch('d-none d-md-block','Search…')
+
+						table.admin-table
+							thead
+								tr.admin-table__head
+									th.admin-table__item.w-md-4
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|User Name
+
+									th.admin-table__item.d-none.d-md-table-cell.w-md-4
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Last Login
+
+									th.admin-table__item.d-none.d-md-table-cell
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Permission
+
+									th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Login Days
+
+									th.admin-table__item.d-none.d-lg-table-cell.admin-table__item_center.w-md-3
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Original Downloads
+
+									th.admin-table__item.d-none.d-xl-table-cell.admin-table__item_center.w-md-3
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Synthetic Downloads
+
+							-
+								var rows=[
+									{
+										row:{selected:''},
+										name:{title:'dan dan (prof.dan)'},
+										fields:[
+											{title:'August 7, 2019 13:22', class:'d-none d-md-table-cell'},
+											{title:'Original', class:'d-none d-md-table-cell'},
+											{title:'1,145', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'89', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'89', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'Demo Demo (demo)'},
+										fields:[
+											{title:'December 15, 2019 11:34', class:'d-none d-md-table-cell'},
+											{title:'Synthetic', circle:'purple', class:'d-none d-md-table-cell'},
+											{title:'262', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'20', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'20', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'Admin Admin (mdclone.admin)'},
+										fields:[
+											{title:'December 15, 2019 11:28', class:'d-none d-md-table-cell'},
+											{title:'Synthetic', circle:'purple', class:'d-none d-md-table-cell'},
+											{title:'1', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'BWH_Pilot BWH_Pilot (BWH_Pilot)'},
+										fields:[
+											{title:'August 7, 2019 13:22', class:'d-none d-md-table-cell'},
+											{title:'Synthetic', circle:'purple', class:'d-none d-md-table-cell'},
+											{title:'1', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'Hovav Dror (Hovav)'},
+										fields:[
+											{title:'August 14, 2019 23:25', class:'d-none d-md-table-cell'},
+											{title:'Synthetic', circle:'purple', class:'d-none d-md-table-cell'},
+											{title:'6', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'Hanan Drobiner (hanan)'},
+										fields:[
+											{title:'December 9, 2019 15:38', class:'d-none d-md-table-cell'},
+											{title:'Original', class:'d-none d-md-table-cell'},
+											{title:'7', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'41', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'41', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:"Al'ona Furmanchuk (alona)"},
+										fields:[
+											{title:'August 7, 2019 11:44', class:'d-none d-md-table-cell'},
+											{title:'Original', class:'d-none d-md-table-cell'},
+											{title:'1', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+									{
+										row:{selected:''},
+										name:{title:'Jonathan Swansson (Jonathan)'},
+										fields:[
+											{title:'February  28, 2019 11:24', class:'d-none d-md-table-cell'},
+											{title:'Original', class:'d-none d-md-table-cell'},
+											{title:'5', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-lg-table-cell admin-table__item_center'},
+											{title:'0', class:'d-none d-xl-table-cell admin-table__item_center'},
+										],
+									},
+								];
+
+							+adminTableRow(rows)
+
+						+pager('Showing 1-8 of 35 users')

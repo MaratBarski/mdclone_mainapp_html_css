@@ -22,8 +22,8 @@ block content
 							.usage-dashboard-top__tab
 								-
 									var tabs=[
-										{name:'General Usage', link:'#', active:'true', class:'d-none d-md-inline-flex'},
-										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
+										{name:'General Usage', link:'#', class:'d-none d-md-inline-flex'},
+										{name:'Monthly Activity', link:'#', active:'true', class:'d-none d-md-inline-flex'},
 										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
 										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
 										{
@@ -47,6 +47,10 @@ block content
 		section.graph-wrap
 			.container-fluid
 				.row
-					.col-12
-						- var graphInfo={head:'Monthly General Usage', popup_text:'Each bar represents the monthly number of users who created at least one new query or downloaded a file.', popup_status:'active'};
+					.col-lg-6
+						- var graphInfo={head:'Activity: new queries count'};
+						+graph(graphInfo)
+
+					.col-lg-6
+						- var graphInfo={head:'Activity: file downloads count'};
 						+graph(graphInfo)

@@ -22,16 +22,17 @@ block content
 							.usage-dashboard-top__tab
 								-
 									var tabs=[
-										{name:'General Usage', link:'#', active:'true', class:'d-none d-md-inline-flex'},
+										{name:'General Usage', link:'#', class:'d-none d-md-inline-flex'},
 										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
 										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
 										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
 										{
 											more: 'true',
-											name:'Retention',
+											name:'Created',
 											link:'#',
+											active:'true',
 											popup_list:[
-												{name:'Created', link:'#'},
+												{name:'Retention', link:'#'},
 												{name:'Table', link:'#'},
 												{name:'General Usage', link:'#', class:'d-md-none'},
 												{name:'Monthly Activity', link:'#', class:'d-md-none'},
@@ -48,5 +49,5 @@ block content
 			.container-fluid
 				.row
 					.col-12
-						- var graphInfo={head:'Monthly General Usage', popup_text:'Each bar represents the monthly number of users who created at least one new query or downloaded a file.', popup_status:'active'};
+						- var graphInfo={head:'Newly created user accounts'};
 						+graph(graphInfo)

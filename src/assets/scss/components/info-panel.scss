@@ -135,6 +135,7 @@
 
 	&__item{
 		display: inline-flex;
+		flex-wrap: wrap;
 		align-items: center;
 		margin-right: 42px;
 	}
@@ -143,6 +144,8 @@
 		@include font(normal, 600, rem(14px), 1.57, $color-dark-grey);
 		margin-right: 12px;
 	}
+
+	.select{margin-left: 0;}
 }
 
 @media (min-width: 768px) {
