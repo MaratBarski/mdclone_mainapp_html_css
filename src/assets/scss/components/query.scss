@@ -26,22 +26,23 @@
 	}
 }
 
-.query-empty{
-	margin-top: 34px;
+.empty-block{
+	margin-top: 24px;
 
 	&__head{
-		@include font(normal, normal, rem(32px), 1, $color-grey);
-		margin-right: 25px;
-		margin-bottom: 22px;
+		@include font(normal, normal, rem(28px), 1.1, $color-dark-grey);
+		margin-top: 31px;
 	}
 
-	&__title{
-		margin-right: 23px;
+	&__text{
+		@include font(normal, normal, rem(20px), 1.1, $color-grey);
+		margin-top: 24px;
 	}
 
-	&__link{
-		font-size: rem(22px);
-		line-height: rem(22px);
+	&__img{
+		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 6px;
 	}
 }
 
@@ -95,18 +96,13 @@
 }
 
 @media (max-width: 767px) {
-	.query-empty{
+	.empty-block{
 		&__head{
 			font-size: rem(26px);
 		}
 
-		&__title{
-			margin-right: 15px;
-		}
-
-		&__link{
-			font-size: rem(18px);
-			line-height: rem(18px);
+		&__text{
+			font-size: rem(16px);
 		}
 	}
 
