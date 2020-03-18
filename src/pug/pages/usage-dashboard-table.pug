@@ -22,10 +22,10 @@ block content
 							.usage-dashboard-top__tab
 								-
 									var tabs=[
-										{name:'General Usage', link:'#', class:'d-none d-md-inline-flex'},
-										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
-										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-flex'},
-										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
+										{name:'General Usage', link:'#', class:'d-none d-md-inline-block'},
+										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-block'},
+										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-block'},
+										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-block'},
 										{
 											more: 'true',
 											name:'Table',
@@ -45,22 +45,7 @@ block content
 
 		include ../components/usage-dashboard-panel
 
-		section.category-list
-			.container-fluid
-				.row
-					.col-12
-						.category-list__content
-							.category-list__label Top 10 users in the last:
-
-							.category-list__list
-								.category-list__item.active
-									a(href="#").category-list__link Month
-
-								.category-list__item
-									a(href="#").category-list__link 3 Months
-
-								.category-list__item
-									a(href="#").category-list__link 6 Months
+		
 
 		section.admin-table-wrap
 			.container-fluid

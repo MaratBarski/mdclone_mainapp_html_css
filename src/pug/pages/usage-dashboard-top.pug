@@ -2,6 +2,7 @@ extends ../layout/main
 
 block variables
 	- var title = 'Usage Dashboard';
+	- var mainIndent = 'false';
 	//- - var h1 = 'Usage Dashboard';
 
 block content
@@ -22,10 +23,10 @@ block content
 							.usage-dashboard-top__tab
 								-
 									var tabs=[
-										{name:'General Usage', link:'#', class:'d-none d-md-inline-flex'},
-										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-flex'},
-										{name:'Activity per User', link:'#', active:'true', class:'d-none d-lg-inline-flex'},
-										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-flex'},
+										{name:'General Usage', link:'#', class:'d-none d-md-inline-block'},
+										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-block'},
+										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-block'},
+										{name:'Top 10 Users', link:'#', active:'true', class:'d-none d-lg-inline-block'},
 										{
 											more: 'true',
 											name:'Retention',

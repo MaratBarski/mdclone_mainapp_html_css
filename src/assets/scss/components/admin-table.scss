@@ -7,6 +7,12 @@
 		margin-bottom: 23px;
 	}
 
+	&__title{
+		@include font(normal, 600, rem(14px), 1.4, $color-dark-grey);
+		text-transform: uppercase;
+		margin-top: 4px;
+	}
+
 	&__col{
 		display: flex;
 		align-items: center;
@@ -704,16 +710,12 @@
 	&__title{
 		width: 150px;
 		@include font(normal, 600, rem(14px), 1.43, $color-dark-blue);
-		margin-right: 6px;
+		margin-right: 10px;
 	}
 
 	&__val{
 		width: calc(100% - 156px);
 		@include font(normal, normal, rem(14px), 1.43, $color-dark-grey);
-	}
-
-	&__val .tag{
-		margin-left: 4px;
 	}
 
 	.file-count{

@@ -115,16 +115,18 @@ h6,.h6{
 	margin: 0 auto;
 }
 
-main{
+.main{
 	flex: 1 1 auto;
 	padding-bottom: 76px;
 	width: 100%;
 	position: relative;
 	left: 0;
 	transition: left 0.3s ease;
+
+	&_no-indent{
+		padding-bottom: 0;
+	}
 }
-
-
 
 .btn,
 input[type="submit"].btn,

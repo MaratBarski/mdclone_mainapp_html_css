@@ -9,6 +9,7 @@
 .graph{
 	display: inline-block;
 	width: 100%;
+	padding: 0;
 	// max-width: 730px;
 	min-height: 423px;
 	background: #fff;
@@ -18,8 +19,11 @@
 	margin-bottom: 20px;
 
 	&__top{
+		width: 100%;
 		background: $color-sort-grey;
 		padding: 10px 20px;
+		border: 0;
+		padding: 0;
 		border-bottom: 1px solid rgba(172, 178, 195, 0.5);
 		text-align: center;
 	}
