@@ -211,8 +211,14 @@ mixin adminTableRow(rows)
 
 				each field in row.fields
 					td.admin-table__item(class=field.class?field.class:'', class=field.color=='blue'?'admin-table__item_blue':'')
-							if(field.circle=='purple')
-								span.admin-table__circle
+							if(field.circle)
+								span.admin-table__circle(class=field.circle=='green'?'admin-table__circle_green':'')
+
+							if(field.tag_green)
+								.tag.tag_green= field.tag_green
+
+							if(field.tag_yellow)
+								.tag= field.tag_yellow
 
 
 							if(field.file_name)

@@ -362,6 +362,8 @@
 		margin-right: 8px;
 	}
 
+	&__circle_green{background: $color-green;}
+
 	.tooltip{
 		max-width: 100%;
 	}
@@ -641,7 +643,8 @@
 	&__icons .ic-hover{
 		display: inline-flex;
 		align-items: center;
-		justify-content: center;	
+		justify-content: center;
+		margin-left: 6px;
 	}
 
 	&__icons .icon:not(:last-child){
@@ -720,6 +723,16 @@
 		height: 12px;
 	}
 
+	.ic-delete{
+		width: 25px;
+		height: 25px;
+	}
+
+	.ic-edit{
+		width: 25px;
+		height: 25px;
+	}
+
 	.icon{vertical-align: middle;}
 
 	.ic-robot{
@@ -730,6 +743,50 @@
 	.ic-plug{
 		width: 25px;
 		height: 15px;
+	}
+
+	&__circle{
+		display: inline-block;
+		vertical-align: middle;
+		width: 7px;
+		height: 7px;
+		background: $color-green;
+		border-radius: 50%;
+	}
+}
+
+.table-detail-wrap{
+	&__title{
+		@include font(normal, 600, rem(14px), 1.4, $color-dark-blue);
+		margin-bottom: 10px;
+	}
+}
+
+.table-detail{
+	width: 100%;
+	table-layout: fixed;
+	margin-bottom: 20px;
+
+	th,
+	td{
+		width: 2%;
+	}
+
+	&__head{
+		background: $color-sort-grey;
+	}
+
+	&__item{
+		height: rem(33px);
+		vertical-align: middle;
+		@include font(normal, normal, rem(14px), 1.4, $color-dark-grey);
+		padding: 2px 20px;
+		border-bottom: 1px solid rgba(161, 173, 205, 0.5);
+	}
+
+	&__head &__item{
+		font-weight: 600;
+		color: $color-dark-blue;
 	}
 }
 

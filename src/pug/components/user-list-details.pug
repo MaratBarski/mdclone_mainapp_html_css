@@ -1,0 +1,75 @@
+.admin-table-info__top
+	.admin-table-info__head User Details
+	.admin-table-info__icons
+		span.ic-hover
+			+svg('ic-edit','ic-edit')
+		span.ic-hover
+			+svg('ic-delete','ic-delete')
+		span.ic-hover
+			+svg('ic-close-history','ic-close-history ic-stroke')
+
+.admin-table-info__content
+	.admin-table-info__main
+		.admin-table-info__col
+			.admin-table-info__item
+				.admin-table-info__title Created:
+				.admin-table-info__val Dec 05, 2018 14:32
+
+			.admin-table-info__item
+				.admin-table-info__title Active:
+				.admin-table-info__val
+					span.admin-table-info__circle
+
+		.admin-table-info__col
+			.admin-table-info__item
+				.admin-table-info__title Modified:
+				.admin-table-info__val Dec 05, 2018 14:32
+
+			.admin-table-info__item
+				.admin-table-info__title Special Roles:
+				.admin-table-info__val
+					.tag.tag_green Super-Admin
+
+	.table-detail-wrap
+		.table-detail-wrap__title Connected to Enviroments:
+
+		table.table-detail
+			thead.table-detail__head
+				tr
+					th.table-detail__item Enviorment
+					th.table-detail__item Permission
+					th.table-detail__item Role
+
+			tbody
+				-
+					var list = [
+						['Buttercup Hospital Central','Original','Researcher'],
+						['Buttercup Clincs','Synthetic (4)','Admin'],
+					];
+
+				each row in list
+					tr
+						each item in row
+							td.table-detail__item= item
+	.table-detail-wrap
+		.table-detail-wrap__title Research list:
+
+		table.table-detail
+			thead.table-detail__head
+				tr
+					th.table-detail__item Research
+					th.table-detail__item Environment
+					th.table-detail__item Status
+
+			tbody
+				-
+					var list = [
+						['Dianetes in elderly people','Buttercup Hospital Central','Active'],
+						['Diabetes general','Buttercup Clincs','Active'],
+						['Medications in community','Buttercup Clincs',''],
+					];
+
+				each row in list
+					tr
+						each item in row
+							td.table-detail__item= item

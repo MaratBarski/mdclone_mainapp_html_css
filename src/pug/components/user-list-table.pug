@@ -1,0 +1,278 @@
+table.admin-table.admin-table_auto
+	thead
+		tr.admin-table__head
+			th.admin-table__item
+				.admin-table__date
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Full Name
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__user
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Username
+
+			th.admin-table__item.d-none.d-md-table-cell
+				.admin-table__user
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Environment
+
+					.admin-table-filter
+						.admin-table-filter__icon
+							span.ic-hover
+								+svg('ic-filter','ic-filter ic-stroke')
+
+			th.admin-table__item.d-none.d--table-cell
+				span.admin-table__sort
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|email
+
+			th.admin-table__item.d-none.d-xl-table-cell
+				span.admin-table__sort.admin-table__sort_desk
+					span.admin-table__sort-up
+					span.admin-table__sort-down
+				|Modified
+
+			th.admin-table__item.d-none.d-xl-table-cell
+				.admin-table__user
+					span.admin-table__sort
+						span.admin-table__sort-up
+						span.admin-table__sort-down
+					|Special Roles
+
+					.admin-table-filter
+						.admin-table-filter__icon
+							span.ic-hover
+								+svg('ic-filter','ic-filter ic-stroke')
+
+			th.admin-table__item.d-none.d-md-table-cell.admin-table__item_center
+				|Active
+
+			th.admin-table__item
+
+	-
+		var rows = [
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Eli Kopter', link:'true'},
+					{title:'Eli Kopter', class:'d-none d-md-table-cell'},
+					{class:'d-none d-md-table-cell'},
+					{title:'Eli.kopter@kopter.com', class:'d-none d-lg-table-cell'},
+					{title:'Dec 05, 2018 14:32', class:'d-none d-xl-table-cell'},
+					{tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Adminstrator', link:'true'},
+					{title:'DevAdmin', class:'d-none d-md-table-cell'},
+					{title:'All projects', class:'d-none d-md-table-cell'},
+					{title:'Devadmin@localhost', class:'d-none d-lg-table-cell'},
+					{title:'Jun 02, 2018 09:46', class:'d-none d-xl-table-cell'},
+					{tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Alon Pesok', link:'true'},
+					{title:'alon.pesok', class:'d-none d-md-table-cell'},
+					{title:'Hospital A', class:'d-none d-md-table-cell'},
+					{title:'alon.pesok@mdclone.com', class:'d-none d-lg-table-cell'},
+					{title:'Jun 02, 2016 00:00', class:'d-none d-xl-table-cell'},
+					{tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Dean Mea', link:'true'},
+					{title:'Dean.m', class:'d-none d-md-table-cell'},
+					{class:'d-none d-md-table-cell'},
+					{title:'jjj@kkk.com', class:'d-none d-lg-table-cell'},
+					{title:'Jan 20, 2020 11:57', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Mordechai Luchim', link:'true'},
+					{title:'moty.luchim', class:'d-none d-md-table-cell'},
+					{title:'2 environments', class:'d-none d-md-table-cell'},
+					{title:'moty.h@localhost', class:'d-none d-lg-table-cell'},
+					{title:'Nov 12, 2018 12:04', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Dotan Perlstein', link:'true'},
+					{title:'dotan.perl', class:'d-none d-md-table-cell'},
+					{title:'Training', class:'d-none d-md-table-cell'},
+					{title:'Dotan.Peren@mdclone.com', class:'d-none d-lg-table-cell'},
+					{title:'Dec 05, 2018 14:32', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Efrat Kershtein', link:'true'},
+					{title:'Efrat.ker', class:'d-none d-md-table-cell'},
+					{title:'2 environments', class:'d-none d-md-table-cell'},
+					{title:'E@MD.COM', class:'d-none d-lg-table-cell'},
+					{title:'Jul 11, 2018 09:17', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Ela Maayan', link:'true'},
+					{title:'ela.maayan', class:'d-none d-md-table-cell'},
+					{title:'2 environments', class:'d-none d-md-table-cell'},
+					{title:'ela.mayan@mdclone.com', class:'d-none d-lg-table-cell'},
+					{title:'May 20, 2019 18:05', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Tiki Pur', link:'true'},
+					{title:'tiki.pur', class:'d-none d-md-table-cell'},
+					{title:'Hospital A', class:'d-none d-md-table-cell'},
+					{title:'123Tik@com', class:'d-none d-lg-table-cell'},
+					{title:'Nov 12, 2018 10:58', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Moshe Bateva', link:'true'},
+					{title:'moshe.bateva', class:'d-none d-md-table-cell'},
+					{title:'Hospital A', class:'d-none d-md-table-cell'},
+					{title:'H@MD.com', class:'d-none d-lg-table-cell'},
+					{title:'Jul 03, 2018 13:51', class:'d-none d-xl-table-cell'},
+					{tag_green:'Super-Admin', tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'Dror Rishonwsky', link:'true'},
+					{title:'dor.rishon', class:'d-none d-md-table-cell'},
+					{title:'Hospital A', class:'d-none d-md-table-cell'},
+					{title:'dor.rishon@localhost', class:'d-none d-lg-table-cell'},
+					{title:'Oct 17, 2018 17:15', class:'d-none d-xl-table-cell'},
+					{tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+			{
+				row:{selected:''},
+				fields:[
+					{title:'John Doe', link:'true'},
+					{title:'john.brunck', class:'d-none d-md-table-cell'},
+					{title:'2 environments', class:'d-none d-md-table-cell'},
+					{title:'john.brunck@mdclone.com', class:'d-none d-lg-table-cell'},
+					{title:'Oct 19, 2018 03:33', class:'d-none d-xl-table-cell'},
+					{tag_yellow:'Admin', class:'d-none d-xl-table-cell'},
+					{circle:'green', class:'d-none d-md-table-cell admin-table__item_center'},
+				],
+				menu:{
+					icons:[
+						{img:'ic-edit', text:'Edit File Settings'},
+						{img:'ic-view', text:'View Output Summary', disable:'true'},
+					]
+				}
+			},
+		];
+	+adminTableRow(rows)

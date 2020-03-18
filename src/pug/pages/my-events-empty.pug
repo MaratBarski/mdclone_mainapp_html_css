@@ -5,25 +5,26 @@ block variables
 	- var h1 = 'My Events';
 
 block content
-	section.empty-block
-		.container-fluid
-			.row
-				.col-12
-					.split-btn
-						.split-btn__title + Combined Event
-						.split-btn__arr
-							+svg('ic-select-arr-down','ic-select-arr-down')
+	.my-events-empty
+		section.empty-block
+			.container-fluid
+				.row
+					.col-12
+						.split-btn
+							.split-btn__title + Combined Event
+							.split-btn__arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
 
-						.split-btn__popup
-							.split-btn__item Action number 0000001
-							.split-btn__item Action number 0000002
-							.split-btn__item Action number 0000003
-							.split-btn__item Action number 0000004
+							.split-btn__popup
+								.split-btn__item Action number 0000001
+								.split-btn__item Action number 0000002
+								.split-btn__item Action number 0000003
+								.split-btn__item Action number 0000004
 
-					.empty-block__head You can define your own events. Start by clicking the button above.
-					.empty-block__text Your events will be listed here.
+						.empty-block__head You can define your own events. Start by clicking the button above.
+						.empty-block__text Your events will be listed here.
 
-					.empty-block__img
-						img(src="assets/img/event-list-empty-state.png", alt="")
+						.empty-block__img
+							img(src="assets/img/events-empty.png", alt="")
 
 	

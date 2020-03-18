@@ -5,47 +5,48 @@ block variables
 	- var h1 = 'Home';
 
 block content
-	section.empty-block
-		.container-fluid
-			.row
-				.col-12
-					a.btn.btn_icon(href='#') + New Query
+	.home-empty-list
+		section.empty-block
+			.container-fluid
+				.row
+					.col-12
+						a.btn.btn_icon(href='#') + New Query
 
-					.empty-block__head Every journey starts with a questions. Ask yours by clicking the button above.
-					.empty-block__text Your queries will be listed here.
+						.empty-block__head Every journey starts with a questions. Ask yours by clicking the button above.
+						.empty-block__text Your queries will be listed here.
 
-					.empty-block__img
-						img(src="assets/img/query-list-home.png", alt="")
+						.empty-block__img
+							img(src="assets/img/home-empty.png", alt="")
 
 
-	section.query-wrap
-		.container-fluid
-			.row
-				.col-12
-					.unwrap
-						.unwrap__head
-							.unwrap__head-content
-								span.unwrap__arr.ic-hover
-									+svg('ic-select-arr-down','ic-select-arr-down')
-								span.unwrap__title Queries shared with me | 
-									span.unwrap__count 4
+		section.query-wrap
+			.container-fluid
+				.row
+					.col-12
+						.unwrap
+							.unwrap__head
+								.unwrap__head-content
+									span.unwrap__arr.ic-hover
+										+svg('ic-select-arr-down','ic-select-arr-down')
+									span.unwrap__title Queries shared with me | 
+										span.unwrap__count 4
 
-							+formSearch('','Search…')
+								+formSearch('','Search…')
 
-						.unwrap__content
-							include ../components/home-table-shared
+							.unwrap__content
+								include ../components/home-table-shared
 
-	section.query-wrap
-		.container-fluid
-			.row
-				.col-12
-					.unwrap
-						.unwrap__head
-							.unwrap__head-content
-								span.unwrap__arr.ic-hover
-									+svg('ic-select-arr-down','ic-select-arr-down')
-								span.unwrap__title My Approval Keys | 
-									span.unwrap__count 2
+		section.query-wrap
+			.container-fluid
+				.row
+					.col-12
+						.unwrap
+							.unwrap__head
+								.unwrap__head-content
+									span.unwrap__arr.ic-hover
+										+svg('ic-select-arr-down','ic-select-arr-down')
+									span.unwrap__title My Approval Keys | 
+										span.unwrap__count 2
 
-						.unwrap__content
-							include ../components/home-table-key
+							.unwrap__content
+								include ../components/home-table-key
