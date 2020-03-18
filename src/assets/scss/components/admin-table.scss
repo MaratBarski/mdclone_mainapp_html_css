@@ -712,6 +712,10 @@
 		@include font(normal, normal, rem(14px), 1.43, $color-dark-grey);
 	}
 
+	&__val .tag{
+		margin-left: 4px;
+	}
+
 	.file-count{
 		.icon,
 		&__val{

@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import "svgxuse/svgxuse.js";
+
 // import '@fancyapps/fancybox'
 // import 'bootstrap/js/dist/modal';
 // import 'slick-slider/slick/slick.min.js';
