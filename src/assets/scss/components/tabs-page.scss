@@ -53,14 +53,14 @@
 		fill: #fff;
 	}
 
-	&__item:hover .tabs-popup-wrap{
+	&__item:hover .tabs-popup-wrap,
+	&__item:hover .tabs-popup-more-wrap{
 		display: inline-block;
 		color: $color-dark-purple;
 	}
 }
 
 .tabs-popup-wrap{
-	width: 100%;
 	display: none;
 	padding-top: 6px;
 	position: absolute;
@@ -80,6 +80,7 @@
 	text-align: left;
 	border: 1px solid $color-light-grey;
 	border-radius: 4px;
+	padding: 20px;
 	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
 	overflow: hidden;
 
@@ -93,6 +94,37 @@
 		padding: 10px 0;
 	}
 
+	&__btn{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.tabs-popup-more-wrap{
+	width: 100%;
+	display: none;
+	padding-top: 6px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 11;
+
+	&.active{
+		display: inline-block;
+	}
+}
+
+.tabs-popup-more{
+	display: inline-block;
+	width: 100%;
+	background: #fff;
+	text-align: left;
+	border: 1px solid $color-light-grey;
+	border-radius: 4px;
+	box-shadow: -10px 9px 21px 0 rgba(128, 152, 213, 0.08);
+	overflow: hidden;
+
 	&__item{
 		padding: 0 20px;
 		@include font(normal, normal, rem(14px), rem(30px), $color-dark-blue);
@@ -103,12 +135,6 @@
 	&__item.active{
 		background: $color-sort-grey;
 		text-decoration: none;
-	}
-
-	&__btn{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 	}
 }
 

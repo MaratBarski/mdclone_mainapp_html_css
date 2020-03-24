@@ -74,11 +74,11 @@ mixin tabsPage(tabs)
 					if(item.popup_list)
 						+svg('ic-select-arr-down','ic-select-arr-down')
 
-						.tabs-popup-wrap
-							.tabs-popup
-								.tabs-popup__list
+						.tabs-popup-more-wrap
+							.tabs-popup-more
+								.tabs-popup-more__list
 									each popup in item.popup_list
-										.tabs-popup__item(class=popup.class?popup.class:'')= popup.name
+										.tabs-popup-more__item(class=popup.class?popup.class:'')= popup.name
 			
 
 
