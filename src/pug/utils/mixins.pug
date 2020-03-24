@@ -398,89 +398,90 @@ mixin modalWindow(error, status)
 		.modal-window__close.ic-hover
 			+svg('ic-close','ic-close')
 
-		form.form-site
-			.form-site__fields
-				.form-site__item(class=error?'form-site__item_error':'')
-					.form-site__label Choose File
+		.new-file-modal-form
+			form.form-site
+				.form-site__fields
+					.form-site__item(class=error?'form-site__item_error':'')
+						.form-site__label Choose File
 
-					.file-upload
-						label.file-upload__content
-							input(type='file', name='file')
-							span.file-upload__btn Choose File
-							span.file-upload__name.disable Select a CSV or Excel file
-					
-					
-					if (error)
-						.form-site-alert
-							.form-site-alert__icon
-								+svg('ic-failure','ic-failure')
-							span.form-site-alert__text File format needs to be CSV (comma separate values)
+						.file-upload
+							label.file-upload__content
+								input(type='file', name='file')
+								span.file-upload__btn Choose File
+								span.file-upload__name.disable Select a CSV or Excel file
+						
+						
+						if (error)
+							.form-site-alert
+								.form-site-alert__icon
+									+svg('ic-failure','ic-failure')
+								span.form-site-alert__text File format needs to be CSV (comma separate values)
 
-				.form-site__item
-					label(for="name").form-site__label Name
-
-					input(type="text", placeholder="Type file name")
-
-				.form-site__item
-					label(for="project").form-site__label Environment
-
-					#project.select(class=status!='active'?'select_up':'')
-						.select__head Select Environment…
-							.select__head-arr
-								+svg('ic-select-arr-down','ic-select-arr-down')
-						.select__option
-							.select__param.active Demo project
-							.select__param Mimic
-							.select__param Project 1
-							.select__param Project 2
-							.select__param Project with very long name
-
-				.form-site__item
-					label.form-site__label Make this a shared file
-	
-					.form-site__shared
-						if (status=='active')
-							span.form-site__shared-notice
-								+svg('ic-shared','ic-shared')
-								span.form-site__shared-text File is shared now. It can be viewed and used by everyone.
-						else
-							span.form-site__shared-notice
-								span.form-site__shared-text When file is shared everyone can see and use it.
-
-						.switch
-							if (status=='active')
-								input(type="checkbox", id="switch1", checked="checked")
-							else
-								input(type="checkbox", id="switch1")
-							label.switch__content(for="switch1")
-								.switch__marker
-								.switch__on Yes
-								.switch__off No
-
-				if (status=='active')
 					.form-site__item
-						label(for="template").form-site__label
-							|Permission Group
-							span.form-site__info
-								+svg('ic-help','ic-help')
-								span.tooltip
-									span.tooltip__content Tooltip
+						label(for="name").form-site__label Name
 
-							span.form-site__optional Optional
+						input(type="text", placeholder="Type file name")
 
-						#template.select.select_up
-							.select__head Select Permission Group...
+					.form-site__item
+						label(for="project").form-site__label Environment
+
+						#project.select(class=status!='active'?'select_up':'')
+							.select__head Select Environment…
 								.select__head-arr
 									+svg('ic-select-arr-down','ic-select-arr-down')
 							.select__option
-								.select__param.active Template 1
-								.select__param Template 2
-								.select__param Template with very long name
-								.select__param Template 4
+								.select__param.active Demo project
+								.select__param Mimic
+								.select__param Project 1
+								.select__param Project 2
+								.select__param Project with very long name
 
-			.form-site__btn
-				a(href="#").btn.btn_border Cancel
-				input.btn(type="submit", value="Upload", class=status=='active'?'':'btn_disable')
+					.form-site__item
+						label.form-site__label Make this a shared file
+		
+						.form-site__shared
+							if (status=='active')
+								span.form-site__shared-notice
+									+svg('ic-shared','ic-shared')
+									span.form-site__shared-text File is shared now. It can be viewed and used by everyone.
+							else
+								span.form-site__shared-notice
+									span.form-site__shared-text When file is shared everyone can see and use it.
+
+							.switch
+								if (status=='active')
+									input(type="checkbox", id="switch1", checked="checked")
+								else
+									input(type="checkbox", id="switch1")
+								label.switch__content(for="switch1")
+									.switch__marker
+									.switch__on Yes
+									.switch__off No
+
+					if (status=='active')
+						.form-site__item
+							label(for="template").form-site__label
+								|Permission Group
+								span.form-site__info
+									+svg('ic-help','ic-help')
+									span.tooltip
+										span.tooltip__content Tooltip
+
+								span.form-site__optional Optional
+
+							#template.select.select_up
+								.select__head Select Permission Group...
+									.select__head-arr
+										+svg('ic-select-arr-down','ic-select-arr-down')
+								.select__option
+									.select__param.active Template 1
+									.select__param Template 2
+									.select__param Template with very long name
+									.select__param Template 4
+
+				.form-site__btn
+					a(href="#").btn.btn_border Cancel
+					input.btn(type="submit", value="Upload", class=status=='active'?'':'btn_disable')
 
 mixin modalWindowQuery(error, status)
 	.modal-window

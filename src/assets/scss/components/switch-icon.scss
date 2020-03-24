@@ -1,12 +1,13 @@
 /*-------------- switch-icon -----------------*/
 .switch-icon{
 	display: inline-flex;
+	border: 1px solid $color-dark-purple;
+	border-radius: rem(12.5px);
 
 	&__item{
 		display: inline-block;
 		height: rem(25px);
 		min-width: 28px;
-		border: 1px solid $color-dark-purple;
 		@include font(normal, 600, rem(14px), rem(23px), $color-dark-purple);
 		text-align: center;
 		cursor: pointer;
@@ -54,6 +55,6 @@
 	}
 
 	&__item:not(:last-child){
-		border-right: 0;
+		border-right: 1px solid $color-dark-purple;
 	}
 }

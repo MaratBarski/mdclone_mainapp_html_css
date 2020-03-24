@@ -51,6 +51,17 @@
 	}
 }
 
+.new-file-modal-form{
+	height: 482px;
+
+	.form-site{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: calc(100% - 10px);
+	}
+}
+
 @media (max-width: 767px) {
 	.mobile-modal-window{
 		.modal-window{
