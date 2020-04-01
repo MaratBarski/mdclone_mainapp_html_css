@@ -1,0 +1,121 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Output history report';
+	//- - var h1 = 'Output history report';
+
+block content
+	include ../components/ouput-history-top
+
+	section.admin-table-wrap
+		.container-fluid
+			.row
+				.col-12
+					.admin-table-wrap__action
+						+formSearch('d-md-none')
+
+						.admin-table-wrap__col
+							a(href='#').link-load
+								span.ic-hover
+									+svg('ic-download','ic-download')
+								span.link-load__text Download Report
+
+						.admin-table-wrap__col
+							-
+								var tabs=[
+									{name:'All', link:'#', active:'true'},
+									{name:'Last 30 Days', name_sort:'30D', link:'#'},
+									{name:'Last 7 Days', name_sort:'7D', link:'#'},
+									{name:'Specific', name_sort:'S', link:'#', popup_date:'true'},
+								];
+
+							+tabsPage(tabs)
+
+							+formSearch('d-none d-md-block')
+
+					table.admin-table.admin-table_auto
+						thead
+							tr.admin-table__head
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__date
+										span.admin-table__sort.admin-table__sort_desk
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|Date
+
+								th.admin-table__item.d-none.d-md-table-cell
+									.admin-table__user
+										span.admin-table__sort
+											span.admin-table__sort-up
+											span.admin-table__sort-down
+										|User
+
+										.admin-table-filter
+											.admin-table-filter__icon
+												span.ic-hover
+													+svg('ic-filter','ic-filter ic-stroke')
+
+								th.admin-table__item
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Query/File Name
+
+								th.admin-table__item.d-none.d-xl-table-cell
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Approval Key
+
+								th.admin-table__item.d-none.d-xxxl-table-cell
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Research
+
+								th.admin-table__item.d-none.d-xxxl-table-cell
+									|Data
+									+svg('ic-help','ic-help')
+
+								th.admin-table__item.d-none.d-xxxl-table-cell
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Environment
+
+									//- +adminTableFilter()
+									.admin-table-filter
+										.admin-table-filter__icon
+											span.ic-hover
+												+svg('ic-filter','ic-filter ic-stroke')
+
+								
+								th.admin-table__item.d-none.d-xl-table-cell
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Source
+
+									.admin-table-filter
+										.admin-table-filter__icon
+											span.ic-hover
+												+svg('ic-filter','ic-filter ic-stroke')
+
+								th.admin-table__item.d-none.d-xl-table-cell.admin-table__item_center
+									span.admin-table__sort
+										span.admin-table__sort-up
+										span.admin-table__sort-down
+									|Status
+
+								th.admin-table__item
+
+					section.empty-table
+						.container-fluid
+							.row
+								.col-12
+									.empty-table__content
+										.empty-table__head Nothing matches your search
+										.empty-table__text Try using the filters or search different keywords
+
+										.empty-table__img
+											img(src="assets/img/import-file-empty.png", alt="")
