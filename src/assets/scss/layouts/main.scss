@@ -470,6 +470,14 @@ button.btn_small{
 	.w-md-100{width: 100%!important;}
 }
 
+.permutations{
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item{margin: 15px;}
+	&__title{@include font(normal, 600, rem(15px), 1.4, $color-dark-blue); margin-bottom: 10px;}
+}
+
 @media (max-width: 767px) {
 	.container{
 		max-width: 100%!important;

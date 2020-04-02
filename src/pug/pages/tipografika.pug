@@ -310,6 +310,414 @@ block content
 
 					br
 					br
+					.h2 Dropdown with auto autocomplete
+					.drop-auto
+						.drop-auto__head
+							.drop-auto__search
+								input(type="text", value="dia", placeholder="Type or Select Property...",)
+								span.drop-auto__search-close
+									+svg('ic-close-small','ic-close-small')
+							.drop-auto__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.drop-auto__popup
+							.drop-auto__option
+								.drop-auto__param <span class="drop-auto__accent">dia</span>cgnosis - I - ageatevent
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - startdate (default date)
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - II - ageatevent
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - insert_date
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - II - insert_date
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - conditioncode
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - conditioncodedesc
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - internalpatientid
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - sequencenumber
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - II - conditioncode
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - II - conditioncodedesc
+									+svg('ic-failure','ic-failure')
+								.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - II - conditioncodedesc
+								
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text The service line associated with the admission if available, if the service line is not available the attending provider
+									.drop-auto-info__link 
+										a(href="#") More details
+											+svg('ic-external-link','ic-external-link')
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title Populated:
+											.drop-auto-prop__val
+												.progress.progress_green
+													.progress__bg(style='width: 86%')
+													.progress__text 86%
+
+
+										.drop-auto-prop
+											.drop-auto-prop__title Data Type:
+											.drop-auto-prop__val
+												+svg('ic-calendar','ic-calendar')
+												span Date
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Data Sample:
+										.drop-auto-info__text 28 Mar, 2011
+					
+					br
+					br
+					.drop-auto
+						.drop-auto__head
+							.drop-auto__search
+								input(type="text", value="dia", placeholder="Type or Select Property...",)
+								span.drop-auto__search-close
+									+svg('ic-close-small','ic-close-small')
+							.drop-auto__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.drop-auto__popup
+							.drop-auto__option
+								.drop-auto__sect
+									.drop-auto__sect-head
+										.drop-auto__icon
+											+svg('ic-my-events','ic-my-events')
+										.drop-auto__title My Events
+									.drop-auto__list
+										.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - conditioncode
+											+svg('ic-failure','ic-failure')
+										.drop-auto__param <span class="drop-auto__accent">dia</span>gnosis - I - conditioncodedesc
+
+								.drop-auto__sect
+									.drop-auto__sect-head
+										.drop-auto__icon
+											+svg('ic-diagnosis','ic-diagnosis')
+										.drop-auto__title Diagnosis
+									.drop-auto__list
+										.drop-auto__param <span class="drop-auto__accent">Dia</span>gnosis
+										.drop-auto__param <span class="drop-auto__accent">Dia</span>gnosis in admission
+
+								.drop-auto__sect
+									.drop-auto__sect-head
+										.drop-auto__icon
+											+svg('ic-admissions','ic-admissions')
+										.drop-auto__title Admissions
+									.drop-auto__list
+										.drop-auto__param Admissions
+
+								.drop-auto__sect
+									.drop-auto__sect-head
+										.drop-auto__icon
+											+svg('ic-medications','ic-medications')
+										.drop-auto__title Medications
+									.drop-auto__list
+										.drop-auto__param Medications - from home
+								
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+									
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title The available data is since:
+											.drop-auto-prop__val 1998
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Diagnosis date
+					
+					br
+					br
+					.drop-auto
+						.drop-auto__head
+							.drop-auto__search
+								input(type="text", value="dia", placeholder="Type or Select Property...",)
+								span.drop-auto__search-close
+									+svg('ic-close-small','ic-close-small')
+							.drop-auto__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+						.drop-auto__popup
+							.drop-auto__option
+								.drop-auto-empty
+									.drop-auto-empty__title Nothing matches your search.
+									.drop-auto-empty__text Try usuing different keywords.
+
+							
+
+					br
+					br
+					.drop-auto.drop-auto_error
+						.drop-auto__head
+							.drop-auto__error Restricted:
+							.drop-auto__search
+								input(type="text", value="Insert Sequence nu", placeholder="Type or Select Property...",)
+								span.drop-auto__search-close
+									+svg('ic-close-small','ic-close-small')
+							.drop-auto__head-arr
+								+svg('ic-select-arr-down','ic-select-arr-down')
+							+svg('ic-failure','ic-failure')
+
+					
+					br
+					br
+					.h2 All Permutations - Event details Box
+					.permutations
+						.permutations__item
+							.permutations__title All information is available
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text Clinical measurements (numeric or textual) such as vital signs, functional statuses, scores, respiratory functional measurements, etc. Each measurement has a timestamp. [based on 80+-60 char]
+									.drop-auto-info__link 
+										a(href="#") More details
+											+svg('ic-external-link','ic-external-link')
+									
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title The available data is since:
+											.drop-auto-prop__val
+												span.drop-auto-prop__year 1998
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Admission Date
+
+						.permutations__item
+							.permutations__title Combined event
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text This event is used for diabetets cases that has also CKD.
+									
+
+								.drop-auto-info__detail
+									.drop-auto-event
+										.drop-auto-event__title Event Type:
+										.drop-auto-event__content
+											.drop-auto-event__icon
+												+svg('ic-and','ic-and')
+											.drop-auto-event__text Combined Event - type 'OR'
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Admission Date
+
+						.permutations__item
+							.permutations__title Combined event with error
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__error
+										+svg('ic-failure','ic-failure')
+										.drop-auto-info__error-text Event is empty
+
+									.drop-auto-info__title Description:
+									.drop-auto-info__text This event is used for diabetets cases that has also CKD.
+									
+
+								.drop-auto-info__detail
+									.drop-auto-event
+										.drop-auto-event__title Event Type:
+										.drop-auto-event__content
+											.drop-auto-event__icon
+												+svg('ic-and','ic-and')
+											.drop-auto-event__text Combined event with ‘OR’ Condition
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Admission Date
+
+					br
+					br
+					.h2 All Permutations - Properties details Box
+					.permutations
+						.permutations__item
+							.permutations__title All information is available
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text The service line associated with the admission if available, if the service line is not available the attending provider primary specialities are used instead.
+									.drop-auto-info__link 
+										a(href="#") More details
+											+svg('ic-external-link','ic-external-link')
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title Populated:
+											.drop-auto-prop__val
+												.progress.progress_green
+													.progress__bg(style='width: 86%')
+													.progress__text 86%
+
+
+										.drop-auto-prop
+											.drop-auto-prop__title Data Type:
+											.drop-auto-prop__val
+												+svg('ic-calendar','ic-calendar')
+												span Date
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Data Sample:
+										.drop-auto-info__text orem ipsum dolor sit amet, consectetur adipiscing elit.
+
+						.permutations__item
+							.permutations__title Case this property is a default date
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__notice
+										+svg('ic-default-date','ic-default-date')
+										.drop-auto-info__notice-text This is the <b>Default</b> date
+									.drop-auto-info__title Description:
+									.drop-auto-info__text The service line associated with the admission if available, if the service line is not available the attending provider primary specialities are used instead.
+									.drop-auto-info__link 
+										a(href="#") More details
+											+svg('ic-external-link','ic-external-link')
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title Populated:
+											.drop-auto-prop__val
+												.progress.progress_green
+													.progress__bg(style='width: 86%')
+													.progress__text 86%
+
+
+										.drop-auto-prop
+											.drop-auto-prop__title Data Type:
+											.drop-auto-prop__val
+												+svg('ic-calendar','ic-calendar')
+												span Date
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Data Sample:
+										.drop-auto-info__text 28 Mar, 2011
+
+						.permutations__item
+							.permutations__title With Scroll
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text Fluoroscopy is a type of medical imaging that shows a continuous X-ray image on a monitor, much like an X-ray movie. During a fluoroscopy procedure, an X-ray beam is passed through the body. The image is transmitted to a monitor so the movement of a body part or of an instrument or contrast agent ("X-ray dye") through the body can be seen in detail.
+
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title Populated:
+											.drop-auto-prop__val
+												.progress.progress_green
+													.progress__bg(style='width: 86%')
+													.progress__text 86%
+
+
+										.drop-auto-prop
+											.drop-auto-prop__title Data Type:
+											.drop-auto-prop__val
+												+svg('ic-calendar','ic-calendar')
+												span Date
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Data Sample:
+										.drop-auto-info__text 28 Mar, 2011
+
+					br
+					br
+					.h2 Empty states
+					.permutations
+						.permutations__item
+							.permutations__title No Description
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__img
+										img(src="/assets/img/empty-state.png", alt="")
+									.drop-auto-info__label No Description Available
+									
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title The available data is since:
+											.drop-auto-prop__val
+												span.drop-auto-prop__year 2007
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Admission Date
+
+						.permutations__item
+							.permutations__title No Description and no other date
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__img
+										img(src="/assets/img/empty-state.png", alt="")
+									.drop-auto-info__label No Description Available
+									
+								.drop-auto-info__detail
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Not Available
+
+						.permutations__item
+							.permutations__title All other fields
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__text Clinical measurements (numeric or textual) such as vital signs, functional statuses, scores, respiratory functional measurements, etc. Each measurement has a timestamp. [based on 80+-60 char]
+									
+								.drop-auto-info__detail
+									.drop-auto-info__bottom
+										.drop-auto-info__title Default Date:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Not Available
+
+						.permutations__item
+							.permutations__title Empty state
+
+							.drop-auto-info
+								.drop-auto-info__desc
+									.drop-auto-info__title Description:
+									.drop-auto-info__img
+										img(src="/assets/img/empty-state.png", alt="")
+									.drop-auto-info__label No Description Available
+									
+								.drop-auto-info__detail
+									.drop-auto-info__prop
+										.drop-auto-prop
+											.drop-auto-prop__title Populated:
+											.drop-auto-prop__val Not Available
+
+										.drop-auto-prop
+											.drop-auto-prop__title Data Type:
+											.drop-auto-prop__val Not Available
+
+									.drop-auto-info__bottom
+										.drop-auto-info__title Data Sample:
+											+svg('ic-info','ic-info')
+										.drop-auto-info__text Admission Date
+
+						
+						
+					
+					br
+					br
 					.h2 System Notifications
 					.system-notice
 						span.system-notice__icon
@@ -785,4 +1193,44 @@ block content
 							.type-icon__img
 								+svg('ic-share-view','ic-share-view')
 							.type-icon__name ic-share-view
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-measurement','ic-measurement')
+							.type-icon__name ic-measurement
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-labs','ic-labs')
+							.type-icon__name ic-labs
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-procedures','ic-procedures')
+							.type-icon__name ic-procedures
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-medications','ic-medications')
+							.type-icon__name ic-medications
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-admissions','ic-admissions')
+							.type-icon__name ic-admissions
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-diagnosis','ic-diagnosis')
+							.type-icon__name ic-diagnosis
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-my-events','ic-my-events')
+							.type-icon__name ic-my-events
+
+						.type-icon__item
+							.type-icon__img
+								+svg('ic-default-date','ic-default-date')
+							.type-icon__name ic-default-date
 
