@@ -165,11 +165,11 @@
 	height: 356px;
 	background:$color-sort-grey;
 	border-left: 1px solid $color-light-grey;
-	padding: 8px 13px 18px;
+	padding: 8px 13px 10px;
 	overflow-y: auto;
 
 	&__desc{
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 	}
 
 	&__title{
@@ -188,8 +188,10 @@
 		padding-top: 15px;
 
 		.ic-info{
+			vertical-align: middle;
 			width: 16px;
 			height: 16px;
+			margin-top: -3px;
 		}
 	}
 
