@@ -491,7 +491,7 @@ mixin modalSendQuery(status)
 				a(href="#").btn.btn_border Cancel
 				input.btn(type="submit", value="Send", class=status=='active'?'':'btn_disable')
 
-mixin modalShareQuery(status)
+mixin modalShareQuery(status, result)
 	.modal-window
 		.modal-window__head Share query
 		.modal-window__close.ic-hover
@@ -545,41 +545,48 @@ mixin modalShareQuery(status)
 
 					.btn.btn_small.btn_disable Add
 
-			.share-form-data
-				.share-form-data__label Already shared with:
+			if(result=='empty')
+				.share-form-empty
+					.share-form-empty__text You can allow other users to view or edit your query 
+					.share-form-empty__img
+						img(src="/assets/img/share-form-empty.png", alt="")
 
-				.share-form-data__content
-					.share-form-data__list
-						-
-							var shareList = [
-								{name:'Moshe Bateva', view:'active'},
-								{name:'Bery Zakala', edit:'active'},
-								{name:'El Hamaayan', edit:'active'},
-								{name:'Moti Hiluchim', edit:'active'},
-								{name:'Alon Noshem', view:'active'},
-								{name:'Simcha Rif', view:'active'},
-								{name:'Micha Fafli', view:'active'},
-								{name:'Nagasta Bagamba', view:'active'},
-								{name:'Moshe Bateva', view:'active'},
-								{name:'Bery Zakala', edit:'active'},
-								{name:'El Hamaayan', edit:'active'},
-								{name:'Moti Hiluchim', edit:'active'},
-								{name:'Alon Noshem', view:'active'},
-							]
-						
-						each item in shareList
-							.share-form-data__row
-								.share-form-data__col.share-form-data__col-name= item.name
-								.share-form-data__col.share-form-data__col-switch
-									.switch-icon
-										.switch-icon__item(class=item.view=='active'?'active':'')
-											+svg('ic-share-view','ic-share-view')
+			else
+				.share-form-data
+					.share-form-data__label Already shared with:
 
-										.switch-icon__item(class=item.edit=='active'?'active':'')
-											+svg('ic-edit','ic-edit')
+					.share-form-data__content
+						.share-form-data__list
+							-
+								var shareList = [
+									{name:'Moshe Bateva', view:'active'},
+									{name:'Bery Zakala', edit:'active'},
+									{name:'El Hamaayan', edit:'active'},
+									{name:'Moti Hiluchim', edit:'active'},
+									{name:'Alon Noshem', view:'active'},
+									{name:'Simcha Rif', view:'active'},
+									{name:'Micha Fafli', view:'active'},
+									{name:'Nagasta Bagamba', view:'active'},
+									{name:'Moshe Bateva', view:'active'},
+									{name:'Bery Zakala', edit:'active'},
+									{name:'El Hamaayan', edit:'active'},
+									{name:'Moti Hiluchim', edit:'active'},
+									{name:'Alon Noshem', view:'active'},
+								]
+							
+							each item in shareList
+								.share-form-data__row
+									.share-form-data__col.share-form-data__col-name= item.name
+									.share-form-data__col.share-form-data__col-switch
+										.switch-icon
+											.switch-icon__item(class=item.view=='active'?'active':'')
+												+svg('ic-share-view','ic-share-view')
 
-								.share-form-data__col.share-form-data__col-close
-									+svg('ic-close-circle','ic-close-circle')
+											.switch-icon__item(class=item.edit=='active'?'active':'')
+												+svg('ic-edit','ic-edit')
+
+									.share-form-data__col.share-form-data__col-close
+										+svg('ic-close-circle','ic-close-circle')
 
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel

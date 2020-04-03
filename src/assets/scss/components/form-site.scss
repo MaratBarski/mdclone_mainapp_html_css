@@ -659,10 +659,22 @@
 	}
 }
 
+.share-form-empty{
+	border: 1px solid $color-light-grey;
+	border-radius: 2px;
+	padding: 25px 25px 15px;
+	text-align: center;
+
+	&__text{
+		@include font(normal, normal, rem(16px), 1, $color-grey);
+		margin-bottom: 26px;
+	}
+}
+
 .share-form-data{
 	&__label{
 		display: block;
-		@include font(normal, 600, 14px, 1, $color-dark-grey);
+		@include font(normal, 600, rem(14px), 1, $color-dark-grey);
 		margin-bottom: 6px;
 	}
 
