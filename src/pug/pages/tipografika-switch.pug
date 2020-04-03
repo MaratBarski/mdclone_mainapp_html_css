@@ -1,0 +1,49 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+	- var h1 = 'Switch';
+
+block content
+	section
+		.container-fluid
+			.row
+				.col-12
+					.h2 Switch
+					.switch
+						input(type="checkbox", id="switch1")
+						label.switch__content(for="switch1")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
+
+					br
+					br
+					.switch
+						input(type="checkbox", id="switch2", disabled="disabled")
+						label.switch__content(for="switch2")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
+
+					br
+					br
+					.switch
+						input(type="checkbox", id="switch3", disabled="disabled", checked="checked")
+						label.switch__content(for="switch3")
+							.switch__marker
+							.switch__on Yes
+							.switch__off No
+
+					br
+					br
+					.h2 Switch icons
+					.switch-icon
+						.switch-icon__item
+							+svg('ic-numeric','ic-numeric')
+
+						.switch-icon__item.active
+							+svg('ic-textual','ic-textual')
+
+						.switch-icon__item.disable
+							+svg('ic-calendar','ic-calendar')

@@ -431,6 +431,39 @@
 			width: auto;
 		}
 	}
+
+	&__more{position: relative;}
+	&__more-link{
+		display: none;
+		vertical-align: middle;
+		@include font(normal, 600, rem(14px), 1, $color-blue);
+		padding-right: 20px;
+		background: #fff;
+		position: absolute;
+		@include top-center;
+		right: 0;
+
+		.icon{
+			fill: $color-blue;
+			position: absolute;
+			@include top-center;
+			right: -4px;
+		}
+	}
+
+	&__row:nth-child(2n+1) &__more-link{
+		background: rgba(242,243,245,.9);
+	}
+
+	&__row:hover &__more-link,
+	&__row:nth-child(2n+1):hover &__more-link{
+		background: #e1e3e7;
+	}
+
+	&__row:hover &__more-link,
+	&__row.active &__more-link{
+		display: inline-block;
+	}
 }
 
 // @media screen and (-webkit-min-device-pixel-ratio:0) {

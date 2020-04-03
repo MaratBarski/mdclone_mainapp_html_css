@@ -2,66 +2,6 @@ extends ../layout/main
 
 block variables
 	- var title = 'Content';
-	- 
-		var pagelist = [
-			{href: 'header-open.html',name:'Header open'},
-			{href: 'main-empty-table.html',name:'Imported files empty with table'},
-			{href: 'main-empty.html',name:'Imported files empty'},
-			{href: 'main.html',name:'Imported files'},
-			{href: 'main-popup.html',name:'Imported files with popup'},
-			{href: 'main-modal.html',name:'Imported files with modal'},
-			{href: 'main-modal-active.html',name:'Imported files with modal (active and error)'},
-			{href: 'main-modal-mobile.html',name:'Imported files with modal mobile (<768px)'},
-			{href: 'main-modal-mobile-active.html',name:'Imported files with modal mobile (active and error, <768px)'},
-			{href: 'home-close.html',name:'Home (close)'},
-			{href: 'home.html',name:'Home'},
-			{href: 'home-send-query.html',name:'Home send query'},
-			{href: 'home-send-query-active.html',name:'Home send query active'},
-			{href: 'home-share-query.html',name:'Home share query'},
-			{href: 'home-share-query-active.html',name:'Home share query active'},
-			{href: 'home-empty.html',name:'Home empty'},
-			{href: 'home-empty-list.html',name:'Home empty with list'},
-			{href: 'home-empty-queries.html',name:'Home empty queries'},
-			{href: 'my-events.html',name:'My events'},
-			{href: 'my-events-empty.html',name:'My events empty'},
-			{href: 'my-events-empty-table.html',name:'My events empty with table'},
-			{href: 'file-mapping.html',name:'File Mapping'},
-			{href: 'file-mapping-popup.html',name:'File Mapping with popup'},
-			{href: 'file-mapping-legend.html',name:'File Mapping with legend'},
-			{href: 'file-mapping-share.html',name:'File Mapping with share'},
-			{href: 'file-mapping-share-active.html',name:'File Mapping with share active'},
-			{href: 'output-history-empty.html',name:'Output history report empty'},
-			{href: 'output-history.html',name:'Output history report'},
-			{href: 'output-history-details.html',name:'Output history report details'},
-			{href: 'output-history-date.html',name:'Output history report select date'},
-			{href: 'categorization-list-empty.html',name:'Categorization list empty'},
-			{href: 'categorization-list.html',name:'Categorization list'},
-			{href: 'categorization-list-details.html',name:'Categorization list details'},
-			{href: 'categorization-popup.html',name:'Categorization list popup'},
-			{href: 'categorization-legend.html',name:'Categorization list legend'},
-			{href: 'categorization-load.html',name:'Categorization list load'},
-			{href: 'categorization-modal.html',name:'Categorization list modal'},
-			{href: 'categorization-modal-replace.html',name:'Categorization list modal replace'},
-			{href: 'categorization-modal-replace-error.html',name:'Categorization list modal replace error'},
-			{href: 'map-categories.html',name:'Map categories'},
-			{href: 'map-categories-error.html',name:'Map categories error'},
-			{href: 'edit-categories.html',name:'Edit categories'},
-			{href: 'edit-categories-popup.html',name:'Edit categories popup'},
-			{href: 'edit-categories-notice-without-notes.html',name:'Edit categories notice without notes'},
-			{href: 'edit-categories-notice.html',name:'Edit categories notice'},
-			{href: 'usage-dashboard.html',name:'Usage dashboard (General Usage)'},
-			{href: 'usage-dashboard-monthly.html',name:'Usage dashboard (Monthly Activity)'},
-			{href: 'usage-dashboard-activity.html',name:'Usage dashboard (Activity per User)'},
-			{href: 'usage-dashboard-top.html',name:'Usage dashboard (Top 10 Users)'},
-			{href: 'usage-dashboard-created.html',name:'Usage dashboard (Created)'},
-			{href: 'usage-dashboard-retention.html',name:'Usage dashboard (Retention)'},
-			{href: 'usage-dashboard-table.html',name:'Usage dashboard (Table)'},
-			{href: 'user-list-empty.html',name:'User list empty'},
-			{href: 'user-list.html',name:'User list'},
-			{href: 'user-list-details.html',name:'User list details'},
-			//- {href: 'main-modal-more-mobile.html',name:'Imported files more information mobile(<768px)'},
-			{href: 'tipografika.html',name:'Typography'},
-		];
 
 block content
 	section
@@ -69,9 +9,240 @@ block content
 			.row
 				.col-12
 					h1 Content
+					- 
+						var pagelist = [
+							{href: 'header-open.html',name:'Header open'},
+						];
+
+					.h6 Header
 					ul
 						each page in pagelist
 							li
 								a(href=page.href,)= page.name
 
+					- 
+						var pagelist = [
+							{href: 'main-empty-table.html',name:'Imported files empty with table'},
+							{href: 'main-empty.html',name:'Imported files empty'},
+							{href: 'main.html',name:'Imported files'},
+							{href: 'main-popup.html',name:'Imported files with popup'},
+							{href: 'main-modal.html',name:'Imported files with modal'},
+							{href: 'main-modal-active.html',name:'Imported files with modal (active and error)'},
+							{href: 'main-modal-mobile.html',name:'Imported files with modal mobile (<768px)'},
+							{href: 'main-modal-mobile-active.html',name:'Imported files with modal mobile (active and error, <768px)'},
+						];
 
+					.h6 Imported files
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'home-close.html',name:'Home (close)'},
+							{href: 'home.html',name:'Home'},
+							{href: 'home-send-query.html',name:'Home send query'},
+							{href: 'home-send-query-active.html',name:'Home send query active'},
+							{href: 'home-share-query.html',name:'Home share query'},
+							{href: 'home-share-query-active.html',name:'Home share query active'},
+							{href: 'home-empty.html',name:'Home empty'},
+							{href: 'home-empty-list.html',name:'Home empty with list'},
+							{href: 'home-empty-queries.html',name:'Home empty queries'},
+						];
+
+					.h6 Home
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'my-events.html',name:'My events'},
+							{href: 'my-events-empty.html',name:'My events empty'},
+							{href: 'my-events-empty-table.html',name:'My events empty with table'},
+						];
+
+					.h6 My events
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'file-mapping.html',name:'File Mapping'},
+							{href: 'file-mapping-popup.html',name:'File Mapping with popup'},
+							{href: 'file-mapping-legend.html',name:'File Mapping with legend'},
+							{href: 'file-mapping-share.html',name:'File Mapping with share'},
+							{href: 'file-mapping-share-active.html',name:'File Mapping with share active'},
+						];
+
+					.h6 File Mapping
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'output-history-empty.html',name:'Output history report empty'},
+							{href: 'output-history.html',name:'Output history report'},
+							{href: 'output-history-details.html',name:'Output history report details'},
+							{href: 'output-history-date.html',name:'Output history report select date'},
+						];
+
+					.h6 Output history report
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'categorization-list-empty.html',name:'Categorization list empty'},
+							{href: 'categorization-list.html',name:'Categorization list'},
+							{href: 'categorization-list-details.html',name:'Categorization list details'},
+							{href: 'categorization-popup.html',name:'Categorization list popup'},
+							{href: 'categorization-legend.html',name:'Categorization list legend'},
+							{href: 'categorization-load.html',name:'Categorization list load'},
+							{href: 'categorization-modal.html',name:'Categorization list modal'},
+							{href: 'categorization-modal-replace.html',name:'Categorization list modal replace'},
+							{href: 'categorization-modal-replace-error.html',name:'Categorization list modal replace error'},
+						];
+
+					.h6 Categorization list
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'map-categories.html',name:'Map categories'},
+							{href: 'map-categories-error.html',name:'Map categories error'},
+						];
+
+					.h6 Map categories
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'edit-categories.html',name:'Edit categories'},
+							{href: 'edit-categories-popup.html',name:'Edit categories popup'},
+							{href: 'edit-categories-notice-without-notes.html',name:'Edit categories notice without notes'},
+							{href: 'edit-categories-notice.html',name:'Edit categories notice'},
+						];
+
+					.h6 Edit categories
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'usage-dashboard.html',name:'Usage dashboard (General Usage)'},
+							{href: 'usage-dashboard-monthly.html',name:'Usage dashboard (Monthly Activity)'},
+							{href: 'usage-dashboard-activity.html',name:'Usage dashboard (Activity per User)'},
+							{href: 'usage-dashboard-top.html',name:'Usage dashboard (Top 10 Users)'},
+							{href: 'usage-dashboard-created.html',name:'Usage dashboard (Created)'},
+							{href: 'usage-dashboard-retention.html',name:'Usage dashboard (Retention)'},
+							{href: 'usage-dashboard-table.html',name:'Usage dashboard (Table)'},
+						];
+
+					.h6 Usage dashboard
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'user-list-empty.html',name:'User list empty'},
+							{href: 'user-list.html',name:'User list'},
+							{href: 'user-list-details.html',name:'User list details'},
+						];
+
+					.h6 User list
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'tipografika-base.html',name:'Base'},
+							{href: 'tipografika-btn.html',name:'Buttons'},
+							{href: 'tipografika-tabs.html',name:'Tabs'},
+							{href: 'tipografika-switch.html',name:'Switch'},
+							{href: 'tipografika-input.html',name:'Input'},
+							{href: 'tipografika-checkbox.html',name:'Checkbox'},
+							{href: 'tipografika-select.html',name:'Select'},
+							{href: 'tipografika-dropdown.html',name:'Dropdown with auto autocomplete'},
+							{href: 'tipografika-search.html',name:'Form search'},
+							{href: 'tipografika-tooltip.html',name:'Tooltip'},
+							{href: 'tipografika-notice.html',name:'System Notifications'},
+							{href: 'tipografika-progress.html',name:'Progress and tags'},
+							{href: 'tipografika-balloon.html',name:'Information Balloon'},
+							{href: 'tipografika-icons.html',name:'Icons'},
+						];
+
+					.h6 Typography
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
+					//- - 
+					//- 	var pagelist = [
+					//- 		{href: 'main-empty-table.html',name:'Imported files empty with table'},
+					//- 		{href: 'main-empty.html',name:'Imported files empty'},
+					//- 		{href: 'main.html',name:'Imported files'},
+					//- 		{href: 'main-popup.html',name:'Imported files with popup'},
+					//- 		{href: 'main-modal.html',name:'Imported files with modal'},
+					//- 		{href: 'main-modal-active.html',name:'Imported files with modal (active and error)'},
+					//- 		{href: 'main-modal-mobile.html',name:'Imported files with modal mobile (<768px)'},
+					//- 		{href: 'main-modal-mobile-active.html',name:'Imported files with modal mobile (active and error, <768px)'},
+					//- 		{href: 'home-close.html',name:'Home (close)'},
+					//- 		{href: 'home.html',name:'Home'},
+					//- 		{href: 'home-send-query.html',name:'Home send query'},
+					//- 		{href: 'home-send-query-active.html',name:'Home send query active'},
+					//- 		{href: 'home-share-query.html',name:'Home share query'},
+					//- 		{href: 'home-share-query-active.html',name:'Home share query active'},
+					//- 		{href: 'home-empty.html',name:'Home empty'},
+					//- 		{href: 'home-empty-list.html',name:'Home empty with list'},
+					//- 		{href: 'home-empty-queries.html',name:'Home empty queries'},
+					//- 		{href: 'my-events.html',name:'My events'},
+					//- 		{href: 'my-events-empty.html',name:'My events empty'},
+					//- 		{href: 'my-events-empty-table.html',name:'My events empty with table'},
+					//- 		{href: 'file-mapping.html',name:'File Mapping'},
+					//- 		{href: 'file-mapping-popup.html',name:'File Mapping with popup'},
+					//- 		{href: 'file-mapping-legend.html',name:'File Mapping with legend'},
+					//- 		{href: 'file-mapping-share.html',name:'File Mapping with share'},
+					//- 		{href: 'file-mapping-share-active.html',name:'File Mapping with share active'},
+					//- 		{href: 'output-history-empty.html',name:'Output history report empty'},
+					//- 		{href: 'output-history.html',name:'Output history report'},
+					//- 		{href: 'output-history-details.html',name:'Output history report details'},
+					//- 		{href: 'output-history-date.html',name:'Output history report select date'},
+					//- 		{href: 'categorization-list-empty.html',name:'Categorization list empty'},
+					//- 		{href: 'categorization-list.html',name:'Categorization list'},
+					//- 		{href: 'categorization-list-details.html',name:'Categorization list details'},
+					//- 		{href: 'categorization-popup.html',name:'Categorization list popup'},
+					//- 		{href: 'categorization-legend.html',name:'Categorization list legend'},
+					//- 		{href: 'categorization-load.html',name:'Categorization list load'},
+					//- 		{href: 'categorization-modal.html',name:'Categorization list modal'},
+					//- 		{href: 'categorization-modal-replace.html',name:'Categorization list modal replace'},
+					//- 		{href: 'categorization-modal-replace-error.html',name:'Categorization list modal replace error'},
+					//- 		{href: 'map-categories.html',name:'Map categories'},
+					//- 		{href: 'map-categories-error.html',name:'Map categories error'},
+					//- 		{href: 'edit-categories.html',name:'Edit categories'},
+					//- 		{href: 'edit-categories-popup.html',name:'Edit categories popup'},
+					//- 		{href: 'edit-categories-notice-without-notes.html',name:'Edit categories notice without notes'},
+					//- 		{href: 'edit-categories-notice.html',name:'Edit categories notice'},
+					//- 		{href: 'usage-dashboard.html',name:'Usage dashboard (General Usage)'},
+					//- 		{href: 'usage-dashboard-monthly.html',name:'Usage dashboard (Monthly Activity)'},
+					//- 		{href: 'usage-dashboard-activity.html',name:'Usage dashboard (Activity per User)'},
+					//- 		{href: 'usage-dashboard-top.html',name:'Usage dashboard (Top 10 Users)'},
+					//- 		{href: 'usage-dashboard-created.html',name:'Usage dashboard (Created)'},
+					//- 		{href: 'usage-dashboard-retention.html',name:'Usage dashboard (Retention)'},
+					//- 		{href: 'usage-dashboard-table.html',name:'Usage dashboard (Table)'},
+					//- 		{href: 'user-list-empty.html',name:'User list empty'},
+					//- 		{href: 'user-list.html',name:'User list'},
+					//- 		{href: 'user-list-details.html',name:'User list details'},
+					//- 		//- {href: 'main-modal-more-mobile.html',name:'Imported files more information mobile(<768px)'},
+					//- 		{href: 'tipografika.html',name:'Typography'},
+					//- 	];

@@ -1,0 +1,30 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+	- var h1 = 'System Notifications';
+
+block content
+	section
+		.container-fluid
+			.row
+				.col-12
+					.system-notice
+						span.system-notice__icon
+							+svg('ic-running','ic-running')
+						span.system-notice__text NLP engine started running on source collection
+
+					br
+					br
+					.system-notice
+						span.system-notice__icon
+							+svg('ic-success','ic-success')
+
+						span.system-notice__text Model saved successfully
+					br
+					br
+					.system-notice.system-notice_red
+						span.system-notice__icon
+							+svg('ic-error','ic-error')
+
+						span.system-notice__text Something failed

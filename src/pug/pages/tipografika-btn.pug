@@ -1,0 +1,48 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+	- var h1 = 'Buttons';
+
+block content
+	section
+		.container-fluid
+			.row
+				.col-12
+					a.btn(href='#') Button
+					a.btn.btn_disable(href='#') Button
+					br
+					br
+					a.btn.btn_border(href='#') Button
+					a.btn.btn_border.btn_disable(href='#') Button
+					br
+					br
+					a.btn.btn_icon(href='#') + Button
+					a.btn.btn_disable.btn_icon(href='#') + Button
+
+					br
+					br
+					a.btn.btn_small(href='#') Button
+					a.btn.btn_small.btn_disable(href='#') Button
+					br
+					br
+					a.btn.btn_small.btn_border(href='#') Button
+					a.btn.btn_small.btn_border.btn_disable(href='#') Button
+
+					br
+					br
+					.split-btn
+						.split-btn__title New Event
+						.split-btn__arr
+							+svg('ic-select-arr-down','ic-select-arr-down')
+
+						.split-btn__popup
+							.split-btn__item Action number 00001
+							.split-btn__item Action number 00002
+							.split-btn__item Action number 00003
+							.split-btn__item Action number 00004
+
+					br
+					br
+					div(style="background: #0d1e42; padding: 10px;")
+						a.btn.btn_border.btn_grey(href='#') Button

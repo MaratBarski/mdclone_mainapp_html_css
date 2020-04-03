@@ -1,0 +1,122 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+	- var h1 = 'Information Balloon';
+
+block content
+	section
+		.container-fluid
+			.row
+				.col-12
+					.info-popup(style="width: 395px;")
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head File Sharing
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								.info-popup-switch
+										.info-popup-switch__content
+											.info-popup-switch__icon
+												+svg('ic-shared','ic-shared')
+
+											.info-popup-switch__text-wrap
+												.info-popup-switch__title File is shared.
+												.info-popup-switch__text It can be viewed and used by everyone.
+
+										.switch
+											input(type="checkbox", id="switch10", checked="checked")
+											label.switch__content(for="switch10")
+												.switch__marker
+												.switch__on Yes
+												.switch__off No
+										
+
+
+							.info-popup__btn
+								a(href="#").btn.btn_border.btn_small Cancel
+								input(type="submit", value="Apply").btn.btn_small
+
+					br
+					br
+					.info-popup
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Hierarchy Description
+									span.info-popup__option Optional
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								.info-popup__fields
+									textarea(placeholder="Type Description that will help you understand more about this hierarchy")
+
+							.info-popup__btn
+								a(href="#").btn.btn_border.btn_small Cancel
+								input(type="submit", value="Save").btn.btn_small
+
+					br
+					br
+					.info-popup.info-popup_right(style="width: 295px;")
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Hierarchy structure mismatch
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								.info-popup__text-wrap
+									.info-popup__text
+										P The hierarchy structure was manually changed and no longer match the previous one. 
+										P After the issue was fixed by the ETL owner, turn off the toggle below to restart the auto-update.
+
+								.info-popup-switch
+									.info-popup-switch__content
+										.info-popup-switch__text-wrap
+											.info-popup-switch__title Hold Automatic loading
+
+									.switch
+										input(type="checkbox", id="switch4", checked="checked")
+										label.switch__content(for="switch4")
+											.switch__marker
+											.switch__on On
+											.switch__off Off
+
+					br
+					br
+					.info-popup.info-popup_right(style="width: 268px;")
+						.info-popup__top
+							.info-popup__head-wrap
+								span.info-popup__head Used in
+
+							.info-popup__close
+								+svg('ic-close-circle','ic-close-circle')
+
+						.info-popup__content
+							.info-popup__text-wrap
+								.info-popup__title Events:
+								.info-popup__text Diagnosis, Admission Diagnosis, Procedures, Customised events
+
+					br
+					br
+					.info-popup.info-popup_right.info-popup_bottom(style="width: 276px;")
+						form.form-site
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Missing old categories
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								|- Type of route<br>
+								|- Pharmacological subgroup ATC3<br>
+								|- Manufacturer 

@@ -1,0 +1,19 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Typography';
+	- var h1 = 'Input';
+
+block content
+	section
+		.container-fluid
+			.row
+				.col-12
+					form.form-site(style="width: 250px;")
+						input(type="text", placeholder="Text")
+						br
+						br
+						input(type="text", placeholder="Text", disabled="disabled")
+						br
+						br
+						input.input-small(type="text", placeholder="Text")
