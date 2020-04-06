@@ -105,6 +105,14 @@
 .my-events-empty .empty-block__img{margin-top: 87px;}
 .import-file-empty .empty-block__img{margin-top: 48px;}
 
+@media (max-height: 772px) {
+	.empty-table{
+		height: 360px;
+
+		&__img{margin-top: 30px;}
+	}
+}
+
 @media (max-width: 1899px) {
 	.query-wrap{
 		.admin-table__item:first-child{
