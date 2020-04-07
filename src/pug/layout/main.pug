@@ -18,7 +18,8 @@ html(lang='ru')
 				include ./header-open
 			else
 				include ./header
-			main.main(class=mainIndent=='false'?'main_no-indent':'')
+			//- main.main(class=mainIndent=='false'?'main_no-indent':'')
+			main.main
 				.content-page
 					block breadcrumb
 					if h1

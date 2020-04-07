@@ -137,10 +137,16 @@
 		border-bottom: 1px solid $color-light-grey;
 	}
 
+	&__list{
+		padding-top: 6px;
+		margin-bottom: -4px;
+	}
+
 	&__icon{
 		width: 28px;
 
 		.icon{
+			vertical-align: bottom;
 			width: 28px;
 			height: 28px;
 			fill: $color-dark-grey;
@@ -149,14 +155,18 @@
 
 	&__title{
 		width: calc(100% - 36px);
-		@include font(normal, 600, rem(14px), rem(30px), $color-dark-grey);
+		@include font(normal, 600, rem(14px), 2, $color-dark-grey);
 	}
 
 	&__sect &__param{
 		padding-left: 51px;
 	}
 
-	.drop-auto-info{height: 100%;}
+	.drop-auto-info{
+		height: 100%;
+		border: 0;
+		border-left: 1px solid $color-light-grey;
+	}
 }
 
 .drop-auto-info{
@@ -165,8 +175,8 @@
 	justify-content: space-between;
 	width: 250px;
 	height: 356px;
-	background:$color-sort-grey;
-	border-left: 1px solid $color-light-grey;
+	background: #f8f9fa;
+	border: 1px solid $color-light-grey;
 	padding: 8px 13px 10px;
 	overflow-y: auto;
 
@@ -184,6 +194,8 @@
 		margin-bottom: 4px;
 	}
 
+	&__text_grey{color: $color-grey;}
+
 	&__bottom{
 		border-top: 1px solid $color-light-grey;
 		margin-top: 14px;
@@ -200,12 +212,18 @@
 	&__link{
 		font-size: rem(13px);
 
+		a{
+			display: flex;
+			align-items: center;
+		}
+
 		.icon{
 			vertical-align: middle;
 			width: 17px;
 			height: 17px;
 			fill: $color-blue;
-			margin-left: 4px;
+			margin-left: 5px;
+			margin-top: 2px;
 		}
 	}
 
@@ -308,6 +326,8 @@
 
 		.progress{vertical-align: middle;}
 	}
+
+	&__val_grey{color: $color-grey;}
 
 	&:not(:last-child){margin-bottom: 10px;}
 	&__year{margin-left: -22px;}

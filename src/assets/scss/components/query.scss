@@ -75,6 +75,11 @@
 	&_green{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-green;}
 	&_red{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-red;}
 	&_orange{box-shadow: 0 2px 4px 0 #dbe4f9, -5px 0px 0px 0px $color-light-red;}
+
+	&_small{
+		height: 236px;
+		&__img{margin-top: 24px;}
+	}
 }
 
 .empty-query{
@@ -104,13 +109,16 @@
 .home-empty-list .empty-block__img{margin-top: 28px;}
 .my-events-empty .empty-block__img{margin-top: 87px;}
 .import-file-empty .empty-block__img{margin-top: 48px;}
+.import-file-empty .empty-block{margin-top: 20px;}
 
-@media (max-height: 772px) {
+@media (max-height: 720px) {
 	.empty-table{
-		height: 360px;
+		height: 430px;
 
 		&__img{margin-top: 30px;}
 	}
+
+	.import-file-empty .empty-block__img{margin-top: 15px;}
 }
 
 @media (max-width: 1899px) {

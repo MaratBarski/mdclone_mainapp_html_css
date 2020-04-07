@@ -1,6 +1,7 @@
 /*-------------- switch-icon -----------------*/
 .switch-icon{
 	display: inline-flex;
+	vertical-align: middle;
 	// border-radius: rem(12.5px);
 	// overflow: hidden;
 
@@ -56,6 +57,6 @@
 	}
 
 	&__item:not(:last-child){
-		border-right: 1px solid $color-dark-purple;
+		border-right: 0;
 	}
 }

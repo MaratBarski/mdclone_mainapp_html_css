@@ -117,15 +117,18 @@ h6,.h6{
 
 .main{
 	flex: 1 1 auto;
-	padding-bottom: 76px;
+	padding-bottom: 0;
 	width: 100%;
 	position: relative;
 	left: 0;
 	transition: left 0.3s ease;
+	height: calc(100vh - 52px);
+	overflow: auto;
+	padding-top: 25px;
 
-	&_no-indent{
-		padding-bottom: 0;
-	}
+	// &_no-indent{
+	// 	padding-bottom: 0;
+	// }
 }
 
 .btn,

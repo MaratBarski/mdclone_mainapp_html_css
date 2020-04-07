@@ -4,7 +4,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 23px;
+		margin-bottom: 12px;
 	}
 
 	&__title{
@@ -59,6 +59,11 @@
 		padding: 2.7px 25px;
 		position: relative;
 		white-space: nowrap;
+
+		.progress{
+			vertical-align: middle;
+			margin-bottom: 2px;
+		}
 	}
 
 	&__item_menu{
@@ -436,8 +441,9 @@
 	&__more-link{
 		display: none;
 		vertical-align: middle;
-		@include font(normal, 600, rem(14px), 1, $color-blue);
+		@include font(normal, normal, rem(14px), 1, $color-blue);
 		padding-right: 20px;
+		padding-left: 6px;
 		background: #fff;
 		position: absolute;
 		@include top-center;
@@ -450,6 +456,8 @@
 			right: -4px;
 		}
 	}
+
+	&__more-link:hover{text-decoration: none;}
 
 	&__row:nth-child(2n+1) &__more-link{
 		background: rgba(242,243,245,.9);

@@ -133,7 +133,7 @@ block content
 					.drop-auto
 						.drop-auto__head
 							.drop-auto__search
-								input(type="text", value="dia", placeholder="Type or Select Property...",)
+								input(type="text", placeholder="Search or Select Event...",)
 								span.drop-auto__search-close
 									+svg('ic-close-small','ic-close-small')
 							.drop-auto__head-arr
@@ -142,7 +142,7 @@ block content
 							.drop-auto__option
 								.drop-auto-empty
 									.drop-auto-empty__title Nothing matches your search.
-									.drop-auto-empty__text Try usuing different keywords.
+									.drop-auto-empty__text Try different keywords or check your spelling.
 
 							
 
@@ -229,7 +229,7 @@ block content
 										.drop-auto-event__content
 											.drop-auto-event__icon
 												+svg('ic-and','ic-and')
-											.drop-auto-event__text Combined event with ‘OR’ Condition
+											.drop-auto-event__text Combined Event - type 'OR'
 
 									.drop-auto-info__bottom
 										.drop-auto-info__title Default Date:
@@ -344,8 +344,8 @@ block content
 								.drop-auto-info__desc
 									.drop-auto-info__title Description:
 									.drop-auto-info__img
-										img(src="/assets/img/empty-state.png", alt="")
-									.drop-auto-info__label No Description Available
+										img(src="/assets/img/empty-state.png", alt="", style="height: 101px")
+									.drop-auto-info__label No description available
 									
 								.drop-auto-info__detail
 									.drop-auto-info__prop
@@ -357,7 +357,7 @@ block content
 									.drop-auto-info__bottom
 										.drop-auto-info__title Default Date:
 											+svg('ic-info','ic-info')
-										.drop-auto-info__text Admission Date
+										.drop-auto-info__text.drop-auto-info__text_grey Admission Date
 
 						.permutations__item
 							.permutations__title No Description and no other date
@@ -366,14 +366,14 @@ block content
 								.drop-auto-info__desc
 									.drop-auto-info__title Description:
 									.drop-auto-info__img
-										img(src="/assets/img/empty-state.png", alt="")
-									.drop-auto-info__label No Description Available
+										img(src="/assets/img/empty-state.png", alt="", style="height: 101px")
+									.drop-auto-info__label No description available
 									
 								.drop-auto-info__detail
 									.drop-auto-info__bottom
 										.drop-auto-info__title Default Date:
 											+svg('ic-info','ic-info')
-										.drop-auto-info__text Not Available
+										.drop-auto-info__text.drop-auto-info__text_grey Not available
 
 						.permutations__item
 							.permutations__title All other fields
@@ -387,7 +387,7 @@ block content
 									.drop-auto-info__bottom
 										.drop-auto-info__title Default Date:
 											+svg('ic-info','ic-info')
-										.drop-auto-info__text Not Available
+										.drop-auto-info__text.drop-auto-info__text_grey Not available
 
 						.permutations__item
 							.permutations__title Empty state
@@ -396,20 +396,20 @@ block content
 								.drop-auto-info__desc
 									.drop-auto-info__title Description:
 									.drop-auto-info__img
-										img(src="/assets/img/empty-state.png", alt="")
-									.drop-auto-info__label No Description Available
+										img(src="/assets/img/empty-state.png", alt="", style="height: 101px")
+									.drop-auto-info__label No description available
 									
 								.drop-auto-info__detail
 									.drop-auto-info__prop
 										.drop-auto-prop
 											.drop-auto-prop__title Populated:
-											.drop-auto-prop__val Not Available
+											.drop-auto-prop__val.drop-auto-prop__val_grey Not available
 
 										.drop-auto-prop
 											.drop-auto-prop__title Data Type:
-											.drop-auto-prop__val Not Available
+											.drop-auto-prop__val.drop-auto-prop__val_grey Not available
 
 									.drop-auto-info__bottom
 										.drop-auto-info__title Data Sample:
 											+svg('ic-info','ic-info')
-										.drop-auto-info__text Admission Date
+										.drop-auto-info__text.drop-auto-info__text_grey Not available
