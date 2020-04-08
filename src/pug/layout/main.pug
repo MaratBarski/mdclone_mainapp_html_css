@@ -14,10 +14,13 @@ html(lang='ru')
 			.shadow-site(class=body_scroll=='false'?'is-visible':'')
 			block modal
 
-			if header=='open'
-				include ./header-open
-			else
-				include ./header
+			- 
+				var headerData={
+					status:header,
+					notice:header_notice,
+					notice_empty:header_notice_empty
+				}
+			+header(headerData)
 			//- main.main(class=mainIndent=='false'?'main_no-indent':'')
 			main.main
 				.content-page

@@ -590,7 +590,7 @@ mixin modalShareQuery(status, result)
 
 			.form-site__btn
 				a(href="#").btn.btn_border Cancel
-				input.btn(type="submit", value="Share")(class=result=='empty'?'btn_disable':'')
+				input.btn(type="submit", value="Share", class=result=='empty'?'btn_disable':'')
 
 mixin svg(icon, name_class)
 	svg.icon(class=name_class?name_class:'')
@@ -1080,3 +1080,128 @@ mixin graph(graphInfo)
 						span.tooltip__content= graphInfo.popup_text
 
 		.graph__content
+
+mixin header(data)
+	header.header
+		.container-fluid
+			.row
+				.col-12
+					.header__content
+						.header__info
+							.hamburger
+								+svg('ic-hamburger','ic-hamburger')
+
+							.header__company.d-none.d-md-block
+								+svg('ic-flower','ic-flower')
+								span.header__company-name Buttercup Hospital Institute
+
+						.header__action
+							.select
+								.select__head Sheba Central
+									.select__head-arr
+										+svg('ic-select-arr-down','ic-select-arr-down')
+								.select__option
+									.select__param Text 1
+									.select__param Text 2
+									.select__param Text 3
+									.select__param Text 4
+		
+							.header-notice(class=data.status=='open'?'active':'')
+								if(data.status=='open')
+									+svg('notice-active','notice')
+								else
+									+svg('notice','notice')
+
+								.header-notice__popup(class=data.notice=='true'?'active':'')
+									if(data.notice_empty=='true')
+										.header-notice__top
+											.header-notice__head Notifications
+
+										.header-notice-empty
+											.header-notice-empty__title No new notifications.
+											.header-notice-empty__text Notifications of your activity will show up here.
+											.header-notice-empty__img
+												img(src="/assets/img/notice-empty.png", alt="", style="height: 170px;")
+
+									else
+										.header-notice__top
+											.header-notice__head Notifications
+											a(href="#").header-notice__link Dismiss All
+
+										.header-notice__content
+											-
+												var list=[
+													{icon:'ic-categorization', header:'Categorization', status_icon:'ic-running', status:'Uploading', text:'The new categorization - “Categorization very long name” is uploading.', link:'Hide progress', date:'Mar 19, 2020 08:00', open:'true'},
+													{icon:'ic-patient-story', stroke_icon:'ic-stroke', header:'Patient Story', status_icon:'ic-running', status:'Generating', text:'The population event ‘list of patients with pre-diabetes conditions’ is uploading.', link:'Show progress', date:'Mar 19, 2020 08:45'},
+													{icon:'ic-imported-file', header:'Imported File', status_circle:'red', status:'Failed', text:'The file “imported file name” upload aborted.', date:'Mar 19, 2020 09:45'},
+													{icon:'ic-quality', header:'Quality of Care', status_circle:'green', status:'Completed', text:'The Quality of Care file generated succesfully and is ready for download', link:'Download File', date:'Mar 19, 2020 10:45'},
+													{icon:'ic-patient-story ic-stroke', header:'Patient Story', status_circle:'green', status:'Completed', text:'The Quality of Care file generated succesfully and is ready for download', link:'Show progress', date:'Mar 19, 2020 10:45'},
+												];
+
+											each item in list
+												.header-notice-item
+													.header-notice-item__top
+														.header-notice-head
+															.header-notice-head__icon
+																+svg(item.icon,item.icon+' '+item.stroke_icon)
+															.header-notice-head__text= item.header
+
+														.header-notice-status
+															.header-notice-status__content
+																if(item.status_icon)
+																	+svg(item.status_icon,item.status_icon)
+																else if(item.status_circle=='green')
+																	.header-notice-status__circle
+																else if(item.status_circle=='red')
+																	.header-notice-status__circle.header-notice-status__circle_red
+																span.header-notice-item__status-text= item.status
+															.header-notice-status__close
+																+svg('ic-close-circle','ic-close-circle')
+
+													.header-notice-item__text= item.text
+
+													.header-notice-item__bottom
+														.header-notice-item__link= item.link
+														.header-notice-item__date= item.date
+													
+													.header-notice-item__progress(class=item.open?'open':'')
+														.load-doc.load-doc_green
+															.load-doc__content
+																.load-doc__file
+																	.load-doc__icon
+																		+svg('ic-csv','ic-csv')
+
+																	.load-doc__text 20191225_134440_Medication Hierarchy 2.csv
+
+																.load-doc__link
+																	a(href="#") Abort
+
+															.load-doc__progress
+																.load-doc__progress-line(style='width:25%;')
+
+							.header__profile
+								.header__profile-icon
+
+								.profile-popup(class=data.status=='open'?'active':'')
+									.profile-popup__list
+										a(href="#").profile-popup__item
+											.profile-popup__icon
+												+svg('ic-setting','ic-setting')
+
+											.profile-popup__text Account settings
+
+										a(href="#").profile-popup__item
+											.profile-popup__icon
+												+svg('ic-logout','ic-logout')
+
+											.profile-popup__text Logout
+
+		
+		include ../components/sidebar
+
+//- mixin headerNoticePopup(empty)
+//- 	.header-notice__popup
+	//- 	if(empty == 'true')
+	//- 		.header-notice__top
+	//- 			.header-notice__head Notifications
+	//- 			a(href="#").header-notice__link Dismiss All

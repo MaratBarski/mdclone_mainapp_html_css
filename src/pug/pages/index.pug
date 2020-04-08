@@ -19,6 +19,17 @@ block content
 						each page in pagelist
 							li
 								a(href=page.href,)= page.name
+					- 
+						var pagelist = [
+							{href: 'notification-empty.html',name:'Notifications empty'},
+							{href: 'notification.html',name:'Notifications'},
+						];
+
+					.h6 Notifications
+					ul
+						each page in pagelist
+							li
+								a(href=page.href,)= page.name
 
 					- 
 						var pagelist = [
@@ -175,6 +186,7 @@ block content
 							{href: 'tipografika-balloon.html',name:'Information Balloon'},
 							{href: 'tipografika-input.html',name:'Input'},
 							{href: 'tipografika-search.html',name:'Form search'},
+							{href: 'tipografika-load-doc.html',name:'Loader document'},
 							{href: 'tipografika-progress.html',name:'Progress and tags'},
 							{href: 'tipografika-select.html',name:'Select'},
 							{href: 'tipografika-notice.html',name:'System Notifications'},
