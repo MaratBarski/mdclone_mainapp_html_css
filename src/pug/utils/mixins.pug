@@ -1170,10 +1170,10 @@ mixin header(data)
 											-
 												var list=[
 													{icon:'ic-categorization', header:'Categorization', status_icon:'ic-running', status:'Uploading', text:'The new categorization - “Categorization very long name” is uploading.', link:'Hide progress', date:'Mar 19, 2020 08:00', open:'true'},
-													{icon:'ic-patient-story', stroke_icon:'ic-stroke', header:'Patient Story', status_icon:'ic-running', status:'Generating', text:'The population event ‘list of patients with pre-diabetes conditions’ is uploading.', link:'Show progress', date:'Mar 19, 2020 08:45'},
+													{icon:'ic-patient-story', header:'Patient Story', status_icon:'ic-running', status:'Generating', text:'The population event ‘list of patients with pre-diabetes conditions’ is uploading.', link:'Show progress', date:'Mar 19, 2020 08:45'},
 													{icon:'ic-imported-file', header:'Imported File', status_circle:'red', status:'Failed', text:'The file “imported file name” upload aborted.', date:'Mar 19, 2020 09:45'},
 													{icon:'ic-quality', header:'Quality of Care', status_circle:'green', status:'Completed', text:'The Quality of Care file generated succesfully and is ready for download', link:'Download File', date:'Mar 19, 2020 10:45'},
-													{icon:'ic-patient-story ic-stroke', header:'Patient Story', status_circle:'green', status:'Completed', text:'The Quality of Care file generated succesfully and is ready for download', link:'Show progress', date:'Mar 19, 2020 10:45'},
+													{icon:'ic-patient-story', header:'Patient Story', status_circle:'green', status:'Completed', text:'The Quality of Care file generated succesfully and is ready for download', link:'Show progress', date:'Mar 19, 2020 10:45'},
 												];
 
 											each item in list
@@ -1289,11 +1289,79 @@ mixin usageDashboardPanel(param)
 												.select__head Please Select...
 													.select__head-arr
 														+svg('ic-select-arr-down','ic-select-arr-down')
-												.select__option
-													.select__param Top 5 Users
-													.select__param Top 10 Users
-													.select__param Top 15 Users
-													.select__param Top 20 Users
+												.select-filter
+													.select-filter__content
+														form
+															.select-filter__top
+																.input-check
+																	input#paramAll(type='checkbox', name='paramAll')
+																	label.input-check__label(for='paramAll')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Top 5 users
+
+																a(href="#").select-filter__clear Clear
+
+															.form-search
+																input(type="text", placeholder="Search a user")
+																button(type="submit")
+																	+svg('ic-search','ic-search')
+																span.form-search__close
+																	+svg('ic-close-small','ic-close-small')
+
+															.select-filter__params
+																.input-check
+																	input#param1(type='checkbox', name='param1', checked="checked")
+																	label.input-check__label(for='param1')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Ron Paul (26)
+
+																.input-check
+																	input#param2(type='checkbox', name='param2')
+																	label.input-check__label(for='param2')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Floyd Stephens (20)
+
+																.input-check
+																	input#param3(type='checkbox', name='param3')
+																	label.input-check__label(for='param3')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Lillie Shaw (10)
+
+																.input-check
+																	input#param4(type='checkbox', name='param4')
+																	label.input-check__label(for='param4')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Christian Sharp
+
+																.input-check
+																	input#param5(type='checkbox', name='param5')
+																	label.input-check__label(for='param5')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Gabriel Barton
+
+																.input-check
+																	input#param6(type='checkbox', name='param6')
+																	label.input-check__label(for='param6')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Craig Wolfe
+
+																.input-check
+																	input#param7(type='checkbox', name='param7')
+																	label.input-check__label(for='param7')
+																		span.input-check__mark
+																			+svg('ic-check','ic-check')
+																		span.input-check__text Nacny Beck
+
+															.select-filter__btn
+																a(href="#").btn.btn_border.btn_small Cancel
+																input.btn.btn_small(type="submit", value="Apply")
 
 							.info-panel__switch
 								.info-panel__switch-label Include Admin Users
