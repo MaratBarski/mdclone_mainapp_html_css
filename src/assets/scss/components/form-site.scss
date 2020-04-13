@@ -801,6 +801,68 @@
 	}
 }
 
+.input-number{
+	position: relative;
+	display: inline-block;
+	width: 47px;
+
+	input[type="text"]{
+		height: rem(28px);
+		width: 100%;
+		outline: none;
+		border: 1px solid $color-light-grey;
+		border-radius: 2px;
+		@include font(normal, normal, rem(14px), rem(26px), $color-dark-grey);
+		text-align: center;
+		padding: 0 15px 0 5px;
+		margin: 0;
+		transition: all 0.3s ease;
+	}
+
+	input[type="text"]::placeholder{color: $color-light-grey;}
+	input[type="text"]:focus{border-color: $color-purple;}
+
+	input[disabled="disabled"]{
+		background: #fff;
+		color: $color-light-grey;
+	}
+
+	&__arr{
+		display: inline-block;
+		width: 7px;
+		height: 12px;
+		position: absolute;
+		@include top-center;
+		right: 6px;
+	}
+
+	&__arr-up{
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 3.5px 4px 3.5px;
+		border-color: transparent transparent $color-dark-blue transparent;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__arr-down{
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 4px 3.5px 0 3.5px;
+		border-color: $color-dark-blue transparent transparent transparent;
+		cursor: pointer;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
 @media (max-width: 767px) {
 	.form-site{
 		&__item{margin-bottom: 20px;}

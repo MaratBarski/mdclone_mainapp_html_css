@@ -52,25 +52,20 @@ block content
 		- var usageParam={environment:'true', years:'true'};
 		+usageDashboardPanel(usageParam)
 
-		section.category-list
+		section.category-list-num
 			.container-fluid
 				.row
 					.col-12
-						.category-list__content
-							.category-list__label List of users without activity in the last
-							.category-list__field
-								input(type="text", value="60")
+						.category-list-num__content
+							.category-list-num__label List of users without activity in the last
+							.category-list-num__field
+								.input-number
+									input(type="text", value="60")
+
+									.input-number__arr
+										.input-number__arr-up
+										.input-number__arr-down
 								|Days
-
-							//- .category-list__list
-							//- 	.category-list__item.active
-							//- 		a(href="#").category-list__link Month
-
-							//- 	.category-list__item
-							//- 		a(href="#").category-list__link 3 Months
-
-							//- 	.category-list__item
-							//- 		a(href="#").category-list__link 6 Months
 
 		section.admin-table-wrap
 			.container-fluid
