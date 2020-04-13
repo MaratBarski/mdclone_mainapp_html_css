@@ -10,7 +10,7 @@ html(lang='ru')
 		//- link(href='https://fonts.googleapis.com/css?family=Open+Sans&display=swap', rel='stylesheet')
 
 	body(class=body_scroll=='false'?'no-scroll':'')
-		.wrapper(class=header=='open'?'open-sidebar':'')
+		.wrapper(class=header=='open'?'open-sidebar':'', class=footer=='show'?'open-footer':'',)
 			.shadow-site(class=body_scroll=='false'?'is-visible':'')
 			block modal
 
@@ -22,7 +22,7 @@ html(lang='ru')
 				}
 			+header(headerData)
 			//- main.main(class=mainIndent=='false'?'main_no-indent':'')
-			main.main
+			main.main()
 				.content-page
 					block breadcrumb
 					if h1

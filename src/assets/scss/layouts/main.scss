@@ -131,6 +131,8 @@ h6,.h6{
 	// }
 }
 
+.wrapper.open-footer .main{height: calc(100vh - 102px);}
+
 .btn,
 input[type="submit"].btn,
 button.btn{

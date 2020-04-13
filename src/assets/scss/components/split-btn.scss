@@ -3,6 +3,7 @@
 	min-width: 114px;
 	position: relative;
 	padding-bottom: 4px;
+	z-index: 1;
 
 	&__title{
 		width: calc(100% - 42px);

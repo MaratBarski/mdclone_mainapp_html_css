@@ -14,10 +14,16 @@ block content
 				.row
 					.col-12
 						.usage-dashboard-top__content
-							a(href='#').link-load
-								span.ic-hover
-									+svg('ic-download','ic-download')
-								span.link-load__text Download
+							.split-btn
+								.split-btn__title Download as CSV
+								.split-btn__arr
+									+svg('ic-select-arr-down','ic-select-arr-down')
+
+								.split-btn__popup
+									.split-btn__item Action number 00001
+									.split-btn__item Action number 00002
+									.split-btn__item Action number 00003
+									.split-btn__item Action number 00004
 
 
 							.usage-dashboard-top__tab
@@ -26,7 +32,7 @@ block content
 										{name:'General Usage', link:'#', active:'true', class:'d-none d-md-inline-block'},
 										{name:'Monthly Activity', link:'#', class:'d-none d-md-inline-block'},
 										{name:'Activity per User', link:'#', class:'d-none d-lg-inline-block'},
-										{name:'Top 10 Users', link:'#', class:'d-none d-lg-inline-block'},
+										{name:'Top 10 Users', link:'#', class:'d-none d-xl-inline-block'},
 										{
 											more: 'true',
 											name:'Retention',
@@ -37,13 +43,14 @@ block content
 												{name:'General Usage', link:'#', class:'d-md-none'},
 												{name:'Monthly Activity', link:'#', class:'d-md-none'},
 												{name:'Activity per User', link:'#', class:'d-lg-none'},
-												{name:'Top 10 Users', link:'#', class:'d-lg-none'},
+												{name:'Top 10 Users', link:'#', class:'d-xl-none'},
 											]
 										}
 									];
 								+tabsPage(tabs)
 
-		include ../components/usage-dashboard-panel
+		- var usageParam={environment:'true', years:'true'};
+		+usageDashboardPanel(usageParam)
 
 		section.graph-wrap
 			.container-fluid

@@ -1079,6 +1079,44 @@ mixin graph(graphInfo)
 					span.tooltip.tooltip_left(graphInfo.popup_status=active?'active':'')
 						span.tooltip__content= graphInfo.popup_text
 
+				if(graphInfo.legend)
+					span.graph__legend Legend
+
+						.info-popup
+							.info-popup__top
+								.info-popup__head-wrap
+									span.info-popup__head Users Shown in Chart
+
+								.info-popup__close
+									+svg('ic-close-circle','ic-close-circle')
+
+							.info-popup__content
+								.graph-term
+									.graph-term__item
+										.graph-term__icon
+											+svg('ic-nancy','ic-nancy')
+										.graph-term__text Nancy Beck
+
+									.graph-term__item
+										.graph-term__icon
+											+svg('ic-lillie','ic-lillie')
+										.graph-term__text Lillie Shaw
+
+									.graph-term__item
+										.graph-term__icon
+											+svg('ic-christian','ic-christian')
+										.graph-term__text Christian Sharp
+
+									.graph-term__item
+										.graph-term__icon
+											+svg('ic-gabriel','ic-gabriel')
+										.graph-term__text Gabriel Barton
+
+									.graph-term__item
+										.graph-term__icon
+											+svg('ic-craig','ic-craig')
+										.graph-term__text Craig Wolfe
+
 		.graph__content
 
 mixin header(data)
@@ -1205,3 +1243,67 @@ mixin header(data)
 	//- 		.header-notice__top
 	//- 			.header-notice__head Notifications
 	//- 			a(href="#").header-notice__link Dismiss All
+
+
+mixin usageDashboardPanel(param)
+	section.info-panel-wrap
+		.container-fluid
+			.row
+				.col-12
+					.info-panel
+						.info-panel__content
+							.info-panel-choose
+								if(param.environment)
+									.info-panel-choose__item
+										.info-panel-choose__title Environment:
+										.info-panel-choose__val
+											.select.select_small
+												.select__head Please Select...
+													.select__head-arr
+														+svg('ic-select-arr-down','ic-select-arr-down')
+												.select__option
+													.select__param Health Institute external
+													.select__param Health Institute 2
+													.select__param Health Institute 3
+													.select__param Health Institute 4
+
+								if(param.years)
+									.info-panel-choose__item
+										.info-panel-choose__title Years:
+										.info-panel-choose__val
+											.select.select_small
+												.select__head Please Select...
+													.select__head-arr
+														+svg('ic-select-arr-down','ic-select-arr-down')
+												.select__option
+													.select__param YTD (Year To Date)
+													.select__param YTD (Year To Date) 2
+													.select__param YTD (Year To Date) 3
+													.select__param YTD (Year To Date) 4
+
+								if(param.users)
+									.info-panel-choose__item
+										.info-panel-choose__title Users:
+										.info-panel-choose__val
+											.select.select_small
+												.select__head Please Select...
+													.select__head-arr
+														+svg('ic-select-arr-down','ic-select-arr-down')
+												.select__option
+													.select__param Top 5 Users
+													.select__param Top 10 Users
+													.select__param Top 15 Users
+													.select__param Top 20 Users
+
+							.info-panel__switch
+								.info-panel__switch-label Include Admin Users
+							
+								.switch
+									if(param.switch)
+										input(type="checkbox", id="switch1", checked="checked")
+									else
+										input(type="checkbox", id="switch1")
+									label.switch__content(for="switch1")
+										.switch__marker
+										.switch__on Yes
+										.switch__off No
