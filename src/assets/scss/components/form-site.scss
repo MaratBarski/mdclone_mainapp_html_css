@@ -566,11 +566,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-bottom: 6px;
+		margin-bottom: 6px;
 	}
 
 	.form-search{
 		width: 100%;
+		height: 33px;
 	}
 
 	.form-search::after{
@@ -582,8 +583,6 @@
 		bottom: 2px;
 		left: 0;
 	}
-
-	&__top .input-check__label{margin-bottom: 0;}
 
 	&__clear{
 		font-size: rem(14px);
@@ -603,12 +602,13 @@
 		max-height: 212px;
 		overflow-y: auto;
 		margin-left: -8px;
-		margin-top: 12px;
+		margin-top: 9px;
 		padding-left: 8px;
 		border-top: 1px solid rgba(172, 178, 195,0.5);
 	}
 
 	.input-check__label{margin-bottom: 17px;}
+	&__top .input-check__label{margin-bottom: 0;}
 }
 
 .select-wrap.error{
