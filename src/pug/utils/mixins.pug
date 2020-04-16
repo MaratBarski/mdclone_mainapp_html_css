@@ -596,7 +596,7 @@ mixin svg(icon, name_class)
 	svg.icon(class=name_class?name_class:'')
 		use(xlink:href='/assets/sprites/sprite.svg#'+icon)
 
-mixin pager(title)
+mixin pager(title, count)
 	.pager-wrap
 		.pager-wrap__title= title
 
@@ -615,6 +615,18 @@ mixin pager(title)
 					a(href="#") 6
 			a(href="#").pager__arr.pager__arr_right.active.ic-hover
 				+svg('ic-pager-arr-right','ic-pager-arr-right')
+
+		if(count)
+			span.pager-count
+				span.pager-count__label Go to page:
+
+				.input-number
+					input(type="text", value="60")
+
+					.input-number__arr
+						.input-number__arr-up
+						.input-number__arr-down
+
 
 mixin infoPanel(share, popup)
 	section.info-panel-wrap
