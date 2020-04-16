@@ -56,6 +56,8 @@
 		white-space: normal;
 	}
 
+	&__accent{color: $color-green;}
+
 	input[type=checkbox]:checked + &__label &__mark{border-color: $color-dark-purple;}
 	input[type=checkbox]:checked + &__label &__mark .ic-check{display: inline-block;}
 

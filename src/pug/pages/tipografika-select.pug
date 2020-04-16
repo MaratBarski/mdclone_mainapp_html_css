@@ -79,85 +79,15 @@ block content
 					br
 					br
 					.h2 Select with filter
-					.select.select_small
-						.select__head Please Select...
-							.select__head-arr
-								+svg('ic-select-arr-down','ic-select-arr-down')
-						.select-filter
-							.select-filter__content
-								form
-									.select-filter__top
-										.input-check
-											input#paramAll(type='checkbox', name='paramAll')
-											label.input-check__label(for='paramAll')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Top 5 users
+					+selectFilter
+					br
+					br
+					+selectFilter('count')
 
-										a(href="#").select-filter__clear Clear
-
-									.form-search
-										input(type="text", placeholder="Search a user")
-										button(type="submit")
-											+svg('ic-search','ic-search')
-										span.form-search__close
-											+svg('ic-close-small','ic-close-small')
-
-									.select-filter__params
-										.input-check
-											input#param1(type='checkbox', name='param1', checked="checked")
-											label.input-check__label(for='param1')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Ron Paul (26)
-
-										.input-check
-											input#param2(type='checkbox', name='param2')
-											label.input-check__label(for='param2')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Floyd Stephens (20)
-
-										.input-check
-											input#param3(type='checkbox', name='param3')
-											label.input-check__label(for='param3')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Lillie Shaw (10)
-
-										.input-check
-											input#param4(type='checkbox', name='param4')
-											label.input-check__label(for='param4')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Christian Sharp
-
-										.input-check
-											input#param5(type='checkbox', name='param5')
-											label.input-check__label(for='param5')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Gabriel Barton
-
-										.input-check
-											input#param6(type='checkbox', name='param6')
-											label.input-check__label(for='param6')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Craig Wolfe
-
-										.input-check
-											input#param7(type='checkbox', name='param7')
-											label.input-check__label(for='param7')
-												span.input-check__mark
-													+svg('ic-check','ic-check')
-												span.input-check__text Nacny Beck
-
-									.select-filter__btn
-										a(href="#").btn.btn_border.btn_small Cancel
-										input.btn.btn_small(type="submit", value="Apply")
-
-
+					br
+					br
+					+selectFilter('', 'search')
+					
 					br
 					br
 					.h2 Select autocomplite

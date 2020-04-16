@@ -566,7 +566,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 6px;
+		margin-bottom: 1px;
 	}
 
 	.form-search{
@@ -594,7 +594,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 -15px -20px;
-		padding: 25px 15px 20px;
+		padding: 24px 15px 21px;
 		box-shadow: -10px 9px 21px 13px rgba(128, 152, 213, 0.15)
 	}
 
@@ -605,9 +605,10 @@
 		margin-top: 9px;
 		padding-left: 8px;
 		border-top: 1px solid rgba(172, 178, 195,0.5);
+		padding-top: 11px;
 	}
 
-	.input-check__label{margin-bottom: 17px;}
+	.input-check__label{margin-bottom: 15px;}
 	&__top .input-check__label{margin-bottom: 0;}
 }
 
