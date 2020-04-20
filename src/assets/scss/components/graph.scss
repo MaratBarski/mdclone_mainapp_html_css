@@ -50,7 +50,20 @@
 		top: -6px;
 	}
 
-	&__head:hover .tooltip,
+	&__head-icon{
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		margin-left: 6px;
+
+		.ic-help{
+			vertical-align: top;
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	&__head-icon:hover .tooltip,
 	.tooltip.active{
 		display: inline-block;
 	}

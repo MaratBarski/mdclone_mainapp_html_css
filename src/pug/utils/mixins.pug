@@ -1087,9 +1087,13 @@ mixin graph(graphInfo)
 	.graph
 		.graph__top
 			.graph__head= graphInfo.head
-				if(graphInfo.popup_text)
-					span.tooltip.tooltip_left(graphInfo.popup_status=active?'active':'')
-						span.tooltip__content= graphInfo.popup_text
+				if(graphInfo.icon=='ic-help')
+					span.graph__head-icon
+						+svg('ic-help','ic-help')
+						
+						if(graphInfo.popup_text)
+							span.tooltip.tooltip_left(graphInfo.popup_status=active?'active':'')
+								span.tooltip__content= graphInfo.popup_text
 
 				if(graphInfo.legend)
 					span.graph__legend Legend
